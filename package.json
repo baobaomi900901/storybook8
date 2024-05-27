@@ -1,0 +1,39 @@
+{
+  "name": "demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "sb": "storybook dev -p 12850",
+    "build-storybook": "storybook build",
+    "watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "dependencies": {
+    "element-plus": "^2.7.3",
+    "ksw-vue-icon": "latest",
+    "vue": "^3.4.27"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^1.4.0",
+    "@storybook/addon-essentials": "^8.1.1",
+    "@storybook/addon-interactions": "^8.1.1",
+    "@storybook/addon-links": "^8.1.1",
+    "@storybook/blocks": "^8.1.1",
+    "@storybook/manager-api": "^8.1.2",
+    "@storybook/test": "^8.1.1",
+    "@storybook/theming": "^8.1.2",
+    "@storybook/vue3": "^8.1.2",
+    "@storybook/vue3-vite": "^8.1.1",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "storybook": "^8.1.1",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vue-tsc": "^2.0.19"
+  }
+}

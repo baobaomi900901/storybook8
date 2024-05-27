@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "paths": {
+      "@alias": ["./path/to/alias"]
+    },
+    "types": ["vue/types"],
+
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src/**/*.ts", 
+    "src/**/*.tsx", 
+    "src/**/*.vue", 
+    "vue-shim.d.ts",
+    "src/stories/KUI/KSwitch.stories.ts11", 
+    "src/stories/KUI/KSwitch.stories.ts1s1", "src/stories/KUI/KButton.stories.ts", "src/stories/KUI/KButton.stories.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
