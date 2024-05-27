@@ -17,7 +17,7 @@ const props = withDefaults(
   defineProps<{
     label: string;
   }>(),
-  { label: "bbm" }
+  { label: "bbm1" }
 );
 </script>
 <style scoped>

@@ -1,21 +1,15 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import { KButton } from "../../kingsware-ui";
+// import { KButton } from "../../kingsware-ui";
+import KButton from "../../package/components/button/button.vue";
 import { IconAdd, IconArrowBottom } from "ksw-vue-icon";
-console.log("IconAdd =>>", IconAdd);
-console.log("IconArrowBottom =>>", IconArrowBottom);
+
+console.log("KButton =>>", KButton);
+
 
 const meta = {
   title: "Base(B)/KButton",
   component: KButton,
   tags: ["autodocs"],
-  // parameters: { // 这里是为了让文档中显示slot
-  //   slots: {
-  //     default: {
-  //       description: "Default slot",
-  //       template: `<p>{{ args.default }}</p>`,
-  //     },
-  //   },
-  // },
   argTypes: {
     type: {
       control: "select",
@@ -52,7 +46,7 @@ export const normal: Story = {
         return { args };
       },
       template: `
-        <k-button v-bind="args">
+        <k-button>
         {{ args.label }}
         </k-button>`,
     };
@@ -71,7 +65,7 @@ export const main: Story = {
         return { args };
       },
       template: `
-        <k-button v-bind="args">
+        <k-button>
         {{ args.label }}
         </k-button>`,
     };
@@ -90,7 +84,7 @@ export const secondary: Story = {
         return { args };
       },
       template: `
-        <k-button v-bind="args">
+        <k-button>
         {{ args.label }}
         </k-button>`,
     };
@@ -110,7 +104,7 @@ export const disabled: Story = {
         return { args };
       },
       template: `
-        <k-button v-bind="args">
+        <k-button>
         {{ args.label }}
         </k-button>`,
     };
@@ -130,7 +124,7 @@ export const text: Story = {
         return { args };
       },
       template: `
-        <k-button v-bind="args">
+        <k-button>
         {{ args.label }}
         </k-button>`,
     };
@@ -150,7 +144,7 @@ export const loading: Story = {
         return { args };
       },
       template: `
-        <k-button v-bind="args">
+        <k-button>
         {{ args.label }}
         </k-button>`,
     };
@@ -162,22 +156,24 @@ export const iconAndText: Story = {
   args: {
     label: "左边图标",
     iconLeft: IconAdd,
-    iconRight: IconArrowBottom,
   },
   render: (args:any) => {
     return {
-      components: { KButton },
+      components: { KButton,IconAdd,IconArrowBottom },
       setup() {
         return { args };
       },
       template: `
-        <k-button v-bind="args">
+        <k-button iconLeft="IconAdd">
+  
+  
         {{ args.label }}
+
+
         </k-button>`,
     };
   },
 };
-
 // only icon
 export const onlyIcon: Story = {
   args: {
@@ -185,12 +181,13 @@ export const onlyIcon: Story = {
   },
   render: (args:any) => {
     return {
-      components: { KButton },
+      components: { KButton,IconAdd },
       setup() {
         return { args };
       },
       template: `
-        <k-button v-bind="args">
+        <k-button >
+          <IconAdd />
         </k-button>`,
     };
   },

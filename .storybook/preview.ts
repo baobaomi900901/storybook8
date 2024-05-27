@@ -8,6 +8,9 @@ setup((app) => {
   app.use(elementPlus)
 })
 
+// console.log(elementPlus);
+
+
 export const preview: Preview = {
   parameters: {
     controls: {

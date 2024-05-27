@@ -2,6 +2,7 @@
   <article>
     <my-header :user="user" @login="onLogin" @logout="onLogout" @create-account="onCreateAccount" />
 
+    <KButton>123</KButton>
     <section class="storybook-page">
       <h2>Pages in Storybook</h2>
       <p>
@@ -56,6 +57,7 @@
 <script lang="ts" setup>
 import './page.css';
 import MyHeader from '../Header/Header.vue';
+import KButton from '../../components/button/button.vue';
 
 import { ref } from 'vue';
 
