@@ -3,9 +3,6 @@ import type { Meta, StoryObj } from "@storybook/vue3";
 import KButton from "../../package/components/button/button.vue";
 import { IconAdd, IconArrowBottom } from "ksw-vue-icon";
 
-console.log("KButton =>>", KButton);
-
-
 const meta = {
   title: "Base(B)/KButton",
   component: KButton,
@@ -154,8 +151,7 @@ export const loading: Story = {
 // icon and text
 export const iconAndText: Story = {
   args: {
-    label: "左边图标",
-    iconLeft: IconAdd,
+    label: "双边图标",
   },
   render: (args:any) => {
     return {
@@ -164,22 +160,19 @@ export const iconAndText: Story = {
         return { args };
       },
       template: `
-        <k-button iconLeft="IconAdd">
-  
-  
-        {{ args.label }}
-
-
-        </k-button>`,
+      <KButton :icon-left="args.iconLeft">
+      {{args.label}}
+      </KButton>
+    `,
     };
   },
 };
 // only icon
 export const onlyIcon: Story = {
   args: {
-    iconLeft: IconAdd,
   },
   render: (args:any) => {
+    console.log('components',components);
     return {
       components: { KButton,IconAdd },
       setup() {
@@ -187,7 +180,7 @@ export const onlyIcon: Story = {
       },
       template: `
         <k-button >
-          <IconAdd />
+        
         </k-button>`,
     };
   },

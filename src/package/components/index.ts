@@ -1,3 +1,4 @@
+import { TBtn } from './btn';
 import { KButton } from './button';
 import { KInput } from './input';
 import { KInputNumber } from './input _number';
@@ -17,6 +18,7 @@ import { KPopover } from './popover';
 import { KPopconfirm } from './popconfirm';
 
 export {
+  TBtn,
   KButton,
   KInput,
   KInputNumber,
