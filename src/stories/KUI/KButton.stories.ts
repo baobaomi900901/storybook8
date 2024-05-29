@@ -152,6 +152,8 @@ export const loading: Story = {
 export const iconAndText: Story = {
   args: {
     label: "双边图标",
+    iconLeft: IconAdd,
+    iconRight: IconArrowBottom,
   },
   render: (args:any) => {
     return {
@@ -160,7 +162,7 @@ export const iconAndText: Story = {
         return { args };
       },
       template: `
-      <KButton :icon-left="args.iconLeft">
+      <KButton :icon-left="args.iconLeft" :icon-right="args.iconRight">
       {{args.label}}
       </KButton>
     `,

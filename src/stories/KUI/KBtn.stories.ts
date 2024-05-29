@@ -9,7 +9,7 @@ const meta = {
   argTypes: {
     type: {
       control: "select",
-      options: ["normal", "main", "secondary", "text"],
+      options: ["normal", "main", "secondary", "text", "icon"],
       description:
         "按钮类型, 可选值为{ main : 主要按钮、secondary : 次要按钮、text : 文字按钮、normal: 默认按钮 }",
     },
@@ -36,29 +36,21 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const normal: Story = {
+const mytype = "secondary";
+const mysize = "sm";
+const mylabel = "按钮";
+const myloading = false;
+const mydisabled = false;
+
+// default
+export const def: Story = {
+  name: "default",
   args: {
-    label: "默认按钮",
-  },
-  render: (args: any) => {
-    return {
-      components: { KBtn },
-      setup() {
-        return { args };
-      },
-      template: `
-        <k-btn>
-        {{ args.label }}
-        </k-btn>`,
-    };
-  },
-};
-// icon and text
-export const iconAndText: Story = {
-  name: "具名插槽写法",
-  args: {
-    label: "双边图标",
-    iconLeft: IconAdd,
+    label: mylabel,
+    type: mytype,
+    size: mysize,
+    loading: myloading,
+    disabled: mydisabled,
   },
   render: (args: any) => {
     return {
@@ -67,34 +59,154 @@ export const iconAndText: Story = {
         return { args };
       },
       template: `
-        <KBtn>
+          <KBtn v-bind='args'>
             <template #iconLeft>
                 <IconAdd />
             </template>
             <template #iconRight>
                 <IconArrowBottom />
             </template>
-            123
+            {{args.label}}
+          </KBtn>
+      `,
+    };
+  },
+};
+
+// default
+export const namedSlot: Story = {
+  name: "icon传参",
+  args: {
+    label: mylabel,
+    type: mytype,
+    size: mysize,
+    loading: myloading,
+    disabled: mydisabled,
+    iconLeft: IconAdd,
+    iconRight: IconArrowBottom,
+  },
+  render: (args: any) => {
+    return {
+      components: { KBtn, IconAdd, IconArrowBottom },
+      setup() {
+        return { args };
+      },
+      template: `
+          <KBtn v-bind='args'>
+            {{args.label}}
+          </KBtn>
+      `,
+    };
+  },
+};
+
+// icon left
+export const iconLeft: Story = {
+  name: "icon left",
+  args: {
+    label: mylabel,
+    type: mytype,
+    size: mysize,
+    loading: myloading,
+    disabled: mydisabled,
+  },
+  render: (args: any) => {
+    return {
+      components: { KBtn, IconAdd, IconArrowBottom },
+      setup() {
+        return { args };
+      },
+      template: `
+        <KBtn v-bind='args'>
+          <template #iconLeft>
+            <IconAdd />
+          </template>
+          {{args.label}}
         </KBtn>
     `,
     };
   },
 };
-// only icon
-export const onlyIcon: Story = {
+
+// icon right
+export const iconRight: Story = {
+  name: "icon right",
   args: {
-    iconLeft: IconAdd,
+    label: mylabel,
+    type: mytype,
+    size: mysize,
+    loading: myloading,
+    disabled: mydisabled,
   },
   render: (args: any) => {
     return {
-      components: { KBtn, IconAdd },
+      components: { KBtn, IconAdd, IconArrowBottom },
       setup() {
         return { args };
       },
       template: `
-        <k-btn >
+          <KBtn v-bind='args'>
+            <template #iconRight>
+              <IconArrowBottom />
+            </template>
+            {{args.label}}
+          </KBtn>
+      `,
+    };
+  },
+};
+
+// sm
+export const sm: Story = {
+  name: "sm",
+  args: {
+    label: mylabel,
+    type: mytype,
+    size: mysize,
+    loading: myloading,
+    disabled: mydisabled,
+  },
+  render: (args: any) => {
+    return {
+      components: { KBtn, IconAdd, IconArrowBottom },
+      setup() {
+        return { args };
+      },
+      template: `
+          <KBtn v-bind='args'>
+              <template #iconLeft>
+                <IconAdd />
+              </template>
+              <template #iconRight>
+                <IconArrowBottom />
+              </template>
+              {{args.label}}
+          </KBtn>
+      `,
+    };
+  },
+};
+// icon and text
+export const icon: Story = {
+  name: "icon",
+  args: {
+    label: mylabel,
+    type: "icon",
+    size: mysize,
+    loading: myloading,
+    disabled: mydisabled,
+  },
+  render: (args: any) => {
+    return {
+      components: { KBtn, IconAdd, IconArrowBottom },
+      setup() {
+        return { args };
+      },
+      template: `
+          <KBtn v-bind='args'>
             <IconAdd />
-        </k-btn>`,
+          </KBtn>
+      `,
     };
   },
 };
