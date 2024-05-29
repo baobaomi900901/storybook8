@@ -1,0 +1,31 @@
+name: component-storybook8
+on:
+  push:
+    branches:
+    - main
+    # file paths to consider in the event. Optional; defaults to all.
+    # paths:
+      # - package.json
+
+jobs:
+  component-storybook8: 
+    name: component-storybook8
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+    - run: npm install
+    - run: npm run build-storybook
+    
+    - name: Deploy GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@v4
+      with:
+        folder: storybook-static
+        ssh-key: ${{ secrets.GH_TOKEN }}
+        git-config-name: GitHubActions
+        git-config-email: GitHubActions@github.com
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+  
