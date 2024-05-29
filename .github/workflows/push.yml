@@ -7,6 +7,9 @@ on:
     # paths:
       # - package.json
 
+permissions:
+  contents: write
+  
 jobs:
   component-storybook8: 
     name: component-storybook8
@@ -25,4 +28,5 @@ jobs:
         folder: storybook-static
         git-config-name: GitHubActions
         git-config-email: GitHubActions@github.com
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
