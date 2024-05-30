@@ -22,8 +22,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
-import { IInputNumberProps } from '../../interface/index';
+import { ref, computed, watch, getCurrentInstance } from 'vue';
+import { InputNumberProps } from './type';
+import { getCompSize } from '../../utils';
 
 defineOptions({
   name: 'KInputNumber'
@@ -31,32 +32,22 @@ defineOptions({
 
 type InputValue = number | null;
 
-const props = withDefaults(defineProps<IInputNumberProps>(), {
-  controls: true,
+const props = withDefaults(defineProps<InputNumberProps>(), {
+  controls: true
 });
 
 const emit = defineEmits(['update:modelValue', 'blur', 'change', 'focus']);
 
+const _global = getCurrentInstance()?.appContext.app.config.globalProperties;
 const inputNumberRef = ref<HTMLElement | null>(null);
 const inputValue = ref<InputValue>(0);
 const attrs = computed(() => ({
-  ...getSizeAttrs(),
-  ...getOriginAttrs(),
-}));
-
-watch(() => props.modelValue, (newValue) => {
-  inputValue.value = newValue;
-}, { immediate: true });
-
-const getSizeAttrs = ():object => ({
-  size: props.size === 'sm' ? 'small' : '',
-});
-const getOriginAttrs = () => ({
   id: props.id,
   name: props.name,
+  size: getCompSize(props.size),
   label: props.label,
   disabled: props.disabled,
-  placeholder: props.placeholder,
+  placeholder: props.placeholder || _global?.$t('input'),
   readonly: props.readonly,
   max: props.max,
   min: props.min,
@@ -65,7 +56,11 @@ const getOriginAttrs = () => ({
   precision: props.precision,
   controls: props.controls,
   controlsPosition: props.controlsPosition,
-});
+}));
+
+watch(() => props.modelValue, (newValue) => {
+  inputValue.value = newValue;
+}, { immediate: true });
 
 const handleBlurEvent = () => {
   emit('blur');

@@ -19,8 +19,8 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted, nextTick, inject } from 'vue';
-import { ISelectButtonProps } from '../../interface/index';
-import { genRandomStr } from '../../utils/index';
+import { SelectButtonProps } from './type';
+import { genRandomStr, getCompSize } from '../../utils/index';
 
 defineOptions({
   name: 'KCheckbox'
@@ -30,7 +30,7 @@ const isWarpped = inject('useCheckboxGroup', false);
 const selectedData:any = inject('selectedData', []);
 const fillColor = inject('fillColor', null);
 
-const props = withDefaults(defineProps<ISelectButtonProps>(), {});
+const props = withDefaults(defineProps<SelectButtonProps>(), {});
 
 const emits = defineEmits(['update:modelValue', 'change']);
 
@@ -49,8 +49,14 @@ onMounted(() => {
 });
 
 const attrs = computed(() => ({
-  ...getSizeAttrs(),
-  ...getOriginAttrs(),
+  value: props.value,
+  label: props.label,
+  disabled: props.disabled,
+  indeterminate: props.indeterminate,
+  checked: props.checked,
+  name: props.name,
+  id: props.id,
+  size: getCompSize(props.size)
 }));
 
 watch(() => props.modelValue, (newValue) => {
@@ -64,15 +70,6 @@ watch(() => [modelValue.value, selectedData.value, props.indeterminate], () => {
   });
 }, { immediate: true });
 
-const getSizeAttrs = ():object => ({
-  size: props.size === 'sm' ? 'small' : ''
-});
-const getOriginAttrs = () => ({
-  value: props.value,
-  label: props.label,
-  disabled: props.disabled,
-  indeterminate: props.indeterminate
-});
 function changeCheckboxStyle(color:string) {
   let isChecked = false;
   if (isWarpped) {

@@ -7,7 +7,7 @@ export default create({
   // 左侧导航栏配置:
   brandTitle: "My custom Storybook", // 图片加载不出来时显示的文字
   brandUrl: "https://example.com", // logo链接
-  brandImage: "https://cdn.donxj.com/img/klogo-text.svg", // logo 图片来源
+  brandImage: "https://cdn.donxj.com/img/klogo-text--light.svg", // logo 图片来源
   brandTarget: "_self", //
   // 主题色配置
   colorPrimary: "#2882FF", // 主要色

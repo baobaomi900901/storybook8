@@ -12,32 +12,28 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
-import { ISelectButtonGroupProps } from '../../interface/index';
+import { SelectButtonGroupProps } from './type';
+import { getCompSize } from '../../utils';
 
 defineOptions({
   name: 'KRadioGroup'
 });
 
-const props = withDefaults(defineProps<ISelectButtonGroupProps>(), {});
+const props = withDefaults(defineProps<SelectButtonGroupProps>(), {});
 
 const emits = defineEmits(['update:modelValue', 'change']);
 
 const modelValue = ref(props.modelValue);
 
 const attrs = computed(() => ({
-  ...getSizeAttrs(),
-  ...getOriginAttrs(),
+  disabled: props.disabled,
+  size: getCompSize(props.size),
+  id: props.id,
+  name: props.name
 }));
 
 watch(() => props.modelValue, (newValue) => {
   modelValue.value = newValue;
-});
-
-const getSizeAttrs = ():object => ({
-  size: props.size === 'sm' ? 'small' : ''
-});
-const getOriginAttrs = () => ({
-  disabled: props.disabled
 });
 
 const handleChange = (value: boolean) => {

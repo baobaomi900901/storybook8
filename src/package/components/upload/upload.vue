@@ -10,7 +10,7 @@
         <slot name="default">
           <div v-if="props.drag" class="default-sign">
             <IconEmptyBox color="#2882ff" />
-            单击或拖拽文件到此处上传
+            {{ $t('uploadDragSign') }}
           </div>
           <div v-else class="default-upload-btn" @click.stop>
             <k-button
@@ -18,7 +18,7 @@
               @click="selectFile"
             >
               <IconUpload v-if="props.autoUpload" />
-              {{ props.autoUpload ? '上传文件' : '选择文件' }}
+              {{ props.autoUpload ? $t('uploadFile') : $t('selectFile') }}
             </k-button>
             <k-button
               v-if="!props.autoUpload"
@@ -28,7 +28,7 @@
               @click="submit"
             >
               <IconUpload />
-              上传文件
+              {{ $t('uploadFile') }}
             </k-button>
           </div>
         </slot>
@@ -78,13 +78,13 @@
 import { ref, computed, watch } from 'vue';
 import { UploadFile, UploadRawFile, UploadStatus } from 'element-plus';
 import { IconEmptyBox, IconWarning, IconCheck, IconDelete, IconFile, IconUpload } from 'ksw-vue-icon';
-import { IUpload } from '../../interface/index';
+import { UploadProps } from './type';
 
 defineOptions({
   name: 'KUpload'
 });
 
-const props = withDefaults(defineProps<IUpload>(), {
+const props = withDefaults(defineProps<UploadProps>(), {
   method: 'post',
   showFileList: true,
   name: 'file',
@@ -127,7 +127,8 @@ const attrs = computed(() => ({
   httpRequest: props.httpRequest,
   removeIcon: props.removeIcon,
   successIcon: props.successIcon,
-  failIcon: props.failIcon
+  failIcon: props.failIcon,
+  drag: props.drag
 }));
 
 watch(() => props.modelValue, (newValue) => {

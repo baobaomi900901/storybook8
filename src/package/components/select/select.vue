@@ -34,7 +34,8 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
-import { ISelectInputProps } from '../../interface/index';
+import { SelectInputProps } from './type';
+import { getCompSize } from '../../utils';
 
 defineOptions({
   name: 'KSelect'
@@ -42,7 +43,14 @@ defineOptions({
 
 type InputValue = string | number;
 
-const props = withDefaults(defineProps<ISelectInputProps>(), {});
+const props = withDefaults(defineProps<SelectInputProps>(), {
+  teleported: true,
+  valueKey: 'value',
+  multipleLimit: 0,
+  autocomplete: 'off',
+  persistent: true
+
+});
 
 const emits = defineEmits([
   'update:modelValue',
@@ -60,27 +68,39 @@ const inputValue = ref<InputValue>('');
 const inputRef = ref<any>(null);
 
 const attrs = computed(() => ({
-  ...getSizeAttrs(),
-  ...getOriginAttrs(),
-}));
-
-watch(() => props.modelValue, (newValue) => {
-  inputValue.value = newValue;
-}, { immediate: true });
-
-const getSizeAttrs = ():object => ({
-  size: props.size === 'sm' ? 'small' : '',
-});
-
-const getOriginAttrs = () => ({
   disabled: props.disabled,
   placeholder: props.placeholder,
   clearable: props.clearable,
   multiple: props.multiple,
   filterable: props.filterable,
   allowCreate: props.allowCreate,
-  popperClass: props.popperClass
-});
+  popperClass: props.popperClass,
+  teleported: props.teleported,
+  valueKey: props.valueKey,
+  collapseTags: props.collapseTags,
+  collapseTagsTooltip: props.collapseTagsTooltip,
+  multipleLimit: props.multipleLimit,
+  autocomplete: props.autocomplete,
+  filterMethod: props.filterMethod,
+  remote: props.remote,
+  remoteMethod: props.remoteMethod,
+  remoteShowSuffix: props.remoteShowSuffix,
+  loading: props.loading,
+  loadingText: props.loadingText,
+  noMatchText: props.noMatchText,
+  noDataText: props.noDataText,
+  defaultFirstOption: props.defaultFirstOption,
+  fitInputWidth: props.fitInputWidth,
+  suffixIcon: props.suffixIcon,
+  name: props.name,
+  automaticDropdown: props.automaticDropdown,
+  persistent: props.persistent,
+  size: getCompSize(props.size)
+}));
+
+watch(() => props.modelValue, (newValue) => {
+  inputValue.value = newValue;
+}, { immediate: true });
 
 function handleBlurEvent() {
   emits('blur');

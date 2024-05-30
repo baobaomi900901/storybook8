@@ -22,7 +22,8 @@
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
-import { ICascaderProps, ICascaderConfig } from '../../interface/index';
+import { CascaderProps, CascaderConfig } from './type';
+import { getCompSize } from '../../utils';
 
 defineOptions({
   name: 'KCascader'
@@ -30,7 +31,7 @@ defineOptions({
 
 type InputValue = string | number;
 
-const props = withDefaults(defineProps<ICascaderProps>(), {
+const props = withDefaults(defineProps<CascaderProps>(), {
   showAllLevels: true,
   separator: '/'
 });
@@ -49,15 +50,24 @@ const inputValue = ref<InputValue>('');
 const cascaderRef = ref<any>(null);
 
 const attrs = computed(() => ({
-  ...getSizeAttrs(),
-  ...getOriginAttrs(),
+  disabled: props.disabled,
+  placeholder: props.placeholder,
+  clearable: props.clearable,
+  filterable: props.filterable,
+  popperClass: props.popperClass,
+  separator: props.separator,
+  options: getOptions(),
+  showAllLevels: props.showAllLevels,
+  collapseTags: props.collapseTags,
+  beforeFilter: props.beforeFilter,
+  size: getCompSize(props.size)
 }));
 
 const propsConfig:object = computed(() => {
   if (!props.props) {
     return {};
   }
-  const cascaderConfig = props.props as ICascaderConfig;
+  const cascaderConfig = props.props as CascaderConfig;
   return {
     expandTrigger: cascaderConfig?.expandTrigger ?? 'click',
     multiple: Boolean(cascaderConfig?.multiple),
@@ -76,28 +86,11 @@ watch(() => props.modelValue, (newValue) => {
   inputValue.value = newValue;
 }, { immediate: true });
 
-const getSizeAttrs = ():object => ({
-  size: props.size === 'sm' ? 'small' : '',
-});
-
-const getOriginAttrs = () => ({
-  disabled: props.disabled,
-  placeholder: props.placeholder,
-  clearable: props.clearable,
-  filterable: props.filterable,
-  popperClass: props.popperClass,
-  separator: props.separator,
-  options: getOptions(),
-  showAllLevels: props.showAllLevels,
-  collapseTags: props.collapseTags,
-  beforeFilter: props.beforeFilter
-});
-
 function getOptions() {
   if (!props.props) {
     return {};
   }
-  const cascaderConfig = props.props as ICascaderConfig;
+  const cascaderConfig = props.props as CascaderConfig;
   const { lazy, lazyLoad } = cascaderConfig;
   if (lazy && lazyLoad) {
     return [];

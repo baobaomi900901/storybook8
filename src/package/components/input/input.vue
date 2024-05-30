@@ -42,8 +42,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
-import { IInputProps } from '../../interface/index';
+import { ref, computed, watch, getCurrentInstance } from 'vue';
+import { InputProps } from './type';
+import { getCompSize } from '../../utils';
 
 defineOptions({
   name: 'KInput'
@@ -51,14 +52,14 @@ defineOptions({
 
 type InputValue = string | number;
 
-const props = withDefaults(defineProps<IInputProps>(), {
+const props = withDefaults(defineProps<InputProps>(), {
   modelValue: '',
   disabled: false,
   clearable: false,
   readonly: false,
   showWordLimit: false,
   autosize: false,
-  showPassword: false,
+  showPassword: false
 });
 
 const slots = defineSlots<{
@@ -71,29 +72,18 @@ const slots = defineSlots<{
 
 const emit = defineEmits(['update:modelValue', 'input', 'blur', 'change', 'clear', 'focus']);
 
+const _gloab = getCurrentInstance()?.appContext.app.config.globalProperties;
 const inputValue = ref<InputValue>('');
 const inputRef = ref<any>(null);
 
 const attrs = computed(() => ({
-  ...getSizeAttrs(),
-  ...getOriginAttrs(),
-}));
-
-watch(() => props.modelValue, (newValue) => {
-  inputValue.value = newValue;
-}, { immediate: true });
-
-const getSizeAttrs = ():object => ({
-  size: props.size === 'sm' ? 'small' : '',
-});
-
-const getOriginAttrs = () => ({
   id: props.id,
   name: props.name,
+  size: getCompSize(props.size),
   label: props.label,
   type: props.type,
   disabled: props.disabled,
-  placeholder: props.placeholder,
+  placeholder: props.placeholder || _gloab?.$t('input'),
   readonly: props.readonly,
   clearable: props.clearable,
   prefixIcon: props.prefixIcon,
@@ -104,7 +94,12 @@ const getOriginAttrs = () => ({
   showPassword: props.showPassword,
   maxLength: props.maxlength,
   minLength: props.minlength,
-});
+}));
+
+watch(() => props.modelValue, (newValue) => {
+  inputValue.value = newValue;
+}, { immediate: true });
+
 const handleInputEvent = () => {
   emit('update:modelValue', inputValue.value);
   emit('input', inputValue.value);

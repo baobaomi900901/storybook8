@@ -19,7 +19,7 @@
       <div
         class="k-tag__sign"
         :style="{
-          backgroundColor: props.color,
+          backgroundColor: props.color || '#2882FF',
           width: tagAttrs?.width,
           height: tagAttrs?.height
         }"
@@ -39,13 +39,14 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { ITagProps } from '../../interface/index';
+import { TagProps } from './type';
+import { getCompSize } from '../../utils';
 
 defineOptions({
   name: 'KTag'
 });
 
-const props = withDefaults(defineProps<ITagProps>(), {
+const props = withDefaults(defineProps<TagProps>(), {
   type: 'block',
   color: '#4091FF'
 });
@@ -53,7 +54,7 @@ const props = withDefaults(defineProps<ITagProps>(), {
 const attrs = computed(() => ({
   color: props.color,
   round: props.round,
-  size: props.size === 'sm' ? 'small' : 'default'
+  size: getCompSize(props.size)
 }));
 
 const tagAttrs = computed(() => {

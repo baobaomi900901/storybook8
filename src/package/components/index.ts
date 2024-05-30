@@ -1,4 +1,3 @@
-import { TBtn } from './btn';
 import { KButton } from './button';
 import { KInput } from './input';
 import { KInputNumber } from './input _number';
@@ -16,9 +15,25 @@ import { KOperate } from './operate';
 import { KTag } from './tag';
 import { KPopover } from './popover';
 import { KPopconfirm } from './popconfirm';
+import { KStatus } from './status';
+import { KMessage } from './message';
+import { KLoading } from './loading';
+import { KDialog } from './dialog';
+import { KTooltip } from './tooltip';
+import { KFilter } from './filter';
+import { KTable, KTableColumn, KColumnGroup } from './table';
+import { KDrawer } from './drawer';
+import { KForm, KFormItem } from './form';
+import { KSteps, KStep } from './step';
+import { KCollapse, KCollapseItem } from './collapse';
+import { KView, KViewItem } from './view';
+import { KBadge } from './badge';
+import { KTimeline, KTimelineItem } from './timeline';
+import { KCalendar } from './calendar';
+import { KTree } from './tree';
+import { KTour } from './tour';
 
 export {
-  TBtn,
   KButton,
   KInput,
   KInputNumber,
@@ -40,5 +55,29 @@ export {
   KOperate,
   KTag,
   KPopover,
-  KPopconfirm
+  KPopconfirm,
+  KStatus,
+  KMessage,
+  KLoading,
+  KDialog,
+  KTooltip,
+  KFilter,
+  KTable,
+  KTableColumn,
+  KColumnGroup,
+  KDrawer,
+  KForm,
+  KFormItem,
+  KSteps,
+  KStep,
+  KCollapse,
+  KCollapseItem,
+  KView,
+  KViewItem,
+  KBadge,
+  KTimeline,
+  KTimelineItem,
+  KCalendar,
+  KTree,
+  KTour
 };
