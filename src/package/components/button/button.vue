@@ -3,16 +3,19 @@
     <el-button
       ref="buttonRef"
       class="k-button__inner"
-      :class="['el-button',{ 
-        'el-button--main': props.type === 'main',
-        'el-button--secondary': props.type === 'secondary',
-        'el-button--text': props.type === 'text',
-        'el-button--icon': props.type === 'icon',
-        'el-button--sm': props.size === 'sm',
-        'is-loading': props.loading,
-        'is-disabled': props.disabled,
-      }]"
-       v-bind="attrs"
+      :class="[
+        'el-button',
+        {
+          'el-button--main': props.type === 'main',
+          'el-button--secondary': props.type === 'secondary',
+          'el-button--text': props.type === 'text',
+          'el-button--icon': props.type === 'icon',
+          'is-loading': props.loading,
+          'is-disabled': props.disabled,
+        },
+        getSizeClass,
+      ]"
+      v-bind="attrs"
       @click="handleClick"
     >
       <slot name="iconLeft" class="icon-left">
@@ -32,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from "vue";
 import { ButtonProps } from "./type";
 import { IconLoading } from "ksw-vue-icon";
 import "ksw-vue-icon/styles/icon.css";
@@ -65,6 +68,11 @@ const getOriginAttrs = () => {
     loadingIcon,
   };
 };
+
+const getSizeClass = computed(() => {
+  return props.size !== "" ? `el-button--${props.size}` : "";
+});
+
 
 const emits = defineEmits(["click"]);
 const handleClick = (e: Event) => {

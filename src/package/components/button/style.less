@@ -128,9 +128,12 @@
       }
     }
     &.is-loading {
-      color: @k-gray-400;
+      color: @k-gray-300;
       background: #fff;
-      cursor: not-allowed;
+      cursor: wait;
+      label {
+        cursor: wait;
+      }
     }
 
     // main style

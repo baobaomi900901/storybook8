@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import KButton from "../../package/components/button/button.vue";
 import { IconAdd, IconArrowBottom } from "ksw-vue-icon";
-import { tr } from "element-plus/es/locale";
 
 const meta = {
   title: "Base(B)/KButton",
@@ -37,11 +36,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const mytype = "text";
+const mytype = "main";
 const mysize = "sm";
 const mylabel = "按钮";
 const myloading = false;
-const mydisabled = true;
+const mydisabled = false;
 
 // default
 export const def: Story = {
