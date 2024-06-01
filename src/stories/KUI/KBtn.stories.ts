@@ -44,6 +44,33 @@ const mydisabled = false;
 
 // default
 export const def: Story = {
+  name: "icon传参",
+  args: {
+    label: mylabel,
+    type: mytype,
+    size: mysize,
+    loading: myloading,
+    disabled: mydisabled,
+    iconLeft: IconAdd,
+    iconRight: IconArrowBottom,
+  },
+  render: (args: any) => {
+    return {
+      components: { KButton, IconAdd, IconArrowBottom },
+      setup() {
+        return { args,IconAdd,IconArrowBottom };
+      },
+      template: `
+          <KButton v-bind='args' :iconLeft=IconAdd :iconRight=IconArrowBottom>
+            {{args.label}}
+          </KButton>
+      `,
+    };
+  },
+};
+
+// 具名插槽
+export const namedSlot: Story = {
   name: "default",
   args: {
     label: mylabel,
@@ -66,33 +93,6 @@ export const def: Story = {
             <template #iconRight>
                 <IconArrowBottom />
             </template>
-            {{args.label}}
-          </KButton>
-      `,
-    };
-  },
-};
-
-// default
-export const namedSlot: Story = {
-  name: "icon传参",
-  args: {
-    label: mylabel,
-    type: mytype,
-    size: mysize,
-    loading: myloading,
-    disabled: mydisabled,
-    iconLeft: IconAdd,
-    iconRight: IconArrowBottom,
-  },
-  render: (args: any) => {
-    return {
-      components: { KButton, IconAdd, IconArrowBottom },
-      setup() {
-        return { args };
-      },
-      template: `
-          <KButton v-bind='args'>
             {{args.label}}
           </KButton>
       `,

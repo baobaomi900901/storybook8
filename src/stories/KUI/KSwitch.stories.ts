@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import { KSwitch } from "../../kingsware-ui";
-
+import KSwitch from "../../package/components/switch/switch.vue";
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta: Meta = {
   title: "Data Entry(DE)/KSwitch",
@@ -22,8 +21,26 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const def: Story = {
-  args: {},
+  args: {
+    size: '',
+    modelValue: "1",
+    disabled: false,
+    activeText: "开",
+    inactiveText: "关",
+  },
+  render: (args: any) => {
+    return {
+      components: { KSwitch },
+      setup() {
+        return { args };
+      },
+      template: `
+        <k-switch v-bind="args" >直角disabled</k-switch>
+      `,
+    };
+  },
 };
+
 export const text: Story = {
   args: {
     activeText: "开",
