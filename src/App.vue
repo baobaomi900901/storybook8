@@ -1,13 +1,24 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-import Bbm from "./stories/Bbm/Bbm.vue";
+import KButton from "./package/components/button/button.vue"
+import { IconAdd, IconArrowBottom } from "ksw-vue-icon";
 </script>
 
 <template>
-  <Bbm>123</Bbm>
+  <div style="display: flex; gap: .75rem;">
+    <KButton type="" :iconLeft="IconAdd" color="#ff5500">123</KButton>
+    <KButton type="main" :iconLeft="IconAdd" color="">123</KButton>
+    <KButton type="main" :iconLeft="IconAdd" color="#ff5500">123</KButton>
+    <KButton type="secondary" :iconLeft="IconAdd" color="#ff5500">123</KButton>
+    <KButton type="text" color="#ff5500">123</KButton>
+    <KButton type="icon" color="#ff5500">
+      <IconAdd />
+    </KButton>
+  </div>
 </template>
 
-<style scoped>
+<style lang="less" scoped>
+@import "./package/style/general.css";
+
 .logo {
   height: 6em;
   padding: 1.5em;

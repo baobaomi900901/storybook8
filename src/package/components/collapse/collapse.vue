@@ -1,13 +1,12 @@
 <template>
-  <div class="k-collapse">
-    <el-collapse
-      v-model="activeName"
-      v-bind="attrs"
-      @change="handleChange"
-    >
-      <slot></slot>
-    </el-collapse>
-  </div>
+  <el-collapse
+    v-model="activeName"
+    class="k-collapse"
+    v-bind="attrs"
+    @change="handleChange"
+  >
+    <slot></slot>
+  </el-collapse>
 </template>
 
 <script setup lang="ts">

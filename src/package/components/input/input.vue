@@ -1,44 +1,43 @@
 <template>
-  <div class="k-input">
-    <el-input
-      ref="inputRef"
-      v-model="inputValue"
-      v-bind="attrs"
-      :style="{
-        width: props.width
-      }"
-      @input="handleInputEvent"
-      @change="handleChangeEvent"
-      @focus="handleFocusEvent"
-      @blur="handleBlurEvent"
-      @clear="handleClearEvent"
+  <el-input
+    ref="inputRef"
+    v-model="inputValue"
+    class="k-input"
+    v-bind="attrs"
+    :style="{
+      width: props.width
+    }"
+    @input="handleInputEvent"
+    @change="handleChangeEvent"
+    @focus="handleFocusEvent"
+    @blur="handleBlurEvent"
+    @clear="handleClearEvent"
+  >
+    <template
+      v-if="slots.prepend"
+      #prepend
     >
-      <template
-        v-if="slots.prepend"
-        #prepend
-      >
-        <slot name="prepend"></slot>
-      </template>
-      <template
-        v-if="slots.append"
-        #append
-      >
-        <slot name="append"></slot>
-      </template>
-      <template
-        v-if="slots.prefix"
-        #prefix
-      >
-        <slot name="prefix"></slot>
-      </template>
-      <template
-        v-if="slots.suffix"
-        #suffix
-      >
-        <slot name="suffix"></slot>
-      </template>
-    </el-input>
-  </div>
+      <slot name="prepend"></slot>
+    </template>
+    <template
+      v-if="slots.append"
+      #append
+    >
+      <slot name="append"></slot>
+    </template>
+    <template
+      v-if="slots.prefix"
+      #prefix
+    >
+      <slot name="prefix"></slot>
+    </template>
+    <template
+      v-if="slots.suffix"
+      #suffix
+    >
+      <slot name="suffix"></slot>
+    </template>
+  </el-input>
 </template>
 
 <script setup lang="ts">
@@ -59,7 +58,9 @@ const props = withDefaults(defineProps<InputProps>(), {
   readonly: false,
   showWordLimit: false,
   autosize: false,
-  showPassword: false
+  showPassword: false,
+  autocomplete: 'off',
+  validateEvent: true
 });
 
 const slots = defineSlots<{
@@ -94,6 +95,12 @@ const attrs = computed(() => ({
   showPassword: props.showPassword,
   maxLength: props.maxlength,
   minLength: props.minlength,
+  autocomplete: props.autocomplete,
+  inputStyle: props.inputStyle,
+  validateEvent: props.validateEvent,
+  max: props.max,
+  min: props.min,
+  step: props.step
 }));
 
 watch(() => props.modelValue, (newValue) => {

@@ -1,14 +1,12 @@
 <template>
-  <div class="k-checkbox-group">
-    <el-checkbox-group
-      v-model="modelValue"
-      class="k-checkbox-group__inner"
-      v-bind="attrs"
-      @change="handleChange"
-    >
-      <slot></slot>
-    </el-checkbox-group>
-  </div>
+  <el-checkbox-group
+    v-model="modelValue"
+    class="k-checkbox-group"
+    v-bind="attrs"
+    @change="handleChange"
+  >
+    <slot></slot>
+  </el-checkbox-group>
 </template>
 
 <script setup lang="ts">
@@ -27,6 +25,7 @@ const props = withDefaults(defineProps<SelectButtonGroupProps>(), {
 const emits = defineEmits(['update:modelValue', 'change']);
 
 const modelValue = ref(props.modelValue);
+const fillColor = ref(props.color);
 
 const attrs = computed(() => ({
   disabled: props.disabled,
@@ -38,17 +37,19 @@ const attrs = computed(() => ({
 watch(() => props.modelValue, (newValue) => {
   modelValue.value = newValue;
 });
+watch(() => props.color, (newValue) => {
+  fillColor.value = newValue;
+});
 
-const handleChange = (value: boolean) => {
+function handleChange(value: boolean) {
   emits('update:modelValue', value);
   emits('change', value);
-};
+}
 
 provide('useCheckboxGroup', true);
-provide('selectedData', modelValue);
-provide('fillColor', props.color);
+provide('_fillColor', fillColor);
 </script>
 
-<style lang="less">
-@import './style.less';
+<style lang="css">
+@import './style.css';
 </style>

@@ -1,16 +1,16 @@
 <template>
-  <div class="k-switch">
-    <el-switch
-      v-model="modelValue"
-      v-bind="attrs"
-      :style="{
-        '--el-switch-on-color': props.switchOnColor,
-        '--el-switch-off-color': props.switchOffColor
-      }"
-      inline-prompt
-      @change="handleChange"
-    />
-  </div>
+  <el-switch
+    ref="kSwitchRef"
+    v-model="modelValue"
+    class="k-switch"
+    v-bind="attrs"
+    :style="{
+      '--el-switch-on-color': props.switchOnColor,
+      '--el-switch-off-color': props.switchOffColor
+    }"
+    inline-prompt
+    @change="handleChange"
+  />
 </template>
 
 <script setup lang="ts">
@@ -29,6 +29,7 @@ const props = withDefaults(defineProps<SwitchProps>(), {
 
 const emits = defineEmits(['update:modelValue', 'change']);
 
+const kSwitchRef = ref();
 const modelValue = ref(props.modelValue);
 
 const attrs = computed(() => ({
@@ -44,10 +45,15 @@ watch(() => props.modelValue, (newValue) => {
   modelValue.value = newValue;
 });
 
-const handleChange = (value: boolean) => {
+function handleChange(value: boolean) {
   emits('update:modelValue', value);
   emits('change', value);
-};
+}
+function focus() {
+  kSwitchRef.value?.focus();
+}
+
+defineExpose({ focus });
 
 </script>
 

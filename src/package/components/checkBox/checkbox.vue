@@ -1,52 +1,37 @@
 <template>
-  <div
-    :id="id"
+  <el-checkbox
+    ref="kCheckboxRef"
+    v-model="modelValue"
     class="k-checkbox"
+    v-bind="attrs"
+    @change="handleChange"
   >
-    <el-checkbox
-      v-model="modelValue"
-      v-bind="attrs"
-      @change="handleChange"
-    >
-      <slot>
-        <span class="checkbox__label">
-          {{ props.label }}
-        </span>
-      </slot>
-    </el-checkbox>
-  </div>
+    <slot>
+      <span class="checkbox__label">
+        {{ props.label }}
+      </span>
+    </slot>
+  </el-checkbox>
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch, onMounted, nextTick, inject } from 'vue';
+import { ref, computed, watch, nextTick, inject } from 'vue';
 import { SelectButtonProps } from './type';
-import { genRandomStr, getCompSize } from '../../utils/index';
+import { getCompSize, isValidColor } from '../../utils/index';
 
 defineOptions({
   name: 'KCheckbox'
 });
 
 const isWarpped = inject('useCheckboxGroup', false);
-const selectedData:any = inject('selectedData', []);
-const fillColor = inject('fillColor', null);
+const fillColor = inject('_fillColor', ref(''));
 
 const props = withDefaults(defineProps<SelectButtonProps>(), {});
 
 const emits = defineEmits(['update:modelValue', 'change']);
 
 const modelValue = ref(props.modelValue);
-let checkboxDom:HTMLElement | null = null;
-let labelDom:HTMLElement | null = null;
-let selectDom:HTMLElement | null = null;
-const id = genRandomStr(8);
-onMounted(() => {
-  checkboxDom = document.getElementById(id);
-  if (checkboxDom === null) {
-    return;
-  }
-  selectDom = checkboxDom.querySelector('.el-checkbox .el-checkbox__inner');
-  labelDom = checkboxDom.querySelector('.el-checkbox .el-checkbox__label');
-});
+const kCheckboxRef = ref();
 
 const attrs = computed(() => ({
   value: props.value,
@@ -63,33 +48,19 @@ watch(() => props.modelValue, (newValue) => {
   modelValue.value = newValue;
 }, { immediate: true });
 
-watch(() => [modelValue.value, selectedData.value, props.indeterminate], () => {
+watch(() => [props.color, fillColor.value], () => {
+  let color = '#2882FF';
+  if (isValidColor(props.color)) {
+    color = props.color as string;
+  } else if (isValidColor(fillColor.value)) {
+    color = fillColor.value;
+  }
   nextTick(() => {
-    const color = (props.color || fillColor || '#409eff') as string;
-    changeCheckboxStyle(color);
+    const element = kCheckboxRef.value.$el;
+    element.style.setProperty('--checkbox-bgColor', color);
   });
 }, { immediate: true });
 
-function changeCheckboxStyle(color:string) {
-  let isChecked = false;
-  if (isWarpped) {
-    isChecked = selectedData.value.includes(props.value);
-  } else {
-    isChecked = modelValue.value === true;
-  }
-  if (labelDom !== null && isChecked) {
-    labelDom.style.color = color;
-  } else if (labelDom !== null && !isChecked) {
-    labelDom.style.color = '#000';
-  }
-  if (selectDom !== null && (isChecked || props.indeterminate)) {
-    selectDom.style.backgroundColor = color;
-    selectDom.style.borderColor = color;
-  } else if (selectDom !== null && !isChecked && !props.indeterminate) {
-    selectDom.style.backgroundColor = '#FFF';
-    selectDom.style.borderColor = '#CDCACF';
-  }
-}
 const handleChange = (value: boolean) => {
   if (isWarpped) {
     return;
@@ -100,6 +71,6 @@ const handleChange = (value: boolean) => {
 
 </script>
 
-<style lang="less">
-@import './style.less';
+<style lang="css">
+@import './style.css';
 </style>

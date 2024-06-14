@@ -1,8 +1,16 @@
+import { CSSProperties } from 'vue';
+
 export interface InputProps {
   id?: string
   name?: string
+  autocomplete?: string
+  inputStyle?: CSSProperties | CSSProperties[]
+  validateEvent?: boolean
+  max?: any
+  min?: any
+  step?: any
   label?: string
-  modelValue: string | number
+  modelValue?: string | number
   type?: string
   width?: string
   prefixIcon?: any
@@ -18,6 +26,4 @@ export interface InputProps {
   rows?: number
   maxlength?: string | number
   minlength?: string | number
-  prependClassName?: string
-  appendClassName?: string
 }

@@ -35,8 +35,7 @@ const meta = {
 
 export default meta;
 type Story = StoryObj<typeof meta>;
-
-const mytype = "main";
+const mytype = "secondary";
 const mysize = "sm";
 const mylabel = "按钮";
 const myloading = false;
@@ -58,7 +57,7 @@ export const def: Story = {
     return {
       components: { KButton, IconAdd, IconArrowBottom },
       setup() {
-        return { args,IconAdd,IconArrowBottom };
+        return { args, IconAdd, IconArrowBottom };
       },
       template: `
           <KButton v-bind='args' :iconLeft=IconAdd :iconRight=IconArrowBottom>
@@ -162,7 +161,7 @@ export const sm: Story = {
   args: {
     label: mylabel,
     type: mytype,
-    size: 'sm',
+    size: "sm",
     loading: myloading,
     disabled: mydisabled,
   },
@@ -195,6 +194,7 @@ export const icon: Story = {
     size: mysize,
     loading: myloading,
     disabled: mydisabled,
+    iconLeft: IconAdd,
   },
   render: (args: any) => {
     return {
@@ -203,10 +203,16 @@ export const icon: Story = {
         return { args };
       },
       template: `
-          <KButton v-bind='args'>
+        <div style="display: flex; gap: 0.75rem">
+            <KButton v-bind='args'>
+            </KButton>
+            <KButton type="icon">
             <IconAdd />
-          </KButton>
+            </KButton>
+        </div>
       `,
     };
   },
 };
+
+// <IconAdd />

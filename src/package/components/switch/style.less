@@ -1,6 +1,68 @@
+@import "../../style/general.less";
 .k-switch {
+  --el-switch-width: 2.75rem;
+  --el-switch-height: 1.25rem;
+  --el-switch-checked-bgc: @k-status-primary;
+  --el-switch-normal-bgc: @k-gray-200;
   width: fit-content;
+  .el-switch{
+    width: var(--el-switch-width);
+    height: var(--el-switch-height);
+    border-radius: calc(var(--el-switch-height) / 2);
+
+    padding: 0 0.25rem;
+
+    // background: #000;
+    background-color: var(--el-switch-normal-bgc);
+    position: relative;
+
+    display: flex;
+    .el-switch__input {
+      // 去除样式
+      appearance: none;
+    }
+    .el-switch__core { // 文字
+      position: absolute;
+      right: -1.25rem;
+      top: -50%;
+      transform: translateY( 50% );
+      .text-base()
+    }
+  }
+  .el-switch::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(var(--el-switch-height) - 4px);
+    height: calc(var(--el-switch-height) - 4px);
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0cqb 2px 0 rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s;
+  }
+  .el-switch.is-checked{
+    background: var(--el-switch-checked-bgc);
+    border-color: var(--el-switch-checked-bgc);
+  }
+  .el-switch.is-checked::after{
+    // transform: translateX( calc(var(--el-switch-width)/2 + 2px) );
+    animation: switchChecked 0.3s;
+  }
   .el-switch.is-disabled {
     border: none !important;
   }
+}
+
+@keyframes switchChecked {
+  30% {
+    width: calc(var(--el-switch-height)*1.5);
+  }
+  50% {
+    width: calc(var(--el-switch-height) - 4px);
+  }
+  100% {
+    transform: translateX( calc(var(--el-switch-width)/2 + 2px) );
+  }
+  
 }

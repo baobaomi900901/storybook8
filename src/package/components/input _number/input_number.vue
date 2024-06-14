@@ -1,24 +1,23 @@
 <template>
-  <div class="k-input-number">
-    <el-input-number
-      ref="inputNumberRef"
-      v-model="inputValue"
-      v-bind="attrs"
-      :style="{
-        width: props.width
-      }"
-      @change="handleChangeEvent"
-      @focus="handleFocusEvent"
-      @blur="handleBlurEvent"
-    >
-      <template #increase-icon>
-        <slot name="increase-icon"></slot>
-      </template>
-      <template #decrease-icon>
-        <slot name="decrease-icon"></slot>
-      </template>
-    </el-input-number>
-  </div>
+  <el-input-number
+    ref="inputNumberRef"
+    v-model="inputValue"
+    class="k-input-number"
+    v-bind="attrs"
+    :style="{
+      width: props.width
+    }"
+    @change="handleChangeEvent"
+    @focus="handleFocusEvent"
+    @blur="handleBlurEvent"
+  >
+    <template #increase-icon>
+      <slot name="increase-icon"></slot>
+    </template>
+    <template #decrease-icon>
+      <slot name="decrease-icon"></slot>
+    </template>
+  </el-input-number>
 </template>
 
 <script setup lang="ts">
@@ -30,7 +29,7 @@ defineOptions({
   name: 'KInputNumber'
 });
 
-type InputValue = number | null;
+type InputValue = number | null | undefined;
 
 const props = withDefaults(defineProps<InputNumberProps>(), {
   controls: true
