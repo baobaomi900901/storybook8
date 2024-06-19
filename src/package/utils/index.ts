@@ -1,4 +1,4 @@
-import { customColor } from "../../stories/KUI/KSwitch.stories";
+import { customColor } from "../../stories/KUI/KSwitch.stories.ts1";
 
 // 获取随机字符串
 export function genRandomStr(bit:number) {
