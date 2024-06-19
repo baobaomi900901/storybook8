@@ -28,7 +28,17 @@ jobs:
         git-config-name: GitHubActions
         git-config-email: GitHubActions@github.com
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
+
+    # 准备SSH以使用远程服务器
+    - name: Prepare SSH
+      run: |
+        cd ~ && mkdir .ssh &&
+        touch ~/.ssh/known_hosts &&
+        ssh-keyscan -H -p "${{ secrets.REMOTE_PORT }}" "${{ secrets.REMOTE_HOST }}" >> ~/.ssh/known_hosts
+      env:
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
+
     - name: Deploy to Staging server
       uses: easingthemes/ssh-deploy@main
       with:
@@ -39,10 +49,3 @@ jobs:
         REMOTE_USER: ${{ secrets.REMOTE_USER }}
         TARGET: ${{ secrets.REMOTE_TARGET }}
         EXCLUDE: "/dist/, /storybook-static/, /node_modules/"
-        SCRIPT_BEFORE: |
-          whoami
-          ls -al
-        SCRIPT_AFTER: |
-          whoami
-          ls -al
-          echo $RSYNC_STDOUT
