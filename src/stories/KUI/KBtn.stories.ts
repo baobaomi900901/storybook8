@@ -10,26 +10,15 @@ const meta = {
     type: {
       control: "select",
       options: ["normal", "main", "secondary", "text", "icon"],
-      description:
-        "按钮类型, 可选值为{ main : 主要按钮、secondary : 次要按钮、text : 文字按钮、normal: 默认按钮 }",
     },
     label: { control: "text", description: "按钮文字" },
     size: {
       control: "select",
       options: ["base", "sm"],
-      description: "按钮大小, sm: 小尺寸、base: 默认尺寸",
     },
-    iconLeft: { control: "object", description: "文字左边图标" },
-    iconRight: { control: "object", description: "文字右边图标" },
-    disabled: { control: "boolean", description: "是否禁用" },
-    loading: { control: "boolean", description: "是否加载中" },
-    loadingIcon: { control: "object", description: "加载图标" },
-  },
-  args: {
-    type: "normal",
-    label: "按钮",
-    disabled: false,
-    loading: false,
+    disabled: 'boolean',
+    loading: 'boolean',
+    color: { control: "color", description: "按钮颜色" },
   },
 } satisfies Meta<typeof KButton>;
 
@@ -50,8 +39,8 @@ export const def: Story = {
     size: mysize,
     loading: myloading,
     disabled: mydisabled,
-    iconLeft: IconAdd,
-    iconRight: IconArrowBottom,
+    value: "",
+    color: "",
   },
   render: (args: any) => {
     return {
@@ -60,7 +49,7 @@ export const def: Story = {
         return { args, IconAdd, IconArrowBottom };
       },
       template: `
-          <KButton v-bind='args' :iconLeft=IconAdd :iconRight=IconArrowBottom>
+          <KButton v-bind='args' :iconLeft=IconAdd :iconRight=IconArrowBottom :color="args.color">
             {{args.label}}
           </KButton>
       `,
