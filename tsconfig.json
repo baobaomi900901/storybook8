@@ -29,7 +29,6 @@
     "src/**/*.tsx", 
     "src/**/*.vue", 
     "vue-shim.d.ts",
-    "src/stories/KUI/KSwitch.stories.ts11", 
-    "src/stories/KUI/KSwitch.stories.ts1s1", "src/stories/KUI/KButton.stories.ts", "src/stories/KUI/KButton.stories.ts", "src/stories/KUI/KSwitch.stories.ts", "src/stories/KUI/KRadio.stories.ts", "src/stories/KUI/KSwitch.stories.ts", "src/stories/KUI/KRadioGroup.stories.ts", "src/stories/KUI/KRadio.stories.ts"],
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
