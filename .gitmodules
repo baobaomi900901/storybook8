@@ -1,0 +1,3 @@
+[submodule "kswux"]
+	path = kswux
+	url = git@github.com:xiyure/k-component-lib.git
