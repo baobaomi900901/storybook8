@@ -1,0 +1,40 @@
+import type { Meta, StoryObj } from "@storybook/vue3";
+import KCheckbox from "@components/checkBox/checkbox.vue";
+// More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
+const meta: Meta = {
+  title: "Data Entry(DE)/KCheckbox",
+  component: KCheckbox,
+  // This component will have an automatically generated docsPage entry: https://storybook.js.org/docs/vue/writing-docs/autodocs
+  tags: ["autodocs"],
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["base", "sm", "lg"],
+      description: "大小, sm: 小尺寸、base: 默认尺寸",
+    },
+  },
+  args: {
+    size: "base",
+  },
+} satisfies Meta<typeof KCheckbox>;
+
+export default meta;
+
+type Story = StoryObj<typeof meta>;
+
+export const def: Story = {
+  args: {
+    label: 'Checkbox',
+  },
+  render: (args: any) => {
+    return {
+      components: { KCheckbox },
+      setup() {
+        return { args };
+      },
+      template: `
+          <k-checkbox v-bind="args" />
+      `,
+    };
+  },
+};
