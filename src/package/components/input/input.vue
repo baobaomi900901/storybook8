@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { ref, computed, watch, getCurrentInstance } from 'vue';
-import { InputProps } from './type';
+import { InputProps } from './type.d';
 import { getCompSize } from '../../utils';
 
 defineOptions({
@@ -84,7 +84,8 @@ const attrs = computed(() => ({
   label: props.label,
   type: props.type,
   disabled: props.disabled,
-  placeholder: props.placeholder || _gloab?.$t('input'),
+  placeholder: props.placeholder,
+  // || _gloab?.$t('input'),
   readonly: props.readonly,
   clearable: props.clearable,
   prefixIcon: props.prefixIcon,
