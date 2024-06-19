@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@components/*": ["./src/package/components/*"],
+      "@components/*": ["./kswux/package/components/*"],
       "@alias": ["./path/to/alias"]
     },
     "types": ["vue/types"],

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import KButton from "../../../kswux/package/components/button/button.vue";
+import {KButton} from "@components/button";
 import { IconAdd, IconArrowBottom } from "ksw-vue-icon";
 
 const meta = {
