@@ -17,6 +17,7 @@ jobs:
           submodules: true
     - name: Checkout submodules to dev branch
       run: |
+        git submodule foreach 'git fetch origin'
         git submodule foreach 'git checkout dev'
         git submodule foreach 'git pull origin dev'
     - uses: actions/setup-node@v3
