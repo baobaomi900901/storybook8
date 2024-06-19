@@ -14,10 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-          submodules: true
+          submodules: recursive
     - name: Checkout submodules to dev branch
       run: |
-        git submodule foreach 'cd $toplevel/$name && git fetch origin && git checkout dev && git pull origin dev || echo "Branch dev does not exist in $name"'
+        git submodule foreach 'git checkout dev'
+        git submodule foreach 'git pull origin dev'
+
     - uses: actions/setup-node@v3
       with:
         node-version: '20'
