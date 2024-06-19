@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import KSwitch from "../../package/components/switch/switch.vue";
+import KSwitch from "../../../k-component-lib/package/components/switch/switch.vue";
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta: Meta = {
   title: "Data Entry(DE)/KSwitch",

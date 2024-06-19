@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import KRadio from "../../package/components/radio/radio.vue";
+import KRadio from "../../../k-component-lib/package/components/radio/radio.vue";
 
 const meta: Meta = {
   title: "Data Entry(DE)/KRadio",
