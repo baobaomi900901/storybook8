@@ -6,7 +6,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./kswux/package/*"],
       "@components/*": ["./kswux/package/components/*"],
       "@alias": ["./path/to/alias"]
     },
