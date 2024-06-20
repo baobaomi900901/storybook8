@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import {KCheckbox} from "@components";
+import { KCheckbox } from "@components";
 // More on how to set up stories at: https://storybook.js.org/docs/vue/writing-stories/introduction
 const meta: Meta = {
   title: "Data Entry(DE)/KCheckbox",
@@ -24,7 +24,7 @@ type Story = StoryObj<typeof meta>;
 
 export const def: Story = {
   args: {
-    label: 'Checkbox',
+    label: "Checkbox",
   },
   render: (args: any) => {
     return {

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import {KInput} from "@components/input";
+import { KInput } from "@components";
 import { ref } from "vue";
 const meta = {
   title: "Data Entry(DE)/KInput",

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
-import {KButton} from "@components/button";
+import { KButton } from "@components";
 import { IconAdd, IconArrowBottom } from "ksw-vue-icon";
 
 const meta = {
@@ -16,8 +16,8 @@ const meta = {
       control: "select",
       options: ["base", "sm"],
     },
-    disabled: 'boolean',
-    loading: 'boolean',
+    disabled: "boolean",
+    loading: "boolean",
     color: { control: "color", description: "按钮颜色" },
   },
 } satisfies Meta<typeof KButton>;
