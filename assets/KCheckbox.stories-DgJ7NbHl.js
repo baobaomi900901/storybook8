@@ -1,4 +1,4 @@
-import{d as $,r as t,o as p,a as v,c as g,w as d,m as q,u as i,F as K,b as f,e as w,t as U,f as H}from"./vue.esm-bundler-BmZDuZDd.js";import{b as r,c as _}from"./tree_transfer-CiKLCTX1.js";import"./_commonjsHelpers-Cpj98o6Y.js";const T=$({__name:"Indeterminate",setup(e){const n=t(!1),l=t(!0),u=t(["Shanghai","Beijing"]),s=["Shanghai","Beijing","Guangzhou","Shenzhen"],a=h=>{u.value=h?s:[],l.value=!1},P=h=>{const c=h.length;n.value=c===s.length,l.value=c>0&&c<s.length};return(h,c)=>(p(),v(K,null,[g(i(r),q({modelValue:n.value,"onUpdate:modelValue":c[0]||(c[0]=o=>n.value=o),indeterminate:l.value,onChange:a},h.$attrs),{default:d(()=>[f(" Check all ")]),_:1},16,["modelValue","indeterminate"]),g(i(_),{modelValue:u.value,"onUpdate:modelValue":c[1]||(c[1]=o=>u.value=o),onChange:P},{default:d(()=>[(p(),v(K,null,w(s,o=>g(i(r),{key:o,label:o,value:o},{default:d(()=>[f(U(o),1)]),_:2},1032,["label","value"])),64))]),_:1},8,["modelValue"])],64))}});T.__docgenInfo={exportName:"default",displayName:"Indeterminate",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/components/checkbox/Indeterminate.vue"]};const J=`<template>
+import{d as w,r,a as C,b as K,c as m,w as l,m as H,F as f,o as x,f as _,g as U,t as T,h as J}from"./vue.esm-bundler-Cftbljzo.js";import{e as g,g as Q}from"./tree_transfer-4-bA9atr.js";import"./_commonjsHelpers-Cpj98o6Y.js";const O=w({__name:"Indeterminate",setup(n){const a=r(!1),t=r(!0),h=r(["Shanghai","Beijing"]),s=["Shanghai","Beijing","Guangzhou","Shenzhen"],p=e=>{h.value=e?s:[],t.value=!1},v=e=>{const c=e.length;a.value=c===s.length,t.value=c>0&&c<s.length};return(e,c)=>{const y=C("KCheckbox"),q=C("KCheckboxGroup");return x(),K(f,null,[m(y,H({modelValue:a.value,"onUpdate:modelValue":c[0]||(c[0]=o=>a.value=o),indeterminate:t.value,onChange:p},e.$attrs),{default:l(()=>[_(" Check all ")]),_:1},16,["modelValue","indeterminate"]),m(q,{modelValue:h.value,"onUpdate:modelValue":c[1]||(c[1]=o=>h.value=o),onChange:v},{default:l(()=>[(x(),K(f,null,U(s,o=>m(y,{key:o,label:o,value:o},{default:l(()=>[_(T(o),1)]),_:2},1032,["label","value"])),64))]),_:1},8,["modelValue"])],64)}}});O.__docgenInfo={exportName:"default",displayName:"Indeterminate",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/components/checkbox/Indeterminate.vue"]};const R=`<template>
     <KCheckbox
       v-model="checkAll"
       :indeterminate="isIndeterminate"
@@ -16,7 +16,6 @@ import{d as $,r as t,o as p,a as v,c as g,w as d,m as q,u as i,F as K,b as f,e a
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { KCheckbox, KCheckboxGroup } from "@components";
 
 const checkAll = ref(false);
 const isIndeterminate = ref(true);
@@ -33,7 +32,7 @@ const handleCheckedCitiesChange = (value: string[]) => {
   isIndeterminate.value = checkedCount > 0 && checkedCount < cities.length;
 };
 <\/script>
-`,O=$({__name:"minMaxCheckbox",setup(e){const n=t(["Shanghai","Beijing"]),l=["Shanghai","Beijing","Guangzhou","Shenzhen"];return(u,s)=>(p(),H(i(_),{modelValue:n.value,"onUpdate:modelValue":s[0]||(s[0]=a=>n.value=a),min:1,max:2},{default:d(()=>[(p(),v(K,null,w(l,a=>g(i(r),{key:a,label:a,value:a},{default:d(()=>[f(U(a),1)]),_:2},1032,["label","value"])),64))]),_:1},8,["modelValue"]))}});O.__docgenInfo={exportName:"default",displayName:"minMaxCheckbox",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/components/checkbox/minMaxCheckbox.vue"]};const Q=`<template>
+`,P=w({__name:"minMaxCheckbox",setup(n){const a=r(["Shanghai","Beijing"]),t=["Shanghai","Beijing","Guangzhou","Shenzhen"];return(h,s)=>{const p=C("KCheckbox"),v=C("KCheckboxGroup");return x(),J(v,{modelValue:a.value,"onUpdate:modelValue":s[0]||(s[0]=e=>a.value=e),min:1,max:2},{default:l(()=>[(x(),K(f,null,U(t,e=>m(p,{key:e,label:e,value:e},{default:l(()=>[_(T(e),1)]),_:2},1032,["label","value"])),64))]),_:1},8,["modelValue"])}}});P.__docgenInfo={exportName:"default",displayName:"minMaxCheckbox",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/components/checkbox/minMaxCheckbox.vue"]};const W=`<template>
   <KCheckboxGroup v-model="checkedCities" :min="1" :max="2">
     <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city">
       {{ city }}
@@ -43,12 +42,11 @@ const handleCheckedCitiesChange = (value: string[]) => {
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { KCheckbox, KCheckboxGroup } from "@components";
 
 const checkedCities = ref(["Shanghai", "Beijing"]);
 const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
 <\/script>
-`,Y={title:"Data Entry(DE)/KCheckbox",component:r,tags:["autodocs"],argTypes:{size:{control:"select",options:["base","sm","lg"],description:"大小, sm: 小尺寸、base: 默认尺寸"}},args:{size:"base"}},b={name:"基础用法",args:{label:"复选框"},render:e=>({components:{KCheckbox:r},setup(){const n=t({checked1:!0,checked2:!1,checked3:!1,checked4:!1,checked5:!1,checked6:!1,checked7:!1,checked8:!1});return{args:e,checkboxes:n}},template:`
+`,ee={title:"Data Entry(DE)/KCheckbox",component:g,tags:["autodocs"],argTypes:{size:{control:"select",options:["base","sm","lg"],description:"大小, sm: 小尺寸、base: 默认尺寸"}},args:{size:"base"}},d={name:"基础用法",args:{label:"复选框"},render:n=>({components:{KCheckbox:g},setup(){const a=r({checked1:!0,checked2:!1,checked3:!1,checked4:!1,checked5:!1,checked6:!1,checked7:!1,checked8:!1});return{args:n,checkboxes:a}},template:`
           <div>
             <KCheckbox :label="args.label" v-model="checkboxes.checked1" size="lg"/>
             <KCheckbox :label="args.label" v-model="checkboxes.checked2" size="lg"/>
@@ -65,14 +63,14 @@ const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
             <KCheckbox v-bind="args" :label="args.label" v-model="checkboxes.checked7" />
             <KCheckbox v-bind="args" :label="args.label" v-model="checkboxes.checked8" disabled/>
           </div>
-      `})},k={name:"禁用状态",args:{name:"禁用",disabled:!1},render:e=>({components:{KCheckbox:r},setup(){return{args:e}},template:`
+      `})},i={name:"禁用状态",args:{name:"禁用",disabled:!1},render:n=>({components:{KCheckbox:g},setup(){return{args:n}},template:`
           <KCheckbox v-bind="args" disabled >
             {{args.name}}
           </KCheckbox>
           <KCheckbox v-bind="args" >
             不{{args.name}}
           </KCheckbox>
-      `})},m={name:"多选框组",args:{Checkbox1:"复选框 1",Checkbox2:"复选框 2",Checkbox3:"复选框 3",Checkbox4:"禁用",Checkbox5:"选择和禁用"},render:e=>({components:{KCheckboxGroup:_,KCheckbox:r},setup(){const n=t(["复选框 1","选择和禁用"]);return{args:e,checkList:n}},template:`
+      `})},u={name:"多选框组",args:{Checkbox1:"复选框 1",Checkbox2:"复选框 2",Checkbox3:"复选框 3",Checkbox4:"禁用",Checkbox5:"选择和禁用"},render:n=>({components:{KCheckboxGroup:Q,KCheckbox:g},setup(){const a=r(["复选框 1","选择和禁用"]);return{args:n,checkList:a}},template:`
           <KCheckboxGroup v-model="checkList">
             <KCheckbox :label="args.Checkbox1" value="复选框 1" />
             <KCheckbox :label="args.Checkbox2" />
@@ -80,7 +78,7 @@ const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
             <KCheckbox :label="args.Checkbox4" disabled />
             <KCheckbox :label="args.Checkbox5" value="选择和禁用" disabled />
           </KCheckboxGroup>
-      `})},x={name:"中间状态",render:e=>({components:{Indeterminate:T},setup(){return{args:e}},template:'<Indeterminate v-bind="args" />'}),parameters:{docs:{source:{code:J}}}},C={name:"可选项目数量的限制",render:e=>({components:{minMaxCheckbox:O},setup(){return{args:e}},template:'<minMaxCheckbox v-bind="args" />'}),parameters:{docs:{source:{code:Q}}}};var y,z,G;b.parameters={...b.parameters,docs:{...(y=b.parameters)==null?void 0:y.docs,source:{originalSource:`{
+      `})},b={name:"中间状态",render:n=>({components:{Indeterminate:O},setup(){return{args:n}},template:'<Indeterminate v-bind="args" />'}),parameters:{docs:{source:{code:R}}}},k={name:"可选项目数量的限制",render:n=>({components:{minMaxCheckbox:P},setup(){return{args:n}},template:'<minMaxCheckbox v-bind="args" />'}),parameters:{docs:{source:{code:W}}}};var G,z,S;d.parameters={...d.parameters,docs:{...(G=d.parameters)==null?void 0:G.docs,source:{originalSource:`{
   name: "基础用法",
   args: {
     label: "复选框"
@@ -126,7 +124,7 @@ const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
       \`
     };
   }
-}`,...(G=(z=b.parameters)==null?void 0:z.docs)==null?void 0:G.source}}};var S,I,B;k.parameters={...k.parameters,docs:{...(S=k.parameters)==null?void 0:S.docs,source:{originalSource:`{
+}`,...(S=(z=d.parameters)==null?void 0:z.docs)==null?void 0:S.source}}};var I,B,E;i.parameters={...i.parameters,docs:{...(I=i.parameters)==null?void 0:I.docs,source:{originalSource:`{
   name: "禁用状态",
   args: {
     name: "禁用",
@@ -152,7 +150,7 @@ const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
       \`
     };
   }
-}`,...(B=(I=k.parameters)==null?void 0:I.docs)==null?void 0:B.source}}};var E,D,M;m.parameters={...m.parameters,docs:{...(E=m.parameters)==null?void 0:E.docs,source:{originalSource:`{
+}`,...(E=(B=i.parameters)==null?void 0:B.docs)==null?void 0:E.source}}};var D,M,V;u.parameters={...u.parameters,docs:{...(D=u.parameters)==null?void 0:D.docs,source:{originalSource:`{
   name: "多选框组",
   args: {
     Checkbox1: "复选框 1",
@@ -185,7 +183,7 @@ const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
       \`
     };
   }
-}`,...(M=(D=m.parameters)==null?void 0:D.docs)==null?void 0:M.source}}};var V,A,j;x.parameters={...x.parameters,docs:{...(V=x.parameters)==null?void 0:V.docs,source:{originalSource:`{
+}`,...(V=(M=u.parameters)==null?void 0:M.docs)==null?void 0:V.source}}};var A,j,F;b.parameters={...b.parameters,docs:{...(A=b.parameters)==null?void 0:A.docs,source:{originalSource:`{
   name: "中间状态",
   render: (args: any) => ({
     components: {
@@ -205,7 +203,7 @@ const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
       }
     }
   }
-}`,...(j=(A=x.parameters)==null?void 0:A.docs)==null?void 0:j.source}}};var F,L,N;C.parameters={...C.parameters,docs:{...(F=C.parameters)==null?void 0:F.docs,source:{originalSource:`{
+}`,...(F=(j=b.parameters)==null?void 0:j.docs)==null?void 0:F.source}}};var L,N,$;k.parameters={...k.parameters,docs:{...(L=k.parameters)==null?void 0:L.docs,source:{originalSource:`{
   name: "可选项目数量的限制",
   render: (args: any) => ({
     components: {
@@ -225,4 +223,4 @@ const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
       }
     }
   }
-}`,...(N=(L=C.parameters)==null?void 0:L.docs)==null?void 0:N.source}}};const Z=["def","disabled","checkboxGropu","indeterminate","minMax"];export{Z as __namedExportsOrder,m as checkboxGropu,b as def,Y as default,k as disabled,x as indeterminate,C as minMax};
+}`,...($=(N=k.parameters)==null?void 0:N.docs)==null?void 0:$.source}}};const ne=["def","disabled","checkboxGropu","indeterminate","minMax"];export{ne as __namedExportsOrder,u as checkboxGropu,d as def,ee as default,i as disabled,b as indeterminate,k as minMax};
