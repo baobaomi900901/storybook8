@@ -16,7 +16,6 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { KCheckbox, KCheckboxGroup } from "@components";
 
 const checkAll = ref(false);
 const isIndeterminate = ref(true);

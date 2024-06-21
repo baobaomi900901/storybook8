@@ -1,7 +1,6 @@
 // @ts-ignore
 import type { Meta, StoryObj } from "@storybook/vue3";
-import KRadio from "../../../k-component-lib/package/components/radio/radio.vue";
-import KRadioGroup from "../../../k-component-lib/package/components/radio/radio_group.vue";
+import { KRadio, KRadioGroup } from "@components";
 // @ts-ignore
 import { ref } from "vue";
 

@@ -8,7 +8,6 @@
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import { KCheckbox, KCheckboxGroup } from "@components";
 
 const checkedCities = ref(["Shanghai", "Beijing"]);
 const cities = ["Shanghai", "Beijing", "Guangzhou", "Shenzhen"];
