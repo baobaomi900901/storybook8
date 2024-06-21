@@ -8,7 +8,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './kswux/package'),
-      '@components': path.resolve(__dirname, './kswux/package/components')
+      '@components': path.resolve(__dirname, './kswux/package/components'),
+      '@src': path.resolve(__dirname, './src')
     }
   },
 })

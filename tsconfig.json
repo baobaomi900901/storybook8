@@ -8,6 +8,7 @@
     "paths": {
       "@/*": ["./kswux/package/*"],
       "@components/*": ["./kswux/package/components/*"],
+      "@src/*": ["./src/*"],
       "@alias": ["./path/to/alias"]
     },
     "types": ["vue/types"],
@@ -30,6 +31,7 @@
     "src/**/*.ts", 
     "src/**/*.tsx", 
     "src/**/*.vue", 
+    "src/**/**/*.vue", 
     "vue-shim.d.ts",
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
