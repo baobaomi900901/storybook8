@@ -554,32 +554,12 @@ video {
   --tw-contain-style:  ;
 }
 
-.visible {
-  visibility: visible;
-}
-
 .collapse {
   visibility: collapse;
 }
 
-.fixed {
-  position: fixed;
-}
-
-.absolute {
-  position: absolute;
-}
-
-.relative {
-  position: relative;
-}
-
-.block {
-  display: block;
-}
-
-.inline {
-  display: inline;
+.mb-4 {
+  margin-bottom: 1rem;
 }
 
 .flex {
@@ -590,8 +570,8 @@ video {
   display: table;
 }
 
-.hidden {
-  display: none;
+.grid {
+  display: grid;
 }
 
 .h-4 {
@@ -602,36 +582,29 @@ video {
   width: 1rem;
 }
 
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.w-40 {
+  width: 10rem;
 }
 
-.border {
-  border-width: 1px;
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
+.items-center {
+  align-items: center;
 }
 
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.gap-3 {
+  gap: 0.75rem;
 }
 
-.font-bold {
-  font-weight: 700;
+.gap-4 {
+  gap: 1rem;
 }
 
 .text-red-500 {
   --tw-text-opacity: 1;
   color: rgb(239 68 68 / var(--tw-text-opacity));
-}
-
-.blur {
-  --tw-blur: blur(8px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .drop-shadow {
@@ -649,4 +622,36 @@ video {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+/* @import url('../kswux/package/style/general.css'); */
+
+@font-face {
+  font-family: 'MyCustomFont-Light';
+
+  src: url('../public/font/AlibabaPuHuiTi-3-45-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MyCustomFont';
+
+  src: url('../public/font/AlibabaPuHuiTi-3-55-Regular.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MyCustomFont-SemiBold';
+
+  src: url('../public/font/AlibabaPuHuiTi-3-75-SemiBold.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'MyCustomFont-Bold';
+
+  src: url('../public/font/AlibabaPuHuiTi-3-85-Bold.otf') format('opentype');
+}
+
+* {
+  font-family: 'MyCustomFont', sans-serif;
+  /* color: red; */
+  font-weight: 500;
 }

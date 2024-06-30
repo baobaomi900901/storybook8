@@ -22,6 +22,9 @@ devDependencies:
   '@chromatic-com/storybook':
     specifier: ^1.4.0
     version: 1.5.0(react@18.3.1)
+  '@iframe-resizer/child':
+    specifier: ^5.1.4
+    version: 5.1.4
   '@storybook/addon-essentials':
     specifier: ^8.1.1
     version: 8.1.5(@types/react@18.3.3)(prettier@3.2.5)(react-dom@18.3.1)(react@18.3.1)
@@ -1640,6 +1643,10 @@ packages:
     resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
     dev: false
 
+  /@iframe-resizer/child@5.1.4:
+    resolution: {integrity: sha512-92HKo1hWgUbk7J1zzMIxJ8R5OPhEsRIrXKOUsssK7St7b649S6Yg8EcXkX4ZmbxonVevxctrMLd0V16ysEHY9g==}
+    dev: true
+
   /@intlify/core-base@9.13.1:
     resolution: {integrity: sha512-+bcQRkJO9pcX8d0gel9ZNfrzU22sZFSA0WVhfXrf5jdJOS24a+Bp8pozuS9sBI9Hk/tGz83pgKfmqcn/Ci7/8w==}
     engines: {node: '>= 16'}
@@ -2911,7 +2918,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.27(typescript@5.4.5)
-      vue-component-type-helpers: 2.0.21
+      vue-component-type-helpers: 2.0.22
     transitivePeerDependencies:
       - encoding
       - prettier
@@ -5345,7 +5352,7 @@ packages:
       chinese-lunar-calendar: 1.0.1
       driver.js: 1.3.1
       element-plus: 2.7.3(vue@3.4.27)
-      ksw-vue-icon: 2.0.40(typescript@5.4.5)
+      ksw-vue-icon: 2.1.5(typescript@5.4.5)
       less: 4.2.0
       less-loader: 12.2.0(less@4.2.0)
       lodash: 4.17.21
@@ -5368,8 +5375,8 @@ packages:
       - typescript
     dev: false
 
-  /ksw-vue-icon@2.0.40(typescript@5.4.5):
-    resolution: {integrity: sha512-cBtz+75WlNJbcMReT4l04T0PY5dLgP/ZlVGQDRUCLmjY74VWgKaOW4BOxQG1fT/M0mb6yDnN12fLozAiyL3fDA==}
+  /ksw-vue-icon@2.1.5(typescript@5.4.5):
+    resolution: {integrity: sha512-t5aS0zFjIbWloeFaldro9sZfaGYzkp1gFY0JAic/dncFpkbN2u4qNHuTwMk8dvCfkPSlgsAjmaSQpMOVV05/4g==}
     dependencies:
       vue: 3.4.27(typescript@5.4.5)
     transitivePeerDependencies:
@@ -7442,8 +7449,8 @@ packages:
     resolution: {integrity: sha512-cN3f1aTxxKo4lzNeQAkVopswuImUrb5Iurll9Gaw5cqpnbTAxtEMM1mgi6ou4X79OCyqYv1U1mzBHJkzmiK82w==}
     dev: true
 
-  /vue-component-type-helpers@2.0.21:
-    resolution: {integrity: sha512-3NaicyZ7N4B6cft4bfb7dOnPbE9CjLcx+6wZWAg5zwszfO4qXRh+U52dN5r5ZZfc6iMaxKCEcoH9CmxxoFZHLg==}
+  /vue-component-type-helpers@2.0.22:
+    resolution: {integrity: sha512-gPr2Ba7efUwy/Vfbuf735bHSVdN4ycoZUCHfypkI33M9DUH+ieRblLLVM2eImccFYaWNWwEzURx02EgoXDBmaQ==}
     dev: true
 
   /vue-demi@0.14.8(vue@3.4.27):

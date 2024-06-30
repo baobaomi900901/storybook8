@@ -1,9 +1,8 @@
-import { createApp } from 'vue'
-import './style.css'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 import './output.css';
 
-import "../src/package/style/variable2.css"
+import '../kswux/package/style/variable2.css';
 
-const app = createApp(App)
-app.mount('#app')
+const app = createApp(App);
+app.mount('#app');
