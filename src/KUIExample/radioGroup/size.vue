@@ -21,3 +21,5 @@ import { KRadio, KRadioGroup } from '@/components/radio';
 const radio = ref('1');
 const radioValue = ref('1');
 </script>
+<style>
+</style>

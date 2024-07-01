@@ -245,3 +245,53 @@ export const customColor: Story = {
     };
   }
 };
+
+// 按钮左右侧图标
+export const customIcon: Story = {
+  name: '按钮左右侧图标(仅限ksw-vue-icon)',
+  args: {},
+  render: (args: any) => {
+    return {
+      components: { KButton, IconAdd, IconArrowBottom },
+      setup() {
+        return { args };
+      },
+      template: `
+      <div class="flex gap-4">
+        <KButton iconLeft="IconAdd" iconRight="IconArrowBottom" >按钮</KButton>
+        <KButton iconLeft="iconAdd" iconRight="IconArrowBottom" main >按钮</KButton>
+        <KButton iconLeft="IconAdd" iconRight="IconArrowBottom" secondary >按钮</KButton>
+        <KButton iconLeft="IconAdd" iconRight="IconArrowBottom" text >按钮</KButton>
+        <KButton icon >
+          <IconAdd />
+        </KButton>
+      </div>
+      `
+    };
+  }
+};
+
+// 具名插槽
+export const namedSlot: Story = {
+  name: '具名插槽',
+  args: {},
+  render: (args: any) => {
+    return {
+      components: { KButton, IconAdd, IconArrowBottom },
+      setup() {
+        return { args };
+      },
+      template: `
+        <KButton>
+          <template #iconLeft>
+            <IconAdd />
+          </template>
+          <template #iconRight>
+            <IconArrowBottom />
+          </template>
+          按钮
+        </KButton>
+      `
+    };
+  }
+};

@@ -1,26 +1,23 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { KRadio, KRadioGroup } from '../kswux/package/components/radio';
-
-console.log(KRadio);
-
-const radioValue = ref(0);
+import { KInput } from '../kswux/package/components/input';
+import { KButton } from '../kswux/package/components/button';
+import { Calendar, Search } from '@element-plus/icons-vue';
+const bbm = ref('');
 </script>
 
 <template>
-  <div>
-    <KRadioGroup v-model="radioValue" size="sm">
-      <KRadio value="0">直角</KRadio>
-      <KRadio value="1">钝角</KRadio>
-      <KRadio value="2">锐角</KRadio>
-      <KRadio value="0" disabled>90°</KRadio>
-    </KRadioGroup>
+  <div class="w-full h-full flex justify-center items-center px-96 flex flex-col gap-4" style="height: 100vh">
+    <KButton main iconLeft="IconAdd">按钮</KButton>
+    <KInput v-model="bbm" placeholder="请输入" iconLeft="IconAdd" :prefix-icon="IconAdd">
+      <template #prepend>Http://</template>
+      <template #append>.com</template>
+    </KInput>
+    <KInput v-model="bbm" placeholder="请输入" disabled :suffix-icon="Calendar" />
   </div>
 </template>
 
 <style lang="less" scoped>
-// @import './package/style/general.css';
-
 .logo {
   height: 6em;
   padding: 1.5em;

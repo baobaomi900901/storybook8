@@ -6,10 +6,12 @@ import 'ksw-vue-icon/styles/icon.css';
 import '@iframe-resizer/child';
 import elementPlus from 'element-plus';
 import { setup } from '@storybook/vue3';
-import install from '../kswux/package/index';
+import install from '../kswux/package/index'; // 全局注册组件
+import { KswIcon } from 'ksw-vue-icon';
 
 setup((app) => {
   app.use(elementPlus);
+  app.use(KswIcon);
   install(app);
 });
 

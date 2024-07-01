@@ -14,11 +14,11 @@ const meta = {
     direction: {
       control: 'select',
       options: ['row', 'column']
-    },
+    }
   },
   args: {
     size: 'base',
-    direction: 'row',
+    direction: 'row'
   }
 } satisfies Meta<typeof KRadioGroup>;
 
