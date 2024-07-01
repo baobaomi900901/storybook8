@@ -3,6 +3,7 @@ import '../kswux/package/style/general.css';
 import '../kswux/package/style/variable.css';
 import '../src/output.css';
 import 'ksw-vue-icon/styles/icon.css';
+import '@iframe-resizer/child';
 import elementPlus from 'element-plus';
 import { setup } from '@storybook/vue3';
 setup((app) => {
