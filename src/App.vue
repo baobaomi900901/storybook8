@@ -1,23 +1,25 @@
 <script setup lang="ts">
-import KButton from "./package/components/button/button.vue"
-import { IconAdd, IconArrowBottom } from "ksw-vue-icon";
+import { ref } from 'vue';
+import { KRadio, KRadioGroup } from '../kswux/package/components/radio';
+
+console.log(KRadio);
+
+const radioValue = ref(0);
 </script>
 
 <template>
-  <div style="display: flex; gap: .75rem;">
-    <KButton type="" :iconLeft="IconAdd" color="#ff5500">123</KButton>
-    <KButton type="main" :iconLeft="IconAdd" color="">123</KButton>
-    <KButton type="main" :iconLeft="IconAdd" color="#ff5500">123</KButton>
-    <KButton type="secondary" :iconLeft="IconAdd" color="#ff5500">123</KButton>
-    <KButton type="text" color="#ff5500">123</KButton>
-    <KButton type="icon" color="#ff5500">
-      <IconAdd />
-    </KButton>
+  <div>
+    <KRadioGroup v-model="radioValue" size="sm">
+      <KRadio value="0">直角</KRadio>
+      <KRadio value="1">钝角</KRadio>
+      <KRadio value="2">锐角</KRadio>
+      <KRadio value="0" disabled>90°</KRadio>
+    </KRadioGroup>
   </div>
 </template>
 
 <style lang="less" scoped>
-@import "./package/style/general.css";
+// @import './package/style/general.css';
 
 .logo {
   height: 6em;
