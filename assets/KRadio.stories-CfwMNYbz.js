@@ -1,4 +1,4 @@
-import{_ as l,a as p}from"./radio_group-_yV4amzy.js";import{r as i}from"./vue.esm-bundler-CjPtUVfS.js";import"./index-JNNWE467.js";const D={title:"Data Entry(DE)/KRadio",component:l,tags:["autodocs"],argTypes:{size:{control:"select",options:["sm","base"]},color:{control:"color"}},args:{}},e={name:"默认",args:{color:"",size:""},render:a=>({components:{KRadio:l},setup(){const o=i("1");return{args:a,radioValue:o}},template:`
+import{_ as l,a as p}from"./radio_group-D_jRz0nj.js";import{r as i}from"./vue.esm-bundler-CjPtUVfS.js";import"./index-JNNWE467.js";const D={title:"Data Entry(DE)/KRadio",component:l,tags:["autodocs"],argTypes:{size:{control:"select",options:["sm","base"]},color:{control:"color"}},args:{}},e={name:"默认",args:{color:"",size:""},render:a=>({components:{KRadio:l},setup(){const o=i("1");return{args:a,radioValue:o}},template:`
       <div class="flex gap-4">
         <KRadio v-model="radioValue" value="0" :color=args.color :size=args.size>直角</KRadio>
         <KRadio v-model="radioValue" value="1" :color=args.color :size=args.size>钝角</KRadio>
