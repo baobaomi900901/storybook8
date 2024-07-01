@@ -27,6 +27,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/**/*.vue", "vue-shim.d.ts", "src/stories/KUI/KRadio.stories"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/**/*.vue", "vue-shim.d.ts", "src/stories/KUIExample/KRadio.stories"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

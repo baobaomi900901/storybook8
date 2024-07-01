@@ -51,47 +51,42 @@ export const def: Story = {
 };
 
 // 自定义颜色
-export const GroupTypeBtn: Story = {
-  name: 'Group控制radio形态',
-  args: {},
-  render: (args: any) => {
-    return {
-      components: { KRadioGroup, KRadio },
-      setup() {
-        const radio = ref(0);
-        return { args, radio };
-      },
-      template: `
-      <k-radio-group v-model="radio" :direction=args.direction button>
-        <KRadio :value="0" >直角</KRadio>
-        <KRadio :value="1" >钝角</KRadio>
-        <KRadio :value="2" >锐角</KRadio>
-        <KRadio :value="0" disabled >直角</KRadio>
-      </k-radio-group>
-      `
-    };
+import btn from './button.vue';
+import btnDoc from './button.vue?raw';
+export const sizeSB2: Story = {
+  name: 'button : 控制不同样式',
+  render: (args: any) => ({
+    components: { btn },
+    setup() {
+      return { args };
+    },
+    template: '<btn v-bind="args" />'
+  }),
+  parameters: {
+    docs: {
+      source: {
+        code: btnDoc
+      }
+    }
   }
 };
 
-// 自定义颜色
-export const GroupSize: Story = {
-  name: 'Group控制radio大小',
-  args: {},
-  render: (args: any) => {
-    return {
-      components: { KRadioGroup, KRadio },
-      setup() {
-        const radio = ref(0);
-        return { args, radio };
-      },
-      template: `
-      <k-radio-group v-model="radio" :direction=args.direction size="sm">
-        <KRadio :value="0" >直角</KRadio>
-        <KRadio :value="1" >钝角</KRadio>
-        <KRadio :value="2" >锐角</KRadio>
-        <KRadio :value="0" disabled >直角</KRadio>
-      </k-radio-group>
-      `
-    };
+import size from './size.vue';
+import sizeDoc from './size.vue?raw';
+export const sizeSB: Story = {
+  name: 'size : 不同尺寸',
+  render: (args: any) => ({
+    components: { size },
+    setup() {
+      return { args };
+    },
+    template: '<size v-bind="args" />'
+  }),
+  parameters: {
+    docs: {
+      source: {
+        code: sizeDoc
+      }
+    }
   }
 };
