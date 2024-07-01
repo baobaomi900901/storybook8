@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3';
 import { KRadio, KRadioGroup } from '@components/radio';
 import { ref } from 'vue';
 
-const meta: Meta = {
+const meta = {
   title: 'Data Entry(DE)/KRadioGroup',
   component: KRadioGroup,
   tags: ['autodocs'],
@@ -15,14 +15,10 @@ const meta: Meta = {
       control: 'select',
       options: ['row', 'column']
     },
-    button: {
-      control: 'boolean'
-    }
   },
   args: {
     size: 'base',
     direction: 'row',
-    button: false
   }
 } satisfies Meta<typeof KRadioGroup>;
 
