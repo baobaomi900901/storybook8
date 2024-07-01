@@ -108,3 +108,23 @@ export const customColor: Story = {
     };
   }
 };
+
+import tmp from '../../components/radio/tmp.vue';
+import tmpDoc from '../../components/radio/tmp.vue?raw';
+export const minMax: Story = {
+  name: '可选项目数量的限制',
+  render: (args: any) => ({
+    components: { tmp },
+    setup() {
+      return { args };
+    },
+    template: '<tmp v-bind="args" />'
+  }),
+  parameters: {
+    docs: {
+      source: {
+        code: tmpDoc
+      }
+    }
+  }
+};
