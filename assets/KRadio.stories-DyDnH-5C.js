@@ -1,11 +1,25 @@
-import{_ as l,a as p}from"./radio_group-D_jRz0nj.js";import{r as i}from"./vue.esm-bundler-CjPtUVfS.js";import"./index-JNNWE467.js";const D={title:"Data Entry(DE)/KRadio",component:l,tags:["autodocs"],argTypes:{size:{control:"select",options:["sm","base"]},color:{control:"color"}},args:{}},e={name:"默认",args:{color:"",size:""},render:a=>({components:{KRadio:l},setup(){const o=i("1");return{args:a,radioValue:o}},template:`
+import{a as e,_ as E}from"./radio_group-DXJ5IvaN.js";import{d as B,r,o as C,c as O,a as s,w as u,u as t,b as v}from"./vue.esm-bundler-CrDTszJQ.js";import"./index-JNNWE467.js";const A={class:"mb-2 flex items-center text-sm"},F=B({__name:"tmp",setup(o){const a=r("1");return(c,m)=>(C(),O("div",A,[s(t(E),{modelValue:a.value,"onUpdate:modelValue":m[0]||(m[0]=y=>a.value=y),class:"ml-4"},{default:u(()=>[s(t(e),{value:"1"},{default:u(()=>[v("Option 1")]),_:1}),s(t(e),{value:"2"},{default:u(()=>[v("Option 2")]),_:1})]),_:1},8,["modelValue"])]))}});F.__docgenInfo={exportName:"default",displayName:"tmp",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/components/radio/tmp.vue"]};const N=`<template>
+  <div class="mb-2 flex items-center text-sm">
+    <k-radio-group v-model="radio" class="ml-4">
+      <KRadio value="1">Option 1</KRadio>
+      <KRadio value="2">Option 2</KRadio>
+    </k-radio-group>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { KRadio, KRadioGroup } from '@/components/radio';
+
+const radio = ref('1');
+<\/script>`,h={title:"Data Entry(DE)/KRadio",component:e,tags:["autodocs"],argTypes:{size:{control:"select",options:["sm","base"]},color:{control:"color"}},args:{}},d={name:"默认",args:{color:"",size:""},render:o=>({components:{KRadio:e},setup(){const a=r("1");return{args:o,radioValue:a}},template:`
       <div class="flex gap-4">
         <KRadio v-model="radioValue" value="0" :color=args.color :size=args.size>直角</KRadio>
         <KRadio v-model="radioValue" value="1" :color=args.color :size=args.size>钝角</KRadio>
         <KRadio v-model="radioValue" value="2" :color=args.color :size=args.size>锐角</KRadio>
         <KRadio v-model="radioValue" value="0" :color=args.color :size=args.size disabled>90°</KRadio>
       </div>
-      `})},d={name:"不同尺寸",args:{},render:a=>({components:{KRadio:l},setup(){const o=i("1");return{args:a,radioValue:o}},template:`
+      `})},i={name:"不同尺寸",args:{},render:o=>({components:{KRadio:e},setup(){const a=r("1");return{args:o,radioValue:a}},template:`
       <div class="flex gap-3">
         <KRadio v-model="radioValue" value="0">直角</KRadio>
         <KRadio v-model="radioValue" value="1">钝角</KRadio>
@@ -18,7 +32,7 @@ import{_ as l,a as p}from"./radio_group-D_jRz0nj.js";import{r as i}from"./vue.es
         <KRadio v-model="radioValue" value="2" size='sm'>锐角</KRadio>
         <KRadio v-model="radioValue" value="0" size='sm' disabled>90°</KRadio>
       </div>
-      `})},r={name:"自定义颜色",args:{},render:a=>({components:{KRadio:l,KRadioGroup:p},setup(){const o=i("1"),f=i(0);return{args:a,radioValue:o,radio:f}},template:`
+      `})},n={name:"自定义颜色",args:{},render:o=>({components:{KRadio:e,KRadioGroup:E},setup(){const a=r("1"),c=r(0);return{args:o,radioValue:a,radio:c}},template:`
       <div class="flex gap-3">
         <KRadio v-model="radioValue" value="0" color='#ff5500'>直角</KRadio>
         <KRadio v-model="radioValue" value="1" color='#ff5500'>钝角</KRadio>
@@ -34,7 +48,7 @@ import{_ as l,a as p}from"./radio_group-D_jRz0nj.js";import{r as i}from"./vue.es
       </k-radio-group>
 
       
-      `})};var n,u,s;e.parameters={...e.parameters,docs:{...(n=e.parameters)==null?void 0:n.docs,source:{originalSource:`{
+      `})},l={name:"可选项目数量的限制",render:o=>({components:{tmp:F},setup(){return{args:o}},template:'<tmp v-bind="args" />'}),parameters:{docs:{source:{code:N}}}};var p,K,R;d.parameters={...d.parameters,docs:{...(p=d.parameters)==null?void 0:p.docs,source:{originalSource:`{
   name: '默认',
   args: {
     color: '',
@@ -62,7 +76,7 @@ import{_ as l,a as p}from"./radio_group-D_jRz0nj.js";import{r as i}from"./vue.es
       \`
     };
   }
-}`,...(s=(u=e.parameters)==null?void 0:u.docs)==null?void 0:s.source}}};var t,c,v;d.parameters={...d.parameters,docs:{...(t=d.parameters)==null?void 0:t.docs,source:{originalSource:`{
+}`,...(R=(K=d.parameters)==null?void 0:K.docs)==null?void 0:R.source}}};var f,g,V;i.parameters={...i.parameters,docs:{...(f=i.parameters)==null?void 0:f.docs,source:{originalSource:`{
   name: '不同尺寸',
   args: {},
   render: (args: any) => {
@@ -93,7 +107,7 @@ import{_ as l,a as p}from"./radio_group-D_jRz0nj.js";import{r as i}from"./vue.es
       \`
     };
   }
-}`,...(v=(c=d.parameters)==null?void 0:c.docs)==null?void 0:v.source}}};var K,R,m;r.parameters={...r.parameters,docs:{...(K=r.parameters)==null?void 0:K.docs,source:{originalSource:`{
+}`,...(V=(g=i.parameters)==null?void 0:g.docs)==null?void 0:V.source}}};var z,b,D;n.parameters={...n.parameters,docs:{...(z=n.parameters)==null?void 0:z.docs,source:{originalSource:`{
   name: '自定义颜色',
   args: {},
   render: (args: any) => {
@@ -130,4 +144,24 @@ import{_ as l,a as p}from"./radio_group-D_jRz0nj.js";import{r as i}from"./vue.es
       \`
     };
   }
-}`,...(m=(R=r.parameters)==null?void 0:R.docs)==null?void 0:m.source}}};const b=["def","size","customColor"];export{b as __namedExportsOrder,r as customColor,e as def,D as default,d as size};
+}`,...(D=(b=n.parameters)==null?void 0:b.docs)==null?void 0:D.source}}};var x,_,k;l.parameters={...l.parameters,docs:{...(x=l.parameters)==null?void 0:x.docs,source:{originalSource:`{
+  name: '可选项目数量的限制',
+  render: (args: any) => ({
+    components: {
+      tmp
+    },
+    setup() {
+      return {
+        args
+      };
+    },
+    template: '<tmp v-bind="args" />'
+  }),
+  parameters: {
+    docs: {
+      source: {
+        code: tmpDoc
+      }
+    }
+  }
+}`,...(k=(_=l.parameters)==null?void 0:_.docs)==null?void 0:k.source}}};const M=["def","size","customColor","minMax"];export{M as __namedExportsOrder,n as customColor,d as def,h as default,l as minMax,i as size};
