@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <div class="car">car</div>
+  </div>
+</body>
+<script>
+  const box = document.querySelector('.box');
+  const car = document.querySelector('.car');
+  // 获取 box 元素在屏幕中的位置
+  const boxRect = box.getBoundingClientRect();
+  const carRect = car.getBoundingClientRect();
+  console.log(boxRect.top, boxRect.left);
+  console.log(carRect.top, carRect.left);
+
+  const mouse = {
+    x:0,
+    y:0
+  }
+  
+
+  // 点击 car 元素
+  car.addEventListener('mousedown', () => {
+    console.log('mouseup');
+    car.addEventListener("mousemove", (e) => {
+      console.log(1);
+    });
+  });
+
+
+
+</script>
+</html>
+
+<style>
+  .box {
+      width: 800px;
+      height: 800px;
+      background: #dfd;
+  }
+  .car{
+    width: 64px;
+    height: 32px;
+    background-color: red;
+  }
+</style>

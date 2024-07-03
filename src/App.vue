@@ -1,19 +1,73 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { KInput } from '../kswux/package/components/input';
+import { KInput, KInputGroup } from '../kswux/package/components/input';
 import { KButton } from '../kswux/package/components/button';
+import { KSelect, KOption } from '../kswux/package/components/select';
 import { Calendar, Search } from '@element-plus/icons-vue';
+import { IconAdd, IconDelete } from 'ksw-vue-icon';
+
 const bbm = ref('');
 </script>
 
 <template>
   <div class="w-full h-full flex justify-center items-center px-96 flex flex-col gap-4" style="height: 100vh">
-    <KButton main iconLeft="IconAdd">按钮</KButton>
-    <KInput v-model="bbm" placeholder="请输入" iconLeft="IconAdd" :prefix-icon="IconAdd">
-      <template #prepend>Http://</template>
-      <template #append>.com</template>
-    </KInput>
-    <KInput v-model="bbm" placeholder="请输入" disabled :suffix-icon="Calendar" />
+    <!-- <KSelect placeholder="请选择" v-model="bbm">
+      <KOption value="1"> 1</KOption>
+      <KOption value="2"> 2</KOption>
+    </KSelect> -->
+
+    <!-- <KInput v-model="bbm" placeholder="请输入" :icon-left="IconAdd" :icon-right="IconDelete"> </KInput> -->
+
+    <!-- <KInputGroup>
+      <KInput v-model="bbm" placeholder="请输入" :icon-left="IconAdd" :icon-right="IconDelete"> </KInput>
+    </KInputGroup> -->
+
+    <KInputGroup>
+      <template #prepend>
+        <KSelect placeholder="请选择" v-model="bbm" class="w-40">
+          <KOption value="1"> 1</KOption>
+          <KOption value="2"> 2</KOption>
+        </KSelect>
+      </template>
+      <KInput v-model="bbm" placeholder="请输入"></KInput>
+      <template #append>
+        <KButton main>搜索</KButton>
+      </template>
+    </KInputGroup>
+
+    <!-- <KInputGroup>
+      <template #prepend>
+        <KSelect placeholder="请选择" v-model="bbm">
+          <KOption value="1"> 1</KOption>
+          <KOption value="2"> 2</KOption>
+        </KSelect>
+      </template>
+      <KInput v-model="bbm" placeholder="请输入"></KInput>
+      <template #append>
+        <KSelect placeholder="请选择" v-model="bbm">
+          <KOption value="1"> 1</KOption>
+          <KOption value="2"> 2</KOption>
+        </KSelect>
+      </template>
+    </KInputGroup> -->
+
+    <!-- <KInputGroup>
+      <template #prepend>
+        <KButton main iconLeft="IconAdd">搜索</KButton>
+      </template>
+      <KInput v-model="bbm" placeholder="请输入" :suffix-icon="IconAdd"></KInput>
+      <template #append> .com </template>
+    </KInputGroup> -->
+
+    <!-- <KInputGroup>
+      <template #prepend>
+        <KButton>搜索</KButton>
+      </template>
+      <KInput v-model="bbm" placeholder="请输入"></KInput>
+      <template #append>
+        <KButton>搜索</KButton>
+      </template>
+    </KInputGroup> -->
   </div>
 </template>
 
