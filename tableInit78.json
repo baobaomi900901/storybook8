@@ -1,0 +1,264 @@
+{
+  "k_menu": [
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 0, '1', '', '设计管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '1a', '1', '作业管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1aa', '1a', '作业设计', 'TaskConfig', 'TTaskConfigFrm[作业设计]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1ab', '1a', '日历配置', 'HolidayMgr', 'THolidayMgrFrm[日历配置]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1ac', '1a', '任务查询', 'BatchTaskQuery', 'TBatchTaskQueryFrm[任务查询]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1ad', '1a', '任务管理', 'TaskMgr', 'TTaskMgrFrm[任务管理]', '')" },
+
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '1b', '1', '资源管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1ba', '1b', '对象设置', 'CoreMgr', 'TCoreMgrFrm[对象设置]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1bb', '1b', '模版管理', 'ModView', 'TModViewFrm[模版管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1bc', '1b', '模版参数', 'ModParamMgr', 'TModParamMgrFrm[模版参数]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1bd', '1b', '数据库链接', 'DBConnectionMgr', 'TDBConnectionMgrFrm[数据库链接]', '')" },
+
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '1c', '1', '监控管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1ca', '1c', '全局变量', 'ParamsMgr', 'TParamsMgrFrm[全局变量]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1cb', '1c', '个人变量', 'SelfParamsMgr', 'TSelfParamsMgrFrm[个人变量]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1cc', '1c', '采集策略', 'ScriptTimeMgr', 'TScriptTimeMgrFrm[采集策略]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1cd', '1c', '告警策略', 'LevelConfigMgr', 'TLevelConfigMgrFrm[告警策略]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1ce', '1c', '综合策略', 'LevelDefineMgr', 'TLevelDefineMgrFrm[综合策略]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1cf', '1c', '组合告警', 'LevelComboMgr', 'TLevelComboMgrFrm[组合告警]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1cg', '1c', '维护期管理', 'MaintenancePeriodMgr', 'TMaintenancePeriodMgrFrm[维护期管理]', '')" },
+
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '1d', '1', '通知管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1da', '1d', '渠道管理', 'NotifyChannelMgr', 'TNotifyChannelMgrFrm[渠道管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '1db', '1d', '通知记录', 'NotifyRecord', 'TFlowQueryFrm[执行历史]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '1dc', '1d', 'URL推送记录', 'EventURLMgr', 'TEventURLMgrFrm[URL推送记录]', '')" },
+
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 0, '2', '', '容灾管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '2a', '2', '容灾管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '2aa', '2a', '双机互备', 'EmergencyMgr', 'TEmergencyMgrFrm[双机互备]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '2ab', '2a', '对应关系', 'RelationMgr', 'TRelationMgrFrm[对应关系]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '2ac', '2a', '容灾流程', 'EmergencyFlow', 'TFlowMgrFrm[容灾流程]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '2ad', '2a', '灾备中心设置', 'EmergencySwitch', 'TEmergencySwitchFrm[灾备切换]', '')" },
+
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 0, '3', '', '系统管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '3a', '3', '用户权限', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3aa', '3a', '用户管理', 'UserMgr', 'TUserMgrFrm[用户管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3ab', '3a', '权限管理', 'RoleMgr', 'TRoleMgrFrm[权限管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3ac', '3a', '值班管理', 'UserJob', 'TUserJobFrm[值班管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3ae', '3a', '人员方案', 'PlanMgr', 'TPlanMgrFrm[人员方案]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3af', '3a', '机器方案', 'AgentPlanMgr', 'TAgentPlanMgrFrm[机器方案]', '')" },
+
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '3b', '3', 'AOM管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3ba', '3b', '系统设置', 'EnvironmentMgr', 'TEnvironmentMgrFrm[系统设置]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3bb', '3b', '代理端管理', 'AgentMgr', 'TAgentMgrFrm[代理端管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3bc', '3b', '代理端信息', 'AgentChk', 'TAgentChkFrm[代理端信息]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3bd', '3b', '代理端时间', 'AgentTime', 'TAgentTimeFrm[代理端时间]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3be', '3b', '代理端线程', 'ScriptMonitor', 'TScriptMonitorFrm[代理端线程]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '3bf', '3b', '控制台管理', 'ControlMgr', 'TControlMgrFrm[控制台管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '3bg', '3b', '服务器信息', 'ServerMgr', 'TServerMgrFrm[服务器配置]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '3bh', '3b', '服务器配置', 'ServerConfigMgr', 'TServerConfigMgrFrm[服务器配置管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '3bi', '3b', '中转服务器', 'TransitMgr', 'TTransitMgrFrm[中转服务器]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '3bj', '3b', '服务器对接', 'SmartRPAMgr', 'TSmartRPAMgrFrm[服务器对接]', '')" },
+
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '3c', '3', '数据管理', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3ca', '3c', '数据管理', 'DataMgr', 'TDataMgrFrm[数据管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3cb', '3c', '外网管理', 'InternetMgr', 'TInternetMgrFrm[外网管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3cc', '3c', '操作日志', 'LogMgr', 'TLogMgrFrm[操作日志]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 2, '3cd', '3c', '功能耗时', 'DMFuncMgr', 'TDMFuncMgrFrm[功能耗时]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '3ce', '3c', 'AOM日志', 'ClientLog', 'TClientLogFrm[AOM日志]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '3cf', '3c', '回收站', 'RecycleMgr', 'TRecycleMgrFrm[回收站]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 2, '3cg', '3c', '脚本日志', 'ScriptLogMgr', 'TScriptLogMgrFrm[脚本日志]', '')" },
+
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (0, $Sort$, 0, '4', '', '调试工具', '', '', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4a', '4', '数据查询', 'SQLQueryMgr', 'TSQLQueryMgrFrm[数据查询]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4b', '4', '向导查询', 'SQLQueryCustomMgr', 'SQLQueryCustomMgrFrm[向导查询]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4c', '4', '数据字典', 'SQLTableMgr', 'TSQLTableMgrFrm[数据字典]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4d', '4', '菜单管理', 'MenuMgr', 'TMenuMgrFrm[菜单管理]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4e', '4', '压力测试', 'Test', 'TTestFrm[压力测试]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4f', '4', '断开测试', 'TestDisconnect', 'TTestDisconnectFrm[断开测试]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4g', '4', '数据测试', 'TestPackage', 'TTestPackageFrm[数据测试]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4i', '4', '执行历史', 'FlowQuery', 'TFlowQueryFrm[执行历史]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4j', '4', '流程接管', 'FlowTake', 'TFlowTakeFrm[流程接管]', '')" },
+      { "sql": "insert into k_menu (Enabled, Sort, Level, ID, PID, Name, FuncName, FromName, Params) values (1, $Sort$, 1, '4h', '4', '组件管理', 'ComponentMgr', 'TComponentMgrFrm[组件管理]', '')" }
+  ],
+
+  "k_webmenu": [
+      {
+          "title": "基础运维平台",
+          "submenu": [
+              { "title": "首页看板", "submenu": [{ "title": "主页", "icon": "IconAomMenuJCYWPTKanbanColor", "url": "home-kanban?desc=用户数据看板" }] },
+              {
+                  "title": "脚本仓库",
+                  "submenu": [
+                      { "title": "脚本看板", "icon": "IconAomMenuJBKanbanColor", "url": "script-kanban?desc=脚本数据总览看板" },
+                      { "title": "仓库管理", "icon": "IconAomMenuCKGLColor", "url": "rep-mgr?desc=仓库流转管理" },
+                      { "title": "脚本管理", "icon": "IconAomMenuJBGLColor", "url": "script-mgr?desc=脚本资源的编辑与管理" },
+                      { "title": "脚本扫描", "icon": "IconAomMenuJBSMColor", "url": "script-scan?desc=脚本风险扫描监控" }
+                  ]
+              },
+              {
+                  "title": "流程仓库",
+                  "submenu": [
+                      { "title": "流程看板", "icon": "IconAomMenuLCKanbanColor", "url": "flow-kanban?desc=流程数据总览看板" },
+                      { "title": "流程仓库", "icon": "IconAomMenuLCCKColor", "url": "flow-rep?desc=流程资源编辑与管理&web_url=funcs/flow/flowmgr.html&web_route=/flow/flowMgr" },
+                      { "title": "流程审核", "icon": "IconAomMenuLCSHColor", "url": "flow-review?desc=审核发布流程&web_url=funcs/flow/flowaudit.html&web_route=/flow/flowAudit" },
+                      { "title": "流程模板", "icon": "IconAomMenuLCMBColor", "url": "flow-template?desc=流程模版设置&web_url=funcs/flow/templateMgr.html&web_route=/flow/templateMgr" }
+                  ]
+              },
+              {
+                  "title": "任务编排",
+                  "submenu": [
+                      { "title": "敏捷任务", "icon": "IconAomMenuMJRWColor", "url": "agile-task?desc=任务总览及快速执行任务" },
+                      { "title": "任务详情", "icon": "IconAomMenuMJRWXQColor", "url": "agile-task-detail?desc=任务执行详情及历史" }
+                  ]
+              }
+          ]
+      },
+      {
+          "title": "智能巡检",
+          "submenu": [
+              { "title": "拨测总览", "submenu": [{ "title": "业务拨测总览", "icon": "IconAomMenuYWBCZLColor", "url": "daily-inspect-home?desc=业务拨测数据看板" }] },
+              {
+                  "title": "业务拨测",
+                  "submenu": [
+                      { "title": "拨测链路配置", "icon": "IconAomMenuBCLLPZColor", "url": "dail-link-config?desc=拨测链路管理与配置" },
+                      { "title": "拨测执行看板", "icon": "IconAomMenuBCZXKanbanColor", "url": "dail-exec-kanban?desc=拨测记录统计看板" }
+                  ]
+              },
+              {
+                  "title": "资源监控",
+                  "submenu": [
+                      { "title": "设备视图", "icon": "IconAomMenuSBSTColor", "url": "device-view?desc=按设备分组的指标视图&web_url=funcs/core/equipmentmgr.html&web_route=/event/equipmentmgr" },
+                      { "title": "管理视图", "icon": "IconAomMenuGLSTColor", "url": "mgr-view?desc=对设备指标的统一管理&web_url=funcs/core/core.html&web_route=/event/core" },
+                      { "title": "应用视图", "icon": "IconAomMenuYYSTColor", "url": "app-view?desc=按应用分组的指标视图&web_url=funcs/core/apply.html&web_route=/event/apply" }
+                  ]
+              },
+              {
+                  "title": "事件管理",
+                  "submenu": [
+                      { "title": "实时事件", "icon": "IconAomMenuSSSJColor", "url": "real-time-event?desc=实时事件展示&web_url=funcs/event/event.html&web_route=/event/event" },
+                      { "title": "事件查询", "icon": "IconAomMenuSJCXColor", "url": "event-handling?desc=历史事件查询&web_url=funcs/event/eventquery.html&web_route=/event/eventquery" },
+                      { "title": "处理记录", "icon": "IconAomMenuCLJLColor", "url": "handle-history?desc=历史事件处理情况查询&web_url=funcs/event/eventprocessqry.html&web_route=/event/eventprocessqry" }
+                  ]
+              }
+          ]
+      },
+      {
+          "title": "系统加固",
+          "submenu": [
+              {
+                  "title": "补丁仓库",
+                  "submenu": [
+                      { "title": "补丁仓库", "icon": "IconAomMenuBDCKColor", "url": "patch-rep?desc=补丁仓库和补丁维度管理" },
+                      { "title": "机器加固", "icon": "IconAomMenuBDGLColor", "url": "patch-agent?desc=机器加固" }
+                  ]
+              },
+              { "title": "补丁看板", "submenu": [{ "title": "补丁看板", "icon": "IconAomMenuBDKBColor", "url": "patch-kanban?desc=补丁看板" }] }
+          ]
+      },
+
+      {
+          "title": "设计管理",
+          "submenu": [
+              {
+                  "title": "流程管控",
+                  "submenu": [
+                      { "title": "流程视图", "icon": "IconAomMenuLCSTColor", "url": "flow-view?desc=流程视图&web_url=funcs/flow/flow.html&web_route=/flow/flow" },
+                      { "title": "流程接管", "icon": "IconAomMenuLCJGColor", "url": "flow-flowtask?desc=实时接管流程&web_url=funcs/flow/flowtask.html&web_route=/flow/flowtake" },
+                      { "title": "今日流程", "icon": "IconAomMenuJRLCColor", "url": "flow-flowtoday?desc=查看今日已执行流程列表&web_url=funcs/flow/flowtoday.html&web_route=/flow/flowtoday" },
+                      { "title": "执行历史", "icon": "IconAomMenuZXLSColor", "url": "flow-flowhistory?desc=查询流程执行历史记录&web_url=funcs/flow/flowhistory.html&web_route=/flow/flowhistory" }
+                  ]
+              },
+              {
+                  "title": "报表管理",
+                  "submenu": [
+                      { "title": "报表设计", "icon": "IconAomMenuBBSJColor", "url": "sheet-design?desc=设计报表执行内容" },
+                      { "title": "报表审核", "icon": "IconAomMenuBBSHColor", "url": "sheet-review?desc=报表审核发布" },
+                      { "title": "报表浏览", "icon": "IconAomMenuBBYLColor", "url": "sheet-overview?desc=已发布的报表视图" },
+                      { "title": "报表查询", "icon": "IconAomMenuBBCXColor", "url": "sheet-query?desc=报表执行历史查询" }
+                  ]
+              },
+              {
+                  "title": "作业管理",
+                  "submenu": [
+                      { "title": "作业设计", "icon": "IconAomMenuZYSJColor", "url": "work-design?desc=配置自动任务&web_url=funcs/task/taskmgr.html&web_route=/task/taskmgr" },
+                      { "title": "日历配置", "icon": "IconAomMenuRLPZColor", "url": "calendar-config?desc=配置、展示交易日历&web_url=funcs/task/calendar.html&web_route=/task/calendar" },
+                      { "title": "任务管理", "icon": "IconAomMenuRWGLColor", "url": "task-mgr?desc=自动任务表格化管理&web_url=funcs/task/calendar.html&web_route=/task/calendar" }
+                  ]
+              },
+              {
+                  "title": "资源管理",
+                  "submenu": [
+                      { "title": "对象设置", "icon": "IconAomMenuDXSZColor", "url": "object-setting?desc=操作、指标的编辑操作&web_url=funcs/core/coremgr.html&web_route=/script/coreMgr" },
+                      { "title": "模版管理", "icon": "IconAomMenuMBGLColor", "url": "template-mgr?desc=指标模板编辑&web_url=funcs/script/modview.html&web_route=/script/modView" },
+                      { "title": "模版参数", "icon": "IconAomMenuMBCSColor", "url": "template-param?desc=指标模板参数编辑&web_url=funcs/script/modparammgr.html&web_route=/script/modParamMgr" }
+                  ]
+              },
+              {
+                  "title": "监控管理",
+                  "submenu": [
+                      { "title": "全局变量", "icon": "IconAomMenuQJBLColor", "url": "global-var?desc=脚本全局变量配置&web_url=funcs/script/parammgr.html&web_route=/script/paramMgr" },
+                      { "title": "采集策略", "icon": "IconAomMenuCJCLColor", "url": "collect-strategy?desc=指标运行采集策略配置&web_url=funcs/script/scripttimemgr.html&web_route=/script/scriptTimeMgr" },
+                      { "title": "告警策略", "icon": "IconAomMenuGJCLColor", "url": "warn-strategy?desc=指标运行告警策略配置&web_url=funcs/script/levelconfigmgr.html&web_route=/script/levelConfigMgr" }
+                  ]
+              },
+              {
+                  "title": "通知管理",
+                  "submenu": [
+                      { "title": "渠道管理", "icon": "IconAomMenuQDGLColor", "url": "channel-mgr?desc=通知平台信息配置&web_url=funcs/system/notify_manage.html&web_route=/system/notifyManage" },
+                      { "title": "通知记录", "icon": "IconAomMenuTZJLColor", "url": "notice-history?desc=通知发送记录查询&web_url=funcs/system/notify_history.html&web_route=/system/notifyHistory" }
+                  ]
+              }
+          ]
+      },
+
+      {
+          "title": "系统管理",
+          "submenu": [
+              {
+                  "title": "用户权限",
+                  "submenu": [
+                      { "title": "用户管理", "icon": "IconAomMenuYYGLColor", "url": "user-mgr?desc=用户信息配置管理&web_url=funcs/user/user.html&web_route=/user/user" },
+                      { "title": "权限管理", "icon": "IconAomMenuQXGLColor", "url": "auth-mgr?desc=用户角色分配管理&web_url=funcs/user/power.html&web_route=/user/power" },
+                      { "title": "值班管理", "icon": "IconAomMenuZBGLColor", "url": "working-mgr?desc=用户值班管理配置&web_url=funcs/user/scheduled.html&web_route=/user/scheduled" },
+                      { "title": "人员方案", "icon": "IconAomMenuRYFAColor", "url": "human-plan?desc=用户通知方案管理&web_url=funcs/user/planmgr.html&web_route=/user/planmgr" }
+                  ]
+              },
+              {
+                  "title": "AOM管理",
+                  "submenu": [
+                      { "title": "系统设置", "icon": "IconAomMenuXTSZColor", "url": "system-setting?desc=系统配置信息&web_url=funcs/system/system_config.html&web_route=/system/systemConfig" },
+                      { "title": "代理端管理", "icon": "IconAomMenuDLDGLColor", "url": "agent-mgr?desc=代理端统一管理&web_url=funcs/agent/agentinfo.html&web_route=/agent/agentInfo" },
+                      { "title": "代理端信息", "icon": "IconAomMenuDLDXXColor", "url": "agent-info?desc=机器人信息展示&web_url=funcs/agent/agentchk.html&web_route=/agent/agentChk" },
+                      { "title": "代理端时间", "icon": "IconAomMenuDLDSJColor", "url": "agent-time?desc=机器人系统时间管理&web_url=funcs/agent/agenttime.html&web_route=/agent/agentTime" },
+                      { "title": "代理端线程", "icon": "IconAomMenuDLDXCColor", "url": "agent-thread?desc=机器人线程占用情况&web_url=funcs/agent/agentthread.html&web_route=/agent/agentThread" },
+                      { "title": "控制台管理", "icon": "IconAomMenuKZTGLColor", "url": "control-mgr?desc=控制台连接管理&web_url=funcs/system/controlmgr.html&web_route=/system/controlmgr" },
+                      { "title": "服务器信息", "icon": "IconAomMenuFWQXXColor", "url": "server-info?desc=服务器信息&web_url=funcs/system/servermgr.html&web_route=/system/servermgr" },
+                      { "title": "服务器配置", "icon": "IconAomMenuFWQPZColor", "url": "server-config?desc=服务器配置设置&web_url=funcs/system/serverconfigmgr.html&web_route=/system/serverConfigMgr" },
+                      { "title": "中转服务器", "icon": "IconAomMenuZZFWQColor", "url": "transit-server?desc=中转服务器管理&web_url=funcs/system/transitmgr.html&web_route=/system/transitmgr" }
+                  ]
+              },
+              {
+                  "title": "数据管理",
+                  "submenu": [
+                      { "title": "数据管理", "icon": "IconAomMenuSJGLColor", "url": "data-mgr?desc=系统数据管理&web_url=funcs/system/datamgr.html&web_route=/system/datamgr" },
+                      { "title": "外网管理", "icon": "IconAomMenuWWGLColor", "url": "wan-mgr?desc=机器人连接规则&web_url=funcs/system/internetmgr.html&web_route=/system/internetmgr" },
+                      { "title": "操作日志", "icon": "IconAomMenuCZRZColor", "url": "operation-log?desc=系统操作日志&web_url=funcs/system/log.html&web_route=/system/log" },
+                      { "title": "功能耗时", "icon": "IconAomMenuGNHSColor", "url": "fn-consuming?desc=统计功能调用时间&web_url=funcs/system/dmFuncMgr.html&web_route=/system/dmFuncMgr" },
+                      { "title": "AOM日志", "icon": "IconAomMenuAOMRZColor", "url": "aom-log?desc=机器人系统日志&web_url=funcs/system/clientlog.html&web_route=/system/clientlog" },
+                      { "title": "回收站", "icon": "IconAomMenuHSZColor", "url": "system-recycle?desc=系统回收站&web_url=funcs/system/recyclemgr.html&web_route=/system/recyclemgr" }
+                  ]
+              }
+          ]
+      },
+
+      {
+        "title": "容灾管理",
+        "submenu": [
+          {
+            "title": "容灾管理",
+            "submenu": [
+              { "title": "双机互备", "icon": "IconAomMenuSJHBColor", "url": "inter-spare-machine?desc=灾备管理信息配置&web_url=funcs/system/emergencymgr.html&web_route=/system/emergencymgr" }
+            ]
+          }
+        ]
+      }
+  ],
+
+  "k_user": [{ "sql": "insert into k_user (ID, PID, UserID, UserName, PassWord, Enabled) values ('0', '', 'admin', '系统管理员', 'c4ca4238a0b923820dcc509a6f75849b', 1)" }]
+}
+

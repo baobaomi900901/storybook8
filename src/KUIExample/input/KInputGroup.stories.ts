@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { KInput, KInputGroup, KSelect, KOption, KButton } from '@components';
 import { ref } from 'vue';
-import { de } from 'element-plus/es/locale';
 import '../../output.css';
 
 const meta = {

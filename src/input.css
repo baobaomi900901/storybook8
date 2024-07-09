@@ -27,3 +27,17 @@
   /* color: red; */
   font-weight: 500;
 }
+
+.epx-title {
+  @apply text-3xl font-bold my-4;
+}
+.epx-title-sub {
+  @apply text-lg font-bold my-2;
+}
+
+.epx-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

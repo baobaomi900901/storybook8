@@ -27,6 +27,13 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/**/**/*.vue", "vue-shim.d.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/**/**/*.vue",
+    "vue-shim.d.ts",
+    "src/testExample/index.js"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
