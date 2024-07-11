@@ -7,6 +7,7 @@
 !-->
 <template>
   <div class="epx-container">
+    123
     <div class="epx-title">k-radio</div>
     <div class="epx-title-sub">单独使用:</div>
     <div class="flex items-star gap-4">
@@ -96,17 +97,16 @@ const value = ref();
 const radioData = [
   {
     value: '直角',
-    label: '直角'
+    label: '直角',
   },
   {
     value: '锐角',
-    label: '锐角'
+    label: '锐角',
   },
   {
     value: '钝角',
-    label: '钝角'
-  }
+    label: '钝角',
+  },
 ];
 </script>
-<style scoped>
-</style>
+<style scoped></style>

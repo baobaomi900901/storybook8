@@ -3,6 +3,7 @@ import App from './App.vue';
 import 'element-plus/dist/index.css'; // 引入 element-plus 样式
 import elementPlus from 'element-plus';
 import './output.css';
+import '/public/font/result.css'; // 全局字体
 import '../kswux/package/style/variable.css';
 import install from '../kswux/package/index'; // 全局注册组件
 import { KswIcon } from 'ksw-vue-icon';

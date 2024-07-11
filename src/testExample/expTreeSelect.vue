@@ -11,7 +11,14 @@
 
     <div class="epx-title-sub">type:</div>
     <div class="flex items-center gap-2">
-    <KTreeSelect v-model="value" :data="data" :multiple="true" :filterable="true" :clearable="true" :placeholder="'请选择'"></KTreeSelect>
+      <KTreeSelect
+        v-model="value"
+        :data="data"
+        :multiple="true"
+        :filterable="true"
+        :clearable="true"
+        :placeholder="'请选择'"
+      ></KTreeSelect>
     </div>
   </div>
 </template>
@@ -21,6 +28,76 @@ import { ref, reactive } from 'vue';
 import { KTreeSelect } from '@components';
 
 const value = ref();
+const data = [
+  {
+    value: '1',
+    label: 'Level one 1',
+    children: [
+      {
+        value: '1-1',
+        label: 'Level two 1-1',
+        children: [
+          {
+            value: '1-1-1',
+            label: 'Level three 1-1-1',
+            icon: 'IconPlugInFirefoxColor',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: '2',
+    label: 'Level one 2',
+    children: [
+      {
+        value: '2-1',
+        label: 'Level two 2-1',
+        children: [
+          {
+            value: '2-1-1',
+            label: 'Level three 2-1-1',
+          },
+        ],
+      },
+      {
+        value: '2-2',
+        label: 'Level two 2-2',
+        children: [
+          {
+            value: '2-2-1',
+            label: 'Level three 2-2-1',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: '3',
+    label: 'Level one 3',
+    children: [
+      {
+        value: '3-1',
+        label: 'Level two 3-1',
+        children: [
+          {
+            value: '3-1-1',
+            label: 'Level three 3-1-1',
+          },
+        ],
+      },
+      {
+        value: '3-2',
+        label: 'Level two 3-2',
+        children: [
+          {
+            value: '3-2-1',
+            label: 'Level three 3-2-1',
+          },
+        ],
+      },
+    ],
+  },
+];
 </script>
-<style scoped>
-</style>
+<style scoped></style>

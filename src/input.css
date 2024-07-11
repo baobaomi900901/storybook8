@@ -5,27 +5,27 @@
 /* @import url('../kswux/package/style/general.css'); */
 @import url('../kswux/package/style/variable.css');
 
-@font-face {
+/* @font-face {
   font-family: 'MyCustomFont-Light';
   src: url('../public/font/AlibabaPuHuiTi-3-45-Light.otf') format('opentype');
-}
-@font-face {
+} */
+/* @font-face {
   font-family: 'MyCustomFont';
   src: url('../public/font/AlibabaPuHuiTi-3-55-Regular.otf') format('opentype');
-}
-@font-face {
+} */
+/* @font-face {
   font-family: 'MyCustomFont-SemiBold';
   src: url('../public/font/AlibabaPuHuiTi-3-75-SemiBold.otf') format('opentype');
 }
 @font-face {
   font-family: 'MyCustomFont-Bold';
   src: url('../public/font/AlibabaPuHuiTi-3-85-Bold.otf') format('opentype');
-}
+} */
 
 * {
-  font-family: 'MyCustomFont', sans-serif;
-  /* color: red; */
-  font-weight: 500;
+  font-family: 'Alibaba PuHuiTi 3.0 55 Regular';
+  /* font-weight: 500; */
+  font-display: swap;
 }
 
 .epx-title {
@@ -33,6 +33,10 @@
 }
 .epx-title-sub {
   @apply text-lg font-bold my-2;
+}
+
+.bbm123 {
+  font-size: 123px;
 }
 
 .epx-container {

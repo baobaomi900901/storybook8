@@ -3,42 +3,49 @@ import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router
 // createWebHashHistory, 带哈希值 #
 
 // 引入示例组件
-import { expButton, expRadio, expInput, expSelect,expTabs,expTreeSelect } from '../testExample';
+import { expButton, expRadio, expInput, expSelect, expTabs, expTreeSelect } from '../testExample';
+import flowPage from '../pageExamlp/flowPage.vue';
 
 const routes = [
   {
     path: '/button',
     component: expButton,
-    name: 'button'
+    name: 'button',
   },
   {
     path: '/radio',
     component: expRadio,
-    name: 'radio'
+    name: 'radio',
   },
   {
     path: '/input',
     component: expInput,
-    name: 'input'
+    name: 'input',
   },
   {
     path: '/select',
     component: expSelect,
-    name: 'select'
+    name: 'select',
   },
   {
     path: '/tabs',
     component: expTabs,
-    name: 'tabs'
-  },{
+    name: 'tabs',
+  },
+  {
     path: '/treeSelect',
     component: expTreeSelect,
-    name: 'treeSelect'
-  }
+    name: 'treeSelect',
+  },
+  {
+    path: '/flowPage',
+    component: flowPage,
+    name: 'flowPage',
+  },
 ];
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 });
 
 export default router;

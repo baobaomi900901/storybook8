@@ -15,8 +15,8 @@ dependencies:
     specifier: 0.0.11
     version: 0.0.11(typescript@5.5.3)
   ksw-vue-icon:
-    specifier: ^2.0.15
-    version: 2.2.0(typescript@5.5.3)
+    specifier: latest
+    version: 2.2.2(typescript@5.5.3)
   vue:
     specifier: ^3.4.27
     version: 3.4.31(typescript@5.5.3)
@@ -5471,7 +5471,7 @@ packages:
       chinese-lunar-calendar: 1.0.1
       driver.js: 1.3.1
       element-plus: 2.7.6(vue@3.4.31)
-      ksw-vue-icon: 2.2.0(typescript@5.5.3)
+      ksw-vue-icon: 2.2.2(typescript@5.5.3)
       less: 4.2.0
       less-loader: 12.2.0(less@4.2.0)
       lodash: 4.17.21
@@ -5485,8 +5485,8 @@ packages:
       - webpack
     dev: false
 
-  /ksw-vue-icon@2.2.0(typescript@5.5.3):
-    resolution: {integrity: sha512-gsKchj/Gz3yIwrDL/v2b3tql+Bt6iKC6BqpJu40NaMWv5yxF3X1T9FfTjrfwcMWB4Zfni8yqnKEPwLVv5Slvog==}
+  /ksw-vue-icon@2.2.2(typescript@5.5.3):
+    resolution: {integrity: sha512-rDnXIMXyaymJ0RZryQfeGEM2ZYiuNCmyENlG2dj8Wrx5RqPddfPJzrkHohuLemeMdqXVsPAl/YDQtWJxdWo3uw==}
     dependencies:
       vue: 3.4.31(typescript@5.5.3)
     transitivePeerDependencies:

@@ -18,8 +18,12 @@
       <span class="">tabs</span>
     </router-link>
     <!-- expTreeSelect -->
-    <router-link to="/tree-select" class="menu-item">
+    <router-link to="/treeSelect" class="menu-item">
       <span class="">tree-select</span>
+    </router-link>
+
+    <router-link to="/flowPage" class="menu-item">
+      <span class="">flowPage</span>
     </router-link>
   </div>
 </template>
