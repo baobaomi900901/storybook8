@@ -3,44 +3,37 @@ import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router
 // createWebHashHistory, 带哈希值 #
 
 // 引入示例组件
-import { expButton, expRadio, expInput, expSelect, expTabs, expTreeSelect } from '../testExample';
-import flowPage from '../pageExamlp/flowPage.vue';
+import {
+  expButton,
+  expRadio,
+  expInput,
+  expSelect,
+  expTabs,
+  expTreeSelect,
+} from '../ExampleComponents';
+import { flowPage } from '../ExamplePage';
+import pageComponents from '../pageComponents.vue';
+import pageTemplate from '../pageTemplate.vue';
 
 const routes = [
   {
-    path: '/button',
-    component: expButton,
-    name: 'button',
+    path: '/components',
+    component: pageComponents,
+    name: 'components',
+    children: [
+      { path: 'button', component: expButton, name: 'button' },
+      { path: 'radio', component: expRadio, name: 'radio' },
+      { path: 'input', component: expInput, name: 'input' },
+      { path: 'select', component: expSelect, name: 'select' },
+      { path: 'tabs', component: expTabs, name: 'tabs' },
+      { path: 'tree-select', component: expTreeSelect, name: 'tree-select' },
+    ],
   },
   {
-    path: '/radio',
-    component: expRadio,
-    name: 'radio',
-  },
-  {
-    path: '/input',
-    component: expInput,
-    name: 'input',
-  },
-  {
-    path: '/select',
-    component: expSelect,
-    name: 'select',
-  },
-  {
-    path: '/tabs',
-    component: expTabs,
-    name: 'tabs',
-  },
-  {
-    path: '/treeSelect',
-    component: expTreeSelect,
-    name: 'treeSelect',
-  },
-  {
-    path: '/flowPage',
-    component: flowPage,
-    name: 'flowPage',
+    path: '/template',
+    component: pageTemplate,
+    name: 'template',
+    children: [{ path: 'flow-page', component: flowPage, name: 'flow-page' }],
   },
 ];
 const router = createRouter({

@@ -20,6 +20,28 @@
       </KButton>
     </div>
 
+    <div class="epx-title-sub">禁止:</div>
+    <div class="flex items-star gap-4">
+      <KButton disabled>普通</KButton>
+      <KButton disabled main>主要</KButton>
+      <KButton disabled secondary>按钮</KButton>
+      <KButton disabled text>按钮</KButton>
+      <KButton disabled icon>
+        <IconAdd />
+      </KButton>
+      <br />
+    </div>
+    <div class="flex items-star gap-4">
+      <KButton size="sm" disabled>普通</KButton>
+      <KButton size="sm" disabled main>主要</KButton>
+      <KButton size="sm" disabled secondary>按钮</KButton>
+      <KButton size="sm" disabled text>按钮</KButton>
+      <KButton size="sm" disabled icon>
+        <IconAdd />
+      </KButton>
+      <br />
+    </div>
+
     <div class="epx-title-sub">按钮尺寸:</div>
     <div class="flex items-star gap-4">
       <KButton size="sm">普通</KButton>
@@ -92,29 +114,29 @@
         <template #iconRight>
           <IconArrowBottom />
         </template>
-        普通</KButton
-      >
+        普通
+      </KButton>
       <KButton main>
         <template #iconLeft>
           <IconAdd />
         </template>
-        <template #iconRight> <IconArrowBottom /> </template>
-        主要</KButton
-      >
+        <template #iconRight><IconArrowBottom /></template>
+        主要
+      </KButton>
       <KButton secondary>
         <template #iconLeft>
           <IconAdd />
         </template>
-        <template #iconRight> <IconArrowBottom /> </template>
-        按钮</KButton
-      >
+        <template #iconRight><IconArrowBottom /></template>
+        按钮
+      </KButton>
       <KButton text>
         <template #iconLeft>
           <IconAdd />
         </template>
-        <template #iconRight> <IconArrowBottom /> </template>
-        按钮</KButton
-      >
+        <template #iconRight><IconArrowBottom /></template>
+        按钮
+      </KButton>
       <KButton icon>
         <IconAdd />
       </KButton>
@@ -124,30 +146,30 @@
         <template #iconLeft>
           <IconAdd />
         </template>
-        <template #iconRight> <IconArrowBottom /> </template>
-        普通</KButton
-      >
+        <template #iconRight><IconArrowBottom /></template>
+        普通
+      </KButton>
       <KButton size="sm" main>
         <template #iconLeft>
           <IconAdd />
         </template>
-        <template #iconRight> <IconArrowBottom /> </template>
-        主要</KButton
-      >
+        <template #iconRight><IconArrowBottom /></template>
+        主要
+      </KButton>
       <KButton size="sm" secondary>
         <template #iconLeft>
           <IconAdd />
         </template>
-        <template #iconRight> <IconArrowBottom /> </template>
-        按钮</KButton
-      >
+        <template #iconRight><IconArrowBottom /></template>
+        按钮
+      </KButton>
       <KButton size="sm" text>
         <template #iconLeft>
           <IconAdd />
         </template>
-        <template #iconRight> <IconArrowBottom /> </template>
-        按钮</KButton
-      >
+        <template #iconRight><IconArrowBottom /></template>
+        按钮
+      </KButton>
       <KButton size="sm" icon>
         <IconAdd />
       </KButton>
@@ -159,5 +181,4 @@
 import { ref, reactive } from 'vue';
 import { KButton } from '@components';
 </script>
-<style scoped>
-</style>
+<style scoped></style>
