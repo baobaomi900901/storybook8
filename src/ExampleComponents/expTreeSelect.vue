@@ -7,17 +7,22 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="epx-title">组件</div>
-
-    <div class="epx-title-sub">type:</div>
-    <div class="flex items-center gap-2">
+    <div class="epx-title">KTreeSelect</div>
+    <div class="epx-title-sub">多选:</div>
+    <div class="flex items-center gap-2 w-60">
+      <!-- 
+       * multiple:多选
+       * filterable:可搜索
+       * clearable:可清除
+        !-->
       <KTreeSelect
         v-model="value"
         :data="data"
-        :multiple="true"
-        :filterable="true"
-        :clearable="true"
         :placeholder="'请选择'"
+        show-checkbox
+        multiple
+        filterable
+        clearable
       ></KTreeSelect>
     </div>
   </div>

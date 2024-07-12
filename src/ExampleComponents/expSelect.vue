@@ -7,8 +7,7 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="epx-title">组件</div>
-
+    <div class="epx-title">KSelect</div>
     <div class="epx-title-sub">type:</div>
     <div class="flex items-center gap-2 w-60">
       <KSelect v-model="value">
@@ -31,17 +30,16 @@ const value = ref();
 const data = [
   {
     value: '1',
-    label: 'Option 1'
+    label: 'Option 1',
   },
   {
     value: '2',
-    label: 'Option 2'
+    label: 'Option 2',
   },
   {
     value: '3',
-    label: 'Option 3'
-  }
+    label: 'Option 3',
+  },
 ];
 </script>
-<style scoped>
-</style>
+<style scoped></style>

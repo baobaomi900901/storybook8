@@ -7,26 +7,18 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="epx-title">组件</div>
+    <div class="epx-title">KTabs, KTabPane</div>
 
     <div class="epx-title-sub">type:</div>
     <div class="flex items-center gap-2">
-      <k-tabs
-      v-model="activeName"
-    >
-      <k-tab-pane label="tab1" name="tab1" closable>
-        <template #label>
-          tab1123123123123123
-        </template>
-        Curren tab is tab1
-      </k-tab-pane>
-      <k-tab-pane label="tab2" :icon="Edit" name="tab2" closable>
-        Curren tab is tab2
-      </k-tab-pane>
-      <k-tab-pane label="tab3" name="tab3">
-        Curren tab is tab3
-      </k-tab-pane>
-    </k-tabs>
+      <KTabs v-model="activeName">
+        <KTabPane label="tab1" name="tab1" closable>
+          <template #label>tab1123123123123123</template>
+          Curren tab is tab1
+        </KTabPane>
+        <KTabPane label="tab2" :icon="Edit" name="tab2" closable>Curren tab is tab2</KTabPane>
+        <KTabPane label="tab3" name="tab3">Curren tab is tab3</KTabPane>
+      </KTabs>
     </div>
   </div>
 </template>
@@ -38,5 +30,4 @@ import { Edit, Star, Delete, Eleme } from '@element-plus/icons-vue';
 
 const activeName = ref('tab1');
 </script>
-<style scoped>
-</style>
+<style scoped></style>

@@ -1,9 +1,5 @@
 <template>
   <div id="menu" class="menu">
-    <!-- <router-link to="/flow-page" class="menu-item">
-      <span class="">flowPage</span>
-    </router-link> -->
-
     <router-link v-for="item in menuItem" :key="item.path" :to="item.path" class="menu-item">
       <span class="">{{ item.name }}</span>
     </router-link>

@@ -7,8 +7,7 @@
 !-->
 <template>
   <div class="epx-container">
-    123
-    <div class="epx-title">k-radio</div>
+    <div class="epx-title">KRadio, KRadioGroup</div>
     <div class="epx-title-sub">单独使用:</div>
     <div class="flex items-star gap-4">
       <KRadio

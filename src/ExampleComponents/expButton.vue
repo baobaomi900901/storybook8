@@ -7,7 +7,7 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="epx-title">k-button</div>
+    <div class="epx-title">KButton</div>
 
     <div class="epx-title-sub">按钮类型:</div>
     <div class="flex items-star gap-4">

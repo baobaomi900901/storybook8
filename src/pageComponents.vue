@@ -28,12 +28,17 @@ const data = [
     path: '/components/input',
   },
   {
-    name: 'tabs | 标签页',
-    path: '/components/tabs',
+    name: 'select | 选择器',
+    path: '/components/select',
   },
+
   {
     name: 'tree-select | 树选择器',
     path: '/components/tree-select',
+  },
+  {
+    name: 'tabs | 标签页',
+    path: '/components/tabs',
   },
 ];
 </script>
