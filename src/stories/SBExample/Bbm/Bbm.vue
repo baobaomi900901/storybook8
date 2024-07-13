@@ -12,13 +12,12 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps, withDefaults } from "vue";
+import { withDefaults } from 'vue';
 const props = withDefaults(
   defineProps<{
     label: string;
   }>(),
-  { label: "bbm1" }
+  { label: 'bbm1' },
 );
 </script>
-<style scoped>
-</style>
+<style scoped></style>

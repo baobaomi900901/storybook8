@@ -1,6 +1,8 @@
 # KSW-UX 组件库文档&示例
 
-技术栈: Vue 3 + TypeScript + Vite + StroyBook8
+技术栈:
+
+- Vue 3, TypeScript, Vite, Tailwindcss, less, StroyBook8
 
 ## 目录结构
 
@@ -24,4 +26,10 @@
 └── vite.config.ts
 ```
 
-## Recommended Setup
+## 注意事项
+
+常用命令:
+
+- `npm run dev`: 启动 测试环境示例
+- `npm run sb`: 启动 storybook
+- `npm run watch` : 监听 tailwindcss 变化并编译

@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, defineProps } from 'vue';
+import { ref, reactive } from 'vue';
 
 const props = defineProps({
   menuItem: undefined,
