@@ -1,10 +1,27 @@
-# Vue 3 + TypeScript + Vite
+# KSW-UX 组件库文档&示例
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+技术栈: Vue 3 + TypeScript + Vite + StroyBook8
+
+## 目录结构
+
+```
+.
+├── .storybook | storybook 配置文件
+├── .kswux | storybook 配置文件
+├── public | 静态资源, 里面有分包文字
+├── src
+│   ├──  Docs | 组件文档, storybook 示例
+│   ├──  ExampleComponents | 组件调试示例
+│   ├──  ExamplePage | 页面调试示例
+│   ├──  router |  路由(pnpm run dev)
+│   ├──  stories | sb 官方示例(将来移除)
+│   ├──  task | 临时需求文件(将来移除)
+│   ├──  input.css | tailwindcss watch入口文件
+│   ├──  output.css | tailwindcss watch 输出文件
+├── vite.config.ts
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
 
 ## Recommended Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
-
-- Use [vue-tsc](https://github.com/vuejs/language-tools/tree/master/packages/tsc) for performing the same type checking from the command line, or for generating d.ts files for SFCs.
-

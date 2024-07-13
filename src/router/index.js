@@ -12,10 +12,16 @@ import {
   expTreeSelect,
 } from '../ExampleComponents';
 import { flowPage } from '../ExamplePage';
-import pageComponents from '../pageComponents.vue';
-import pageTemplate from '../pageTemplate.vue';
+import { home } from '../pages';
+import pageComponents from '../pages/pageComponents.vue';
+import pageTemplate from '../pages/pageTemplate.vue';
 
 const routes = [
+  {
+    path: '/',
+    component: home,
+    name: 'home',
+  },
   {
     path: '/components',
     component: pageComponents,

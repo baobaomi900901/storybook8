@@ -13,7 +13,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import Menu from './components/menu.vue';
+import Menu from '../components/menu.vue';
 const data = [
   {
     name: 'button | 按钮',

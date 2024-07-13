@@ -15,7 +15,30 @@
         <KInput v-model="value" placeholder="请输入内容"></KInput>
       </div>
       <div class="w-80">
-        <KInput v-model="value" placeholder="请输入内容" disabled></KInput>
+        <KInput v-model="value" placeholder="请输入内容"></KInput>
+      </div>
+    </div>
+
+    <div class="epx-title-sub" @click="handleClick">图标(prefix-icon, suffix-icon)</div>
+    <div class="flex items-star gap-2">
+      <div class="w-80">
+        <KInput v-model="value" placeholder="请输入内容" prefix-icon="IconAdd"></KInput>
+      </div>
+      <div class="w-80">
+        <KInput v-model="value" placeholder="请输入内容" suffix-icon="IconDelete" disabled></KInput>
+      </div>
+    </div>
+    <div class="epx-title-sub" @click="handleClick">插槽(prefix, suffix)</div>
+    <div class="flex items-star gap-2">
+      <div class="w-80">
+        <KInput v-model="value" placeholder="请输入内容">
+          <template #prefix>
+            <IconAdd @click="handleClick('add')"></IconAdd>
+          </template>
+          <template #suffix>
+            <IconDelete @click="handleClick('delete')"></IconDelete>
+          </template>
+        </KInput>
       </div>
     </div>
 
@@ -366,14 +389,18 @@ const data = [
     label: 'Option 3',
   },
 ];
+
+const handleClick = (type) => {
+  console.log('click ==>', type);
+};
 </script>
 <style lang="less">
-.k-input {
-  .el-input-group__prepend,
-  .el-input-group__append {
-    .k-input-slot--string {
-      color: red;
-    }
-  }
-}
+// .k-input {
+//   .el-input-group__prepend,
+//   .el-input-group__append {
+//     .k-input-slot--string {
+//       color: red;
+//     }
+//   }
+// }
 </style>
