@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
-// createWebHistory
-// createWebHashHistory, 带哈希值 #
 
+// 引入页面
+import { home, pageComponents, pageTemplate } from '../pages';
 // 引入示例组件
 import {
   expButton,
@@ -11,10 +11,9 @@ import {
   expTabs,
   expTreeSelect,
 } from '../ExampleComponents';
+
+// 引入示例页面
 import { flowPage } from '../ExamplePage';
-import { home } from '../pages';
-import pageComponents from '../pages/pageComponents.vue';
-import pageTemplate from '../pages/pageTemplate.vue';
 
 const routes = [
   {
@@ -42,6 +41,9 @@ const routes = [
     children: [{ path: 'flow-page', component: flowPage, name: 'flow-page' }],
   },
 ];
+
+// createWebHistory, 无哈希值 #
+// createWebHashHistory, 带哈希值 #
 const router = createRouter({
   history: createWebHashHistory(),
   routes,

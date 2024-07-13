@@ -1,3 +1,5 @@
 import home from './home.vue';
+import pageComponents from './pageComponents.vue';
+import pageTemplate from './pageTemplate.vue';
 
-export { home };
+export { home, pageComponents, pageTemplate };
