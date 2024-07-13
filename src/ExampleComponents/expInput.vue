@@ -41,6 +41,18 @@
         </KInput>
       </div>
     </div>
+    <div class="flex items-star gap-2">
+      <div class="w-80">
+        <KInput v-model="value" placeholder="选择运行机器">
+          <template #prefix>
+            <IconBot color="#2882FF" @click="handleClick('bot')" />
+          </template>
+          <template #append>
+            <KButton main icon-left="IconIdePlay">运行</KButton>
+          </template>
+        </KInput>
+      </div>
+    </div>
 
     <div class="epx-title-sub">密码:</div>
     <div class="flex items-star gap-2">
@@ -356,14 +368,6 @@
         </KInput>
       </div>
     </div>
-    <!-- <KSelect v-model="selectValue">
-        <KOption
-          v-for="item in data"
-          :key="item.selectValue"
-          :value="item.selectValue"
-          :label="item.label"
-        ></KOption>
-      </KSelect> -->
   </div>
 </template>
 
