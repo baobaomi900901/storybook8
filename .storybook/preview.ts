@@ -1,5 +1,4 @@
 import type { Preview } from '@storybook/vue3';
-import '../kswux/package/style/general.css';
 import '../kswux/package/style/variable.css';
 import 'ksw-vue-icon/styles/icon.css';
 import '@iframe-resizer/child';
@@ -21,10 +20,10 @@ export const preview: Preview = {
     controls: {
       matchers: {
         color: /(background|color)$/i,
-        date: /Date$/i
-      }
-    }
-  }
+        date: /Date$/i,
+      },
+    },
+  },
 };
 
 // export default preview;

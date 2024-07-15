@@ -36,16 +36,26 @@ const value = ref();
 const data = [
   {
     value: '1',
-    label: 'Level one 1',
+    label: '金融科技部',
     children: [
       {
         value: '1-1',
-        label: 'Level two 1-1',
+        label: '运维1组',
         children: [
           {
             value: '1-1-1',
-            label: 'Level three 1-1-1',
-            icon: 'IconPlugInFirefoxColor',
+            label: '测试专用机器',
+            icon: 'IconSystemTypeWindowsColor',
+          },
+          {
+            value: '1-1-2',
+            label: '测试专用机器2',
+            icon: 'IconSystemTypeLinuxColor',
+          },
+          {
+            value: '1-1-3',
+            label: '测试专用机器3',
+            icon: 'IconSystemTypeAndroidColor',
           },
         ],
       },
@@ -72,32 +82,6 @@ const data = [
           {
             value: '2-2-1',
             label: 'Level three 2-2-1',
-          },
-        ],
-      },
-    ],
-  },
-  {
-    value: '3',
-    label: 'Level one 3',
-    children: [
-      {
-        value: '3-1',
-        label: 'Level two 3-1',
-        children: [
-          {
-            value: '3-1-1',
-            label: 'Level three 3-1-1',
-          },
-        ],
-      },
-      {
-        value: '3-2',
-        label: 'Level two 3-2',
-        children: [
-          {
-            value: '3-2-1',
-            label: 'Level three 3-2-1',
           },
         ],
       },

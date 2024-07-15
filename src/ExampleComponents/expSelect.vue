@@ -19,6 +19,16 @@
         ></KOption>
       </KSelect>
     </div>
+    <div class="flex items-center gap-2 w-60">
+      <KSelect v-model="value" size="sm">
+        <KOption
+          v-for="item in data"
+          :key="item.value"
+          :value="item.value"
+          :label="item.label"
+        ></KOption>
+      </KSelect>
+    </div>
   </div>
 </template>
 
