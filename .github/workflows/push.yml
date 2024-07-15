@@ -22,6 +22,7 @@ jobs:
         git submodule foreach 'git fetch --all'
         git submodule foreach 'git checkout dev'
         git submodule foreach 'git pull origin dev'
+        git submodule foreach 'npm install'
 
     - uses: actions/setup-node@v3
       with:
