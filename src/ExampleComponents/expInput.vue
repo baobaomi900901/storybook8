@@ -31,7 +31,7 @@
     <div class="epx-title-sub" @click="handleClick">插槽(prefix, suffix)</div>
     <div class="flex items-star gap-2">
       <div class="w-80">
-        <KInput v-model="value" placeholder="请输入内容">
+        <KInput v-model="value" placeholder="请输入内容" disabled>
           <template #prefix>
             <IconAdd @click="handleClick('add')"></IconAdd>
           </template>

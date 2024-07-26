@@ -84,6 +84,20 @@
         <KRadio v-model="value" label="直角" value="直角" size="sm" button disabled></KRadio>
       </KRadioGroup>
     </div>
+
+    <div class="epx-title-sub">自定义颜色:</div>
+    <div class="flex items-star gap-4">
+      <KRadioGroup v-model="value">
+        <KRadio
+          v-for="item in radioData"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+          color="#ff5500"
+        ></KRadio>
+        <KRadio v-model="value" label="直角" value="直角" color="#ff5500" disabled></KRadio>
+      </KRadioGroup>
+    </div>
   </div>
 </template>
 

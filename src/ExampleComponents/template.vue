@@ -10,7 +10,7 @@
     <div class="epx-title">组件</div>
 
     <div class="epx-title-sub">type:</div>
-    <div class="flex items-center gap-2"></div>
+    <div class="flex items-start gap-2"></div>
   </div>
 </template>
 
@@ -20,5 +20,4 @@ import {} from '@components';
 
 const value = ref();
 </script>
-<style scoped>
-</style>
+<style scoped></style>

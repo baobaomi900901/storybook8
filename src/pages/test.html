@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../output.css">
+    <title>Document</title>
+  </head>
+  <body class="flex flex-col justify-center items-center h-screen">
+    <div class="wrap flex flex-col  w-80">
+      <div class="txt" data-title="这是一段可以自动出现tooltip的文本12312312312312312">
+        这是一段可以自动出现tooltip的文本12312312312312312
+      </div>
+        <div class="txt" data-title="比较少">
+        比较少
+      </div>
+        <div class="txt" data-title="这是一段可以自动出现tooltip的文本123123123123">
+          这是一段可以自动出现tooltip的文本123123123123
+      </div>
+    </div>
+</html>
+<style>
+.wrap{
+  position: relative;
+}
+.txt{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 8px;
+  outline: 1px dashed #9747FF;
+  font-family: cursive;
+  border-radius: 4px;
+}
+.txt::after{
+  content: attr(data-title);
+  position: absolute;
+  top: 0;
+  width: fit-content;
+  left: 50%;
+  margin: auto;
+  transform: translate(-50%,-100%);
+  background-color: rgba(0,0,0,.6);
+  padding: .3em 1em;
+  border-radius: 4px;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s .1s;
+}
+.txt{
+  --trunc: false;
+  animation: check 1s;
+  animation-timeline: scroll(x self);
+}
+@keyframes check{
+  from,to {
+    --trunc: true;
+  }
+}
+@container style(--trunc: true) {
+  .txt:hover::after{
+    opacity: 1;
+    visibility: visible;
+  }
+}
+</style>

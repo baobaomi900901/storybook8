@@ -8,8 +8,8 @@
 <template>
   <div class="epx-container">
     <div class="epx-title">KSelect</div>
-    <div class="epx-title-sub">type:</div>
-    <div class="flex items-center gap-2 w-60">
+    <div class="epx-title-sub">size:</div>
+    <div class="flex items-start gap-2 w-60">
       <KSelect v-model="value">
         <KOption
           v-for="item in data"
@@ -18,9 +18,27 @@
           :label="item.label"
         ></KOption>
       </KSelect>
-    </div>
-    <div class="flex items-center gap-2 w-60">
       <KSelect v-model="value" size="sm">
+        <KOption
+          v-for="item in data"
+          :key="item.value"
+          :value="item.value"
+          :label="item.label"
+        ></KOption>
+      </KSelect>
+    </div>
+
+    <div class="epx-title-sub">禁用:</div>
+    <div class="flex items-start gap-2 w-60">
+      <KSelect v-model="value" disabled>
+        <KOption
+          v-for="item in data"
+          :key="item.value"
+          :value="item.value"
+          :label="item.label"
+        ></KOption>
+      </KSelect>
+      <KSelect v-model="value" size="sm" disabled>
         <KOption
           v-for="item in data"
           :key="item.value"
@@ -51,5 +69,9 @@ const data = [
     label: 'Option 3',
   },
 ];
+
+const handleClick = () => {
+  console.log('click');
+};
 </script>
 <style scoped></style>

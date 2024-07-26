@@ -10,10 +10,12 @@ import {
   expSelect,
   expTabs,
   expTreeSelect,
+  expCheckbox,
+  expTag,
 } from '../ExampleComponents';
 
 // 引入示例页面
-import { flowPage } from '../ExamplePage';
+import { flowPage, customColor, stashLayout, expPageTable, expPageTable2 } from '../ExamplePage';
 
 const routes = [
   {
@@ -32,13 +34,27 @@ const routes = [
       { path: 'select', component: expSelect, name: 'select' },
       { path: 'tabs', component: expTabs, name: 'tabs' },
       { path: 'tree-select', component: expTreeSelect, name: 'tree-select' },
+      { path: 'checkbox', component: expCheckbox, name: 'checkbox' },
+      { path: 'tag', component: expTag, name: 'tag' },
     ],
   },
   {
     path: '/template',
     component: pageTemplate,
     name: 'template',
-    children: [{ path: 'flow-page', component: flowPage, name: 'flow-page' }],
+    children: [
+      { path: 'flow-page', component: flowPage, name: 'flow-page' },
+      { path: 'custom-color', component: customColor, name: 'custom-color' },
+      {
+        path: 'stash-layout',
+        component: stashLayout,
+        name: 'stash-layout',
+        children: [
+          { path: 'exp-page-table', component: expPageTable, name: 'exp-page-table' },
+          { path: 'exp-page-table2', component: expPageTable2, name: 'exp-page-table2' },
+        ],
+      },
+    ],
   },
 ];
 

@@ -11,8 +11,9 @@
 
     <div class="epx-title-sub">按钮类型:</div>
     <div class="flex items-star gap-4">
-      <KButton>普通</KButton>
-      <KButton main>主要</KButton>
+      <k-button @click="handleClick" disabled>Delete</k-button>
+      <KButton @click="handleClick" disabled>普通</KButton>
+      <KButton @click="handleClick" main>主要</KButton>
       <KButton secondary>按钮</KButton>
       <KButton text>按钮</KButton>
       <KButton icon>
@@ -180,5 +181,26 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import { KButton } from '@components';
+
+const handleClick = () => {
+  console.log('click');
+};
 </script>
-<style scoped></style>
+<style scoped>
+.vvn {
+  position: relative;
+}
+.vvn::after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  background-color: red;
+  padding: 0.125rem 0.25rem;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+.vvn:hover::after {
+  opacity: 1;
+}
+</style>

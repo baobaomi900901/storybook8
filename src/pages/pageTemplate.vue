@@ -6,7 +6,7 @@
 * @version V3.0.0
 !-->
 <template>
-  <div id="pageTemplate" class="pageTemplate">模板示例:</div>
+  <div id="pageTemplate" class="pageTemplate"></div>
   <Menu :menuItem="data" />
   <router-view />
 </template>
@@ -14,11 +14,18 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import Menu from '../components/menu.vue';
-const data = [
-  {
-    name: 'flow-page | 流程节点动画',
-    path: '/template/flow-page',
-  },
-];
+import { useRouter } from 'vue-router';
+const router = useRouter();
+const data = [];
+// 读取router 结构
+const routerPath = router.currentRoute.value.matched[0].children;
+routerPath.forEach((item) => {
+  if (!item.path.includes('/template/')) {
+    item.path = '/template/' + item.path;
+  }
+  data.push(item);
+});
+// 读取路由结构
+// const route = reactive(router.currentRoute.value);
 </script>
 <style scoped></style>

@@ -4,5 +4,7 @@ import expInput from './expInput.vue';
 import expSelect from './expSelect.vue';
 import expTabs from './expTabs.vue';
 import expTreeSelect from './expTreeSelect.vue';
+import expCheckbox from './expCheckbox.vue';
+import expTag from './expTag.vue';
 
-export { expButton, expRadio, expInput, expSelect, expTabs, expTreeSelect };
+export { expButton, expRadio, expInput, expSelect, expTabs, expTreeSelect, expCheckbox, expTag };

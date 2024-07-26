@@ -1,5 +1,5 @@
 <template>
-  <div id="menu" class="menu">
+  <div id="menu" class="menu" :class="[{ show: store.showMenuType }]">
     <router-link v-for="item in menuItem" :key="item.path" :to="item.path" class="menu-item">
       <span class="">{{ item.name }}</span>
     </router-link>
@@ -7,7 +7,9 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
+import useMainStore from '../store';
+const store = useMainStore();
 
 const props = defineProps({
   menuItem: undefined,
@@ -22,7 +24,12 @@ const props = defineProps({
   gap: 0.5rem;
   display: flex;
   border: 1px solid #eee;
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 2rem;
+  display: none;
+}
+.show {
+  display: inline-block;
+  /* visibility: hidden; */
 }
 .router-link-active {
   color: #1890ff;
