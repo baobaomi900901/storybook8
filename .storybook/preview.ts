@@ -1,9 +1,9 @@
-import type { Preview } from '@storybook/vue3';
+import { Preview, setup } from '@storybook/vue3';
 import '../kswux/package/style/variable.css';
 import 'ksw-vue-icon/styles/icon.css';
 import '@iframe-resizer/child';
+import '/public/font/result.css'; // 全局字体
 import elementPlus from 'element-plus';
-import { setup } from '@storybook/vue3';
 import install from '../kswux/package/index'; // 全局注册组件
 import { KswIcon } from 'ksw-vue-icon';
 import '../src/output.css';
@@ -15,7 +15,7 @@ setup((app) => {
   install(app);
 });
 
-export const preview: Preview = {
+const preview: Preview  = {
   parameters: {
     controls: {
       matchers: {
@@ -26,4 +26,4 @@ export const preview: Preview = {
   },
 };
 
-// export default preview;
+export default preview;

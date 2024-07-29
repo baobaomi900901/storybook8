@@ -1,17 +1,22 @@
 import { create } from '@storybook/theming/create';
 
 export default create({
-  base: 'dark', // or 'light',基于dark主题
+  base: 'light', // or 'light',基于dark主题
   fontBase: '"Open Sans", sans-serif', // 字体
   fontCode: 'monospace', // 代码字体
   // 左侧导航栏配置:
-  brandTitle: 'My custom Storybook', // 图片加载不出来时显示的文字
-  brandUrl: 'https://example.com', // logo链接
-  brandImage: 'https://cdn.donxj.com/img/klogo-text-dark.svg', // logo 图片来源
+  brandTitle: `
+    <div style="display: grid; grid-template-columns: min-content auto; gap: 4px; align-items: center;">
+      <img src="/favicon.svg"/>
+      <span>@ksware/ksw-ux</span>
+    </div>
+  `, // 图片加载不出来时显示的文字
+  brandUrl: '/', // logo链接
+  // brandImage: '/favicon.svg', // logo 图片来源
   brandTarget: '_self', //
   // 主题色配置
-  colorPrimary: '#2882FF', // 主要色
-  colorSecondary: '#585C6D' // 导航栏图标颜色与选中颜色
+  // colorPrimary: '#2882FF', // 主要色
+  // colorSecondary: '#585C6D' // 导航栏图标颜色与选中颜色
   //   // UI
   //   appBg: '#38363c', // 左侧导航栏背景色
   //   appContentBg: '#ffffff', // 徽章颜色
