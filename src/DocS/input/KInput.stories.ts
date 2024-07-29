@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { KInput } from '@components';
 import { ref } from 'vue';
-import { de } from 'element-plus/es/locale';
 const meta = {
   title: 'Data Entry(DE)/KInput',
   component: KInput,
@@ -9,42 +8,42 @@ const meta = {
   argTypes: {
     type: {
       control: 'text',
-      description: '原生input类型'
+      description: '原生input类型',
     },
     clearable: {
       control: 'boolean',
-      description: '是否可清空'
+      description: '是否可清空',
     },
     showPassword: {
       control: 'boolean',
-      description: '是否显示密码'
+      description: '是否显示密码',
     },
     maxlength: {
       control: 'number',
-      description: '最大输入长度'
+      description: '最大输入长度',
     },
     showWordLimit: {
       control: 'boolean',
-      description: '显示输入字数限制'
+      description: '显示输入字数限制',
     },
     autosize: {
       control: 'object',
-      description: '文本域自适应高度, 接收对象例如 { minRows: 2, maxRows: 6 }'
+      description: '文本域自适应高度, 接收对象例如 { minRows: 2, maxRows: 6 }',
     },
     blur: {
-      description: 'el, 使 input 失去 焦点'
+      description: 'el, 使 input 失去 焦点',
     },
     focus: {
-      description: 'el, 使 input 获取 焦点'
+      description: 'el, 使 input 获取 焦点',
     },
     select: {
-      description: 'el, 选中 input 中的文字'
+      description: 'el, 选中 input 中的文字',
     },
     resizeTextarea: {
-      description: 'el, 改变 textarea 大小'
-    }
+      description: 'el, 改变 textarea 大小',
+    },
   },
-  args: {}
+  args: {},
 } satisfies Meta<typeof KInput>;
 export default meta;
 
@@ -53,7 +52,7 @@ export const def: Story = {
   name: '默认用法',
   args: {
     type: 'text',
-    clearable: false
+    clearable: false,
   },
   render: (args: any) => {
     const text = ref('');
@@ -67,9 +66,9 @@ export const def: Story = {
         <k-input v-model="text" type="text" :clearable="args.clearable">
         </k-input>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 
 import disabled from './disabled.vue';
@@ -81,15 +80,15 @@ export const disabledSB: Story = {
     setup() {
       return { args };
     },
-    template: '<disabled v-bind="args" />'
+    template: '<disabled v-bind="args" />',
   }),
   parameters: {
     docs: {
       source: {
-        code: disabledDoc
-      }
-    }
-  }
+        code: disabledDoc,
+      },
+    },
+  },
 };
 
 import clearable from './clearable.vue';
@@ -101,15 +100,15 @@ export const clearableSB: Story = {
     setup() {
       return { args };
     },
-    template: '<clearable v-bind="args" />'
+    template: '<clearable v-bind="args" />',
   }),
   parameters: {
     docs: {
       source: {
-        code: clearableDoc
-      }
-    }
-  }
+        code: clearableDoc,
+      },
+    },
+  },
 };
 
 import showPassword from './showPassword.vue';
@@ -121,15 +120,15 @@ export const showPasswordSB: Story = {
     setup() {
       return { args };
     },
-    template: '<showPassword v-bind="args" />'
+    template: '<showPassword v-bind="args" />',
   }),
   parameters: {
     docs: {
       source: {
-        code: showPasswordDoc
-      }
-    }
-  }
+        code: showPasswordDoc,
+      },
+    },
+  },
 };
 
 import ktextarea from './textarea.vue';
@@ -141,15 +140,15 @@ export const textareaSB: Story = {
     setup() {
       return { args };
     },
-    template: '<ktextarea v-bind="args" />'
+    template: '<ktextarea v-bind="args" />',
   }),
   parameters: {
     docs: {
       source: {
-        code: textareaDoc
-      }
-    }
-  }
+        code: textareaDoc,
+      },
+    },
+  },
 };
 
 import maxInput from './maxInput.vue';
@@ -161,16 +160,42 @@ export const maxInputSB: Story = {
     setup() {
       return { args };
     },
-    template: '<maxInput v-bind="args" />'
+    template: '<maxInput v-bind="args" />',
   }),
   parameters: {
     docs: {
       source: {
-        code: maxInputDoc
-      }
-    }
-  }
+        code: maxInputDoc,
+      },
+    },
+  },
 };
+
+import frontAndRearSlots from './frontAndRearSlots.vue';
+import frontAndRearSlotsDoc from './frontAndRearSlots.vue?raw';
+export const frontAndRearSlotsSB: Story = {
+  name: 'frontAndRearSlots : 前后插槽',
+  render: (args: any) => ({
+    components: { frontAndRearSlots },
+    setup() {
+      return { args };
+    },
+    template: '<frontAndRearSlots v-bind="args" />',
+  }),
+  parameters: {
+    docs: {
+      source: {
+        code: frontAndRearSlotsDoc,
+      },
+    },
+  },
+};
+
+import { bbm } from './t.ts';
+
+// console.log(bbm(disabled, 'BBMdisabled', disabledDoc));
+
+export const disabledSB2 = bbm(disabled, 'BBMdisabled', disabledDoc, disabled.name);
 
 // TODO: 开发, input 尺寸
 // export const def8: Story = {

@@ -22,6 +22,7 @@
         </template>
         BBM900901
       </KTooltip>
+      <KTooltip placement="top-start">BBM900901</KTooltip>
     </div>
   </div>
 </template>
