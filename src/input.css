@@ -35,6 +35,10 @@
   @apply text-lg font-bold my-2;
 }
 
+.sb-title-sub {
+  @apply text-sm my-2;
+}
+
 .bbm123 {
   font-size: 123px;
   border: 1px solid red;

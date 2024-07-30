@@ -12,6 +12,7 @@ import {
   expTreeSelect,
   expCheckbox,
   expTag,
+  expInputNumber,
 } from '../ExampleComponents';
 
 // 引入示例页面
@@ -36,6 +37,7 @@ const routes = [
       { path: 'tree-select', component: expTreeSelect, name: 'tree-select' },
       { path: 'checkbox', component: expCheckbox, name: 'checkbox' },
       { path: 'tag', component: expTag, name: 'tag' },
+      { path: 'input-number', component: expInputNumber, name: 'input-number' },
     ],
   },
   {

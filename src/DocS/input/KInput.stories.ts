@@ -71,131 +71,32 @@ export const def: Story = {
   },
 };
 
+import { ATExample } from '../../hooks';
 import disabled from './disabled.vue';
 import disabledDoc from './disabled.vue?raw';
-export const disabledSB: Story = {
-  name: 'disabled : 禁止输入',
-  render: (args: any) => ({
-    components: { disabled },
-    setup() {
-      return { args };
-    },
-    template: '<disabled v-bind="args" />',
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: disabledDoc,
-      },
-    },
-  },
-};
-
 import clearable from './clearable.vue';
 import clearableDoc from './clearable.vue?raw';
-export const clearableSB: Story = {
-  name: 'clearable : 一键清空',
-  render: (args: any) => ({
-    components: { clearable },
-    setup() {
-      return { args };
-    },
-    template: '<clearable v-bind="args" />',
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: clearableDoc,
-      },
-    },
-  },
-};
-
 import showPassword from './showPassword.vue';
 import showPasswordDoc from './showPassword.vue?raw';
-export const showPasswordSB: Story = {
-  name: 'showPassword : 显示密码',
-  render: (args: any) => ({
-    components: { showPassword },
-    setup() {
-      return { args };
-    },
-    template: '<showPassword v-bind="args" />',
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: showPasswordDoc,
-      },
-    },
-  },
-};
-
 import ktextarea from './textarea.vue';
 import textareaDoc from './textarea.vue?raw';
-export const textareaSB: Story = {
-  name: 'textarea : 文本域',
-  render: (args: any) => ({
-    components: { ktextarea },
-    setup() {
-      return { args };
-    },
-    template: '<ktextarea v-bind="args" />',
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: textareaDoc,
-      },
-    },
-  },
-};
-
 import maxInput from './maxInput.vue';
 import maxInputDoc from './maxInput.vue?raw';
-export const maxInputSB: Story = {
-  name: 'maxInput : 文本域',
-  render: (args: any) => ({
-    components: { maxInput },
-    setup() {
-      return { args };
-    },
-    template: '<maxInput v-bind="args" />',
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: maxInputDoc,
-      },
-    },
-  },
-};
-
 import frontAndRearSlots from './frontAndRearSlots.vue';
 import frontAndRearSlotsDoc from './frontAndRearSlots.vue?raw';
-export const frontAndRearSlotsSB: Story = {
-  name: 'frontAndRearSlots : 前后插槽',
-  render: (args: any) => ({
-    components: { frontAndRearSlots },
-    setup() {
-      return { args };
-    },
-    template: '<frontAndRearSlots v-bind="args" />',
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: frontAndRearSlotsDoc,
-      },
-    },
-  },
-};
 
-import { bbm } from './t.ts';
+export const disabledSB = ATExample(disabled, 'disabled : 禁止输入', disabledDoc);
+export const clearableSB = ATExample(clearable, 'clearable : 一键清空', clearableDoc);
+export const showPasswordSB = ATExample(showPassword, 'showPassword : 显示密码', showPasswordDoc);
+export const textareaSB = ATExample(ktextarea, 'textarea : 文本域', textareaDoc);
+export const maxInputSB = ATExample(maxInput, 'maxInput : 最大输入长度', maxInputDoc);
+export const frontAndRearSlotsSB = ATExample(
+  frontAndRearSlots,
+  '组合使用&前后插槽',
+  frontAndRearSlotsDoc,
+);
 
 // console.log(bbm(disabled, 'BBMdisabled', disabledDoc));
-
-export const disabledSB2 = bbm(disabled, 'BBMdisabled', disabledDoc, disabled.name);
 
 // TODO: 开发, input 尺寸
 // export const def8: Story = {

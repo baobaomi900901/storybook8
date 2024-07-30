@@ -9,13 +9,13 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['sm', 'base']
+      options: ['sm', 'base'],
     },
     color: {
-      control: 'color'
-    }
+      control: 'color',
+    },
   },
-  args: {}
+  args: {},
 } satisfies Meta<typeof KRadio>;
 
 export default meta;
@@ -26,7 +26,7 @@ export const def: Story = {
   name: '默认',
   args: {
     color: '',
-    size: ''
+    size: '',
   },
   render: (args: any) => {
     return {
@@ -42,29 +42,29 @@ export const def: Story = {
         <KRadio v-model="radioValue" value="2" :color=args.color :size=args.size>锐角</KRadio>
         <KRadio v-model="radioValue" value="0" :color=args.color :size=args.size disabled>90°</KRadio>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 
 import size from './size.vue';
 import sizeDoc from './size.vue?raw';
 export const sizeSB: Story = {
-  name: 'size : 不同尺寸',
+  // name: 'size : 不同尺寸',
   render: (args: any) => ({
     components: { size },
     setup() {
       return { args };
     },
-    template: '<size v-bind="args" />'
+    template: '<size v-bind="args" />',
   }),
   parameters: {
     docs: {
       source: {
-        code: sizeDoc
-      }
-    }
-  }
+        code: sizeDoc,
+      },
+    },
+  },
 };
 
 import color from './color.vue';
@@ -76,13 +76,13 @@ export const colorSB: Story = {
     setup() {
       return { args };
     },
-    template: '<color v-bind="args" />'
+    template: '<color v-bind="args" />',
   }),
   parameters: {
     docs: {
       source: {
-        code: colorDoc
-      }
-    }
-  }
+        code: colorDoc,
+      },
+    },
+  },
 };

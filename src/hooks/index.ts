@@ -1,14 +1,8 @@
 import { Component } from 'Vue';
 
-export function bbm(comp: Component, label: string, compDoc: Component) {
+// Automatic template example: 自动模板示例
+export function ATExample(comp: Component, label: string, compDoc: any) {
   // TODO: 添加类型校验
-
-  const vn = new String('label');
-  console.log(vn instanceof String);
-  console.log(Object.prototype.toString.call(vn));
-  // if (typeof compDoc !== 'object' || typeof comp !== 'object') {
-  //   // return null;
-  // }
   const doc: Story = {
     name: label,
     render: (args: any) => ({
@@ -26,6 +20,5 @@ export function bbm(comp: Component, label: string, compDoc: Component) {
       },
     },
   };
-
   return doc;
 }

@@ -8,7 +8,7 @@
     Check all
   </KCheckbox>
   <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange">
-    <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city">
+    <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city" color="red">
       {{ city }}
     </KCheckbox>
   </KCheckboxGroup>
@@ -19,7 +19,7 @@ import { ref } from 'vue';
 
 const checkAll = ref(false);
 const isIndeterminate = ref(true);
-const checkedCities = ref(['Shanghai', 'Beijing']);
+const checkedCities = ref([]);
 const cities = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen'];
 
 const handleCheckAllChange = (val: boolean) => {

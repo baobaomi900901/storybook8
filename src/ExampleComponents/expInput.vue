@@ -8,7 +8,6 @@
 <template>
   <div class="epx-container">
     <div class="epx-title">KInput</div>
-
     <div class="epx-title-sub">默认</div>
     <div class="flex items-star gap-2">
       <div class="w-80">

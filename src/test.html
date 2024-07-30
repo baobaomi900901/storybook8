@@ -3,27 +3,157 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./output.css" />
+    <style>
+      .box {
+        width: 400px;
+        height: 2.5rem;
+        border: 1px solid #ccc;
+        position: relative;
+        /* overflow: hidden; */
+        overflow-x: scroll;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+      }
+
+      .tabs {
+        height: 100%;
+        display: flex;
+        position: absolute;
+        transition: all 0.2s ease-in-out;
+      }
+      .tab-item {
+        display: inline-block;
+        width: fit-content;
+        padding: 0 1rem;
+        height: 100%;
+        line-height: 2.5rem;
+
+        border-right: 2px solid #ddd;
+      }
+      .btn {
+        border-radius: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        margin-right: 0.5rem;
+        border: 1px solid #ccc;
+        min-width: 32px;
+      }
+    </style>
     <title>Document</title>
   </head>
-  <body>
-    <div class="textarea-wrapper">
-      <textarea id="myTextarea" rows="4" cols="50"></textarea>
-      <span class="textarea-decorator">装饰内容</span>
+  <body class="w-screen h-screen flex flex-col justify-center items-center">
+    <div class="btns">
+      <button class="btn">0</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+    </div>
+    <br />
+    <div class="box">
+      <div class="tabs">
+        <span class="tab-item">item0</span>
+        <span class="tab-item bbm">item1</span>
+        <span class="tab-item">item22</span>
+        <span class="tab-item">item333</span>
+        <span class="tab-item">item4444</span>
+        <span class="tab-item bbm2">item55555</span>
+        <span class="tab-item bbm2">item666666</span>
+        <span class="tab-item bbm2">item7777777</span>
+        <span class="tab-item bbm2">item88888888</span>
+      </div>
     </div>
   </body>
-  <script></script>
+  <script>
+    const btns = document.querySelectorAll('.btn');
+    const tabs = document.querySelector('.tabs');
+    const box = document.querySelector('.box');
+    const tabItems = document.querySelectorAll('.tab-item');
+    let type = true;
+    //  监听 item 位置
+    const itemPosition = [];
+    let boxScrollX = 0; // box 的滚动位置
+    let boxWidth = box.offsetWidth; // box 的宽度
+
+    // 判断tabItems是否在 box boxWidth 内
+    const isItemInBox = (item, index, boxW, boxSX) => {
+      const total = itemPosition.slice(0, index + 1).reduce((acc, cur) => acc + cur, 0);
+      let itemW = itemPosition[index];
+      let res;
+      let scrollNum = 0;
+      if (total - boxSX >= itemW && total - boxSX <= boxW) {
+        // console.log('在中间');
+        res = true;
+      } else if (total - boxSX < itemW) {
+        // console.log('在左边');
+        scrollNum = total - itemW;
+        res = false;
+      } else if (total - boxSX > boxW) {
+        // console.log('在右边');
+        scrollNum = total - boxW;
+        res = false;
+      }
+      return { res, scrollNum };
+    };
+
+    // 监听 box 的滚动
+    box.addEventListener('scroll', () => {
+      boxScrollX = box.scrollLeft;
+      // console.log(boxScrollX);
+    });
+
+    // 获取 tabs 的左侧位置
+    const tabsLeft = tabs.getBoundingClientRect().left;
+
+    // 初始化 获取每个 获取 tab-item 的长度
+    tabItems.forEach((item, index) => {
+      const itemWidth = item.offsetWidth;
+      itemPosition.push(itemWidth);
+    });
+
+    // 点击 tab-item 的时候 位移 tabs
+    tabItems.forEach((item, index) => {
+      item.addEventListener('click', () => {
+        const total = itemPosition.slice(0, index + 0).reduce((acc, cur) => acc + cur, 0);
+        setTimeout(() => {
+          let { res, scrollNum } = isItemInBox(tabItems[index], index, boxWidth, boxScrollX);
+          if (!res) {
+            smoothScroll(box, box.scrollLeft, scrollNum);
+          }
+        }, 1);
+      });
+    });
+
+    // 按钮
+    btns.forEach((btn, index) => {
+      btn.addEventListener('click', () => {
+        const total = itemPosition.slice(0, index + 0).reduce((acc, cur) => acc + cur, 0);
+        setTimeout(() => {
+          let { res, scrollNum } = isItemInBox(tabItems[index], index, boxWidth, boxScrollX);
+          if (!res) {
+            smoothScroll(box, box.scrollLeft, scrollNum);
+          }
+        }, 1);
+      });
+    });
+
+    // 平滑滚动
+    function smoothScroll(target, start, end, duration = 250) {
+      let startTime = null;
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        target.scrollLeft = start + (end - start) * progress;
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+      requestAnimationFrame(animation);
+    }
+  </script>
 </html>
-
-<style>
-  .textarea-wrapper {
-    position: relative;
-  }
-
-  .textarea-decorator {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 5px;
-    background-color: #f9f9f9;
-  }
-</style>
