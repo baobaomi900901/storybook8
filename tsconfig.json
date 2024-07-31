@@ -33,7 +33,7 @@
     "src/**/*.vue",
     "src/**/**/*.vue",
     "vue-shim.d.ts",
-    "src/ExampleComponents/index.js"
+    "src/example Components/index.js"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
