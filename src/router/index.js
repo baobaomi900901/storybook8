@@ -13,10 +13,10 @@ import {
   expCheckbox,
   expTag,
   expInputNumber,
-} from '../ExampleComponents';
+} from '../example Components';
 
 // 引入示例页面
-import { flowPage, customColor, stashLayout, expPageTable, expPageTable2 } from '../ExamplePage';
+import { flowPage, customColor, stashLayout, expPageTable, expPageTable2 } from '../example Page';
 
 const routes = [
   {
