@@ -45,7 +45,7 @@ const generateColors = (hue, rule) => {
 const [, , colorName, fileType] = process.argv;
 
 if (!colorName || !fileType) {
-  console.error('Please provide both color name and file type (.json or .css)');
+  console.error('Please provide both color name and file type (.json , .css or .less)');
   process.exit(1);
 }
 
@@ -57,21 +57,39 @@ const colorData = generateColors(customHue, customRule);
 
 let fileContent;
 
-if (fileType === '.json') {
-  // 将颜色数据转换为 JSON 格式
-  fileContent = JSON.stringify(colorData, null, 2);
-} else if (fileType === '.css') {
-  // 将颜色数据转换为 CSS 变量格式
-  let cssVariables = '';
-  colorData.forEach((group) => {
-    group.colors.forEach((color) => {
-      cssVariables += `  --${color.name}: ${color.color};\n`;
+switch (fileType) {
+  case '.json':
+    fileContent = JSON.stringify(colorData, null, 2);
+    break;
+  case '.css':
+    let cssVariables = '';
+    colorData.forEach((group, i) => {
+      group.colors.forEach((color, j) => {
+        if (j === 0) {
+          cssVariables += `/* ${group.name} colors */  \n`;
+        }
+        cssVariables += `  --k-${color.name}: ${color.color};\n`;
+      });
     });
-  });
-  fileContent = `:root {\n${cssVariables}}`;
-} else {
-  console.error('Unsupported file type. Please use .json or .css');
-  process.exit(1);
+    fileContent = `:root {\n${cssVariables}}`;
+    break;
+  case '.less':
+    let lessVariables = '';
+    colorData.forEach((group, i) => {
+      group.colors.forEach((color, j) => {
+        // 如果是第一个, 添加注释
+        if (j === 0) {
+          lessVariables += `// ${group.name} colors\n`;
+        }
+        lessVariables += `@k-${color.name}: ${color.color};\n`;
+      });
+    });
+    fileContent = `:root{${lessVariables}}`;
+    break;
+  default:
+    console.error('Unsupported file type. Please use .json or .css');
+    process.exit(1);
+    break;
 }
 
 // 写入文件
