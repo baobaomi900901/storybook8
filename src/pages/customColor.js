@@ -1,6 +1,11 @@
 import { cssColorNames } from './const.js';
 
 function computeMappedValue(x, a, b, c, d) {
+  // x: 实际值
+  // a: 实际数轴最小值
+  // b: 实际数轴最大值
+  // c: 映射数轴最小值
+  // d: 映射数轴最大值
   // 计算并返回映射值
   return c + ((x - a) * (d - c)) / (b - a);
 }

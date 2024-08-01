@@ -96,6 +96,8 @@ export const frontAndRearSlotsSB = ATExample(
   frontAndRearSlotsDoc,
 );
 
+setTimeout(() => {}, 1);
+
 // console.log(bbm(disabled, 'BBMdisabled', disabledDoc));
 
 // TODO: 开发, input 尺寸

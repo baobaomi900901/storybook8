@@ -2336,7 +2336,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.33(typescript@5.5.4)
-      vue-component-type-helpers: 2.0.28
+      vue-component-type-helpers: 2.0.29
     dev: true
 
   /@sxzz/popperjs-es@2.11.7:
@@ -6011,6 +6011,10 @@ packages:
 
   /vue-component-type-helpers@2.0.28:
     resolution: {integrity: sha512-hoK0UsKXrXDY9zdpdk+drqOqYHpPhbmfQUJ2mFYK57+l73mQxcYyCteQsolllwGaxhWihT077+OA/FR5ZPTceg==}
+    dev: true
+
+  /vue-component-type-helpers@2.0.29:
+    resolution: {integrity: sha512-58i+ZhUAUpwQ+9h5Hck0D+jr1qbYl4voRt5KffBx8qzELViQ4XdT/Tuo+mzq8u63teAG8K0lLaOiL5ofqW38rg==}
     dev: true
 
   /vue-demi@0.14.9(vue@3.4.33):

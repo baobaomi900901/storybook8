@@ -27,7 +27,7 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const def: Story = {
-  args: {},
+  name: 'Default',
   render: (args: any) => {
     return {
       components: { KTag },
@@ -39,6 +39,7 @@ export const def: Story = {
     };
   },
 };
+console.log(def);
 
 import { ATExample } from '../../hooks';
 import blockComp from './block.vue';
@@ -46,5 +47,14 @@ import blockCompDoc from './block.vue?raw';
 import pointComp from './point.vue';
 import pointCompDoc from './point.vue?raw';
 
-export const blockExample = ATExample(blockComp, '块状标签', blockCompDoc);
-export const pointExample = ATExample(pointComp, '点状标签', pointCompDoc);
+const doc = ATExample(blockComp, '块状标签', blockCompDoc);
+export const blockExample: Story = {
+  name: '块状标签',
+  ...doc,
+};
+
+const doc1 = ATExample(pointComp, '点状标签', pointCompDoc);
+export const pointExample: Story = {
+  name: '点状标签',
+  ...doc1,
+};
