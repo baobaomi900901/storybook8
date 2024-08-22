@@ -13,7 +13,7 @@
     <div class="flex items-center gap-2">
       <KTabs v-model="activeName">
         <KTabPane label="tab1" name="tab1" closable>
-          <template #label>tab1123123123123123</template>
+          <template #label>tab1123123123123123123123123123123123123123123123123123123123</template>
           Curren tab is tab1
         </KTabPane>
         <KTabPane label="tab2" :icon="Edit" name="tab2" closable>Curren tab is tab2</KTabPane>
@@ -22,18 +22,38 @@
     </div>
 
     <div class="epx-title-sub">antV</div>
+
     <KButton @click="fromTo(5)">跳转到 5 页</KButton>
     <KButton @click="fromTo(19)">跳转到 20 页</KButton>
     <div class="flex items-center gap-2">
       <div ref="boxCenter" class="boxCenter w-80">
-        <KTabs v-model="activeName2" :id="id">
+        <!-- <KTabs v-model="activeName2" :id="id">
           <k-tab-pane v-for="index in 20" :label="'tab' + index" :name="'tab' + index">
             Curren tab is tab{{ index }}
           </k-tab-pane>
-        </KTabs>
+        </KTabs> -->
       </div>
     </div>
   </div>
+
+  <!-- <div class="epx-title-sub">type:</div>
+  <div class="flex items-center gap-2 w-full" style="width: 100vw">
+    <k-tabs v-model="activeName" tabPosition="top" addable class="w-full">
+      <k-tab-pane v-for="index in 30" :name="'tab' + index" :disabled="index === 3">
+        Curren tab is tab{{ index }}
+        <template #label>tab{{ index }}</template>
+      </k-tab-pane> -->
+  <!-- <k-tab-pane label="tab1" name="tab1">
+        Curren tab is tab2
+      </k-tab-pane>
+      <k-tab-pane label="tab2" :icon="Edit" name="tab2">
+        Curren tab is tab2
+      </k-tab-pane>
+      <k-tab-pane label="tab3" name="tab3">
+        Curren tab is tab3
+      </k-tab-pane> -->
+  <!-- </k-tabs>
+  </div> -->
 </template>
 
 <script setup>
@@ -43,8 +63,8 @@ import { Edit, Star, Delete, Eleme } from '@element-plus/icons-vue';
 import { genRandomStr } from '../../kswux/package/utils/index';
 
 const id = `_${genRandomStr(8)}`;
-const activeName = ref('tab1');
-const activeName2 = ref('tab1');
+// const activeName = ref('tab1');
+// const activeName2 = ref('tab1');
 
 let type = true;
 //  监听 item 位置
@@ -63,9 +83,13 @@ nextTick(() => {
   // 监听 el-tabs__nav-scroll 位置
   tabItems = document.querySelectorAll(`#${id} .el-tabs__item`);
   elTabsNav = document.querySelector(`#${id} .el-tabs__nav`);
-  elTabsNavTTX = elTabsNav.style.transform;
-  // 提取 elTabsNavTTX 中的数字
-  elTabsNavTTXNum = elTabsNavTTX.match(/\d+/g) * 1;
+  if (elTabsNav) {
+    elTabsNavTTX = elTabsNav?.style?.transform;
+    // 提取 elTabsNavTTX 中的数字
+    elTabsNavTTXNum = elTabsNavTTX.match(/\d+/g) * 1;
+    return;
+  }
+
   // console.log('tabItems', tabItems.length);
   // console.log(elTabsNav, elTabsNavTTX, elTabsNavTTXNum);
   tabItems.forEach((item, index) => {
@@ -127,4 +151,7 @@ const isItemInBox = (item, index, boxW, boxSX) => {
   return { res, scrollNum };
 };
 </script>
-<style scoped></style>
+<style scoped>
+.box {
+}
+</style>

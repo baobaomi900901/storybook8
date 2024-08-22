@@ -6,7 +6,8 @@ import '/public/font/result.css'; // 全局字体
 import elementPlus from 'element-plus';
 import install from '../kswux/package/index'; // 全局注册组件
 import { KswIcon } from 'ksw-vue-icon';
-import '../src/output.css';
+import '../src/myStyle.css';
+import '../src/style.css';
 
 setup((app) => {
   // app.use(elementPlus);
@@ -15,7 +16,7 @@ setup((app) => {
   install(app);
 });
 
-const preview: Preview  = {
+const preview: Preview = {
   parameters: {
     controls: {
       matchers: {

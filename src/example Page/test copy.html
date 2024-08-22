@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .item {
+      --h: 40px;
+      --icon-size: 20px;
+      --icon-number: 0;
+      --padding-x: 16px;
+      border: 1px solid #ccc;
+      display: inline-block;
+      width: 200px;
+      height: var(--h);
+      padding-left: calc(var(--icon-size) * var(--icon-number) + var(--padding-x));
+      padding-right: var(--padding-x);
+      inset: 0;
+      box-sizing: border-box;
+    }
+    .item2 {
+      --icon-size: 20px;
+      --icon-number: 1;
+    }
+
+    .item3 {
+      --icon-size: 20px;
+      --icon-number: 2;
+    }
+
+    .contents {
+      position: relative;
+      display: inline-block;
+      height: 40px;
+      width: 100%;
+    }
+    .icon-box {
+      --width: calc(var(--icon-size) * var(--icon-number) + 4px * (var(--icon-number) - 1));
+      width: calc(var(--icon-size) * var(--icon-number) + 4px * (var(--icon-number) - 1));
+      height: var(--icon-size);
+      display: inline-flex;
+
+      inset: 0;
+
+      background: #000;
+      position: relative;
+      /* top: 50%; */
+      /* left: calc(var(--width) * -1); */
+      /* transform: translateY(-50%); */
+
+      display: inline-flex;
+      gap: 4px;
+      justify-content: end;
+    }
+    .icon {
+      width: var(--icon-size);
+      height: var(--icon-size);
+    }
+    .text {
+      font-size: 12px;
+      line-height: 40px;
+      white-space: nowrap;
+      /* margin-left: calc((var(--icon-number) - 1) * 4px); */
+      margin-left: calc(var(--icon-number) / (var(--icon-number) + 1e-10) * 4px);
+
+      display: inline-block;
+      /* width: 100%; */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* position: relative; */
+    }
+
+    .is-center {
+      text-align: center;
+    }
+    .is-end {
+      text-align: end;
+    }
+  </style>
+  <body
+    style="
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    "
+  >
+    <h2>left</h2>
+    <div
+      class="bbm"
+      style="display: flex; justify-content: center; align-items: center; height: 60px"
+    >
+      <table>
+        <tr>
+          <td>
+            <div class="item">
+              <span class="contents">
+                <span class="text">Vue是什么?12</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item2">
+              <span class="contents">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么?12</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item3">
+              <span class="contents">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么?12</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div
+      class="bbm"
+      style="display: flex; justify-content: center; align-items: center; height: 60px"
+    >
+      <table>
+        <tr>
+          <td>
+            <div class="item">
+              <span class="contents">
+                <span class="text">Vue是什么?1123123123212aaaaaaaaaaa</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item2">
+              <span class="contents">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么123123123123?12aaaaaaaaaaaaaa</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item3 is-center">
+              <span class="contents">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么12312333333?12aaaaaaaaaaa</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <br />
+    <br />
+
+    <h2>center</h2>
+    <div
+      class="bbm"
+      style="display: flex; justify-content: center; align-items: center; height: 60px"
+    >
+      <table>
+        <tr>
+          <td>
+            <div class="item">
+              <span class="contents is-center">
+                <span class="text">Vue是什么?</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item2">
+              <span class="contents is-center">
+                <span class="text">
+                  <span class="icon-box">
+                    <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                  </span>
+                  Vue是什么?
+                </span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item3">
+              <span class="contents is-center">
+                <span class="text">
+                  <span class="icon-box">
+                    <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                    <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                  </span>
+                  Vue是什么?
+                </span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div
+      class="bbm"
+      style="display: flex; justify-content: center; align-items: center; height: 60px"
+    >
+      <table>
+        <tr>
+          <td>
+            <div class="item">
+              <span class="contents is-center">
+                <span class="text">Vue是什么?123123123123123123123123123123123123123</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item2">
+              <span class="contents is-center">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么?123123123123123123123123123123123123123</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item3">
+              <span class="contents is-center">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么?123123123123123123</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <h2>end</h2>
+    <div
+      class="bbm"
+      style="display: flex; justify-content: center; align-items: center; height: 60px"
+    >
+      <table>
+        <tr>
+          <td>
+            <div class="item">
+              <span class="contents is-end">
+                <span class="text">Vue是什么?</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item2">
+              <span class="contents is-end">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么?</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item3">
+              <span class="contents is-end">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么?</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div
+      class="bbm"
+      style="display: flex; justify-content: center; align-items: center; height: 60px"
+    >
+      <table>
+        <tr>
+          <td>
+            <div class="item">
+              <span class="contents is-end">
+                <span class="text">Vue是什么?123123123123123123123123123123123123123</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item2">
+              <span class="contents is-end">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么?123123123123123123123123123123123123123</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <table>
+        <tr>
+          <td>
+            <div class="item item3">
+              <span class="contents is-end">
+                <span class="icon-box">
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                  <img src="../assets/vue.svg" alt="描述文字" class="icon" />
+                </span>
+                <span class="text">Vue是什么?123123123123123123</span>
+              </span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

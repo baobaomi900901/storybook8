@@ -8,14 +8,13 @@
 <template>
   <div class="epx-container">
     <div class="epx-title">组件</div>
-
-    <div class="epx-title-sub">type:</div>
-    <div class="flex items-start gap-2"></div>
+    <SBExamplePanel label="默认">内容</SBExamplePanel>
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import {} from '@components';
 
 const value = ref();

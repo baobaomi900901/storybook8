@@ -8,7 +8,6 @@
 <template>
   <div id="CustomColor" class="CustomColor flex flex-col gap-2">
     CustomColor
-    <IconSystemTypeAndroidColor grayscale />
     <div class="oklch flex">
       <div class="box" style="background-color: #fff7e2">50</div>
       <div class="box" style="background-color: #fbe9c6">100</div>
@@ -64,21 +63,20 @@ const customHue = [
 ];
 
 const customRule = [
-  { l: 0.98, c: 0.05, name: '50' },
-  { l: 0.94, c: 0.05, name: '100' },
-  { l: 0.88, c: 0.09, name: '200' },
-  { l: 0.82, c: 0.14, name: '300' },
-  { l: 0.74, c: 0.14, name: '400' },
-  { l: 0.65, c: 40, name: '500' },
-  { l: 0.6, c: 0.17, name: '600' },
-  { l: 0.53, c: 0.15, name: '700' },
-  { l: 0.47, c: 0.13, name: '800' },
-  { l: 0.4, c: 0.11, name: '900' },
-  { l: 0.28, c: 0.1, name: '950' },
+  { l: 0.9778, c: 0.05, name: '50' },
+  { l: 0.9356, c: 0.05, name: '100' },
+  { l: 0.8811, c: 0.09, name: '200' },
+  { l: 0.8267, c: 0.14, name: '300' },
+  { l: 0.7422, c: 0.17, name: '400' },
+  { l: 0.6478, c: 0.19, name: '500' },
+  { l: 0.5733, c: 0.17, name: '600' },
+  { l: 0.4689, c: 0.15, name: '700' },
+  { l: 0.3944, c: 0.13, name: '800' },
+  { l: 0.32, c: 0.11, name: '900' },
+  { l: 0.2378, c: 0.1, name: '950' },
 ];
-
 onMounted(() => {
-  customColors(customHue, customRule);
+  colorLevel(customHue, customRule);
   let arr = [
     'oklch(0.98 0.03 0)',
     'oklch(0.94 0.04 0)',
@@ -92,14 +90,78 @@ onMounted(() => {
     'oklch(0.38 0.12 0)',
     'oklch(0.32 0.11 0)',
   ];
-  // arr.forEach((item, index) => {
-  //   let { mode, l, c, h } = parse(item);
-  //   let { lightness, chroma, hue } = apcach(crToBg(item, 65), maxChroma(0.15), 35);
-  //   // console.log(`${index}`, 'crToBg ==>', `oklch(${lightness} ${chroma} ${hue})`);
-  // });
+
+  const bgColor = [
+    'oklch(66.3% 0.2 0)',
+    'oklch(66.3% 0.2 15)',
+    'oklch(66.3% 0.2 30)',
+    'oklch(66.3% 0.2 45)',
+    'oklch(66.3% 0.2 135)',
+    'oklch(66.3% 0.2 150)',
+    'oklch(66.3% 0.2 165)',
+    'oklch(66.3% 0.2 180)',
+    'oklch(66.3% 0.2 195)',
+    'oklch(66.3% 0.2 210)',
+    'oklch(66.3% 0.2 225)',
+    'oklch(66.3% 0.2 240)',
+    'oklch(66.3% 0.2 255)',
+    'oklch(66.3% 0.2 270)',
+    'oklch(66.3% 0.2 285)',
+    'oklch(66.3% 0.2 300)',
+    'oklch(66.3% 0.2 345)',
+    'oklch(66.3% 0.2 360)',
+  ];
+
+  // 将 bgColor 中的 oklch 颜色转换成 16 进制颜色
+
+  let HEXColor = [];
+  bgColor.forEach((item) => {
+    let { mode, l, c, h } = parse(item);
+    let newHexColor = formatHex({ mode, l, c, h });
+    // console.log(newHexColor);
+    HEXColor.push(newHexColor);
+  });
+  console.log(HEXColor);
+
+  // customColor('#38363c');
+  // 示例用法
+  // console.log(customColor('rgb(255, 0, 0)')); // 输出: rgb
+  // console.log(customColor('rgba(255, 0, 0, 0.5)')); // 输出: rgba
+  // console.log(customColor('hsl(120, 100%, 50%)')); // 输出: hsl
+  // console.log(customColor('#ff0000')); // 输出: hex
+  // console.log(customColor('oklch(50%, 0.3, 100)')); // 输出: oklch
+  // console.log(customColor('red')); // 输出: unknown
+  // parse('red');
+  // console.log(parse('red'));
+  customColor('red');
+  customColor('rgb(255, 0, 0)');
+  customColor('rgba(255, 0, 0, 0.5)');
+  customColor('#ff5500');
+  customColor('oklch(50%, 0.3, 100)');
+  customColor('hsl(120, 100%, 50%)');
 });
 
-const customColors = (hue, rule) => {
+const customColor = (color) => {
+  let hue;
+  let oklch = converter('oklch');
+  console.log(color, oklch(color));
+  // switch (parse(color).mode) {
+  //   case 'rgb':
+  //     let { mode, r, g, b } = parse(color);
+  //     console.log(mode);
+  //     return 'rgb';
+  //   case 'hsl':
+  //     return 'hsl';
+  //   case 'hex':
+  //     return 'hex';
+  //   case 'oklch':
+  //     return 'oklch';
+  //   default:
+  //     return 'unknown';
+  // }
+};
+
+const colorLevel = (hue, rule) => {
   let groups = [];
   hue.forEach((item) => {
     let hexColors = [];
@@ -110,31 +172,15 @@ const customColors = (hue, rule) => {
       const inRgb = inGamut('rgb');
       let isInRgb = inRgb(`${mode}(${l} ${c} ${h})`);
       // console.log(isInRgb, `${mode}(${l} ${c} ${h})`);
-      if (isInRgb) {
-        hexColors.push({ name: colorName, color: newHexColor, isInRgb });
-      }
+      // if (isInRgb) {
+      hexColors.push({ name: colorName, color: newHexColor, isInRgb });
+      // }
     });
     groups.push({ name: item.name, colors: hexColors });
   });
   colorGroups.value = groups;
-  console.log(colorGroups.value);
+  // console.log(colorGroups.value);
 };
-
-// // fn 自定义颜色
-// const customColors = (hue, rule) => {
-//   let hexColors = [];
-//   hue.forEach((item, index) => {
-//     rule.forEach((item2, index2) => {
-//       let { mode, l, c, h } = parse(`oklch(${item2.l} ${item2.c} ${item.h})`);
-//       let colorName = `${item.name}-${item2.name}`;
-//       // console.log(mode, l, c, h, colorName);
-//       let newHexColor = formatHex(`${mode}(${l} ${c} ${h})`);
-//       hexColors.push({ name: colorName, color: newHexColor });
-//       let colorBox = `<div class="box" style="background-color: ${newHexColor};">${item2.name}</div>`;
-//     });
-//   });
-//   console.log(hexColors);
-// };
 
 // let apc = apcach(70, 0.2, 145);
 // console.log('apc ==>', apc);
@@ -150,7 +196,7 @@ const customColors = (hue, rule) => {
 let rgb = converter('rgb');
 let oklch = converter('oklch');
 // console.log(rgb('oklch(0.65 0.19 0)'));
-console.log(oklch('#38363c'));
+// console.log(oklch('#38363c'));
 // console.log(formatHex('red'));
 // console.log(formatHex('rgb(255, 85, 0)'));
 
@@ -158,10 +204,10 @@ console.log(oklch('#38363c'));
 
 let arr = samples(13);
 let newArr = arr.slice(1, arr.length - 1);
-console.log(newArr);
+// console.log(newArr);
 
 const inRgb = inGamut('rgb'); // inGamut
-console.log(inRgb('oklch(0.65 40 145)')); // 判断是否在 rgb 色域
+// console.log(inRgb('oklch(0.65 40 145)')); // 判断是否在 rgb 色域
 // console.log(clampChroma({ mode: 'oklch', l: 1, c: 0.4, h: 85 }, 'oklch')); // 限制色域
 // let grays = interpolate(['#fff', '#000']);
 // console.log(grays);
@@ -241,6 +287,7 @@ console.log(inRgb('oklch(0.65 40 145)')); // 判断是否在 rgb 色域
 .icon-refresh:hover {
   svg {
     fill: greenyellow;
+    width: calc();
   }
 }
 </style>

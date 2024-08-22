@@ -8,27 +8,23 @@
 <template>
   <div class="epx-container">
     <div class="epx-title">KInput</div>
-    <div class="epx-title-sub">默认</div>
-    <div class="flex items-star gap-2">
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入内容"></KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入内容"></KInput>
-      </div>
-    </div>
 
-    <div class="epx-title-sub" @click="handleClick">图标(prefix-icon, suffix-icon)</div>
-    <div class="flex items-star gap-2">
+    <SBExamplePanel label="默认">
+      <div class="w-80">
+        <KInput v-model="value" placeholder="请输入内容"></KInput>
+      </div>
+      <div class="w-80">
+        <KInput v-model="value" placeholder="请输入内容"></KInput>
+      </div>
+    </SBExamplePanel>
+
+    <SBExamplePanel label="图标(prefix-icon, suffix-icon)">
       <div class="w-80">
         <KInput v-model="value" placeholder="请输入内容" prefix-icon="IconAdd"></KInput>
       </div>
       <div class="w-80">
         <KInput v-model="value" placeholder="请输入内容" suffix-icon="IconDelete" disabled></KInput>
       </div>
-    </div>
-    <div class="epx-title-sub" @click="handleClick">插槽(prefix, suffix)</div>
-    <div class="flex items-star gap-2">
       <div class="w-80">
         <KInput v-model="value" placeholder="请输入内容" disabled>
           <template #prefix>
@@ -39,22 +35,60 @@
           </template>
         </KInput>
       </div>
-    </div>
-    <div class="flex items-star gap-2">
-      <div class="w-80">
-        <KInput v-model="value" placeholder="选择运行机器">
-          <template #prefix>
-            <IconBot color="#2882FF" @click="handleClick('bot')" />
-          </template>
-          <template #append>
-            <KButton main icon-left="IconIdePlay">运行</KButton>
-          </template>
-        </KInput>
-      </div>
-    </div>
+    </SBExamplePanel>
 
-    <div class="epx-title-sub">密码:</div>
-    <div class="flex items-star gap-2">
+    <SBExamplePanel label="嵌入 button-group">
+      <div class="flex flex-col gap-2 w-full">
+        <div class="flex gap-4">
+          <KButtonGroup class="flex">
+            <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+            <KButton main>
+              <IconArrowBottom />
+            </KButton>
+          </KButtonGroup>
+          <KButtonGroup class="flex">
+            <KButton main icon-left="IconIdePlay" @click="handleClick('运行')" disabled>
+              运行
+            </KButton>
+            <KButton main>
+              <IconArrowBottom />
+            </KButton>
+          </KButtonGroup>
+        </div>
+        <div class="flex gap-4 w-1/2">
+          <KInput v-model="value" placeholder="选择运行机器">
+            <template #prefix>
+              <IconBot color="#2882FF" @click="handleClick('bot')" />
+            </template>
+            <template #append>
+              <KButtonGroup>
+                <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+                <KButton main>
+                  <IconArrowBottom />
+                </KButton>
+              </KButtonGroup>
+            </template>
+          </KInput>
+          <KButton @click="handleClick">KButtonGroup</KButton>
+        </div>
+        <div class="flex gap-4 w-1/2">
+          <KInput v-model="value" placeholder="选择运行机器">
+            <template #prefix>
+              <IconBot color="#2882FF" @click="handleClick('bot')" />
+            </template>
+            <template #append>
+              <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+              <KButton main>
+                <IconArrowBottom />
+              </KButton>
+            </template>
+          </KInput>
+          <KButton @click="handleClick">啥也没包</KButton>
+        </div>
+      </div>
+    </SBExamplePanel>
+
+    <SBExamplePanel label="密码">
       <div class="w-80">
         <KInput v-model="value" placeholder="请输入密码" type="password"></KInput>
       </div>
@@ -66,17 +100,15 @@
           showPassword
         ></KInput>
       </div>
-    </div>
+    </SBExamplePanel>
 
-    <div class="epx-title-sub">文本域:</div>
-    <div class="flex items-star gap-2">
+    <SBExamplePanel label="文本域">
       <div class="w-80">
         <KInput v-model="value" placeholder="请输入" type="textarea" showWordLimit></KInput>
       </div>
-    </div>
+    </SBExamplePanel>
 
-    <div class="epx-title-sub">限制字数:</div>
-    <div class="flex items-star gap-2">
+    <SBExamplePanel label="限制字数">
       <div class="w-80">
         <KInput v-model="value" placeholder="请输入内容" showWordLimit :maxlength="255"></KInput>
       </div>
@@ -89,10 +121,9 @@
           :maxlength="255"
         ></KInput>
       </div>
-    </div>
+    </SBExamplePanel>
 
-    <div class="epx-title-sub">Size:sm</div>
-    <div class="flex items-star gap-2">
+    <SBExamplePanel label="Size:sm">
       <div class="w-80">
         <KInput v-model="value" placeholder="请输入密码" type="password" size="sm"></KInput>
       </div>
@@ -105,8 +136,6 @@
           showPassword
         ></KInput>
       </div>
-    </div>
-    <div class="flex items-star gap-2">
       <div class="w-80">
         <KInput
           v-model="value"
@@ -116,263 +145,534 @@
           showWordLimit
         ></KInput>
       </div>
-    </div>
+    </SBExamplePanel>
 
-    <div class="epx-title-sub">组合插槽(left):</div>
-    <div class="flex flex-col items-star gap-2">
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入url">
-          <template #prepend>http://</template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #prepend>
-            <KButton>普通按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #prepend>
-            <KButton main>主要按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #prepend>
-            <KButton secondary>次要按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #prepend>
-            <KButton icon><IconAdd /></KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入url">
-          <template #prepend>
-            <KSelect v-model="selectValue" class="w-60">
-              <KOption
-                v-for="item in data"
-                :key="item.selectValue"
-                :value="item.selectValue"
-                :label="item.label"
-              ></KOption>
-            </KSelect>
-          </template>
-        </KInput>
-      </div>
-    </div>
+    <div class="flex gap-2">
+      <SBExamplePanel label="组合插槽(prepend)" defaultOpen>
+        <div class="w-full flex flex-col gap-2">
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>http://</template>
+            <!-- <template #append>http://</template> -->
+          </KInput>
 
-    <div class="epx-title-sub">组合插槽(right):</div>
-    <div class="flex flex-col items-star gap-2">
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入url">
-          <template #append>http://</template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #append>
-            <KButton>普通按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #append>
-            <KButton main>主要按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #append>
-            <KButton secondary>次要按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #append>
-            <KButton icon><IconAdd /></KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入url">
-          <template #append>
-            <KSelect v-model="selectValue" class="w-60">
-              <KOption
-                v-for="item in data"
-                :key="item.selectValue"
-                :value="item.selectValue"
-                :label="item.label"
-              ></KOption>
-            </KSelect>
-          </template>
-        </KInput>
-      </div>
-    </div>
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+            </template>
+          </KInput>
 
-    <div class="epx-title-sub">组合插槽(双边):</div>
-    <div class="flex flex-col items-star gap-2">
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入url">
-          <template #prepend>http://</template>
-          <template #append>.com</template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #prepend>
-            <KButton>普通按钮</KButton>
-          </template>
-          <template #append>
-            <KButton>普通按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #prepend>
-            <KButton main>主要按钮</KButton>
-          </template>
-          <template #append>
-            <KButton main>主要按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #prepend>
-            <KButton secondary>次要按钮</KButton>
-          </template>
-          <template #append>
-            <KButton secondary>次要按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select">
-          <template #prepend>
-            <KButton icon><IconAdd /></KButton>
-          </template>
-          <template #append>
-            <KButton icon><IconAdd /></KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入url">
-          <template #prepend>
-            <KSelect v-model="selectValue" class="w-60">
-              <KOption
-                v-for="item in data"
-                :key="item.selectValue"
-                :value="item.selectValue"
-                :label="item.label"
-              ></KOption>
-            </KSelect>
-          </template>
-          <template #append>
-            <KSelect v-model="selectValue" class="w-60">
-              <KOption
-                v-for="item in data"
-                :key="item.selectValue"
-                :value="item.selectValue"
-                :label="item.label"
-              ></KOption>
-            </KSelect>
-          </template>
-        </KInput>
-      </div>
-    </div>
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('普通按钮')" :type="type" disabled>普通按钮</KButton>
+            </template>
+          </KInput>
 
-    <div class="epx-title-sub">组合插槽(双边 size:sm):</div>
-    <div class="flex flex-col items-star gap-2">
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入url" size="sm">
-          <template #prepend>http://</template>
-          <template #append>.com</template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select" size="sm">
-          <template #prepend>
-            <KButton>普通按钮</KButton>
-          </template>
-          <template #append>
-            <KButton>普通按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select" size="sm">
-          <template #prepend>
-            <KButton main>主要按钮</KButton>
-          </template>
-          <template #append>
-            <KButton main>主要按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select" size="sm">
-          <template #prepend>
-            <KButton secondary>次要按钮</KButton>
-          </template>
-          <template #append>
-            <KButton secondary>次要按钮</KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="btn, select" size="sm">
-          <template #prepend>
-            <KButton icon><IconAdd /></KButton>
-          </template>
-          <template #append>
-            <KButton icon><IconAdd /></KButton>
-          </template>
-        </KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入url" size="sm">
-          <template #prepend>
-            <KSelect v-model="selectValue" class="w-60">
-              <KOption
-                v-for="item in data"
-                :key="item.selectValue"
-                :value="item.selectValue"
-                :label="item.label"
-              ></KOption>
-            </KSelect>
-          </template>
-          <template #append>
-            <KSelect v-model="selectValue" class="w-60">
-              <KOption
-                v-for="item in data"
-                :key="item.selectValue"
-                :value="item.selectValue"
-                :label="item.label"
-              ></KOption>
-            </KSelect>
-          </template>
-        </KInput>
-      </div>
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('主要按钮')" :type="type" main>主要按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('主要按钮')" :type="type" main disabled>
+                主要按钮
+              </KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary>次要按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary disabled>
+                次要按钮
+              </KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('icon')" :type="type" icon><IconAdd /></KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('icon')" :type="type" icon disabled><IconAdd /></KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>
+              <KSelect v-model="selectValue" class="w-60">
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>
+              <KSelect v-model="selectValue" class="w-60" disabled>
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>
+              <KButtonGroup>
+                <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+                <KButton main>
+                  <IconArrowBottom />
+                </KButton>
+              </KButtonGroup>
+            </template>
+          </KInput>
+        </div>
+      </SBExamplePanel>
+
+      <SBExamplePanel label="组合插槽(append)" defaultOpen>
+        <div class="w-full flex flex-col gap-2">
+          <KInput v-model="value" placeholder="请输入url">
+            <template #append>http://</template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #append>
+              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #append>
+              <KButton @click="handleClick('普通按钮')" :type="type" disabled>普通按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #append>
+              <KButton @click="handleClick('主要按钮')" :type="type" main>主要按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #append>
+              <KButton @click="handleClick('主要按钮')" :type="type" main disabled>
+                主要按钮
+              </KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #append>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary>次要按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #append>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary disabled>
+                次要按钮
+              </KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #append>
+              <KButton @click="handleClick('icon')" :type="type" icon><IconAdd /></KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #append>
+              <KButton @click="handleClick('icon')" :type="type" icon disabled><IconAdd /></KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #append>
+              <KSelect v-model="selectValue" class="w-60">
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+          </KInput>
+          <KInput v-model="value" placeholder="请输入url">
+            <template #append>
+              <KSelect v-model="selectValue" class="w-60" disabled>
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #append>
+              <KButtonGroup>
+                <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+                <KButton main>
+                  <IconArrowBottom />
+                </KButton>
+              </KButtonGroup>
+            </template>
+          </KInput>
+        </div>
+      </SBExamplePanel>
+
+      <SBExamplePanel label="组合插槽(prepend + append)" defaultOpen>
+        <div class="w-full flex flex-col gap-2">
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>http://</template>
+            <template #append>http://</template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('普通按钮')" :type="type" disabled>普通按钮</KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('普通按钮')" :type="type" disabled>普通按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('主要按钮')" :type="type" main>主要按钮</KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('主要按钮')" :type="type" main>主要按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('主要按钮')" :type="type" main disabled>
+                主要按钮
+              </KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('主要按钮')" :type="type" main disabled>
+                主要按钮
+              </KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary>次要按钮</KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary>次要按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary disabled>
+                次要按钮
+              </KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary disabled>
+                次要按钮
+              </KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('icon')" :type="type" icon><IconAdd /></KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('icon')" :type="type" icon><IconAdd /></KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select">
+            <template #prepend>
+              <KButton @click="handleClick('icon')" :type="type" icon disabled><IconAdd /></KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('icon')" :type="type" icon disabled><IconAdd /></KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>
+              <KSelect v-model="selectValue" class="w-60">
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+            <template #append>
+              <KSelect v-model="selectValue" class="w-60">
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>
+              <KSelect v-model="selectValue" class="w-60" disabled>
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+            <template #append>
+              <KSelect v-model="selectValue" class="w-60" disabled>
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>
+              <KButtonGroup>
+                <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+                <KButton main>
+                  <IconArrowBottom />
+                </KButton>
+              </KButtonGroup>
+            </template>
+            <template #append>
+              <KButtonGroup>
+                <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+                <KButton main>
+                  <IconArrowBottom />
+                </KButton>
+              </KButtonGroup>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url">
+            <template #prepend>
+              <KButtonGroup>
+                <KButton main icon-left="IconIdePlay" @click="handleClick('运行')" disabled>
+                  运行
+                </KButton>
+                <KButton main>
+                  <IconArrowBottom />
+                </KButton>
+              </KButtonGroup>
+            </template>
+            <template #append>
+              <KButtonGroup>
+                <KButton main icon-left="IconIdePlay" @click="handleClick('运行')" disabled>
+                  运行
+                </KButton>
+                <KButton main>
+                  <IconArrowBottom />
+                </KButton>
+              </KButtonGroup>
+            </template>
+          </KInput>
+        </div>
+      </SBExamplePanel>
+
+      <SBExamplePanel label="组合插槽(双边 size:sm)" defaultOpen>
+        <div class="w-full flex flex-col gap-2">
+          <KInput v-model="value" placeholder="请输入url" size="sm">
+            <template #prepend>http://</template>
+            <template #append>http://</template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select" size="sm">
+            <template #prepend>
+              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select" size="sm">
+            <template #prepend>
+              <KButton @click="handleClick('普通按钮')" disabled>普通按钮</KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('普通按钮')" disabled>普通按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select" size="sm">
+            <template #prepend>
+              <KButton @click="handleClick('主要按钮')" :type="type" main>主要按钮</KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('主要按钮')" :type="type" main>主要按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select" size="sm">
+            <template #prepend>
+              <KButton @click="handleClick('主要按钮')" :type="type" main disabled>
+                主要按钮
+              </KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('主要按钮')" :type="type" main disabled>
+                主要按钮
+              </KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select" size="sm">
+            <template #prepend>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary>次要按钮</KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary>次要按钮</KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select" size="sm">
+            <template #prepend>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary disabled>
+                次要按钮
+              </KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('次要按钮')" :type="type" secondary disabled>
+                次要按钮
+              </KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select" size="sm">
+            <template #prepend>
+              <KButton @click="handleClick('icon')" :type="type" icon><IconAdd /></KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('icon')" :type="type" icon><IconAdd /></KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="btn, select" size="sm">
+            <template #prepend>
+              <KButton @click="handleClick('icon')" :type="type" icon disabled><IconAdd /></KButton>
+            </template>
+            <template #append>
+              <KButton @click="handleClick('icon')" :type="type" icon disabled><IconAdd /></KButton>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url" size="sm">
+            <template #prepend>
+              <KSelect v-model="selectValue" class="w-60">
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+            <template #append>
+              <KSelect v-model="selectValue" class="w-60">
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url" size="sm">
+            <template #prepend>
+              <KSelect v-model="selectValue" class="w-60" disabled>
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+            <template #append>
+              <KSelect v-model="selectValue" class="w-60" disabled>
+                <KOption
+                  v-for="item in data"
+                  :key="item.selectValue"
+                  :value="item.selectValue"
+                  :label="item.label"
+                ></KOption>
+              </KSelect>
+            </template>
+          </KInput>
+
+          <KInput v-model="value" placeholder="请输入url" size="sm">
+            <template #append>
+              <KButtonGroup>
+                <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+                <KButton main>
+                  <IconArrowBottom />
+                </KButton>
+              </KButtonGroup>
+            </template>
+          </KInput>
+        </div>
+      </SBExamplePanel>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
 import { KInput, KButton, KSelect, KOption } from '@components';
+import { IconArrowBottom } from 'ksw-vue-icon';
 
 const value = ref();
 
@@ -396,14 +696,8 @@ const data = [
 const handleClick = (type) => {
   console.log('click ==>', type);
 };
+
+// const type = ['primary', 'success','warning', 'danger', 'info'];
+const type = ref('danger');
 </script>
-<style lang="less">
-// .k-input {
-//   .el-input-group__prepend,
-//   .el-input-group__append {
-//     .k-input-slot--string {
-//       color: red;
-//     }
-//   }
-// }
-</style>
+<style lang="less"></style>

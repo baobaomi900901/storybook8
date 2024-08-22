@@ -1,5 +1,5 @@
 <template>
-  <div id="App" class="App">
+  <div id="App" class="App flex flex-col">
     <div
       ref="showMenu"
       class="show-menu flex justify-center items-center text-center"

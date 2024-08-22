@@ -16,7 +16,14 @@ import {
 } from '../example Components';
 
 // 引入示例页面
-import { flowPage, customColor, stashLayout, expPageTable, expPageTable2 } from '../example Page';
+import {
+  flowPage,
+  customColor,
+  stashLayout,
+  expPageTable,
+  expPageTable2,
+  echartsDemo,
+} from '../example Page';
 
 const routes = [
   {
@@ -47,6 +54,7 @@ const routes = [
     children: [
       { path: 'flow-page', component: flowPage, name: 'flow-page' },
       { path: 'custom-color', component: customColor, name: 'custom-color' },
+      { path: 'echarts-demo', component: echartsDemo, name: 'echarts-Demo' },
       {
         path: 'stash-layout',
         component: stashLayout,

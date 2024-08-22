@@ -121,5 +121,7 @@ const radioData = [
     label: '钝角',
   },
 ];
+
+const lstDateType = ['本月', '本季度', '本年'];
 </script>
 <style scoped></style>

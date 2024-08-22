@@ -1,0 +1,32 @@
+/* @import url('../kswux/package/style/general.css'); */
+@import url('../kswux/package/style/variable.css');
+
+* {
+  font-family: 'Alibaba PuHuiTi 3.0 55 Regular';
+  font-display: swap;
+}
+
+.epx-title {
+  @apply text-3xl font-bold my-4;
+}
+.epx-title-sub {
+  @apply text-lg font-bold my-2;
+}
+
+.sb-title-sub {
+  @apply text-sm my-2;
+}
+
+.bbm123 {
+  font-size: 123px;
+  border: 1px solid red;
+}
+
+.epx-container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100vh;
+  overflow: auto;
+}
