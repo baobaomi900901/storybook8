@@ -7,7 +7,7 @@
 !-->
 <template>
   <div id="CustomColor" class="CustomColor flex flex-col gap-2">
-    CustomColor
+    CustomColor old
     <div class="oklch flex">
       <div ref="oklch50" class="box color-panel">50</div>
       <div ref="oklch100" class="box color-secondary-bg">100</div>
