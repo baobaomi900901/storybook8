@@ -33,7 +33,9 @@
     "src/**/*.vue",
     "src/**/**/*.vue",
     "vue-shim.d.ts",
-    "src/example Components/index.js"
+    "src/example Components/index.js",
+    "src/doc/button/KButton.stories.ts1",
+    "src/doc/button/KButton.stories.ts1"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

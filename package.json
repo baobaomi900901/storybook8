@@ -8,12 +8,12 @@
     "build": "vite build",
     "preview": "vite preview",
     "storybook": "storybook dev -p 12850",
-    "build-storybook": "storybook build",
-    "watch": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@headlessui/vue": "^1.7.22",
+    "@ksware/ksw-ux": "^0.0.33",
     "apcach": "^0.6.4",
     "chroma-js": "^2.4.2",
     "culori": "^4.0.1",

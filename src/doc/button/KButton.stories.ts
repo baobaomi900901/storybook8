@@ -10,7 +10,7 @@ const meta = {
     value: 'text',
     size: {
       control: 'select',
-      options: ['base', 'sm']
+      options: ['base', 'sm'],
     },
     main: 'boolean',
     secondary: 'boolean',
@@ -22,13 +22,13 @@ const meta = {
     iconRight: '',
     type: {
       control: 'select',
-      options: ['normal', 'main', 'secondary', 'text', 'icon']
+      options: ['normal', 'main', 'secondary', 'text', 'icon'],
     },
     color: {
-      control: 'color'
-    }
+      control: 'color',
+    },
   },
-  args: {}
+  args: {},
 } satisfies Meta<typeof KButton>;
 
 export default meta;
@@ -37,15 +37,15 @@ type Story = StoryObj<typeof meta>;
 export const def: Story = {
   name: '默认',
   args: {
-    value: 'Button'
-  }
+    value: 'Button',
+  },
 };
 
 export const KBtbType: Story = {
   name: '各类型按钮',
   args: {
     value: '新增',
-    main: true
+    main: true,
   },
   render: (args: any) => {
     return {
@@ -61,14 +61,14 @@ export const KBtbType: Story = {
         <span>文字按钮:</span> <KButton text >编辑</KButton>
         <span>icon按钮:</span> <KButton icon ><IconAdd /></KButton>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 export const disabled: Story = {
   name: '禁用按钮',
   args: {
-    disabled: true
+    disabled: true,
   },
   render: (args: any) => {
     return {
@@ -86,16 +86,16 @@ export const disabled: Story = {
           <IconAdd />
         </KButton>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 
 export const loading: Story = {
   name: '加载中',
   args: {
     value: 'Button',
-    loading: true
+    loading: true,
   },
   render: (args: any) => {
     return {
@@ -113,16 +113,16 @@ export const loading: Story = {
           <IconAdd />
         </KButton>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 
 export const size: Story = {
   name: '不同尺寸',
   args: {
     value: 'Button',
-    size: 'base'
+    size: 'base',
   },
   render: (args: any) => {
     return {
@@ -150,9 +150,9 @@ export const size: Story = {
           <IconAdd />
         </KButton>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 
 // el 颜色
@@ -216,9 +216,9 @@ export const elTypeColor: Story = {
           <IconAdd />
         </KButton>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 
 // 自定义颜色
@@ -241,9 +241,9 @@ export const customColor: Story = {
           <IconAdd />
         </KButton>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 
 // 按钮左右侧图标
@@ -266,9 +266,9 @@ export const customIcon: Story = {
           <IconAdd />
         </KButton>
       </div>
-      `
+      `,
     };
-  }
+  },
 };
 
 // 具名插槽
@@ -291,7 +291,7 @@ export const namedSlot: Story = {
           </template>
           按钮
         </KButton>
-      `
+      `,
     };
-  }
+  },
 };

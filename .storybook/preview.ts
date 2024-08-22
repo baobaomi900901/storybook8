@@ -10,7 +10,7 @@ import '../src/myStyle.css';
 import '../src/style.css';
 
 setup((app) => {
-  // app.use(elementPlus);
+  app.use(elementPlus);
   app.use(KswIcon);
   // app.use(install);
   install(app);
