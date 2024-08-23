@@ -74,58 +74,48 @@ export const def: Story = {
 import { ATExample } from '../../hooks';
 import disabled from './disabled.vue';
 import disabledDoc from './disabled.vue?raw';
+const doc1 = ATExample(disabled, 'disabled : 禁止输入', disabledDoc);
+export const example1: Story = {
+  name: 'disabled : 禁止输入',
+  ...doc1,
+};
+
 import clearable from './clearable.vue';
 import clearableDoc from './clearable.vue?raw';
+const clearableSB = ATExample(clearable, 'clearable : 一键清空', clearableDoc);
+export const example2: Story = {
+  name: 'clearable : 一键清空',
+  ...clearableSB,
+};
+
 import showPassword from './showPassword.vue';
 import showPasswordDoc from './showPassword.vue?raw';
+const showPasswordSB = ATExample(showPassword, 'showPassword : 显示密码', showPasswordDoc);
+export const example3: Story = {
+  name: 'showPassword : 显示密码',
+  ...showPasswordSB,
+};
+
 import ktextarea from './textarea.vue';
 import textareaDoc from './textarea.vue?raw';
+const textareaSB = ATExample(ktextarea, 'textarea : 文本域', textareaDoc);
+export const example4: Story = {
+  name: 'textarea : 文本域',
+  ...textareaSB,
+};
+
 import maxInput from './maxInput.vue';
 import maxInputDoc from './maxInput.vue?raw';
+const maxInputSB = ATExample(maxInput, 'maxInput : 最大输入长度', maxInputDoc);
+export const example5: Story = {
+  name: 'maxInput : 最大输入长度',
+  ...maxInputSB,
+};
+
 import frontAndRearSlots from './frontAndRearSlots.vue';
 import frontAndRearSlotsDoc from './frontAndRearSlots.vue?raw';
-
-export const disabledSB = ATExample(disabled, 'disabled : 禁止输入', disabledDoc);
-export const clearableSB = ATExample(clearable, 'clearable : 一键清空', clearableDoc);
-export const showPasswordSB = ATExample(showPassword, 'showPassword : 显示密码', showPasswordDoc);
-export const textareaSB = ATExample(ktextarea, 'textarea : 文本域', textareaDoc);
-export const maxInputSB = ATExample(maxInput, 'maxInput : 最大输入长度', maxInputDoc);
-export const frontAndRearSlotsSB = ATExample(
-  frontAndRearSlots,
-  '组合使用&前后插槽',
-  frontAndRearSlotsDoc,
-);
-
-setTimeout(() => {}, 1);
-
-// console.log(bbm(disabled, 'BBMdisabled', disabledDoc));
-
-// TODO: 开发, input 尺寸
-// export const def8: Story = {
-//   name: '尺寸',
-//   render: (args: any) => {
-//     const text = ref('');
-//     const text1 = ref('');
-//     return {
-//       components: { KInput },
-//       setup() {
-//         return { args, text, text1 };
-//       },
-//       template: `
-//           <div  style="margin:5px">默认大小</div>
-//           <k-input v-model="text" type="text" :width="args.width" >
-//           </k-input>
-//           <div />
-//          <div  style="margin:5px"> size = lg</div>
-//           <k-input v-model="text" type="text" :width="args.width" size="lg">
-//           </k-input>
-//            <div  style="margin:5px"> size = base</div>
-//           <k-input v-model="text" type="text" :width="args.width" size="base">
-//           </k-input>
-//            <div  style="margin:5px"> size = sm</div>
-//           <k-input v-model="text1" type="text" :width="args.width" size="sm">
-//           </k-input>
-//       `
-//     };
-//   }
-// };
+const frontAndRearSlotsSB = ATExample(frontAndRearSlots, '组合使用&前后插槽', frontAndRearSlotsDoc);
+export const example6: Story = {
+  name: '组合使用&前后插槽',
+  ...frontAndRearSlotsSB,
+};

@@ -25,6 +25,8 @@
         filterable
         clearable
         @change="handleChange"
+        no-match-text="未找到相关的内容"
+        no-data-text="暂无数据"
       ></KTreeSelect>
     </div>
   </div>
@@ -35,8 +37,8 @@ import { ref, reactive } from 'vue';
 import { KTreeSelect } from '@components';
 
 const value = ref();
-const handleChange = (val) => {
-  console.log(value.value);
+const handleChange = (...val) => {
+  // console.log(val);
 };
 const data = [
   {

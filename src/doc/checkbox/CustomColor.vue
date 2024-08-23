@@ -8,7 +8,7 @@
     Check all
   </KCheckbox>
   <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange">
-    <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city" color="red">
+    <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city" color="#ff5500">
       {{ city }}
     </KCheckbox>
   </KCheckboxGroup>

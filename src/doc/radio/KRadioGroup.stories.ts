@@ -9,17 +9,17 @@ const meta = {
   argTypes: {
     size: {
       control: 'select',
-      options: ['base', 'sm']
+      options: ['base', 'sm'],
     },
     direction: {
       control: 'select',
-      options: ['row', 'column']
-    }
+      options: ['row', 'column'],
+    },
   },
   args: {
     size: 'base',
-    direction: 'row'
-  }
+    direction: 'row',
+  },
 } satisfies Meta<typeof KRadioGroup>;
 
 export default meta;
@@ -41,48 +41,26 @@ export const def: Story = {
         <KRadio :value="1" >钝角</KRadio>
         <KRadio :value="2" >锐角</KRadio>
         <KRadio :value="0" disabled >直角</KRadio>
-      </k-radio-group>`
+      </k-radio-group>`,
     };
-  }
+  },
 };
 
-// 自定义颜色
-import btn from './button.vue';
-import btnDoc from './button.vue?raw';
-export const sizeSB2: Story = {
+import { ATExample } from '../../hooks';
+// button : 控制不同样式
+import btn from './RGbutton.vue';
+import btnDoc from './RGbutton.vue?raw';
+const doc1 = ATExample(btn, 'button : 控制不同样式', btnDoc);
+export const example2: Story = {
   name: 'button : 控制不同样式',
-  render: (args: any) => ({
-    components: { btn },
-    setup() {
-      return { args };
-    },
-    template: '<btn v-bind="args" />'
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: btnDoc
-      }
-    }
-  }
+  ...doc1,
 };
 
-import size from './size.vue';
-import sizeDoc from './size.vue?raw';
-export const sizeSB: Story = {
+// size : 不同尺寸
+import RGsize from './RGsize.vue';
+import RGsizeDoc from './RGsize.vue?raw';
+const doc2 = ATExample(RGsize, 'size : 不同尺寸', RGsizeDoc);
+export const example1: Story = {
   name: 'size : 不同尺寸',
-  render: (args: any) => ({
-    components: { size },
-    setup() {
-      return { args };
-    },
-    template: '<size v-bind="args" />'
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: sizeDoc
-      }
-    }
-  }
+  ...doc2,
 };

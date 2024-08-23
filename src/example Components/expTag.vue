@@ -35,29 +35,10 @@
       <br />
     </div>
     <div class="flex items-start gap-2">
-      <KTooltip placement="top">
-        <template #reference>
-          <span
-            style="display: inline-flex; justify-content: center; align-items: center; gap: 0.25rem"
-          >
-            <span
-              style="
-                display: inline-flex;
-                width: 1.25rem;
-                height: 1.25rem;
-                justify-content: center;
-                align-items: center;
-                background-color: #c9ebff;
-                border-radius: 0.25rem;
-              "
-            >
-              <IconScrip color="#2882FF" size="16" />
-            </span>
-            <span>500</span>
-          </span>
-        </template>
-        脚本:500
-      </KTooltip>
+      <KTag type="primary">Primary</KTag>
+      <KTag type="primary" size="sm">Primary</KTag>
+      <KTag type="primary" point>Primary</KTag>
+      <KTag type="primary" point size="sm">Primary</KTag>
     </div>
   </div>
 

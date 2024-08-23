@@ -47,42 +47,19 @@ export const def: Story = {
   },
 };
 
+import { ATExample } from '../../hooks';
 import size from './size.vue';
 import sizeDoc from './size.vue?raw';
-export const sizeSB: Story = {
-  // name: 'size : 不同尺寸',
-  render: (args: any) => ({
-    components: { size },
-    setup() {
-      return { args };
-    },
-    template: '<size v-bind="args" />',
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: sizeDoc,
-      },
-    },
-  },
+const doc1 = ATExample(size, 'size : 不同尺寸', sizeDoc);
+export const example1: Story = {
+  name: 'size : 不同尺寸',
+  ...doc1,
 };
 
 import color from './color.vue';
 import colorDoc from './color.vue?raw';
-export const colorSB: Story = {
+const doc2 = ATExample(color, 'color : 自定义颜色', colorDoc);
+export const example2: Story = {
   name: 'color : 自定义颜色',
-  render: (args: any) => ({
-    components: { color },
-    setup() {
-      return { args };
-    },
-    template: '<color v-bind="args" />',
-  }),
-  parameters: {
-    docs: {
-      source: {
-        code: colorDoc,
-      },
-    },
-  },
+  ...doc2,
 };

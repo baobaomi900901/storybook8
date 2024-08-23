@@ -1,5 +1,5 @@
 <template>
-  <div class="sb-title-sub">图标(prefix-icon, suffix-icon)</div>
+  <div class="pt-4 pb-1">图标(prefix-icon, suffix-icon)</div>
   <div class="flex items-star gap-2">
     <div class="w-80">
       <KInput v-model="value" placeholder="请输入内容" prefix-icon="IconAdd"></KInput>
@@ -8,7 +8,8 @@
       <KInput v-model="value" placeholder="请输入内容" suffix-icon="IconDelete"></KInput>
     </div>
   </div>
-  <div class="sb-title-sub" @click="handleClick">默认: 插槽(prefix, suffix)</div>
+
+  <div class="pt-4 pb-1">默认: 插槽(prefix, suffix)</div>
   <div class="flex items-star gap-2">
     <div class="w-80">
       <KInput v-model="value" placeholder="请输入url">
@@ -17,7 +18,8 @@
       </KInput>
     </div>
   </div>
-  <div class="sb-title-sub" @click="handleClick">组合按钮与选择器: 插槽(prefix, suffix)</div>
+
+  <div class="pt-4 pb-1" @click="handleClick">组合按钮与选择器: 插槽(prefix, suffix)</div>
   <div class="flex items-star gap-2">
     <div class="w-full">
       <KInput v-model="value" placeholder="选择运行机器">
@@ -28,7 +30,12 @@
           </KSelect>
         </template>
         <template #append>
-          <KButton main icon-left="IconIdePlay">运行</KButton>
+          <KButtonGroup>
+            <KButton main icon-left="IconIdePlay">运行</KButton>
+            <KButton main>
+              <IconArrowBottom />
+            </KButton>
+          </KButtonGroup>
         </template>
       </KInput>
     </div>

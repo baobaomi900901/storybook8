@@ -71,6 +71,21 @@ import CustomColor from './CustomColor.vue';
 import CustomColorDoc from './CustomColor.vue?raw';
 import { de } from 'element-plus/es/locale';
 
-export const selectAll = ATExample(Indeterminate, '全选', IndeterminateDoc);
-export const minMax = ATExample(minMaxCheckbox, '最小最大值', minMaxCheckboxDoc);
-// export const customColor = ATExample(CustomColor, '自定义颜色', CustomColorDoc);
+const doc1 = ATExample(Indeterminate, 'check all:全选', IndeterminateDoc);
+export const example1: Story = {
+  name: 'check all:全选',
+  ...doc1,
+};
+
+const doc2 = ATExample(minMaxCheckbox, 'min&max: 最小与最大值', minMaxCheckboxDoc);
+export const example2: Story = {
+  name: 'min&max: 最小与最大值',
+  ...doc2,
+};
+
+// TODO: check 需要添加 自定义颜色
+// const customColor = ATExample(CustomColor, 'color:自定义颜色', CustomColorDoc);
+// export const example3: Story = {
+//   name: 'color:自定义颜色',
+//   ...customColor,
+// };

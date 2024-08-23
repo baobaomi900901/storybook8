@@ -7,10 +7,20 @@
       <span>自定义插槽-right</span>
     </div>
     <div class="grid grid-flow-row auto-rows-fr justify-items-center items-center gap-4">
-      <KButton iconLeft="IconAdd" main>普通按钮</KButton>
-      <KButton iconRight="IconArrowBottom" main>主要按钮</KButton>
-      <KButton type="success" main>主要按钮</KButton>
-      <KButton type="warning" main>主要按钮</KButton>
+      <KButton iconLeft="IconAdd" main>新增</KButton>
+      <KButton iconRight="IconArrowBottom" main>新增</KButton>
+      <KButton main>
+        <template #iconLeft>
+          <IconAdd />
+        </template>
+        新增
+      </KButton>
+      <KButton main>
+        <template #iconRight>
+          <IconArrowBottom />
+        </template>
+        新增
+      </KButton>
     </div>
   </div>
 </template>
