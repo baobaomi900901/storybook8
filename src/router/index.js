@@ -13,6 +13,7 @@ import {
   expCheckbox,
   expTag,
   expInputNumber,
+  expTooltip,
 } from '../example Components';
 
 // 引入示例页面
@@ -45,6 +46,7 @@ const routes = [
       { path: 'checkbox', component: expCheckbox, name: 'checkbox' },
       { path: 'tag', component: expTag, name: 'tag' },
       { path: 'input-number', component: expInputNumber, name: 'input-number' },
+      { path: 'tooltip', component: expTooltip, name: 'tooltip' },
     ],
   },
   {

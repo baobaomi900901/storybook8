@@ -11,13 +11,13 @@ import 'ksw-vue-icon/styles/icon.css';
 import router from './router';
 import { createPinia } from 'pinia';
 import SBExamplePanel from './components/SBExamplePanel.vue';
-import KUI from '@ksware/ksw-ux';
+// import KUI from '@ksware/ksw-ux';
 
 const app = createApp(App);
 app.use(router);
 app.use(elementPlus);
 app.use(KswIcon);
-app.use(KUI);
+// app.use(KUI);
 app.use(createPinia());
 install(app);
 app.mount('#app');

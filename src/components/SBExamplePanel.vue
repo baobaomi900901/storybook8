@@ -8,7 +8,7 @@
 <template>
   <div class="SBExamplePanel w-full pt-2">
     <div class="w-full rounded-2xl bg-white">
-      <Disclosure v-slot="{ open }" :defaultOpen="defaultOpen">
+      <Disclosure v-slot="{ open }" :defaultOpen="open">
         <DisclosureButton
           class="DisclosureButton flex w-full justify-between items-center rounded-lg bg-purple-100 px-4 py-2 text-left text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring focus-visible:ring-purple-500/75"
         >
@@ -47,7 +47,7 @@ const props = defineProps({
     type: String,
     default: 'SBExamplePanel',
   },
-  defaultOpen: {
+  open: {
     type: Boolean,
     default: false,
   },

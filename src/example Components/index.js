@@ -7,6 +7,8 @@ import expTreeSelect from './expTreeSelect.vue';
 import expCheckbox from './expCheckbox.vue';
 import expTag from './expTag.vue';
 import expInputNumber from './expInputNumber.vue';
+// expTooltip
+import expTooltip from './expTooltip.vue';
 
 export {
   expButton,
@@ -18,4 +20,5 @@ export {
   expCheckbox,
   expTag,
   expInputNumber,
+  expTooltip,
 };
