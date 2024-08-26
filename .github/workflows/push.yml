@@ -72,5 +72,5 @@ jobs:
         msgtype: markdown
         content: "兄弟们，咱们的文档更新啦！\n
         > 变更日志 [${{ env.COMMIT_SHORT_SHA }}](https://github.com/${{github.repository}}/commit/${{github.sha}})\n
-        > <font color=\"comment\">${{ github.event.head_commit.message }}</font>\n
+        > <font color=\"comment\">${{ github.event.head_commit.message }}</font>\n\n
         [查看文档](https://ksw-storybook.design.donxj.com/)"
