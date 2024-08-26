@@ -57,13 +57,13 @@ jobs:
           ls -al
           echo $RSYNC_STDOUT
 
-      # 发送企业微信通知
-      - name: WeChat Work notification
-        uses: chf007/action-wechat-work@master
-        env:
-          WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
-        with:
-          msgtype: markdown
-          content: "兄弟们，咱们的文档更新啦！\n[${GITHUB_SHA::7}](https://github.com/${{github.repository}}/commit/${{github.sha}})
-          >变更日志\n<font color=\"comment\">${{ github.event.head_commit.message }}</font>
+    # 发送企业微信通知
+    - name: WeChat Work notification
+      uses: chf007/action-wechat-work@master
+      env:
+        WECHAT_WORK_BOT_WEBHOOK: ${{secrets.WECHAT_WORK_BOT_WEBHOOK}}
+      with:
+        msgtype: markdown
+        content: "兄弟们，咱们的文档更新啦！\n[${GITHUB_SHA::7}](https://github.com/${{github.repository}}/commit/${{github.sha}})
+        >变更日志\n<font color=\"comment\">${{ github.event.head_commit.message }}</font>
 \n[查看文档](https://ksw-storybook.design.donxj.com/)"
