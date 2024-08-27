@@ -27,7 +27,9 @@
         @change="handleChange"
         no-match-text="未找到相关的内容"
         no-data-text="暂无数据"
-      ></KTreeSelect>
+      >
+        <!-- <template #empty>empty</template> -->
+      </KTreeSelect>
     </div>
   </div>
 </template>

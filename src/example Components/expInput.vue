@@ -157,7 +157,7 @@
 
           <KInput v-model="value" placeholder="btn, select">
             <template #prepend>
-              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮1</KButton>
             </template>
           </KInput>
 
@@ -254,7 +254,7 @@
 
           <KInput v-model="value" placeholder="btn, select">
             <template #append>
-              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+              <KButton @click="handleClick('普通按钮')">普通按钮1</KButton>
             </template>
           </KInput>
 

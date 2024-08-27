@@ -9,6 +9,8 @@ import expTag from './expTag.vue';
 import expInputNumber from './expInputNumber.vue';
 // expTooltip
 import expTooltip from './expTooltip.vue';
+// expForm.vue
+import expForm from './expForm.vue';
 
 export {
   expButton,
@@ -21,4 +23,5 @@ export {
   expTag,
   expInputNumber,
   expTooltip,
+  expForm,
 };
