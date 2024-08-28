@@ -5,7 +5,6 @@ import { IconAdd, IconArrowBottom } from 'ksw-vue-icon';
 const meta = {
   title: 'Base(B)/KButton',
   component: KButton,
-  tags: ['autodocs'],
   argTypes: {
     value: 'text',
     size: {

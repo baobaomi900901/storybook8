@@ -10,13 +10,15 @@
     <div class="epx-title">KButton</div>
 
     <SBExamplePanel label="按钮类型" defaultOpen>
-      <KButton @click="handleClick">普通</KButton>
-      <KButton @click="handleClick" main>主要</KButton>
-      <KButton @click="handleClick" secondary>按钮</KButton>
-      <KButton @click="handleClick" text>按钮</KButton>
-      <KButton icon>
-        <IconAdd />
-      </KButton>
+      <div class="gap-0">
+        <KButton @click="handleClick">普通</KButton>
+        <KButton @click="handleClick" main>主要</KButton>
+        <KButton @click="handleClick" secondary>按钮</KButton>
+        <KButton @click="handleClick" text>按钮</KButton>
+        <KButton icon>
+          <IconAdd />
+        </KButton>
+      </div>
     </SBExamplePanel>
 
     <SBExamplePanel label="尺寸" defaultOpen>

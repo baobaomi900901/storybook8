@@ -5,7 +5,6 @@ import { ref } from 'vue';
 const meta = {
   title: 'Data Entry(DE)/KTag',
   component: KTag,
-  tags: ['autodocs'],
   argTypes: {
     size: {
       control: 'select',
@@ -39,7 +38,6 @@ export const def: Story = {
     };
   },
 };
-console.log(def);
 
 import { ATExample } from '../../hooks';
 import blockComp from './block.vue';

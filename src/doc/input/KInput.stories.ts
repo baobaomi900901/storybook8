@@ -4,7 +4,6 @@ import { ref } from 'vue';
 const meta = {
   title: 'Data Entry(DE)/KInput',
   component: KInput,
-  tags: ['autodocs'],
   argTypes: {
     type: {
       control: 'text',

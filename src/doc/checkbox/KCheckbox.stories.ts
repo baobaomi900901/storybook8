@@ -5,7 +5,6 @@ import { ref } from 'vue';
 const meta = {
   title: 'Data Entry(DE)/KCheckbox',
   component: KCheckbox,
-  tags: ['autodocs'],
   argTypes: {
     size: {
       control: 'select',
