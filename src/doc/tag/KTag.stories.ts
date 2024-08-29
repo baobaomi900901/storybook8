@@ -19,6 +19,17 @@ const meta = {
     size: 'base',
     direction: 'row',
   },
+  parameters: {
+    controls: {
+      // exclude: ['showPage', 'border'],
+    },
+    docs: {
+      subtitle: '用于标记和选择。',
+      description: {
+        component: 'Another description, overriding the comments',
+      },
+    },
+  },
 } satisfies Meta<typeof KTag>;
 
 export default meta;

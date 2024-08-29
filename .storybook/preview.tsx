@@ -1,4 +1,5 @@
-import { Preview, setup } from '@storybook/vue3';
+import { setup } from '@storybook/vue3';
+import { Preview } from '@storybook/your-framework';
 import '../kswux/package/style/variable.css';
 import 'ksw-vue-icon/styles/icon.css';
 import '@iframe-resizer/child';
@@ -8,6 +9,8 @@ import install from '../kswux/package/index'; // 全局注册组件
 import { KswIcon } from 'ksw-vue-icon';
 import '../src/myStyle.css';
 import '../src/style.css';
+import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
+import DocTemplate from './DocTemplate.mdx';
 
 setup((app) => {
   app.use(elementPlus);
@@ -29,6 +32,9 @@ const preview: Preview = {
       storySort: {
         order: [''],
       },
+    },
+    docs: {
+      page: DocTemplate,
     },
   },
 };

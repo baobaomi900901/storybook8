@@ -1,117 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
 import { KTreeTable } from '@components';
 import { ref, reactive } from 'vue';
-import DocumentationTemplate from './DocumentationTemplate.mdx';
-
-// export interface TreeTableProps {
-//   /**
-//    * 列配置
-//    */
-//   column: columnConfigType[];
-//   /**
-//    * 是否显示分页 默认值 true0
-//    */
-//   showPage?: boolean;
-//   /**
-//    * 是否使用树形结构 默认值 false
-//    */
-//   useTree?: boolean;
-//   /**
-//    * 是否远程查询 默认值 false
-//    */
-//   isRemoteQuery?: boolean;
-//   isServerPaging?: boolean;
-//   /**
-//    * 分页配置
-//    */
-//   paginationConfig?: PaginationConfigType;
-//   /**
-//    * 是否显示描述 默认值 true
-//    */
-//   showDescription?: boolean;
-//   /**
-//    * 是否显示表头工具栏 默认值 true
-//    */
-//   showHeaderTools?: boolean;
-//   /**
-//    * 批量操作配置
-//    */
-//   batchOperations?: any[];
-//   /**
-//    * 是否显示批量操作 默认值
-//    */
-//   showBatchOperation?: boolean;
-//   /**
-//    * 是否显示列头菜单 默认值 false
-//    */
-//   showColumnMenu?: boolean;
-//   /**
-//    * 是否显示拖拽列 默认值 false
-//    */
-//   showDragColumn?: boolean;
-//   /**
-//    * 单元格点击是否切换高亮状态 默认值 true
-//    */
-//   cellClickToggleHighlight?: boolean;
-//   /**
-//    * 自定义表头菜单组件
-//    */
-//   widgets?: (string | widgetItemType)[];
-//   /**
-//    * 是否显示搜索框 默认值 true
-//    */
-//   showSearchInput?: boolean;
-//   /**
-//    * 是否显示筛选器 默认值 true
-//    */
-//   showFilter?: boolean;
-//   /**
-//    * 是否显示刷新按钮 默认值 false
-//    */
-//   showRefresh?: boolean;
-//   /**
-//    * 是否显示数据穿梭按钮 默认值 false
-//    */
-//   showTransfer?: boolean;
-//   /**
-//    * 高级筛选器配置
-//    */
-//   advancedFilterConfig?: {
-//     /**
-//      * 自定义筛选列配置
-//      */
-//     filterColumns?: FilterColumnType[];
-//     /**
-//      * 是否筛选全部 默认值 true，为false时只筛选可见数据
-//      */
-//     filterAll?: boolean;
-//     /**
-//      * 排除字段
-//      */
-//     exclude?: string[];
-//     /**
-//      * 默认条件，只在初始化时生效
-//      */
-//     defaultConditions?: any[];
-//   };
-//   /**
-//    * 搜索配置
-//    */
-//   searchConfig?: {
-//     /**
-//      * 是否严格匹配 默认值 false
-//      */
-//     strict?: boolean;
-//     /**
-//      * 自定义搜索方法，返回匹配的数据
-//      */
-//     searchMethod?: (key, data: any[]) => any[];
-//     /**
-//      * 是否远程查询 默认值 false
-//      */
-//     isRemoteQuery?: boolean;
-//   };
-// }
+import DocumentationTemplate from '../../../.storybook/DocTemplate.mdx';
 
 const meta = {
   title: 'Data Display(DD)/KTreeTable',
@@ -289,7 +179,7 @@ const meta = {
       //     // exclude: /.*/g, // 禁用全部控制
     },
     docs: {
-      //     // page: DocumentationTemplate,
+      page: DocumentationTemplate,
     },
   },
 } satisfies Meta<typeof KTreeTable>;
