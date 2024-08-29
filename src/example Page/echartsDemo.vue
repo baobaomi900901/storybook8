@@ -11,12 +11,12 @@
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
-import * as echarts from 'echarts';
+// import * as echarts from 'echarts';
 
 onMounted(() => {
-  var chartDom = document.getElementById('echartsdemo');
-  var myChart = echarts.init(chartDom);
-  var option;
+  // var chartDom = document.getElementById('echartsdemo');
+  // var myChart = echarts.init(chartDom);
+  // var option;
 
   option = {
     xAxis: {

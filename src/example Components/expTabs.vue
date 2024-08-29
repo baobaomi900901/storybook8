@@ -9,9 +9,8 @@
   <div class="epx-container">
     <div class="epx-title">KTabs, KTabPane</div>
 
-    <div class="epx-title-sub">type:</div>
-    <div class="flex items-center gap-2">
-      <KTabs v-model="activeName">
+    <SBExamplePanel label="默认" open>
+      <KTabs v-model="activeName" class="w-full">
         <KTabPane label="tab1" name="tab1" closable>
           <template #label>tab1123123123123123123123123123123123123123123123123123123123</template>
           Curren tab is tab1
@@ -19,41 +18,8 @@
         <KTabPane label="tab2" :icon="Edit" name="tab2" closable>Curren tab is tab2</KTabPane>
         <KTabPane label="tab3" name="tab3">Curren tab is tab3</KTabPane>
       </KTabs>
-    </div>
-
-    <div class="epx-title-sub">antV</div>
-
-    <KButton @click="fromTo(5)">跳转到 5 页</KButton>
-    <KButton @click="fromTo(19)">跳转到 20 页</KButton>
-    <div class="flex items-center gap-2">
-      <div ref="boxCenter" class="boxCenter w-80">
-        <!-- <KTabs v-model="activeName2" :id="id">
-          <k-tab-pane v-for="index in 20" :label="'tab' + index" :name="'tab' + index">
-            Curren tab is tab{{ index }}
-          </k-tab-pane>
-        </KTabs> -->
-      </div>
-    </div>
+    </SBExamplePanel>
   </div>
-
-  <!-- <div class="epx-title-sub">type:</div>
-  <div class="flex items-center gap-2 w-full" style="width: 100vw">
-    <k-tabs v-model="activeName" tabPosition="top" addable class="w-full">
-      <k-tab-pane v-for="index in 30" :name="'tab' + index" :disabled="index === 3">
-        Curren tab is tab{{ index }}
-        <template #label>tab{{ index }}</template>
-      </k-tab-pane> -->
-  <!-- <k-tab-pane label="tab1" name="tab1">
-        Curren tab is tab2
-      </k-tab-pane>
-      <k-tab-pane label="tab2" :icon="Edit" name="tab2">
-        Curren tab is tab2
-      </k-tab-pane>
-      <k-tab-pane label="tab3" name="tab3">
-        Curren tab is tab3
-      </k-tab-pane> -->
-  <!-- </k-tabs>
-  </div> -->
 </template>
 
 <script setup>
@@ -151,7 +117,4 @@ const isItemInBox = (item, index, boxW, boxSX) => {
   return { res, scrollNum };
 };
 </script>
-<style scoped>
-.box {
-}
-</style>
+<style scoped></style>
