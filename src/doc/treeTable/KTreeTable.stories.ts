@@ -106,7 +106,7 @@ const meta = {
       description: '是否显示批量操作',
       type: 'boolean',
     },
-    showColumnMenu: {
+    showColumnMenu2: {
       description: '是否显示列头菜单',
       type: 'boolean',
     },
