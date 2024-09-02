@@ -11,12 +11,14 @@ import '../src/myStyle.css';
 import '../src/style.css';
 import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
 import DocTemplate from './DocTemplate.mdx';
+import SBExamplePanel from '../src/components/SBExamplePanel.vue';
 
 setup((app) => {
   app.use(elementPlus);
   app.use(KswIcon);
   // app.use(install);
   install(app);
+  app.component('SBExamplePanel', SBExamplePanel);
 });
 
 const preview: Preview = {
@@ -34,7 +36,7 @@ const preview: Preview = {
       },
     },
     docs: {
-      page: DocTemplate,
+      // page: DocTemplate,
     },
   },
 };
