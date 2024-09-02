@@ -1,106 +1,41 @@
 <template>
-  <div :style="{ height: '500px' }">
-    <k-tree-table :data="tableData" :column="column"></k-tree-table>
+  <div :style="{ height: '300px' }">
+    <k-tree-table :data="tableData" :column="column1" :show-page="false" border></k-tree-table>
   </div>
 </template>
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
 
-const column = ref([
-  {
-    type: 'checkbox',
-    width: '50',
-  },
+const column1 = ref([
   {
     title: 'Id',
     field: 'id',
-    width: '50',
+    width: '100',
     dataType: 'number',
   },
   {
     title: 'Name',
     field: 'name',
-    dataType: 'string',
   },
   {
     title: 'Role',
     field: 'role',
-    dataType: 'string',
-    align: 'center',
   },
   {
     title: 'Sex',
     field: 'sex',
-    dataType: 'string',
-    align: 'left',
   },
   {
     title: 'Age',
     field: 'age',
     dataType: 'number',
-    align: 'right',
   },
   {
     title: 'Address',
     field: 'address',
-    dataType: 'string',
   },
 ]);
-
-const columnPro = [
-  {
-    title: 'Id',
-    field: 'id',
-    width: '50px',
-    dataType: 'number',
-  },
-  {
-    title: 'Name',
-    field: 'name',
-    render: ({ row }) => {
-      return <span style={{ color: 'green' }}>{row.name}</span>;
-    },
-  },
-  {
-    title: 'Role',
-    field: 'role',
-    dataType: 'string',
-  },
-  {
-    title: 'Other1',
-    field: 'other1',
-    group: [
-      {
-        title: 'Other2',
-        field: 'other2',
-        group: [
-          {
-            title: 'Age',
-            field: 'age',
-            dataType: 'number',
-            showIcon: true,
-            __folder: true,
-          },
-          {
-            title: 'Sex',
-            field: 'sex',
-            dataType: 'string',
-            render: ({ row }) => {
-              return <span style={{ color: 'red' }}>{row.sex}</span>;
-            },
-          },
-        ],
-      },
-      {
-        title: 'Address',
-        field: 'address',
-        dataType: 'string',
-      },
-    ],
-  },
-];
-
 const tableData = reactive([
   {
     id: 1,
