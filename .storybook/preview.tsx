@@ -36,7 +36,7 @@ const preview: Preview = {
       },
     },
     docs: {
-      page: DocTemplate,
+      // page: DocTemplate,
     },
   },
 };
