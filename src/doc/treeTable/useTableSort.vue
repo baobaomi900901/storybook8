@@ -1,21 +1,18 @@
 <template>
-  <!-- 单元格布局 -->
-  <!-- 通过align属性设置单元格的对齐方式，可选值有left、center、right，默认为left，
-      也可以在列配置中设置align属性，优先级高于align属性
-  -->
   <SBExamplePanel label="注释" open>
     <p>
-      单元格布局:
+      表格排序:
       <br />
-      通过align属性设置单元格的对齐方式，可选值有left、center、right，默认为left，
-      也可以在列配置中设置align属性，优先级高于align属性
+      1.在列配置中配置sortable属性为true，表示该列可排序
+      <br />
+      2.可以通过快捷入口和列菜单栏进行排序
     </p>
   </SBExamplePanel>
   <br />
   <div :style="{ height: '300px' }">
     <k-tree-table
       :data="tableData"
-      :column="column2"
+      :column="column6"
       :show-page="false"
       align="center"
       border
@@ -45,16 +42,20 @@ const tableData = reactive([
   { id: 16, name: 'Test16', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' },
 ]);
 
-const column2 = ref([
+// 列排序配置示例
+const column6 = ref([
   {
     title: 'Id',
     field: 'id',
     width: '100',
     dataType: 'number',
+    sortable: true,
+    showColumnMenu: true,
   },
   {
     title: 'Name',
     field: 'name',
+    showIcon: true,
   },
   {
     title: 'Role',

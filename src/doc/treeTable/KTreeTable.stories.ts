@@ -1,477 +1,181 @@
 import type { Meta, StoryObj } from '@storybook/vue3';
-import { KTreeTable } from '@components';
+import { KTreeTable, KTag } from '@components';
 import { ref, reactive } from 'vue';
 import DocumentationTemplate from '../../../.storybook/DocTemplate.mdx';
-
-export interface columnConfigType extends VxeColumnProps {
-  /**
-   *
-   */
-  visible?: boolean;
-  /**
-   *
-   */
-  key?: string | number;
-  /**
-   *
-   */
-  field?: string;
-  /**
-   *是否可见
-   */
-  title?: string;
-  /**
-   * 列名
-   */
-  width?: string | number;
-  /**
-   *列宽
-   */
-  filters?: any[];
-  /**
-   *筛选配置，参考vxe-table
-   */
-  treeNode?: boolean;
-  /**
-   *该列是否为树节点，只在useTree为true时有效
-   */
-  cellRender?: any;
-  /**
-   *自定义渲染列，参考vxe-table
-   */
-  editRender?: any;
-  /**
-   *自定义编辑列，参考vxe-table
-   */
-  minWidth?: string | number;
-  /**
-   *最小宽度
-   */
-  sortable?: boolean;
-  /**
-   *是否开启排序
-   */
-  showIcon?: boolean;
-  /**
-   *
-   */
-  showColumnMenu?: boolean;
-  /**
-   *是否显示列头菜单
-   */
-  group?: VxeColgroupProps[];
-  /**
-   *多级列头配置，数组结构与列配置一致
-   */
-  dataType?: string;
-  /**
-   *该列数据类型，默认string，用于表格高级筛选
-   */
-  render?: () => VNode;
-  /**
-   *自定义渲染该列单元格内容
-   */
-}
-
-type widgetItemType = {
-  /**
-   *table.widget参数配置
-   */
-  id: string;
-  /**
-   * widget标识符
-   */
-  widget: Component | (() => VNode | Component);
-  /**
-   * 自定义渲染函数
-   */
-};
-
-type FilterColumnType = {
-  /**
-   * 自定义筛选列配置
-   */
-  title: string;
-  /**
-   *列名
-   */
-  field: string;
-  /**
-   *与表格列field一致
-   */
-  dataType?: string;
-  /**
-   * 数据类型
-   */
-  options: {
-    /**
-     * 自定义选项
-     */
-    label: string;
-    /**
-     *
-     */
-    value: any;
-  }[];
-};
-
-// 分页配置
-export interface PaginationConfigType {
-  total?: number; // 总条数
-  pagerCount?: number; // 显示页码数量
-  currentPage?: number; // 当前页
-  pageSizes?: number[]; // 每页数据条数选项
-  pageSize?: number; // 每页数据量
-  layout?: string; // 布局
-  isRemotePaging?: boolean; // 是否远程分页
-}
-
-export interface TreeTableProps {
-  /**
-   * 列配置
-   */
-  column: columnConfigType[];
-  /**
-   * 是否显示分页 默认值 true
-   */
-  showPage?: boolean;
-  /**
-   * 是否使用树形结构 默认值 false
-   */
-  useTree?: boolean;
-  /**
-   * 是否远程查询 默认值 false
-   */
-  isRemoteQuery?: boolean;
-  isServerPaging?: boolean;
-  /**
-   * 分页配置
-   */
-  paginationConfig?: PaginationConfigType;
-  /**
-   * 是否显示描述 默认值 true
-   */
-  showDescription?: boolean;
-  /**
-   * 是否显示表头工具栏 默认值 true
-   */
-  showHeaderTools?: boolean;
-  /**
-   * 批量操作配置
-   */
-  batchOperations?: any[];
-  /**
-   * 是否显示批量操作 默认值
-   */
-  showBatchOperation?: boolean;
-  /**
-   * 是否显示列头菜单 默认值 false
-   */
-  showColumnMenu?: boolean;
-  /**
-   * 是否显示拖拽列 默认值 false
-   */
-  showDragColumn?: boolean;
-  /**
-   * 单元格点击是否切换高亮状态 默认值 true
-   */
-  cellClickToggleHighlight?: boolean;
-  /**
-   * 自定义表头菜单组件
-   */
-  widgets?: (string | widgetItemType)[];
-  /**
-   * 是否显示搜索框 默认值 true
-   */
-  showSearchInput?: boolean;
-  /**
-   * 是否显示筛选器 默认值 true
-   */
-  showFilter?: boolean;
-  /**
-   * 是否显示刷新按钮 默认值 false
-   */
-  showRefresh?: boolean;
-  /**
-   * 是否显示数据穿梭按钮 默认值 false
-   */
-  showTransfer?: boolean;
-  /**
-   * 高级筛选器配置
-   */
-  advancedFilterConfig?: {
-    /**
-     * 自定义筛选列配置
-     */
-    filterColumns?: FilterColumnType[];
-    /**
-     * 是否筛选全部 默认值 true，为false时只筛选可见数据
-     */
-    filterAll?: boolean;
-    /**
-     * 排除字段
-     */
-    exclude?: string[];
-    /**
-     * 默认条件，只在初始化时生效
-     */
-    defaultConditions?: any[];
-  };
-  /**
-   * 搜索配置
-   */
-  searchConfig?: {
-    /**
-     * 是否严格匹配 默认值 false
-     */
-    strict?: boolean;
-    /**
-     * 自定义搜索方法，返回匹配的数据
-     */
-    searchMethod?: (key, data: any[]) => any[];
-    /**
-     * 是否远程查询 默认值 false
-     */
-    isRemoteQuery?: boolean;
-  };
-}
 
 const meta = {
   title: 'Data Display(DD)/KTreeTable',
   component: KTreeTable,
   argTypes: {
-    TreeTableProps: {
-      description: '表格配置:, 配置项如下👇🏻',
-      control: 'boolean',
-    },
     column: {
       description: '继承 VxeColumnProps:, 常用配置项如下👇🏻',
       control: 'boolean',
-      if: { arg: 'TreeTableProps', truthy: true },
       type: 'columnConfigType | VxeColumnProps',
     },
     visible: {
       description: '是否可见',
-      if: { arg: 'column', truthy: true },
+
       type: 'boolean',
     },
-    key: {
-      if: { arg: 'column', truthy: true },
-    },
+    key: {},
     field: {
-      if: { arg: 'column', truthy: true },
       description: '是否可见',
       type: 'string',
     },
     title: {
-      if: { arg: 'column', truthy: true },
       description: '列名',
       type: 'string',
     },
     width: {
-      if: { arg: 'column', truthy: true },
       description: '列宽',
       type: ' string | number',
     },
     filters: {
-      if: { arg: 'column', truthy: true },
       description: '筛选配置，参考vxe-table',
       type: 'any[]',
     },
     treeNode: {
-      if: { arg: 'column', truthy: true },
       description: '该列是否为树节点，只在useTree为true时有效',
       type: 'boolean',
     },
     cellRender: {
-      if: { arg: 'column', truthy: true },
       description: '自定义渲染列，参考vxe-table',
       type: 'any',
     },
     editRender: {
-      if: { arg: 'column', truthy: true },
       description: '自定义渲染列，参考vxe-table',
       type: 'any',
     },
     minWidth: {
-      if: { arg: 'column', truthy: true },
       description: '最小宽度',
       type: 'string | number',
     },
     sortable: {
-      if: { arg: 'column', truthy: true },
       description: '参考vxe-table',
       type: 'boolean',
     },
     showColumnMenu: {
-      if: { arg: 'column', truthy: true },
       description: '是否显示列头菜单',
       type: 'boolean',
     },
     group: {
-      if: { arg: 'column', truthy: true },
       description: '多级列头配置，数组结构与列配置一致',
       type: 'VxeColgroupProps[]',
     },
     dataType: {
-      if: { arg: 'column', truthy: true },
       description: '该列数据类型，默认string，用于表格高级筛选',
       type: 'string',
     },
     render: {
-      if: { arg: 'column', truthy: true },
       description: '自定义渲染该列单元格内容',
       type: 'render?: () => VNode',
     },
     showPage: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示分页',
       type: 'boolean',
     },
     useTree: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示分页',
       type: 'boolean',
     },
     isRemoteQuery: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示分页',
       type: 'boolean',
     },
     isServerPaging: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否服务器分页',
       type: 'boolean',
     },
     paginationConfig: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '分页配置',
       type: 'PaginationConfigType',
     },
     showDescription: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示秒数',
       type: 'boolean',
     },
     showHeaderTools: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示表头工具栏',
       type: 'boolean',
     },
     batchOperations: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '批量操作配置',
       type: 'any[]',
     },
     showBatchOperation: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示批量操作',
       type: 'boolean',
     },
     showColumnMenu: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示列头菜单',
       type: 'boolean',
     },
     showDragColumn: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示拖拽列',
       type: 'boolean',
     },
     cellClickToggleHighlight: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '单元格点击是否切换高亮状态',
       type: 'boolean',
     },
     widgets: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '自定义表头菜单组件',
       type: '(string | widgetItemType)[]',
     },
     showSearchInput: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示搜索框',
       type: 'boolean',
     },
     showFilter: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示筛选器',
       type: 'boolean',
     },
     showRefresh: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示刷新按钮',
       type: 'boolean',
     },
     showTransfer: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '是否显示数据穿梭按钮',
       type: 'boolean',
     },
     advancedFilterConfig: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '高级筛选器配置: 如下👇🏻',
       type: 'boolean',
     },
     filterColumns: {
-      if: { arg: 'advancedFilterConfig', truthy: true },
       description: '自定义筛选列配置',
       type: 'FilterColumnType[]',
     },
     filterAll: {
-      if: { arg: 'advancedFilterConfig', truthy: true },
       description: '是否筛选全部 默认值 true，为false时只筛选可见数据',
       type: 'boolean',
     },
     exclude: {
-      if: { arg: 'advancedFilterConfig', truthy: true },
       description: '排除字段',
       type: 'string[]',
     },
     defaultConditions: {
-      if: { arg: 'advancedFilterConfig', truthy: true },
       description: '默认条件，只在初始化时生效',
       type: 'any[]',
     },
     searchConfig: {
-      if: { arg: 'TreeTableProps', truthy: true },
       description: '搜索配置',
       type: 'boolean',
     },
     strict: {
-      if: { arg: 'searchConfig', truthy: true },
       description: '是否严格匹配 默认值 false',
       type: 'boolean',
     },
     searchMethod: {
-      if: { arg: 'searchConfig', truthy: true },
       description: '自定义搜索方法，返回匹配的数据',
       type: '(key, data: any[]) => any[]',
     },
     'searchConfig--isRemoteQuery': {
-      if: { arg: 'searchConfig', truthy: true },
       description: '是否远程查询 默认值 false',
       type: 'boolean',
     },
   },
-  args: {
-    TreeTableProps: false,
-    column: false,
-    // widgets: false,
-    showPage: false,
-    useTree: false,
-    isRemoteQuery: false,
-    showDescription: true,
-    showColumnMenu: false,
-    showDragColumn: false,
-    cellClickToggleHighlight: true,
-    showSearchInput: true,
-    showFilter: true,
-    showRefresh: false,
-    advancedFilterConfig: true,
-    filterAll: true,
-    searchConfig: true,
-  },
+  args: {},
   parameters: {
     controls: {
       //     // exclude: ['showPage', 'border'],
@@ -606,9 +310,9 @@ import { ATExample } from '../../hooks';
 // base
 import base from './base.vue';
 import baseDoc from './base.vue?raw';
-const doc1 = ATExample(base, 'base: 基础使用', baseDoc);
+const doc1 = ATExample(base, '基础使用', baseDoc);
 export const def1Example: Story = {
-  name: 'base',
+  name: '基础使用',
   ...doc1,
 };
 
@@ -617,6 +321,91 @@ import cellLayout from './cellLayout.vue';
 import cellLayoutDoc from './cellLayout.vue?raw';
 const doc2 = ATExample(cellLayout, 'cellLayout: 单元格布局', cellLayoutDoc);
 export const def2Example: Story = {
-  name: 'cellLayout',
+  name: '单元格布局',
   ...doc2,
+};
+
+// EditableCells
+import editableCells from './editableCells.vue';
+import editableCellsDoc from './editableCells.vue?raw';
+const doc3 = ATExample(
+  editableCells,
+  'editableCells: 可编辑单元格, 示例中双击 Name 列的单元格文字,即可编辑',
+  editableCellsDoc,
+);
+export const def3Example: Story = {
+  name: '可编辑单元格',
+  ...doc3,
+};
+
+// searchFunction
+import searchFunction from './searchFunction.vue';
+import searchFunctionDoc from './searchFunction.vue?raw';
+const doc4 = ATExample(searchFunction, 'searchFunction: 搜索功能', searchFunctionDoc);
+export const def4Example: Story = {
+  name: '自定义搜索方法',
+  ...doc4,
+};
+
+// advancedScreening
+import advancedScreening from './advancedScreening.vue';
+import advancedScreeningDoc from './advancedScreening.vue?raw';
+const doc5 = ATExample(advancedScreening, 'advancedScreening: 高级筛选器', advancedScreeningDoc);
+export const def5Example: Story = {
+  name: '高级筛选器',
+  ...doc5,
+};
+
+// formToolbar
+import formToolbar from './formToolbar.vue';
+import formToolbarDoc from './formToolbar.vue?raw';
+const doc6 = ATExample(formToolbar, 'formToolbar: 表单工具栏', formToolbarDoc);
+export const def6Example: Story = {
+  name: '表单工具栏',
+  ...doc6,
+};
+
+// customRender
+import customRender from './customRender.vue';
+import customRenderDoc from './customRender.vue?raw';
+const doc7 = ATExample(customRender, 'customRender: 自定义渲染', customRenderDoc);
+export const def7Example: Story = {
+  name: '自定义渲染',
+  ...doc7,
+};
+
+// customCellIcon
+import customCellIcon from './customCellIcon.vue';
+import customCellIconDoc from './customCellIcon.vue?raw';
+const doc8 = ATExample(customCellIcon, 'customCellIcon: 自定义单元格图标', customCellIconDoc);
+export const def8Example: Story = {
+  name: '自定义单元格图标',
+  ...doc8,
+};
+
+// useTreeTable
+import useTreeTable from './useTreeTable.vue';
+import useTreeTableDoc from './useTreeTable.vue?raw';
+const doc9 = ATExample(useTreeTable, 'useTreeTable: 树形表格', useTreeTableDoc);
+export const def9Example: Story = {
+  name: '树形表格',
+  ...doc9,
+};
+
+// useTableSort
+import useTableSort from './useTableSort.vue';
+import useTableSortDoc from './useTableSort.vue?raw';
+const doc10 = ATExample(useTableSort, 'useTableSort: 表格排序', useTableSortDoc);
+export const def10Example: Story = {
+  name: '表格排序',
+  ...doc10,
+};
+
+// useTableFilter
+import useTableFilter from './useTableFilter.vue';
+import useTableFilterDoc from './useTableFilter.vue?raw';
+const doc11 = ATExample(useTableFilter, 'useTableFilter: 表格筛选', useTableFilterDoc);
+export const def11Example: Story = {
+  name: '表格筛选',
+  ...doc11,
 };

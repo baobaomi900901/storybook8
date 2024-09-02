@@ -1,30 +1,24 @@
 <template>
-  <!-- 单元格布局 -->
-  <!-- 通过align属性设置单元格的对齐方式，可选值有left、center、right，默认为left，
-      也可以在列配置中设置align属性，优先级高于align属性
-  -->
   <SBExamplePanel label="注释" open>
     <p>
-      单元格布局:
+      树形表格:
       <br />
-      通过align属性设置单元格的对齐方式，可选值有left、center、right，默认为left，
-      也可以在列配置中设置align属性，优先级高于align属性
+      1.设置参数use-tree为true时启用树形表格(传入的数据需为扁平化的树形结构数组)
+      <br />
+      2.设置参数tree-config配置树形结构，参考vxe-table实现
+      <br />
+      3.需要再某列配置中设置treeNode属性为true，表示该列为树形结构的节点列
     </p>
   </SBExamplePanel>
   <br />
   <div :style="{ height: '300px' }">
-    <k-tree-table
-      :data="tableData"
-      :column="column2"
-      :show-page="false"
-      align="center"
-      border
-    ></k-tree-table>
+    <k-tree-table :data="tableData" :column="column7" :show-page="false" border></k-tree-table>
   </div>
 </template>
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
+import { KTreeTable } from '@components';
 
 const tableData = reactive([
   { id: 1, name: 'Test1', role: 'Develop', sex: 'Man', age: 28, address: 'test abc' },
@@ -45,16 +39,19 @@ const tableData = reactive([
   { id: 16, name: 'Test16', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' },
 ]);
 
-const column2 = ref([
+// 列筛选配置示例
+const column7 = ref([
   {
     title: 'Id',
     field: 'id',
     width: '100',
     dataType: 'number',
+    showColumnMenu: true,
   },
   {
     title: 'Name',
     field: 'name',
+    showIcon: true,
   },
   {
     title: 'Role',
@@ -63,6 +60,11 @@ const column2 = ref([
   {
     title: 'Sex',
     field: 'sex',
+    showColumnMenu: true,
+    filters: [
+      { label: '男', value: 'Man' },
+      { label: '女', value: 'Women' },
+    ],
   },
   {
     title: 'Age',

@@ -1,30 +1,24 @@
 <template>
-  <!-- 单元格布局 -->
-  <!-- 通过align属性设置单元格的对齐方式，可选值有left、center、right，默认为left，
-      也可以在列配置中设置align属性，优先级高于align属性
-  -->
+  <!-- 自定义渲染 -->
+  <!-- 表格通过具名插槽(插槽名为field字段)和列配置中的render函数自定义渲染单元格内容，已如下表格name和sex列为例 -->
   <SBExamplePanel label="注释" open>
     <p>
-      单元格布局:
+      自定义渲染:
       <br />
-      通过align属性设置单元格的对齐方式，可选值有left、center、right，默认为left，
-      也可以在列配置中设置align属性，优先级高于align属性
+      表格通过具名插槽(插槽名为field字段)和列配置中的render函数自定义渲染单元格内容，已如下表格name和sex列为例。
     </p>
   </SBExamplePanel>
   <br />
   <div :style="{ height: '300px' }">
-    <k-tree-table
-      :data="tableData"
-      :column="column2"
-      :show-page="false"
-      align="center"
-      border
-    ></k-tree-table>
+    <k-tree-table :data="tableData" :column="column4" :show-page="false" border>
+      <template #name="{ row, column }">kingsware-{{ row.name }}</template>
+    </k-tree-table>
   </div>
 </template>
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
+import { KTreeTable } from '@components';
 
 const tableData = reactive([
   { id: 1, name: 'Test1', role: 'Develop', sex: 'Man', age: 28, address: 'test abc' },
@@ -45,7 +39,7 @@ const tableData = reactive([
   { id: 16, name: 'Test16', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' },
 ]);
 
-const column2 = ref([
+const column4 = ref([
   {
     title: 'Id',
     field: 'id',
@@ -63,6 +57,15 @@ const column2 = ref([
   {
     title: 'Sex',
     field: 'sex',
+    render: ({ row, column }) => {
+      if (row.sex === 'Man') {
+        return <span style={{ color: 'green' }}>男</span>;
+      } else if (row.sex === 'Women') {
+        return <span style={{ color: 'red' }}>女</span>;
+      } else {
+        return <span style={{ color: 'black' }}>未知</span>;
+      }
+    },
   },
   {
     title: 'Age',

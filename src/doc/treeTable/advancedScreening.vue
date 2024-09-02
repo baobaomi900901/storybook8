@@ -1,23 +1,41 @@
 <template>
-  <!-- 单元格布局 -->
-  <!-- 通过align属性设置单元格的对齐方式，可选值有left、center、right，默认为left，
-      也可以在列配置中设置align属性，优先级高于align属性
+  <!-- 高级筛选 -->
+  <!-- 通过advanced-filter-config属性配置高级筛选功能，例如可自定义筛选条件、显示内容和指定筛选列，
   -->
   <SBExamplePanel label="注释" open>
     <p>
-      单元格布局:
+      高级筛选:
       <br />
-      通过align属性设置单元格的对齐方式，可选值有left、center、right，默认为left，
-      也可以在列配置中设置align属性，优先级高于align属性
+      通过advanced-filter-config属性配置高级筛选功能，例如可自定义筛选条件、显示内容和指定筛选列。
     </p>
   </SBExamplePanel>
   <br />
   <div :style="{ height: '300px' }">
     <k-tree-table
       :data="tableData"
-      :column="column2"
+      :column="column"
       :show-page="false"
-      align="center"
+      :advanced-filter-config="{
+        filterAll: true,
+        exclude: ['id', 'name', 'role', 'address', 'sex'],
+        filterColumns: [
+          {
+            title: 'Age',
+            field: 'age',
+            dataType: 'number',
+            options: [
+              {
+                label: '22',
+                value: 22,
+              },
+              {
+                label: '23',
+                value: 23,
+              },
+            ],
+          },
+        ],
+      }"
       border
     ></k-tree-table>
   </div>
@@ -25,6 +43,7 @@
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
+import { KTreeTable, KTag } from '@components';
 
 const tableData = reactive([
   { id: 1, name: 'Test1', role: 'Develop', sex: 'Man', age: 28, address: 'test abc' },
@@ -45,33 +64,63 @@ const tableData = reactive([
   { id: 16, name: 'Test16', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' },
 ]);
 
-const column2 = ref([
+const column = ref([
+  {
+    type: 'checkbox',
+    width: '50',
+  },
   {
     title: 'Id',
     field: 'id',
-    width: '100',
+    width: '50',
+    sortable: true,
     dataType: 'number',
   },
   {
     title: 'Name',
     field: 'name',
+    sortable: true,
+    cellRender: {},
+    render: ({ row, column }) => {
+      return (
+        <span style={{ color: 'red' }}>
+          <k-tag point>标签</k-tag>
+        </span>
+      );
+    },
+    dataType: 'string',
   },
   {
     title: 'Role',
     field: 'role',
+    showIcon: true,
+    dataType: 'string',
+    formatter: ({ cellValue, row, column }) => {
+      return `${cellValue}-${row.id}-${column.field}`;
+    },
+    align: 'center',
   },
   {
     title: 'Sex',
     field: 'sex',
+    dataType: 'string',
+    formatter: ({ cellValue, row, column }) => {
+      return cellValue === 'Man' ? '男' : '女';
+    },
+    align: 'left',
   },
   {
     title: 'Age',
     field: 'age',
     dataType: 'number',
+    showIcon: true,
+    __folder: true,
+    align: 'right',
   },
   {
     title: 'Address',
     field: 'address',
+    dataType: 'string',
   },
 ]);
 </script>
