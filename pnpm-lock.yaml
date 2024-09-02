@@ -30,8 +30,8 @@ dependencies:
     specifier: ^2.7.6
     version: 2.8.1(vue@3.4.38)
   ksw-vue-icon:
-    specifier: ^2.2.16
-    version: 2.2.16(vue@3.4.38)
+    specifier: ^2.2.17
+    version: 2.2.17(vue@3.4.38)
   pinia:
     specifier: ^2.1.7
     version: 2.2.2(typescript@5.5.4)(vue@3.4.38)
@@ -1804,7 +1804,7 @@ packages:
     dependencies:
       chinese-lunar-calendar: 1.0.1
       element-plus: 2.8.1(vue@3.4.38)
-      ksw-vue-icon: 2.2.16(vue@3.4.38)
+      ksw-vue-icon: 2.2.17(vue@3.4.38)
       less: 4.2.0
       less-loader: 12.2.0(less@4.2.0)
       lodash-es: 4.17.21
@@ -2437,7 +2437,7 @@ packages:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.38(typescript@5.5.4)
-      vue-component-type-helpers: 2.0.29
+      vue-component-type-helpers: 2.1.2
     dev: true
 
   /@sxzz/popperjs-es@2.11.7:
@@ -4469,8 +4469,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /ksw-vue-icon@2.2.16(vue@3.4.38):
-    resolution: {integrity: sha512-Qi5joS2raTX5x68iJZN4FVh3f1g9gt/wFwuaooRHZOaDOWMiBUTypAgOUFRZ3E5AnCE0ijSTCInl5U4wNXiTLw==}
+  /ksw-vue-icon@2.2.17(vue@3.4.38):
+    resolution: {integrity: sha512-DY8JTj5flE0bfdYnIR6L7yorbp9YQEaK1dwcaW4myhO8OqotnsD1DRl4r2R9NoaPmO6wU7huxGuV3c9Ns+a4tw==}
     peerDependencies:
       vue: ^3.4.21
     dependencies:
@@ -6271,6 +6271,10 @@ packages:
 
   /vue-component-type-helpers@2.0.29:
     resolution: {integrity: sha512-58i+ZhUAUpwQ+9h5Hck0D+jr1qbYl4voRt5KffBx8qzELViQ4XdT/Tuo+mzq8u63teAG8K0lLaOiL5ofqW38rg==}
+    dev: true
+
+  /vue-component-type-helpers@2.1.2:
+    resolution: {integrity: sha512-URuxnrOhO9lUG4LOAapGWBaa/WOLDzzyAbL+uKZqT7RS+PFy0cdXI2mUSh7GaMts6vtHaeVbGk7trd0FPJi65Q==}
     dev: true
 
   /vue-demi@0.14.10(vue@3.4.38):
