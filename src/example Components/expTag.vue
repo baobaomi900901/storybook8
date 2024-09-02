@@ -41,21 +41,11 @@
       <KTag type="primary" point size="sm">Primary</KTag>
     </div>
   </div>
-
-  <!-- <KTag color="#ff55cc" point>222</KTag>
-  <KTag color="#ff55cc" textColor="#383838" point>333</KTag>
-  <KTooltip placement="top">
-    <template #reference>
-      <KTag color="#ff55cc" textColor="#383838" text="444" point></KTag>
-    </template>
-    {{ bbm }}
-  </KTooltip>
-  <KTooltip placement="top-start">BBM900901</KTooltip> -->
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KTag, KTooltip } from '@components';
+import { KTag } from '@components';
 
 const value = ref();
 </script>
