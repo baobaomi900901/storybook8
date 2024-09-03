@@ -1,4 +1,4 @@
-import"./button-CcOKIamw.js";import{_ as te,c as q}from"./tree_select-BoIpHxCo.js";import"./radio_group-BVyi_CQ5.js";import{r as i,i as c,o as m,s as v,e as n,E as o,k as p,D as x,u as oe,F as ne}from"./vue.esm-bundler-D0aKWXXn.js";import{A as f}from"./index-wXGUTIPA.js";import"./utils-DE3h7KcC.js";import"./_commonjsHelpers-Cpj98o6Y.js";const se={class:"w-60"},H=Object.assign({name:"disabled"},{__name:"disabled",setup(u){const t=i("");return(r,a)=>{const e=c("k-input");return m(),v("div",se,[n(e,{modelValue:t.value,"onUpdate:modelValue":a[0]||(a[0]=s=>t.value=s),placeholder:"Disabled Input",disabled:""},null,8,["modelValue"])])}}});H.__docgenInfo={name:"disabled",exportName:"default",displayName:"disabled",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/doc/input/disabled.vue"]};const ae=`<template>
+import"./button-Bdp72iJS.js";import{_ as te,c as q}from"./tree_select-KLl3cXDb.js";import"./radio_group-IruEeixh.js";import{r as i,j as c,o as m,t as v,e as n,G as o,l as p,E as x,u as oe,F as ne}from"./vue.esm-bundler-N-wW40t0.js";import{A as f}from"./index-wXGUTIPA.js";import"./utils-D6daWLFa.js";import"./_commonjsHelpers-Cpj98o6Y.js";const se={class:"w-60"},H=Object.assign({name:"disabled"},{__name:"disabled",setup(u){const t=i("");return(r,a)=>{const e=c("k-input");return m(),v("div",se,[n(e,{modelValue:t.value,"onUpdate:modelValue":a[0]||(a[0]=s=>t.value=s),placeholder:"Disabled Input",disabled:""},null,8,["modelValue"])])}}});H.__docgenInfo={name:"disabled",exportName:"default",displayName:"disabled",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/doc/input/disabled.vue"]};const ae=`<template>
   <div class="w-60">
     <k-input v-model="text" placeholder="Disabled Input" disabled></k-input>
   </div>
@@ -145,12 +145,12 @@ const value = ref('');
 const selectValue = ref('windows');
 <\/script>
 <style scoped></style>
-`,ze={title:"Data Entry(DE)/KInput",component:q,argTypes:{type:{control:"text",description:"原生input类型"},clearable:{control:"boolean",description:"是否可清空"},showPassword:{control:"boolean",description:"是否显示密码"},maxlength:{control:"number",description:"最大输入长度"},showWordLimit:{control:"boolean",description:"显示输入字数限制"},autosize:{control:"object",description:"文本域自适应高度, 接收对象例如 { minRows: 2, maxRows: 6 }"},blur:{description:"el, 使 input 失去 焦点"},focus:{description:"el, 使 input 获取 焦点"},select:{description:"el, 选中 input 中的文字"},resizeTextarea:{description:"el, 改变 textarea 大小"}},args:{}},w={name:"默认用法",args:{type:"text",clearable:!1},render:u=>{const t=i("");return{components:{KInput:q},setup(){return{args:u,text:t}},template:`
+`,We={title:"Data Entry(DE)/KInput",component:q,argTypes:{type:{control:"text",description:"原生input类型"},clearable:{control:"boolean",description:"是否可清空"},showPassword:{control:"boolean",description:"是否显示密码"},maxlength:{control:"number",description:"最大输入长度"},showWordLimit:{control:"boolean",description:"显示输入字数限制"},autosize:{control:"object",description:"文本域自适应高度, 接收对象例如 { minRows: 2, maxRows: 6 }"},blur:{description:"el, 使 input 失去 焦点"},focus:{description:"el, 使 input 获取 焦点"},select:{description:"el, 选中 input 中的文字"},resizeTextarea:{description:"el, 改变 textarea 大小"}},args:{}},w={name:"默认用法",args:{type:"text",clearable:!1},render:u=>{const t=i("");return{components:{KInput:q},setup(){return{args:u,text:t}},template:`
       <div class="w-60">
         <k-input v-model="text" type="text" :clearable="args.clearable">
         </k-input>
       </div>
-      `}}},$e=f(H,"disabled : 禁止输入",ae),_={name:"disabled : 禁止输入",...$e},Ne=f(J,"clearable : 一键清空",le),g={name:"clearable : 一键清空",...Ne},je=f(M,"showPassword : 显示密码",ce),y={name:"showPassword : 显示密码",...je},Ae=f(Q,"textarea : 文本域",fe),b={name:"textarea : 文本域",...Ae},De=f(X,"maxInput : 最大输入长度",ge),h={name:"maxInput : 最大输入长度",...De},Ue=f(Y,"组合使用&前后插槽",Pe),k={name:"组合使用&前后插槽",...Ue};var I,K,B;w.parameters={...w.parameters,docs:{...(I=w.parameters)==null?void 0:I.docs,source:{originalSource:`{
+      `}}},$e=f(H,"disabled : 禁止输入",ae),_={name:"disabled : 禁止输入",...$e},je=f(J,"clearable : 一键清空",le),g={name:"clearable : 一键清空",...je},Ne=f(M,"showPassword : 显示密码",ce),y={name:"showPassword : 显示密码",...Ne},Ae=f(Q,"textarea : 文本域",fe),b={name:"textarea : 文本域",...Ae},Ue=f(X,"maxInput : 最大输入长度",ge),h={name:"maxInput : 最大输入长度",...Ue},De=f(Y,"组合使用&前后插槽",Pe),k={name:"组合使用&前后插槽",...De};var I,K,B;w.parameters={...w.parameters,docs:{...(I=w.parameters)==null?void 0:I.docs,source:{originalSource:`{
   name: '默认用法',
   args: {
     type: 'text',
@@ -179,19 +179,19 @@ const selectValue = ref('windows');
 }`,...(B=(K=w.parameters)==null?void 0:K.docs)==null?void 0:B.source}}};var S,P,$;_.parameters={..._.parameters,docs:{...(S=_.parameters)==null?void 0:S.docs,source:{originalSource:`{
   name: 'disabled : 禁止输入',
   ...doc1
-}`,...($=(P=_.parameters)==null?void 0:P.docs)==null?void 0:$.source}}};var N,j,A;g.parameters={...g.parameters,docs:{...(N=g.parameters)==null?void 0:N.docs,source:{originalSource:`{
+}`,...($=(P=_.parameters)==null?void 0:P.docs)==null?void 0:$.source}}};var j,N,A;g.parameters={...g.parameters,docs:{...(j=g.parameters)==null?void 0:j.docs,source:{originalSource:`{
   name: 'clearable : 一键清空',
   ...clearableSB
-}`,...(A=(j=g.parameters)==null?void 0:j.docs)==null?void 0:A.source}}};var D,U,R;y.parameters={...y.parameters,docs:{...(D=y.parameters)==null?void 0:D.docs,source:{originalSource:`{
+}`,...(A=(N=g.parameters)==null?void 0:N.docs)==null?void 0:A.source}}};var U,D,R;y.parameters={...y.parameters,docs:{...(U=y.parameters)==null?void 0:U.docs,source:{originalSource:`{
   name: 'showPassword : 显示密码',
   ...showPasswordSB
-}`,...(R=(U=y.parameters)==null?void 0:U.docs)==null?void 0:R.source}}};var E,O,F;b.parameters={...b.parameters,docs:{...(E=b.parameters)==null?void 0:E.docs,source:{originalSource:`{
+}`,...(R=(D=y.parameters)==null?void 0:D.docs)==null?void 0:R.source}}};var E,O,F;b.parameters={...b.parameters,docs:{...(E=b.parameters)==null?void 0:E.docs,source:{originalSource:`{
   name: 'textarea : 文本域',
   ...textareaSB
-}`,...(F=(O=b.parameters)==null?void 0:O.docs)==null?void 0:F.source}}};var C,L,W;h.parameters={...h.parameters,docs:{...(C=h.parameters)==null?void 0:C.docs,source:{originalSource:`{
+}`,...(F=(O=b.parameters)==null?void 0:O.docs)==null?void 0:F.source}}};var C,G,L;h.parameters={...h.parameters,docs:{...(C=h.parameters)==null?void 0:C.docs,source:{originalSource:`{
   name: 'maxInput : 最大输入长度',
   ...maxInputSB
-}`,...(W=(L=h.parameters)==null?void 0:L.docs)==null?void 0:W.source}}};var z,G,T;k.parameters={...k.parameters,docs:{...(z=k.parameters)==null?void 0:z.docs,source:{originalSource:`{
+}`,...(L=(G=h.parameters)==null?void 0:G.docs)==null?void 0:L.source}}};var W,z,T;k.parameters={...k.parameters,docs:{...(W=k.parameters)==null?void 0:W.docs,source:{originalSource:`{
   name: '组合使用&前后插槽',
   ...frontAndRearSlotsSB
-}`,...(T=(G=k.parameters)==null?void 0:G.docs)==null?void 0:T.source}}};const Ge=["def","example1","example2","example3","example4","example5","example6"];export{Ge as __namedExportsOrder,w as def,ze as default,_ as example1,g as example2,y as example3,b as example4,h as example5,k as example6};
+}`,...(T=(z=k.parameters)==null?void 0:z.docs)==null?void 0:T.source}}};const ze=["def","example1","example2","example3","example4","example5","example6"];export{ze as __namedExportsOrder,w as def,We as default,_ as example1,g as example2,y as example3,b as example4,h as example5,k as example6};

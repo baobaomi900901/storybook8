@@ -1,4 +1,4 @@
-import"./button-CcOKIamw.js";import{d as F}from"./tree_select-BoIpHxCo.js";import"./radio_group-BVyi_CQ5.js";import{A as m}from"./index-wXGUTIPA.js";import{f as d,i as _,s as u,E as n,e as o,k as s,o as g,D as t}from"./vue.esm-bundler-D0aKWXXn.js";import"./utils-DE3h7KcC.js";import"./_commonjsHelpers-Cpj98o6Y.js";const O={class:"flex items-star gap-2"},j={class:"w-80"},I=d({__name:"block",setup(a){return(f,T)=>{const e=_("KTag");return g(),u("div",O,[n("div",j,[o(e,null,{default:s(()=>[t("标签1")]),_:1})])])}}});I.__docgenInfo={exportName:"default",displayName:"block",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/doc/tag/block.vue"]};const q=`<template>
+import"./button-Bdp72iJS.js";import{d as F}from"./tree_select-KLl3cXDb.js";import"./radio_group-IruEeixh.js";import{A as m}from"./index-wXGUTIPA.js";import{f as d,j as _,t as u,G as n,e as o,l as s,o as g,E as t}from"./vue.esm-bundler-N-wW40t0.js";import"./utils-D6daWLFa.js";import"./_commonjsHelpers-Cpj98o6Y.js";const j={class:"flex items-star gap-2"},G={class:"w-80"},I=d({__name:"block",setup(a){return(f,T)=>{const e=_("KTag");return g(),u("div",j,[n("div",G,[o(e,null,{default:s(()=>[t("标签1")]),_:1})])])}}});I.__docgenInfo={exportName:"default",displayName:"block",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/doc/tag/block.vue"]};const O=`<template>
   <div class="flex items-star gap-2">
     <div class="w-80">
       <KTag>标签1</KTag>
@@ -9,7 +9,7 @@ import"./button-CcOKIamw.js";import{d as F}from"./tree_select-BoIpHxCo.js";impor
 <script lang="ts" setup>
 import { ref } from 'vue';
 <\/script>
-`,G={class:"flex items-star gap-2"},H={class:"w-80"},A=d({__name:"point",setup(a){return(f,T)=>{const e=_("KTag");return g(),u("div",G,[n("div",H,[o(e,{point:""},{default:s(()=>[t("标签1")]),_:1})])])}}});A.__docgenInfo={exportName:"default",displayName:"point",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/doc/tag/point.vue"]};const J=`<template>
+`,q={class:"flex items-star gap-2"},H={class:"w-80"},A=d({__name:"point",setup(a){return(f,T)=>{const e=_("KTag");return g(),u("div",q,[n("div",H,[o(e,{point:""},{default:s(()=>[t("标签1")]),_:1})])])}}});A.__docgenInfo={exportName:"default",displayName:"point",description:"",tags:{},sourceFiles:["/home/runner/work/storybook8/storybook8/src/doc/tag/point.vue"]};const J=`<template>
   <div class="flex items-star gap-2">
     <div class="w-80">
       <KTag point>标签1</KTag>
@@ -51,7 +51,7 @@ import { ref } from 'vue';
 import { ref } from 'vue';
 <\/script>
 `,pe={title:"Data Entry(DE)/KTag",component:F,argTypes:{size:{control:"select",options:["base","sm"]},direction:{control:"select",options:["row","column"]}},args:{size:"base",direction:"row"},parameters:{controls:{},docs:{subtitle:"用于标记和选择。",description:{component:"Another description, overriding the comments"}}}},r={name:"Default",render:a=>({components:{KTag:F},setup(){return{args:a}},template:`
-     <KTag>123</KTag>`})},X=m(I,"块状标签",q),c={name:"块状标签",...X},Y=m(A,"点状标签",J),p={name:"点状标签",...Y},Z=m(B,"color: 自定义颜色",P),i={name:"color: 自定义颜色",...Z},ee=m(V,"size: 标签大小",W),l={name:"size: 标签大小",...ee};var v,x,K;r.parameters={...r.parameters,docs:{...(v=r.parameters)==null?void 0:v.docs,source:{originalSource:`{
+     <KTag>123</KTag>`})},X=m(I,"块状标签",O),c={name:"块状标签",...X},Y=m(A,"点状标签",J),p={name:"点状标签",...Y},Z=m(B,"color: 自定义颜色",P),i={name:"color: 自定义颜色",...Z},ee=m(V,"size: 标签大小",W),l={name:"size: 标签大小",...ee};var v,x,K;r.parameters={...r.parameters,docs:{...(v=r.parameters)==null?void 0:v.docs,source:{originalSource:`{
   name: 'Default',
   render: (args: any) => {
     return {
@@ -67,10 +67,10 @@ import { ref } from 'vue';
      <KTag>123</KTag>\`
     };
   }
-}`,...(K=(x=r.parameters)==null?void 0:x.docs)==null?void 0:K.source}}};var k,h,y;c.parameters={...c.parameters,docs:{...(k=c.parameters)==null?void 0:k.docs,source:{originalSource:`{
+}`,...(K=(x=r.parameters)==null?void 0:x.docs)==null?void 0:K.source}}};var h,k,y;c.parameters={...c.parameters,docs:{...(h=c.parameters)==null?void 0:h.docs,source:{originalSource:`{
   name: '块状标签',
   ...doc1
-}`,...(y=(h=c.parameters)==null?void 0:h.docs)==null?void 0:y.source}}};var b,w,z;p.parameters={...p.parameters,docs:{...(b=p.parameters)==null?void 0:b.docs,source:{originalSource:`{
+}`,...(y=(k=c.parameters)==null?void 0:k.docs)==null?void 0:y.source}}};var b,w,z;p.parameters={...p.parameters,docs:{...(b=p.parameters)==null?void 0:b.docs,source:{originalSource:`{
   name: '点状标签',
   ...doc2
 }`,...(z=(w=p.parameters)==null?void 0:w.docs)==null?void 0:z.source}}};var E,N,$;i.parameters={...i.parameters,docs:{...(E=i.parameters)==null?void 0:E.docs,source:{originalSource:`{
