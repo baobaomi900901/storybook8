@@ -409,3 +409,12 @@ export const def11Example: Story = {
   name: '表格筛选',
   ...doc11,
 };
+
+// 自动生成序号
+import autoGenerateIndex from './autoGenerateIndex.vue';
+import autoGenerateIndexDoc from './autoGenerateIndex.vue?raw';
+const doc12 = ATExample(autoGenerateIndex, 'autoGenerateIndex: 自动生成序号', autoGenerateIndexDoc);
+export const def12Example: Story = {
+  name: '自动生成序号',
+  ...doc12,
+};

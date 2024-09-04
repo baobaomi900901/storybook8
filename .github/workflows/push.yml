@@ -12,38 +12,23 @@ jobs:
     name: component-storybook8
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       with:
-        submodules: recursive
-        fetch-depth: 0
+          submodules: recursive
+          fetch-depth: 0
     - name: Checkout submodules to dev branch
       run: |
         git submodule update --init --recursive
         git submodule foreach 'git fetch --all'
         git submodule foreach 'git checkout dev'
         git submodule foreach 'git pull origin dev'
+        git submodule foreach 'npm install'
 
-    - uses: bahmutov/npm-install@v1
+    - uses: actions/setup-node@v3
       with:
-        working-directory: kswux
-
-    - name: Install pnpm
-      uses: pnpm/action-setup@v4
-      with:
-        version: 9
-        run_install: false
-
-    - name: Install Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: 'pnpm'
-
-    - name: Install dependencies
-      run: |
-        pnpm install
-        pnpm run build-storybook
+        node-version: '20'
+    - run: npm install
+    - run: npm run build-storybook
     
     - name: Deploy GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
