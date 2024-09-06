@@ -29,7 +29,7 @@
     <div class="node node-type-component is-finish node2">
       <div class="title">
         <!-- <span class="ksw-icon"></span> -->
-        <IconFlowComponent size="24px"></IconFlowComponent>
+        <IconFlowComponentColor size="24px"></IconFlowComponentColor>
         组件
       </div>
       <div class="content">
@@ -49,7 +49,7 @@
     <div class="node node-type-component is-skip node3">
       <div class="title">
         <!-- <span class="ksw-icon"></span> -->
-        <IconFlowComponent size="24px"></IconFlowComponent>
+        <IconFlowComponentColor size="24px"></IconFlowComponentColor>
         组件
       </div>
       <div class="content">
@@ -69,7 +69,7 @@
     <div class="node node-type-component is-error is-focus node3-2">
       <div class="title">
         <!-- <span class="ksw-icon"></span> -->
-        <IconFlowComponent size="24px"></IconFlowComponent>
+        <IconFlowComponentColor size="24px"></IconFlowComponentColor>
         组件
       </div>
       <div class="content">
@@ -89,7 +89,7 @@
     <div class="node node-type-component is-process4 is-focus node4-3">
       <div class="title">
         <!-- <span class="ksw-icon"></span> -->
-        <IconFlowComponent size="24px"></IconFlowComponent>
+        <IconFlowComponentColor size="24px"></IconFlowComponentColor>
         组件
       </div>
       <div class="content">
@@ -109,7 +109,7 @@
     <div class="node node-type-component is-process4 node4-4">
       <div class="title">
         <!-- <span class="ksw-icon"></span> -->
-        <IconFlowComponent size="24px"></IconFlowComponent>
+        <IconFlowComponentColor size="24px"></IconFlowComponentColor>
         组件
       </div>
       <div class="content">
@@ -129,7 +129,7 @@
     <div class="node node-type-component is-process4 is-danger node4-5">
       <div class="title">
         <!-- <span class="ksw-icon"></span> -->
-        <IconFlowComponent size="24px"></IconFlowComponent>
+        <IconFlowComponentColor size="24px"></IconFlowComponentColor>
         组件
       </div>
       <div class="content">
@@ -149,7 +149,7 @@
     <div class="node node-type-component is-process4 is-warning node4-6">
       <div class="title">
         <!-- <span class="ksw-icon"></span> -->
-        <IconFlowComponent size="24px"></IconFlowComponent>
+        <IconFlowComponentColor size="24px"></IconFlowComponentColor>
         组件
       </div>
       <div class="content">
@@ -169,7 +169,7 @@
     <div class="node node-type-component node5">
       <div class="title">
         <!-- <span class="ksw-icon"></span> -->
-        <IconFlowComponent size="24px"></IconFlowComponent>
+        <IconFlowComponentColor size="24px"></IconFlowComponentColor>
         组件
       </div>
       <div class="content">

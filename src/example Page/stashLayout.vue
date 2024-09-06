@@ -56,7 +56,7 @@ const menu = ref();
 const MenuData = [
   { name: '首页', path: '/template/stash-layout/exp-page-table2', close: false },
   {
-    name: 'tabletabletable',
+    name: ' 开发中心',
     path: '/template/stash-layout/exp-page-table',
     close: true,
     // icon: 'IconAdd',

@@ -18,6 +18,9 @@
         <KButton icon>
           <IconAdd />
         </KButton>
+        <KButton @click="handleClick" text>
+          <IconAdd color="red" />
+        </KButton>
       </div>
     </SBExamplePanel>
 

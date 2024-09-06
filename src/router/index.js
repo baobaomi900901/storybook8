@@ -15,6 +15,7 @@ import {
   expInputNumber,
   expTooltip,
   expForm,
+  expResult,
 } from '../example Components';
 
 // 引入示例页面
@@ -25,6 +26,8 @@ import {
   expPageTable,
   expPageTable2,
   echartsDemo,
+  customColorHooksDev,
+  webStatus,
 } from '../example Page';
 
 const routes = [
@@ -49,6 +52,7 @@ const routes = [
       { path: 'input-number', component: expInputNumber, name: 'input-number' },
       { path: 'tooltip', component: expTooltip, name: 'tooltip' },
       { path: 'form', component: expForm, name: 'form' },
+      { path: 'result', component: expResult, name: 'result' },
     ],
   },
   {
@@ -60,6 +64,11 @@ const routes = [
       { path: 'custom-color', component: customColor, name: 'custom-color' },
       { path: 'echarts-demo', component: echartsDemo, name: 'echarts-Demo' },
       {
+        path: 'custom-color-hooks-dev',
+        component: customColorHooksDev,
+        name: 'custom-color-hooks-dev',
+      },
+      {
         path: 'stash-layout',
         component: stashLayout,
         name: 'stash-layout',
@@ -68,6 +77,7 @@ const routes = [
           { path: 'exp-page-table2', component: expPageTable2, name: 'exp-page-table2' },
         ],
       },
+      { path: 'web-status', component: webStatus, name: 'web-status' },
     ],
   },
 ];

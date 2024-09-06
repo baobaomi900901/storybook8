@@ -11,6 +11,8 @@ import expInputNumber from './expInputNumber.vue';
 import expTooltip from './expTooltip.vue';
 // expForm.vue
 import expForm from './expForm.vue';
+// expResult
+import expResult from './expResult.vue';
 
 export {
   expButton,
@@ -24,4 +26,5 @@ export {
   expInputNumber,
   expTooltip,
   expForm,
+  expResult,
 };

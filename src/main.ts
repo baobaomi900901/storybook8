@@ -3,8 +3,7 @@ import App from './App.vue';
 import 'element-plus/dist/index.css'; // 引入 element-plus 样式
 import elementPlus from 'element-plus';
 import './style.css';
-import '/public/font/result.css'; // 全局字体
-import '../kswux/package/style/variable.css';
+import '../public/result.css'; // 全局字体
 import install from '../kswux/package/index'; // 全局注册组件
 import { KswIcon } from 'ksw-vue-icon';
 import 'ksw-vue-icon/styles/icon.css';
@@ -17,7 +16,6 @@ const app = createApp(App);
 app.use(router);
 app.use(elementPlus);
 app.use(KswIcon);
-// app.use(KUI);
 app.use(createPinia());
 install(app);
 app.mount('#app');

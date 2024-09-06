@@ -148,7 +148,7 @@
     </SBExamplePanel>
 
     <div class="flex gap-2">
-      <SBExamplePanel label="组合插槽(prepend)" defaultOpen>
+      <SBExamplePanel label="组合插槽(prepend)" open>
         <div class="w-full flex flex-col gap-2">
           <KInput v-model="value" placeholder="请输入url">
             <template #prepend>http://</template>
@@ -157,7 +157,7 @@
 
           <KInput v-model="value" placeholder="btn, select">
             <template #prepend>
-              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮1</KButton>
+              <KButton @click="handleClick('普通按钮')">普通按钮1</KButton>
             </template>
           </KInput>
 
@@ -246,7 +246,7 @@
         </div>
       </SBExamplePanel>
 
-      <SBExamplePanel label="组合插槽(append)" defaultOpen>
+      <SBExamplePanel label="组合插槽(append)" open>
         <div class="w-full flex flex-col gap-2">
           <KInput v-model="value" placeholder="请输入url">
             <template #append>http://</template>
@@ -342,7 +342,7 @@
         </div>
       </SBExamplePanel>
 
-      <SBExamplePanel label="组合插槽(prepend + append)" defaultOpen>
+      <SBExamplePanel label="组合插槽(prepend + append)" open>
         <div class="w-full flex flex-col gap-2">
           <KInput v-model="value" placeholder="请输入url">
             <template #prepend>http://</template>
@@ -351,10 +351,10 @@
 
           <KInput v-model="value" placeholder="btn, select">
             <template #prepend>
-              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+              <KButton @click="handleClick('普通按钮')">普通按钮</KButton>
             </template>
             <template #append>
-              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+              <KButton @click="handleClick('普通按钮')">普通按钮</KButton>
             </template>
           </KInput>
 
@@ -519,7 +519,7 @@
         </div>
       </SBExamplePanel>
 
-      <SBExamplePanel label="组合插槽(双边 size:sm)" defaultOpen>
+      <SBExamplePanel label="组合插槽(双边 size:sm)" open>
         <div class="w-full flex flex-col gap-2">
           <KInput v-model="value" placeholder="请输入url" size="sm">
             <template #prepend>http://</template>
@@ -528,10 +528,10 @@
 
           <KInput v-model="value" placeholder="btn, select" size="sm">
             <template #prepend>
-              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+              <KButton @click="handleClick('普通按钮')">普通按钮</KButton>
             </template>
             <template #append>
-              <KButton @click="handleClick('普通按钮')" :type="type">普通按钮</KButton>
+              <KButton @click="handleClick('普通按钮')">普通按钮</KButton>
             </template>
           </KInput>
 

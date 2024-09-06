@@ -1,3 +1,6 @@
 [submodule "kswux"]
     path = kswux
     url = git@github.com:xiyure/k-component-lib.git
+[submodule "kswux-ant"]
+	path = kswux-ant
+	url = git@github.com:xiyure/k-component-lib.git
