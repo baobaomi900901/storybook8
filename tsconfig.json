@@ -8,6 +8,9 @@
     "paths": {
       "@/*": ["./kswux/package/*"],
       "@components/*": ["./kswux/package/components/*"],
+      "@templates/*": ["./kswux/package/templates/*"],
+      "@components-ant/*": ["./kswux-ant/package/components/*"],
+      "@templates-ant/*": ["./kswux-ant/package/templates/*"],
       "@src/*": ["./src/*"],
       "@alias": ["./path/to/alias"]
     },

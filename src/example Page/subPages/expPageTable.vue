@@ -20,7 +20,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KPageHead } from '../../../kswux/package/templates';
+import { KPageHead } from '@templates';
 import { KButton } from '@components';
 </script>
 <style lang="less">
@@ -31,10 +31,6 @@ import { KButton } from '@components';
   height: 100%;
   background-color: #f5f5f5;
   border-radius: var(--k-rounded-sm);
-
-  // display: flex;
-  // justify-content: center;
-  // align-items: start;
 }
 
 .left {
