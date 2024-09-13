@@ -418,3 +418,12 @@ export const def12Example: Story = {
   name: '自动生成序号',
   ...doc12,
 };
+
+// 多级表头
+import multiHeader from './multiHeader.vue';
+import multiHeaderDoc from './multiHeader.vue?raw';
+const doc13 = ATExample(multiHeader, 'multiHeader: 多级表头', multiHeaderDoc);
+export const def13Example: Story = {
+  name: '多级表头',
+  ...doc13,
+};

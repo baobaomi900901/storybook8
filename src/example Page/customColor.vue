@@ -76,7 +76,7 @@ const customRule = [
   { l: 0.2378, c: 0.1, name: '950' },
 ];
 onMounted(() => {
-  colorLevel(customHue, customRule);
+  // colorLevel(customHue, customRule);
   let arr = [
     'oklch(0.98 0.03 0)',
     'oklch(0.94 0.04 0)',
@@ -113,19 +113,18 @@ onMounted(() => {
   ];
 
   // 将 bgColor 中的 oklch 颜色转换成 16 进制颜色
-
-  let HEXColor = [];
-  bgColor.forEach((item) => {
-    let { mode, l, c, h } = parse(item);
-    let newHexColor = formatHex({ mode, l, c, h });
-    // console.log(newHexColor);
-    HEXColor.push(newHexColor);
-  });
-  console.log(HEXColor);
+  // let HEXColor = [];
+  // bgColor.forEach((item) => {
+  //   let { mode, l, c, h } = parse(item);
+  //   let newHexColor = formatHex({ mode, l, c, h });
+  //   // console.log(newHexColor);
+  //   HEXColor.push(newHexColor);
+  // });
+  // console.log(HEXColor);
 
   // customColor('#38363c');
   // 示例用法
-  // console.log(customColor('rgb(255, 0, 0)')); // 输出: rgb
+  console.log(customColor('rgb(255, 0, 0)')); // 输出: rgb
   // console.log(customColor('rgba(255, 0, 0, 0.5)')); // 输出: rgba
   // console.log(customColor('hsl(120, 100%, 50%)')); // 输出: hsl
   // console.log(customColor('#ff0000')); // 输出: hex
@@ -133,18 +132,26 @@ onMounted(() => {
   // console.log(customColor('red')); // 输出: unknown
   // parse('red');
   // console.log(parse('red'));
-  customColor('red');
-  customColor('rgb(255, 0, 0)');
-  customColor('rgba(255, 0, 0, 0.5)');
-  customColor('#ff5500');
-  customColor('oklch(50%, 0.3, 100)');
-  customColor('hsl(120, 100%, 50%)');
+  // customColor('red');
+  // customColor('rgb(255, 0, 0)');
+  // customColor('rgba(255, 0, 0, 0.5)');
+  // customColor('#ff5500');
+  // customColor('oklch(50%, 0.3, 100)');
+  // customColor('hsl(120, 100%, 50%)');
+
+  // 将来 oklch(50%, 0.3, 100) 转换成rgb颜色
+  // let { mode, l, c, h } = customColor('oklch(50%, 0.3, 100)');
+  // let newColor = formatHex({ mode, l, c, h });
+  // console.log(newColor);
+
+  // console.log(convertOklchToRgb('oklch(50%, 0.3, 100)'));
 });
 
 const customColor = (color) => {
-  let hue;
   let oklch = converter('oklch');
   console.log(color, oklch(color));
+
+  // return oklch(color);
   // switch (parse(color).mode) {
   //   case 'rgb':
   //     let { mode, r, g, b } = parse(color);
@@ -159,28 +166,37 @@ const customColor = (color) => {
   //   default:
   //     return 'unknown';
   // }
+
+  // // 创建一个从 oklch 到 rgb 的转换器
+  // const oklchToRgb = culori.converter('oklch', 'rgb');
+
+  // // 使用转换器将 oklch 颜色转换为 rgb 颜色
+  // const rgbColor = oklchToRgb(oklchColor);
+
+  // 返回 rgb 颜色
+  // return rgbColor;
 };
 
-const colorLevel = (hue, rule) => {
-  let groups = [];
-  hue.forEach((item) => {
-    let hexColors = [];
-    rule.forEach((item2) => {
-      let { mode, l, c, h } = parse(`oklch(${item2.l} ${item2.c} ${item.h})`);
-      let colorName = `${item.name}-${item2.name}`;
-      let newHexColor = formatHex({ mode, l, c, h });
-      const inRgb = inGamut('rgb');
-      let isInRgb = inRgb(`${mode}(${l} ${c} ${h})`);
-      // console.log(isInRgb, `${mode}(${l} ${c} ${h})`);
-      // if (isInRgb) {
-      hexColors.push({ name: colorName, color: newHexColor, isInRgb });
-      // }
-    });
-    groups.push({ name: item.name, colors: hexColors });
-  });
-  colorGroups.value = groups;
-  // console.log(colorGroups.value);
-};
+// const colorLevel = (hue, rule) => {
+//   let groups = [];
+//   hue.forEach((item) => {
+//     let hexColors = [];
+//     rule.forEach((item2) => {
+//       let { mode, l, c, h } = parse(`oklch(${item2.l} ${item2.c} ${item.h})`);
+//       let colorName = `${item.name}-${item2.name}`;
+//       let newHexColor = formatHex({ mode, l, c, h });
+//       const inRgb = inGamut('rgb');
+//       let isInRgb = inRgb(`${mode}(${l} ${c} ${h})`);
+//       // console.log(isInRgb, `${mode}(${l} ${c} ${h})`);
+//       // if (isInRgb) {
+//       hexColors.push({ name: colorName, color: newHexColor, isInRgb });
+//       // }
+//     });
+//     groups.push({ name: item.name, colors: hexColors });
+//   });
+//   colorGroups.value = groups;
+//   // console.log(colorGroups.value);
+// };
 
 // let apc = apcach(70, 0.2, 145);
 // console.log('apc ==>', apc);
@@ -195,7 +211,7 @@ const colorLevel = (hue, rule) => {
 // 将 parse('oklch(0.98 0.03 0)'), 转换成 16 进制的颜色
 let rgb = converter('rgb');
 let oklch = converter('oklch');
-// console.log(rgb('oklch(0.65 0.19 0)'));
+// console.log('@', rgb('oklch(0.65 0.19 0)'));
 // console.log(oklch('#38363c'));
 // console.log(formatHex('red'));
 // console.log(formatHex('rgb(255, 85, 0)'));

@@ -4,7 +4,7 @@ import 'ksw-vue-icon/styles/icon.css';
 import '@iframe-resizer/child';
 import '../public/result.css'; // 全局字体
 import elementPlus from 'element-plus';
-import install from '../kswux/package/index'; // 全局注册组件
+// import install from '../kswux/package/index'; // 全局注册组件
 import { KswIcon } from 'ksw-vue-icon';
 import '../src/myStyle.css';
 import '../src/style.css';
@@ -16,7 +16,7 @@ setup((app) => {
   app.use(elementPlus);
   app.use(KswIcon);
   // app.use(install);
-  install(app);
+  // install(app);
   app.component('SBExamplePanel', SBExamplePanel);
 });
 

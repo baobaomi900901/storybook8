@@ -9,85 +9,229 @@
   <div class="epx-container">
     <div class="epx-title">KButton</div>
 
-    <SBExamplePanel label="按钮类型" defaultOpen>
-      <div class="gap-0">
+    <SBExamplePanel label="自定义颜色" open>
+      <KButton color="danger" main>按钮</KButton>
+      <!-- <KButton color="#success" secondary>按钮</KButton>
+      <KButton color="#success" text>按钮</KButton>
+      <br />
+      <KButton color="#success" size="sm" main>按钮</KButton>
+      <KButton color="#success" size="sm" secondary>按钮</KButton>
+      <KButton color="#success" size="sm" text>按钮</KButton> -->
+    </SBExamplePanel>
+
+    <SBExamplePanel label="按钮类型">
+      <div class="flex gap-2">
         <KButton @click="handleClick">普通</KButton>
         <KButton @click="handleClick" main>主要</KButton>
         <KButton @click="handleClick" secondary>按钮</KButton>
         <KButton @click="handleClick" text>按钮</KButton>
-        <KButton icon>
+        <KButton @click="handleClick" icon>
           <IconAdd />
-        </KButton>
-        <KButton @click="handleClick" text>
-          <IconAdd color="red" />
         </KButton>
       </div>
     </SBExamplePanel>
 
-    <SBExamplePanel label="尺寸" defaultOpen>
-      <KButton size="sm">普通</KButton>
-      <KButton size="sm" main>主要</KButton>
-      <KButton size="sm" secondary>按钮</KButton>
-      <KButton size="sm" text>按钮</KButton>
+    <SBExamplePanel label="禁止" open>
+      <div class="flex flex-col gap-2">
+        <div class="flex items-star gap-4">
+          <KButton size="lg" color="danger" iconLeft="IconAdd">普通1</KButton>
+          <KButton size="lg" color="danger" main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" color="danger" secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" color="danger" icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" color="danger" loading iconLeft="IconAdd">普通2</KButton>
+          <KButton size="lg" color="danger" loading main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" color="danger" loading secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" loading text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" loading text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" color="danger" loading icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" color="danger" disabled iconLeft="IconAdd">普通3</KButton>
+          <KButton size="lg" color="danger" disabled main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" color="danger" disabled secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" disabled text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" disabled text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" color="danger" disabled icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" color="danger" disabled loading iconLeft="IconAdd">普通4</KButton>
+          <KButton size="lg" color="danger" disabled loading main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" color="danger" disabled loading secondary iconLeft="IconAdd">
+            按钮
+          </KButton>
+          <KButton size="lg" color="danger" disabled loading text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" disabled loading text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" color="danger" disabled loading icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <hr />
+        <div class="flex items-star gap-4">
+          <KButton size="lg" color="danger" iconLeft="IconAdd">普通2</KButton>
+          <KButton size="lg" color="danger" main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" color="danger" secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" color="danger" icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" color="danger" loading iconLeft="IconAdd">普通3</KButton>
+          <KButton size="lg" color="danger" loading main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" color="danger" loading secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" loading text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" loading text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" color="danger" loading icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" color="danger" disabled iconLeft="IconAdd">普通4</KButton>
+          <KButton size="lg" color="danger" disabled main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" color="danger" disabled secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" disabled text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" disabled text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" color="danger" disabled icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" color="danger" disabled loading iconLeft="IconAdd">普通5</KButton>
+          <KButton size="lg" color="danger" disabled loading main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" color="danger" disabled loading secondary iconLeft="IconAdd">
+            按钮
+          </KButton>
+          <KButton size="lg" color="danger" disabled loading text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" color="danger" disabled loading text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" color="danger" disabled loading icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <hr />
+        <div class="flex items-star gap-4">
+          <KButton size="lg" type="danger" iconLeft="IconAdd">普通</KButton>
+          <KButton size="lg" type="danger" main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" type="danger" secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" type="danger" text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" type="danger" text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" type="danger" icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" type="danger" loading iconLeft="IconAdd">普通</KButton>
+          <KButton size="lg" type="danger" loading main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" type="danger" loading secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" type="danger" loading text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" type="danger" loading text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" type="danger" loading icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" type="danger" disabled iconLeft="IconAdd">普通</KButton>
+          <KButton size="lg" type="danger" disabled main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" type="danger" disabled secondary iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" type="danger" disabled text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" type="danger" disabled text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" type="danger" disabled icon>
+            <IconAdd />
+          </KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton size="lg" type="danger" disabled loading iconLeft="IconAdd">普通</KButton>
+          <KButton size="lg" type="danger" disabled loading main iconLeft="IconAdd">主要</KButton>
+          <KButton size="lg" type="danger" disabled loading secondary iconLeft="IconAdd">
+            按钮
+          </KButton>
+          <KButton size="lg" type="danger" disabled loading text iconLeft="IconAdd">按钮</KButton>
+          <KButton size="lg" type="danger" disabled loading text iconLeft="IconAdd"></KButton>
+          <KButton size="lg" type="danger" disabled loading icon>
+            <IconAdd />
+          </KButton>
+        </div>
+      </div>
+    </SBExamplePanel>
+
+    <SBExamplePanel label="loading" open>
+      <div class="flex gap-2">
+        <KButton @click="handleClick" loading>普通</KButton>
+        <KButton @click="handleClick" loading main>主要</KButton>
+        <KButton @click="handleClick" loading secondary>次级按钮</KButton>
+        <KButton @click="handleClick" loading text>文字按钮</KButton>
+        <KButton @click="handleClick" loading icon>
+          <IconAdd />
+        </KButton>
+      </div>
+    </SBExamplePanel>
+
+    <SBExamplePanel label="loading + disabled">
+      <div class="flex gap-2">
+        <KButton @click="handleClick" loading disabled>普通</KButton>
+        <KButton @click="handleClick" loading disabled main>主要</KButton>
+        <KButton @click="handleClick" loading disabled secondary>按钮</KButton>
+        <KButton @click="handleClick" loading disabled text>按钮</KButton>
+        <KButton @click="handleClick" loading icon>
+          <IconAdd />
+        </KButton>
+      </div>
+    </SBExamplePanel>
+
+    <SBExamplePanel label="尺寸">
+      <KButton size="sm" iconLeft="IconAdd" iconRight="IconArrowBottom">普通</KButton>
+      <KButton size="sm" iconLeft="IconAdd" iconRight="IconArrowBottom" main>主要</KButton>
+      <KButton size="sm" iconLeft="IconAdd" iconRight="IconArrowBottom" secondary>按钮</KButton>
+      <KButton size="sm" iconLeft="IconAdd" iconRight="IconArrowBottom" text>按钮</KButton>
       <KButton size="sm" icon>
+        <IconAdd />
+      </KButton>
+      <KButton size="lg">普通</KButton>
+      <KButton size="lg" main>主要</KButton>
+      <KButton size="lg" secondary>按钮</KButton>
+      <KButton size="lg" text>按钮</KButton>
+      <KButton size="lg" icon>
         <IconAdd />
       </KButton>
     </SBExamplePanel>
 
-    <SBExamplePanel label="禁止" defaultOpen>
-      <div class="flex flex-col gap-2">
-        <div class="flex items-star gap-4">
-          <KButton disabled>普通</KButton>
-          <KButton disabled main>主要</KButton>
-          <KButton disabled secondary>按钮</KButton>
-          <KButton disabled text>按钮</KButton>
-          <KButton disabled icon>
-            <IconAdd />
-          </KButton>
-        </div>
-        <div class="flex items-star gap-4">
-          <KButton size="sm" disabled>普通</KButton>
-          <KButton size="sm" disabled main>主要</KButton>
-          <KButton size="sm" disabled secondary>按钮</KButton>
-          <KButton size="sm" disabled text>按钮</KButton>
-          <KButton size="sm" disabled icon>
-            <IconAdd />
-          </KButton>
-        </div>
-      </div>
-    </SBExamplePanel>
-
-    <SBExamplePanel label="el-颜色" defaultOpen>
-      <KButton type="primary" main>主要</KButton>
-      <KButton type="success" main>成功</KButton>
-      <KButton type="warning" main>警告</KButton>
+    <SBExamplePanel label="el-颜色">
+      <KButton type="danger" main>主要</KButton>
+      <KButton type="danger" main>成功</KButton>
+      <KButton type="danger" main>警告</KButton>
       <KButton type="danger" main>危险</KButton>
-      <KButton type="info" main>信息</KButton>
+      <KButton type="danger" main>信息</KButton>
       <br />
-      <KButton type="primary" secondary>按钮</KButton>
-      <KButton type="success" secondary>按钮</KButton>
-      <KButton type="warning" secondary>按钮</KButton>
       <KButton type="danger" secondary>按钮</KButton>
-      <KButton type="info" secondary>按钮</KButton>
+      <KButton type="danger" secondary>按钮</KButton>
+      <KButton type="danger" secondary>按钮</KButton>
+      <KButton type="danger" secondary>按钮</KButton>
+      <KButton type="danger" secondary>按钮</KButton>
       <br />
-      <KButton type="primary" text>按钮</KButton>
-      <KButton type="success" text>按钮</KButton>
-      <KButton type="warning" text>按钮</KButton>
       <KButton type="danger" text>按钮</KButton>
-      <KButton type="info" text>按钮</KButton>
-    </SBExamplePanel>
-
-    <SBExamplePanel label="自定义颜色" defaultOpen>
-      <KButton color="#ff5500" main>按钮</KButton>
-      <KButton color="#ff5500" secondary>按钮</KButton>
-      <KButton color="#ff5500" text>按钮</KButton>
+      <KButton type="danger" text>按钮</KButton>
+      <KButton type="danger" text>按钮</KButton>
+      <KButton type="danger" text>按钮</KButton>
+      <KButton type="danger" text>按钮</KButton>
       <br />
-      <KButton color="#ff5500" size="sm" main>按钮</KButton>
-      <KButton color="#ff5500" size="sm" secondary>按钮</KButton>
-      <KButton color="#ff5500" size="sm" text>按钮</KButton>
+      <KButton type="danger" icon><IconAdd /></KButton>
+      <KButton type="danger" icon><IconAdd /></KButton>
+      <KButton type="danger" icon><IconAdd /></KButton>
+      <KButton type="danger" icon><IconAdd /></KButton>
+      <KButton type="danger" icon><IconAdd /></KButton>
     </SBExamplePanel>
 
-    <SBExamplePanel label="icon-参数" defaultOpen>
+    <SBExamplePanel label="icon-参数">
       <KButton iconLeft="IconAdd" iconRight="IconArrowBottom">普通</KButton>
       <KButton iconLeft="IconAdd" iconRight="IconArrowBottom" main>主要</KButton>
       <KButton iconLeft="IconAdd" iconRight="IconArrowBottom" secondary>按钮</KButton>
@@ -106,7 +250,8 @@
       </KButton>
     </SBExamplePanel>
 
-    <SBExamplePanel label="icon-slot" defaultOpen>
+    <SBExamplePanel label="icon-slot">
+      <KButton iconRight="IconArrowBottom" iconLeft="IconAdd">普通</KButton>
       <KButton iconRight="IconArrowBottom">
         <template #iconLeft>
           <IconAdd />
@@ -175,7 +320,7 @@
       </KButton>
     </SBExamplePanel>
 
-    <SBExamplePanel label="button-group" defaultOpen>
+    <SBExamplePanel label="button-group">
       <div class="flex flex-col gap-2">
         <KButtonGroup>
           <KButton @click="handleClick('运行')">普通</KButton>
@@ -205,6 +350,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import { KButton } from '@components';
+import KButtonGroup from '../components/ButtonGroup.vue';
 
 const handleClick = () => {
   console.log('click');

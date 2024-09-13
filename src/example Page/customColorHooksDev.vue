@@ -8,6 +8,14 @@
 <template>
   <div id="customColorHooksDev" class="customColorHooksDev flex flex-col gap-2">
     CustomColor old2
+    <!-- formatHex -->
+    <KButton color="primary" main>按钮</KButton>
+
+    <br />
+    <KButton color="red" main>按钮</KButton>
+
+    <br />
+    <KButton color="#ff5500" main>按钮</KButton>
   </div>
 </template>
 
@@ -15,6 +23,7 @@
 import { ref, reactive, onMounted } from 'vue';
 import { calcContrast } from 'apcach';
 import { parse, clampChroma, converter } from 'culori';
+import { KButton } from '@components';
 
 const hslPanel = document.getElementById('hslPanel');
 const sliderHue = ref();
@@ -23,29 +32,25 @@ const cardOklch = ref();
 const cardHsl = document.getElementById('cardHsl');
 const boostChromaCheckbox = ref();
 const clearButton = ref();
-const lightness = [
-  97.78, 93.56, 88.11, 82.67, 74.22, 64.78, 57.33, 46.89, 39.44, 32, 23.78,
-];
-
+const lightness = [97.78, 93.56, 88.11, 82.67, 74.22, 64.78, 57.33, 46.89, 39.44, 32, 23.78];
 const chroma = [
-  0.0108, 0.0321, 0.0609, 0.0908, 0.1398, 0.1472, 0.1299, 0.1067, 0.0898,
-  0.0726, 0.054,
+  0.0108, 0.0321, 0.0609, 0.0908, 0.1398, 0.1472, 0.1299, 0.1067, 0.0898, 0.0726, 0.054,
 ];
-
 const oklchComps = {
-  0: { l: .9778, c: 0.0108, name: '--color-oklch-50' },
-  1: { l: .9356, c: 0.0321, name: '--color-oklch-100' },
-  2: { l: .8811, c: 0.0609, name: '--color-oklch-200' },
-  3: { l: .8267, c: 0.0908, name: '--color-oklch-300' },
-  4: { l: .7422, c: 0.1398, name: '--color-oklch-400' },
-  5: { l: .6478, c: 0.1472, name: '--color-oklch-500' },
-  6: { l: .5733, c: 0.1299, name: '--color-oklch-600' },
-  7: { l: .4689, c: 0.1067, name: '--color-oklch-700' },
-  8: { l: .3944, c: 0.0898, name: '--color-oklch-800' },
-  9: { l: .32, c: 0.0726, name: '--color-oklch-900' },
-  10: { l: .2378, c: 0.054, name: '--color-oklch-950' },
+  0: { l: 0.9778, c: 0.0108, name: '--color-oklch-50' },
+  1: { l: 0.9356, c: 0.0321, name: '--color-oklch-100' },
+  2: { l: 0.8811, c: 0.0609, name: '--color-oklch-200' },
+  3: { l: 0.8267, c: 0.0908, name: '--color-oklch-300' },
+  4: { l: 0.7422, c: 0.1398, name: '--color-oklch-400' },
+  5: { l: 0.6478, c: 0.1472, name: '--color-oklch-500' },
+  6: { l: 0.5733, c: 0.1299, name: '--color-oklch-600' },
+  7: { l: 0.4689, c: 0.1067, name: '--color-oklch-700' },
+  8: { l: 0.3944, c: 0.0898, name: '--color-oklch-800' },
+  9: { l: 0.32, c: 0.0726, name: '--color-oklch-900' },
+  10: { l: 0.2378, c: 0.054, name: '--color-oklch-950' },
 };
 
+onMounted(() => {});
 
 // console.log(sliderHue.value);
 </script>

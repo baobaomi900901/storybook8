@@ -1,10 +1,10 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import 'element-plus/dist/index.css'; // 引入 element-plus 样式
 import elementPlus from 'element-plus';
+import 'element-plus/dist/index.css'; // 禁用
 import './style.css';
 import '../public/result.css'; // 全局字体
-import install from '../kswux/package/index'; // 全局注册组件
+// import install from '../kswux/package/index'; // 全局注册组件
 import { KswIcon } from 'ksw-vue-icon';
 import 'ksw-vue-icon/styles/icon.css';
 import router from './router';
@@ -17,6 +17,6 @@ app.use(router);
 app.use(elementPlus);
 app.use(KswIcon);
 app.use(createPinia());
-install(app);
+// install(app);
 app.mount('#app');
 app.component('SBExamplePanel', SBExamplePanel);

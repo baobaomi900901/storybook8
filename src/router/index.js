@@ -16,6 +16,7 @@ import {
   expTooltip,
   expForm,
   expResult,
+  expTreeTable,
 } from '../example Components';
 
 // 引入示例页面
@@ -36,6 +37,7 @@ const routes = [
     component: home,
     name: 'home',
   },
+  // components
   {
     path: '/components',
     component: pageComponents,
@@ -53,8 +55,10 @@ const routes = [
       { path: 'tooltip', component: expTooltip, name: 'tooltip' },
       { path: 'form', component: expForm, name: 'form' },
       { path: 'result', component: expResult, name: 'result' },
+      { path: 'tree-table', component: expTreeTable, name: 'tree-table' },
     ],
   },
+  // template
   {
     path: '/template',
     component: pageTemplate,

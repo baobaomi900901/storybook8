@@ -6,13 +6,16 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "paths": {
-      "@/*": ["./kswux/package/*"],
-      "@components/*": ["./kswux/package/components/*"],
-      "@templates/*": ["./kswux/package/templates/*"],
-      "@components-ant/*": ["./kswux-ant/package/components/*"],
-      "@templates-ant/*": ["./kswux-ant/package/templates/*"],
       "@src/*": ["./src/*"],
       "@alias": ["./path/to/alias"]
+      // dev 分支
+      // "@/*": ["./kswux/package/*"],
+      // "@components/*": ["./kswux/package/components/*"],
+      // "@templates/*": ["./kswux/package/templates/*"]
+      // ant 分支
+      // "@/*": ["./kswux-ant/package/*"],
+      // "@components/*": ["./kswux-ant/package/components/*"],
+      // "@templates/*": ["./kswux-ant/package/templates/*"]
     },
     "types": ["vue/types"],
 
