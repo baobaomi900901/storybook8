@@ -77,8 +77,8 @@ const routes = [
         component: stashLayout,
         name: 'stash-layout',
         children: [
-          { path: 'exp-page-table', component: expPageTable, name: 'exp-page-table' },
-          { path: 'exp-page-table2', component: expPageTable2, name: 'exp-page-table2' },
+          { path: 'exp-page-table', component: expPageTable, name: '一级页面' },
+          { path: 'exp-page-table2', component: expPageTable2, name: '详情页' },
         ],
       },
       { path: 'web-status', component: webStatus, name: 'web-status' },

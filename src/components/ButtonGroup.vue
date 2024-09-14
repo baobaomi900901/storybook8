@@ -6,7 +6,7 @@
 * @version V3.0.0
 !-->
 <template>
-  <div id="ButtonGroup" class="ButtonGroup">
+  <div id="k-button-group" class="k-button-group">
     <slot></slot>
   </div>
 </template>

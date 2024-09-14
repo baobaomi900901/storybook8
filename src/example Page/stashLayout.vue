@@ -13,14 +13,14 @@
       >
         <span class="left"><img src="./assets/ksw-logo.svg" alt="" /></span>
         <span class="right flex justify-between items-center">
-          <span class="KButtonGroup">
+          <div class="k-button-group">
             <KButton size="sm" icon>
               <IconMenuCollect></IconMenuCollect>
             </KButton>
             <KButton size="sm" icon>
               <IconArrowBottom />
             </KButton>
-          </span>
+          </div>
           <span
             ref="KAvatar"
             class="k-avatar rounded-full uppercase inline-block mx-4 w-8 h-8 flex justify-center items-center text-base font-bold"
@@ -34,7 +34,7 @@
           <div ref="menu" class="menu" />
         </div>
         <div class="tabs h-10 w-full flex-1">
-          <KMenu :menuItem="MenuData" />
+          <KMenu :menuItem="data" />
         </div>
         <div class="edit w-10 h-10 flex justify-center items-center border-l">
           <IconTriangleBottom size="24" />
@@ -51,16 +51,32 @@
 import { ref, reactive, onMounted } from 'vue';
 import { KButton, KDropdown, KDropdownItem } from '@components';
 import KMenu from '../components/KMenu.vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const data = [];
+// 读取router 结构
+// components路由下的子路由
+const routerPath = reactive(router.currentRoute.value.matched[0].children[4].children);
+// console.log(routerPath);
+
+routerPath.forEach((item) => {
+  // console.log(item);
+  // if (!item.path.includes('/template/')) {
+  item.path = '/template/stash-layout/' + item.path;
+  // }
+  data.push(item);
+});
 const menu = ref();
 
 const MenuData = [
-  { name: '首页', path: '/template/stash-layout/exp-page-table2', close: false },
   {
-    name: ' 开发中心',
+    name: '首页',
     path: '/template/stash-layout/exp-page-table',
     close: true,
     // icon: 'IconAdd',
   },
+  { name: '一级页面', path: '/template/stash-layout/exp-page-table2', close: false },
 ];
 
 const avatarData = {

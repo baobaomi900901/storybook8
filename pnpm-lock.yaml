@@ -35,6 +35,9 @@ dependencies:
   pinia:
     specifier: ^2.1.7
     version: 2.2.2(typescript@5.5.4)(vue@3.5.0)
+  tailwind-scrollbar-hide:
+    specifier: ^1.1.7
+    version: 1.1.7
   vue:
     specifier: ^3.4.27
     version: 3.5.0(typescript@5.5.4)
@@ -1804,7 +1807,7 @@ packages:
     dependencies:
       chinese-lunar-calendar: 1.0.1
       element-plus: 2.8.1(vue@3.5.0)
-      ksw-vue-icon: 2.2.24(vue@3.5.0)
+      ksw-vue-icon: 2.2.25(vue@3.5.0)
       less: 4.2.0
       less-loader: 12.2.0(less@4.2.0)
       lodash-es: 4.17.21
@@ -4477,6 +4480,14 @@ packages:
       vue: 3.5.0(typescript@5.5.4)
     dev: false
 
+  /ksw-vue-icon@2.2.25(vue@3.5.0):
+    resolution: {integrity: sha512-sTXuScvWv8clXhFrHi0cPfhkXBIM2OChffSKqpqA+cmdPgWriBEkF4txULjgeW7SUpxi8B2swx5Sk1j0uVSY+Q==}
+    peerDependencies:
+      vue: ^3.4.21
+    dependencies:
+      vue: 3.5.0(typescript@5.5.4)
+    dev: false
+
   /less-loader@12.2.0(less@4.2.0):
     resolution: {integrity: sha512-MYUxjSQSBUQmowc0l5nPieOYwMzGPUaTzB6inNW/bdPEG9zOL3eAAD1Qw5ZxSPk7we5dMojHwNODYMV1hq4EVg==}
     engines: {node: '>= 18.12.0'}
@@ -5902,6 +5913,10 @@ packages:
   /svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
     dev: true
+
+  /tailwind-scrollbar-hide@1.1.7:
+    resolution: {integrity: sha512-X324n9OtpTmOMqEgDUEA/RgLrNfBF/jwJdctaPZDzB3mppxJk7TLIDmOreEDm1Bq4R9LSPu4Epf8VSdovNU+iA==}
+    dev: false
 
   /tailwindcss@3.4.10:
     resolution: {integrity: sha512-KWZkVPm7yJRhdu4SRSl9d4AK2wM3a50UsvgHZO7xY77NQr2V+fIrEuoDGQcbvswWvFGbS2f6e+jC/6WJm1Dl0w==}
