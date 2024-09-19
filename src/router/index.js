@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 
 // 引入页面
-import { home, pageComponents, pageTemplate } from '../pages';
+import { home, pageComponents, pageTemplate, pageAntPro } from '../pages';
 // 引入示例组件
 import {
   expButton,
@@ -30,6 +30,9 @@ import {
   customColorHooksDev,
   webStatus,
 } from '../example Page';
+
+// 引入仿 ant pro 的页面
+import { tableView, cardView } from '../example ant';
 
 const routes = [
   {
@@ -82,6 +85,16 @@ const routes = [
         ],
       },
       { path: 'web-status', component: webStatus, name: 'web-status' },
+    ],
+  },
+  // ant pro
+  {
+    path: '/ant-pro',
+    component: pageAntPro,
+    name: 'ant-pro',
+    children: [
+      { path: 'table-view', component: tableView, name: 'table-view' },
+      { path: 'card-view', component: cardView, name: 'card-view' },
     ],
   },
 ];

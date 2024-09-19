@@ -28,6 +28,10 @@ const data = [
     name: 'template | 模板',
     path: '/template',
   },
+  {
+    name: 'ant-pro | 模板',
+    path: '/ant-pro',
+  },
 ];
 
 const showMenuClick = () => {

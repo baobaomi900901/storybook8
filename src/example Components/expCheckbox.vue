@@ -7,52 +7,166 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="epx-title">组件</div>
-    <div class="epx-title-sub">常规:</div>
-    <div class="flex items-center gap-4">
-      <KCheckbox v-model="value" label="烧饼"></KCheckbox>
-      <KCheckbox v-model="value2" label="包子"></KCheckbox>
-      <KCheckbox v-model="value2" label="馒头" disabled></KCheckbox>
-    </div>
+    <div class="epx-title">多选</div>
+    <SBExamplePanel label="按钮类型" open>
+      <div>
+        <div class="flex items-center gap-4">
+          <KCheckbox v-model="value" label="烧饼"></KCheckbox>
+          <KCheckbox v-model="value2" label="包子"></KCheckbox>
+          <KCheckbox v-model="value2" label="馒头" disabled></KCheckbox>
+        </div>
+        <hr />
+        <div class="flex items-center gap-4">
+          <KCheckbox
+            v-model="checkAll"
+            :indeterminate="isIndeterminate"
+            @change="handleCheckAllChange"
+            size="sm"
+            label="全部"
+            color="success"
+          ></KCheckbox>
+          <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange">
+            <KCheckbox
+              v-for="item in radioData"
+              :key="item"
+              :label="item.value"
+              :value="item.value"
+              size="sm"
+              color="success"
+            >
+              {{ item.label }}
+            </KCheckbox>
+          </KCheckboxGroup>
+        </div>
+        <div class="flex items-center gap-4">
+          <KRadio
+            v-for="item in radioData"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+            v-model="radioValue"
+            size="sm"
+          ></KRadio>
+        </div>
+        <hr />
+        <div class="flex items-center gap-4">
+          <KCheckbox
+            v-model="checkAll"
+            :indeterminate="isIndeterminate"
+            @change="handleCheckAllChange"
+            label="全部"
+            color="red"
+          ></KCheckbox>
+          <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange">
+            <KCheckbox
+              v-for="item in radioData"
+              :key="item"
+              :label="item.value"
+              :value="item.value"
+              color="red"
+            >
+              {{ item.label }}
+            </KCheckbox>
+          </KCheckboxGroup>
+        </div>
+        <div class="flex items-center gap-4">
+          <KRadio
+            v-for="item in radioData"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+            v-model="radioValue"
+          ></KRadio>
+        </div>
+        <hr />
+        <div class="flex items-center gap-4">
+          <KCheckbox
+            v-model="checkAll"
+            :indeterminate="isIndeterminate"
+            @change="handleCheckAllChange"
+            size="lg"
+            label="全部"
+            color="#ff5500"
+          ></KCheckbox>
+          <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange">
+            <KCheckbox
+              v-for="item in radioData"
+              :key="item"
+              :label="item.value"
+              :value="item.value"
+              size="lg"
+              color="#ff5500"
+            >
+              {{ item.label }}
+            </KCheckbox>
+          </KCheckboxGroup>
+        </div>
+        <div class="flex items-center gap-4">
+          <KRadio
+            v-for="item in radioData"
+            :key="item.value"
+            :label="item.label"
+            :value="item.value"
+            v-model="radioValue"
+            size="lg"
+            color="#ff5500"
+          ></KRadio>
+        </div>
+      </div>
+    </SBExamplePanel>
 
-    <div class="epx-title-sub">组:</div>
-    <div class="flex flex-col items-start gap-2">
-      <KCheckbox
-        v-model="checkAll"
-        :indeterminate="isIndeterminate"
-        @change="handleCheckAllChange"
-        label="全部"
-      ></KCheckbox>
-      <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange">
-        <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city">
-          {{ city }}
-        </KCheckbox>
-      </KCheckboxGroup>
-    </div>
+    <SBExamplePanel label="group" open>
+      <div class="flex flex-col items-start gap-2">
+        <KCheckbox
+          v-model="checkAll"
+          :indeterminate="isIndeterminate"
+          @change="handleCheckAllChange"
+          label="全部"
+        ></KCheckbox>
+        <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange">
+          <KCheckbox v-for="item in radioData" :key="item" :label="item.value" :value="item.value">
+            {{ item.label }}
+          </KCheckbox>
+        </KCheckboxGroup>
+      </div>
+    </SBExamplePanel>
 
-    <div class="epx-title-sub">min/max:</div>
-    <div class="flex items-center gap-4">
-      <KCheckboxGroup v-model="checkedCities" :min="1" :max="2">
-        <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city">
-          {{ city }}
-        </KCheckbox>
-      </KCheckboxGroup>
-    </div>
-
-    <div class="epx-title-sub">单选:</div>
-    <div class="flex items-center gap-4">
-      <KCheckboxGroup v-model="checkedCities" :min="1" :max="2">
-        <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city">
-          {{ city }}
-        </KCheckbox>
-      </KCheckboxGroup>
-    </div>
+    <SBExamplePanel label="min/max:" open>
+      <div class="flex items-center gap-4">
+        <KCheckboxGroup v-model="checkedCities" :min="0" :max="2">
+          <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city">
+            {{ city }}
+          </KCheckbox>
+        </KCheckboxGroup>
+      </div>
+    </SBExamplePanel>
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
 import { KCheckbox, KCheckboxGroup, KRadio, KRadioGroup } from '@components';
+
+const radioValue = ref();
+
+const radioData = [
+  {
+    value: '直角',
+    label: '直角',
+  },
+  {
+    value: '锐角',
+    label: '锐角',
+  },
+  {
+    value: '钝角',
+    label: '钝角',
+  },
+  {
+    value: '圆角',
+    label: '圆角',
+  },
+];
 
 const value = ref(false);
 const value2 = ref(false);
@@ -64,7 +178,7 @@ const valueMoby = ref('1');
 
 // 全选
 const checkAll = ref(false);
-const isIndeterminate = ref(true);
+const isIndeterminate = ref(false);
 const checkedCities = ref([]);
 const cities = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen'];
 

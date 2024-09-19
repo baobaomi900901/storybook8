@@ -4,5 +4,7 @@ import home from './home.vue';
 import pageComponents from './pageComponents.vue';
 // pageTemplate
 import pageTemplate from './pageTemplate.vue';
+// pageAntPro
+import pageAntPro from './pageAntPro.vue';
 
-export { home, pageComponents, pageTemplate };
+export { home, pageComponents, pageTemplate, pageAntPro };

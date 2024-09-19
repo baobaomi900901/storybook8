@@ -1,13 +1,24 @@
 <!--
-* @description  参数1
+* @description:
+  - showViewBus: 是否显示左侧视图, 默认false
+  - viewBusTitle: 视图名称, 默认'视图'
+  - viewBusInfo: 视图描述信息, 默认'描述信息'
+  - viewBusRefresh: 是否显示刷新按钮, 默认false
+  - pageIcon: 页面图标, 默认'IconAomMenuAOMRZColor'
+  - pageTitle: 页面名称, 默认'页面名称'
+  - pageInfo: 页面描述信息, 默认'页面描述信息'
+
+  slot:
+  - extra-viewBus-body: 视图内容自定义渲染
+  - extra-page-head-btn: 页面头部按钮自定义渲染
+  - extra-page-body: 页面内容自定义渲染
 * @fileName  expPageTable
-* @author userName
+* @author moby
 * @date 2024-07-23 15:16:18
-* @version V3.0.0
 !-->
 <template>
   <div id="expPageTable" class="expPageTable h-full">
-    <KPageTableView
+    <!-- <KPageTableView
       showViewBus
       viewBusTitle="视图"
       viewBusInfo="描述信息"
@@ -16,6 +27,7 @@
       pageTitle="用户管理"
       pageInfo="用户管理页面描述信息"
     >
+      <template #extra-viewBus-body>view-bus-body</template>
       <template #extra-page-head-btn>
         <KButton @click="() => console.log('新增')" main>新增</KButton>
         <KButton @click="() => console.log('导出')">导出</KButton>
@@ -29,14 +41,15 @@
             border
           ></k-tree-table>
         </div>
+        123
       </template>
-    </KPageTableView>
+    </KPageTableView> -->
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KPageViewBus, KPageTableView } from '@templates';
+// import { KPageViewBus, KPageTableView } from '@templates';
 import { KButton, KTreeTable } from '@components';
 
 const column1 = ref([

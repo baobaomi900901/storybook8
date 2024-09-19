@@ -27,7 +27,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KPageDetails } from '@templates';
+// import { KPageDetails } from '@templates';
 import { KButton, KTreeTable } from '@components';
 
 const abstract = [
