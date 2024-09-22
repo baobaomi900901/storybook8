@@ -12,8 +12,8 @@ import 'ksw-vue-icon/styles/icon.css';
 import SBExamplePanel from './components/SBExamplePanel.vue';
 
 // 测试分支
-// import install from '../kswux/package/index'; // dev
-import install from '../kswux-ant/package/index'; // dev-ant
+import install from '../kswux/package/index'; // dev
+// import install from '../kswux-ant/package/index'; // dev-ant
 
 const app = createApp(App);
 app.use(router);

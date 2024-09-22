@@ -9,12 +9,62 @@
   <div class="epx-container">
     <div class="epx-title">KInput</div>
 
-    <SBExamplePanel label="默认">
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入内容"></KInput>
-      </div>
-      <div class="w-80">
-        <KInput v-model="value" placeholder="请输入内容"></KInput>
+    <SBExamplePanel label="默认" open>
+      <div class="w-80 flex flex-col gap-2">
+        <KInput v-model="value" size="sm" placeholder="请输入内容">
+          <template #prepend>
+            <KButtonGroup>
+              <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+              <KButton main>
+                <IconArrowBottom />
+              </KButton>
+            </KButtonGroup>
+          </template>
+          <template #append>
+            <KButtonGroup>
+              <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+              <KButton main>
+                <IconArrowBottom />
+              </KButton>
+            </KButtonGroup>
+          </template>
+        </KInput>
+        <KInput v-model="value" placeholder="请输入内容">
+          <template #prepend>
+            <KButtonGroup>
+              <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+              <KButton main>
+                <IconArrowBottom />
+              </KButton>
+            </KButtonGroup>
+          </template>
+          <template #append>
+            <KButtonGroup>
+              <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+              <KButton main>
+                <IconArrowBottom />
+              </KButton>
+            </KButtonGroup>
+          </template>
+        </KInput>
+        <KInput v-model="value" size="lg" placeholder="请输入内容">
+          <template #prepend>
+            <KButtonGroup>
+              <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+              <KButton main>
+                <IconArrowBottom />
+              </KButton>
+            </KButtonGroup>
+          </template>
+          <template #append>
+            <KButtonGroup>
+              <KButton main icon-left="IconIdePlay" @click="handleClick('运行')">运行</KButton>
+              <KButton main>
+                <IconArrowBottom />
+              </KButton>
+            </KButtonGroup>
+          </template>
+        </KInput>
       </div>
     </SBExamplePanel>
 
