@@ -10,8 +10,12 @@
     <div class="epx-title">KButton</div>
 
     <SBExamplePanel label="自定义颜色" open>
-      <KButton color="danger" text>按钮</KButton>
-      <KButton link>按钮</KButton>
+      <KButton size="sm" main>按钮</KButton>
+      <KButton size="sm" main>按钮</KButton>
+      <KButton main>按钮</KButton>
+      <KButton main>按钮</KButton>
+      <KButton size="lg" main>按钮</KButton>
+      <KButton size="lg" main>按钮</KButton>
       <!-- <KButton color="#success" secondary>按钮</KButton>
       <KButton color="#success" text>按钮</KButton>
       <br />

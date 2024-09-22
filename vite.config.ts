@@ -9,13 +9,13 @@ export default defineConfig({
     alias: {
       '@src': path.resolve(__dirname, './src'),
       // dev 分支
-      // '@': path.resolve(__dirname, './kswux/package'),
-      // '@components': path.resolve(__dirname, './kswux/package/components'),
-      // '@templates': path.resolve(__dirname, './kswux/package/templates'),
+      '@': path.resolve(__dirname, './kswux/package'),
+      '@components': path.resolve(__dirname, './kswux/package/components'),
+      '@templates': path.resolve(__dirname, './kswux/package/templates'),
       // ant 分支
-      '@': path.resolve(__dirname, './kswux-ant/package'),
-      '@components': path.resolve(__dirname, './kswux-ant/package/components'),
-      '@templates': path.resolve(__dirname, './kswux-ant/package/templates'),
+      // '@': path.resolve(__dirname, './kswux-ant/package'),
+      // '@components': path.resolve(__dirname, './kswux-ant/package/components'),
+      // '@templates': path.resolve(__dirname, './kswux-ant/package/templates'),
     },
   },
   server: {

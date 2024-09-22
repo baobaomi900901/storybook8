@@ -32,7 +32,7 @@ import {
 } from '../example Page';
 
 // 引入仿 ant pro 的页面
-import { tableView, cardView } from '../example ant';
+import { tableView, cardView, detailsView } from '../example ant';
 
 const routes = [
   {
@@ -95,6 +95,7 @@ const routes = [
     children: [
       { path: 'table-view', component: tableView, name: 'table-view' },
       { path: 'card-view', component: cardView, name: 'card-view' },
+      { path: 'details-view', component: detailsView, name: 'details-view' },
     ],
   },
 ];

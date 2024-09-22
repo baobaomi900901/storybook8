@@ -139,21 +139,7 @@
     <SBExamplePanel label="group__button" open>
       <div class="flex flex-row gap-4">
         <div class="flex items-star gap-4">
-          <KRadioGroup v-model="value" column button>
-            <KRadio
-              v-for="item in radioData"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              size="sm"
-              button
-            ></KRadio>
-            <KRadio v-model="value" label="直角" value="直角" size="sm" button disabled></KRadio>
-          </KRadioGroup>
-        </div>
-        <br />
-        <div class="flex items-star gap-4">
-          <KRadioGroup v-model="value" column button>
+          <KRadioGroup v-model="value" button size="sm" column>
             <KRadio
               v-for="item in radioData"
               :key="item.value"
@@ -166,16 +152,28 @@
         </div>
         <br />
         <div class="flex items-star gap-4">
-          <KRadioGroup v-model="value" column button>
+          <KRadioGroup v-model="value" button column>
             <KRadio
               v-for="item in radioData"
               :key="item.value"
               :label="item.label"
               :value="item.value"
-              size="lg"
               button
             ></KRadio>
-            <KRadio v-model="value" label="直角" value="直角" size="lg" button disabled></KRadio>
+            <KRadio v-model="value" label="直角" value="直角" button disabled></KRadio>
+          </KRadioGroup>
+        </div>
+        <br />
+        <div class="flex items-star gap-4">
+          <KRadioGroup v-model="value" button size="lg" column>
+            <KRadio
+              v-for="item in radioData"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+              button
+            ></KRadio>
+            <KRadio v-model="value" label="直角" value="直角" button disabled></KRadio>
           </KRadioGroup>
         </div>
       </div>

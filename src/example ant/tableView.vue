@@ -11,39 +11,36 @@
     class="tableView flex-1 px-10 pt-8"
     style="background-color: #f5f5f5; min-width: 0"
   >
-    <div class="page-head mb-4">
-      <span class="page-head--title text-xl">表格视图</span>
-    </div>
-    <div class="page-body flex-col" style="min-width: 0">
-      <div class="search-container bg-white rounded-md p-6 mb-4 shadow-sm">
-        <div class="search-items" ref="searchItems">
-          <div class="search-item">
-            <k-form-item label="Id">
+    <KPageTitle>表格视图</KPageTitle>
+    <div class="page-body flex-col flex-1" style="min-width: 0">
+      <KPageFiltr>
+        <div class="filtr-items" ref="filtrItems">
+          <div class="filtr-item">
+            <k-form-item label="Id:">
               <el-input v-model="form.name" />
             </k-form-item>
           </div>
-          <div class="search-item">
-            <k-form-item label="Name">
+          <div class="filtr-item">
+            <k-form-item label="Name:">
               <el-input v-model="form.name" />
             </k-form-item>
           </div>
-          <div class="search-item">
-            <k-form-item label="Role">
+          <div class="filtr-item">
+            <k-form-item label="Role:">
               <el-input v-model="form.name" />
             </k-form-item>
           </div>
-          <div class="search-item">
-            <k-form-item label="Role">
+          <div class="filtr-item">
+            <k-form-item label="Sex:">
               <el-input v-model="form.name" />
             </k-form-item>
           </div>
-          <div class="search-item">
-            <k-form-item label="Role">
+          <div class="filtr-item">
+            <k-form-item label="Age:">
               <el-input v-model="form.name" />
             </k-form-item>
           </div>
-          <div class="search-item">6</div>
-          <div class="search-btns flex gap-2" ref="searchBtns">
+          <div class="filtr-btns flex gap-2" ref="filtrBtns">
             <KButton>重置</KButton>
             <KButton color="#1890ff" main>查询</KButton>
             <KButton text :iconRight="handleExpandBtnIcon" @click="handleExpand">
@@ -51,7 +48,7 @@
             </KButton>
           </div>
         </div>
-      </div>
+      </KPageFiltr>
 
       <div class="table-container bg-white rounded-md p-6 mb-4 shadow-sm" style="height: 70vh">
         <div style="min-width: 0; height: 100%">
@@ -69,12 +66,13 @@
         </div>
       </div>
     </div>
-    <div class="page-foot py-4 text-center text-gray-300">footer</div>
   </div>
 </template>
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
+import KPageTitle from './components/KPageTitle.vue';
+import KPageFiltr from './components/KPageFiltr.vue';
 
 const widgets = ref([
   {
@@ -207,8 +205,8 @@ const onSubmit = () => {
   console.log('submit!');
 };
 
-const searchItems = ref();
-const searchBtns = ref();
+const filtrItems = ref();
+const filtrBtns = ref();
 
 const handleExpandBtnText = ref('展开');
 const handleExpandBtnIcon = ref('IconArrowBottom');
@@ -216,8 +214,8 @@ const handleExpandBtnIcon = ref('IconArrowBottom');
 const handleExpand = () => {
   console.log(1);
 
-  searchBtns?.value.classList.toggle('is-expand');
-  searchItems.value.classList.toggle('is-expand');
+  filtrBtns?.value.classList.toggle('is-expand');
+  filtrItems.value.classList.toggle('is-expand');
   handleExpandBtnText.value = handleExpandBtnText.value === '展开' ? '收起' : '展开';
   handleExpandBtnIcon.value =
     handleExpandBtnIcon.value === 'IconArrowBottom' ? 'IconArrowTop' : 'IconArrowBottom';
@@ -236,7 +234,7 @@ const handleExpand = () => {
   padding: 0 0 !important;
 }
 
-.search-items {
+.filtr-items {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 33%);
@@ -251,7 +249,7 @@ const handleExpand = () => {
   }
 }
 
-.search-btns {
+.filtr-btns {
   // width: 30%;
   grid-column: -1;
   grid-row: -1;
@@ -263,6 +261,6 @@ const handleExpand = () => {
 .el-form-item__label {
   display: inline-block;
   min-width: 4rem;
-  text-align: left;
+  text-align: right;
 }
 </style>
