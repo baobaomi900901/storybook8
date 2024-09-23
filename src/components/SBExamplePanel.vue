@@ -19,11 +19,20 @@
             size="20"
           />
         </DisclosureButton>
-        <DisclosurePanel class="px-4 pb-2 pt-4 text-sm text-gray-500">
-          <div class="flex items-star gap-2">
-            <slot></slot>
-          </div>
-        </DisclosurePanel>
+        <transition
+          enter-active-class="transition duration-200 ease-in-out"
+          enter-from-class="transform opacity-0"
+          enter-to-class="transform opacity-100"
+          leave-active-class="transition duration-200 ease-in-out "
+          leave-from-class="transform opacity-1000"
+          leave-to-class="transform opacity-0"
+        >
+          <DisclosurePanel class="px-4 pb-2 pt-4 text-sm text-gray-500">
+            <div class="flex items-star gap-2">
+              <slot></slot>
+            </div>
+          </DisclosurePanel>
+        </transition>
       </Disclosure>
     </div>
   </div>

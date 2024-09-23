@@ -17,6 +17,7 @@ import {
   expForm,
   expResult,
   expTreeTable,
+  expCollapse,
 } from '../example Components';
 
 // 引入示例页面
@@ -59,6 +60,7 @@ const routes = [
       { path: 'form', component: expForm, name: 'form' },
       { path: 'result', component: expResult, name: 'result' },
       { path: 'tree-table', component: expTreeTable, name: 'tree-table' },
+      { path: 'collapse', component: expCollapse, name: 'collapse' },
     ],
   },
   // template

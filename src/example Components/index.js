@@ -15,6 +15,8 @@ import expForm from './expForm.vue';
 import expResult from './expResult.vue';
 // expTreeTable
 import expTreeTable from './expTreeTable.vue';
+// expCollapse
+import expCollapse from './expCollapse.vue';
 
 export {
   expButton,
@@ -30,4 +32,5 @@ export {
   expForm,
   expResult,
   expTreeTable,
+  expCollapse,
 };

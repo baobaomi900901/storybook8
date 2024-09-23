@@ -18,7 +18,7 @@
 !-->
 <template>
   <div id="expPageTable" class="expPageTable h-full">
-    <!-- <KPageTableView
+    <KPageTableView
       showViewBus
       viewBusTitle="视图"
       viewBusInfo="描述信息"
@@ -26,6 +26,7 @@
       pageIcon="IconAomMenuAOMRZColor"
       pageTitle="用户管理"
       pageInfo="用户管理页面描述信息"
+      @refresh="() => console.log('刷新')"
     >
       <template #extra-viewBus-body>view-bus-body</template>
       <template #extra-page-head-btn>
@@ -43,13 +44,13 @@
         </div>
         123
       </template>
-    </KPageTableView> -->
+    </KPageTableView>
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
-// import { KPageViewBus, KPageTableView } from '@templates';
+import { KPageViewBus, KPageTableView } from '@templates';
 import { KButton, KTreeTable } from '@components';
 
 const column1 = ref([
