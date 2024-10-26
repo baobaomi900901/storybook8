@@ -4,5 +4,7 @@ import tableView from './tableView.vue';
 import cardView from './cardView.vue';
 // detailsView
 import detailsView from './detailsView.vue';
+// toolMarket
+import toolMarket from './toolMarket.vue';
 
-export { tableView, cardView, detailsView };
+export { tableView, cardView, detailsView, toolMarket };

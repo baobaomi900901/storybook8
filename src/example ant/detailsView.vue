@@ -7,7 +7,7 @@
 !-->
 <template>
   <div id="detailsView" class="detailsView flex-1" style="background-color: #f5f5f5; min-width: 0">
-    <div class="bg-white rounded-md px-10 mb-6 shadow-sm" style="min-width: 0">
+    <div class="bg-white rounded-md px-10 shadow-sm" style="min-width: 0">
       <div class="crumbs py-6 flex gap-1 items-center text-gray-400 text-sm">
         <span
           class="py-1 px-0.5 cursor-pointer rounded-md select-none hover:bg-gray-100 hover:text-gray-500"
@@ -23,19 +23,75 @@
         <span>/</span>
         <span class="text-gray-500 p-1">详情</span>
       </div>
-      <div class="text-2xl mb-4 font-bold">详情页</div>
-      <div class="items grid grid-cols-3 gap-4">
-        <div class="item" v-for="item in data" :key="item.label">
-          <k-form-item :label="item.label">{{ item.value }}</k-form-item>
-        </div>
-      </div>
     </div>
+
+    <GFPageDetails
+      ref="ks"
+      icon="IconAomMenuAOMRZColor"
+      title="功能详情页"
+      info="这里是功能详情页的描述信息"
+      :abstract="abstract"
+      :columns="4"
+      :tabs="tabs"
+      class="w-full h-full flex flex-col"
+      :tabs-config="{
+        defaultActive: 'desc',
+      }"
+    >
+      <!-- <template #head-title>123</template> -->
+      <template #head-toolbar>
+        <KButton main @click="() => ks.toggleActiveTab('other')">保存</KButton>
+        <KButton>取消</KButton>
+      </template>
+      <template #basic>基本信息</template>
+      <template #basic-label>基本信息-zhj</template>
+      <template #desc>描述信息</template>
+      <template #other>其他信息</template>
+    </GFPageDetails>
   </div>
 </template>
 
-<script setup>
-import { ref, reactive } from 'vue';
-import KPageTitle from './components/KPageTitle.vue';
+<script lang="tsx" setup>
+import { ref } from 'vue';
+
+const ks = ref();
+const abstract = [
+  {
+    label: '姓名',
+    value: '张三',
+  },
+  {
+    label: '性别',
+    value: '男',
+  },
+  {
+    label: '职业',
+    column: 2,
+    render: () => {
+      return <KTag>设计师</KTag>;
+    },
+  },
+  {
+    label: '年龄',
+    value: '25',
+  },
+  {
+    label: '职业',
+    render: () => {
+      return <KTag>设计师</KTag>;
+    },
+  },
+  {
+    label: '年龄',
+    value: '25',
+  },
+];
+
+const tabs = ref([
+  { label: '基本信息', name: 'basic' },
+  { label: '描述信息', name: 'desc' },
+  { label: '其他信息', name: 'other' },
+]);
 
 const data = [
   { label: 'Id:', value: 'g0019801' },

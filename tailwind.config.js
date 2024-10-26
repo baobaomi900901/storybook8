@@ -11,6 +11,15 @@ export default {
   ],
   theme: {
     extend: guangfa,
+    screens: {
+      '2xs': '768px',
+      xs: '1280px',
+      sm: '1440px',
+      base: '1920px',
+      lg: '2560px',
+      xl: '3008px',
+      '2xl': '3840px',
+    },
   },
   plugins: [
     // 滚动条

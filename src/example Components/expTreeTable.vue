@@ -1,14 +1,11 @@
 <template>
   <div :style="{ height: '300px' }">
-    <!-- <k-tree-table :data="tableData" :column="column1" :show-page="false" border></k-tree-table> -->
+    <k-tree-table :data="tableData" :column="columnPro" :show-page="false" border></k-tree-table>
   </div>
 </template>
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
-import { KTreeTable } from '@components';
-
-console.log('@', KTreeTable);
 
 const column1 = ref([
   {

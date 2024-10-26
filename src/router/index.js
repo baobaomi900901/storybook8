@@ -18,6 +18,8 @@ import {
   expResult,
   expTreeTable,
   expCollapse,
+  expFilterForm,
+  expDetails,
 } from '../example Components';
 
 // 引入示例页面
@@ -33,7 +35,7 @@ import {
 } from '../example Page';
 
 // 引入仿 ant pro 的页面
-import { tableView, cardView, detailsView } from '../example ant';
+import { tableView, cardView, detailsView, toolMarket } from '../example ant';
 
 const routes = [
   {
@@ -61,6 +63,8 @@ const routes = [
       { path: 'result', component: expResult, name: 'result' },
       { path: 'tree-table', component: expTreeTable, name: 'tree-table' },
       { path: 'collapse', component: expCollapse, name: 'collapse' },
+      { path: 'filter-form', component: expFilterForm, name: 'filter-form' },
+      { path: 'details', component: expDetails, name: 'details' },
     ],
   },
   // template
@@ -98,6 +102,7 @@ const routes = [
       { path: 'table-view', component: tableView, name: 'table-view' },
       { path: 'card-view', component: cardView, name: 'card-view' },
       { path: 'details-view', component: detailsView, name: 'details-view' },
+      { path: 'tool-market', component: toolMarket, name: 'tool-market' },
     ],
   },
 ];

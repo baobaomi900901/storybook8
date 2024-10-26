@@ -11,7 +11,7 @@
     class="tableView flex-1 px-10 pt-8"
     style="background-color: #f5f5f5; min-width: 0"
   >
-    <KPageTitle>表格视图</KPageTitle>
+    <KPageTitle>表格视图123</KPageTitle>
     <div class="page-body flex-col flex-1" style="min-width: 0">
       <KPageFiltr>
         <div class="filtr-items" ref="filtrItems">
@@ -59,6 +59,7 @@
             :widgets="widgets"
             :border="false"
             size="small"
+            :showOverflow="false"
             border
           >
             <template #custom1>custom1插槽</template>
@@ -112,10 +113,25 @@ const widgets = ref([
 ]);
 
 const tableData = reactive([
-  { id: 1, name: 'Test1', role: 'Develop', sex: 'Man', age: 28, address: 'test abc' },
+  {
+    id: 1,
+    name: 'Test1',
+    role: 'Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1---Develop1--Develop1--Develop1--Develop1',
+    sex: 'Man',
+    age: 28,
+    address: 'test abc',
+  },
   { id: 2, name: 'Test2', role: 'Test', sex: 'Women', age: 42, address: 'Guangzhou' },
   { id: 3, name: 'Test3', role: 'PM', sex: 'Man', age: 32, address: 'Shanghai' },
-  { id: 4, name: 'Test4', role: 'Designer', sex: 'Women', age: 18, address: 'Shanghai' },
+  {
+    id: 4,
+    name: 'Test4',
+    role: 'Designer',
+    sex: 'Women',
+    age: 18,
+    address:
+      'Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1--Develop1---Develop1--Develop1--Develop1--Develop1',
+  },
   { id: 5, name: 'Test5', role: 'Develop', sex: 'Man', age: 39, address: 'test abc' },
   { id: 6, name: 'Test6', role: 'Test', sex: 'Women', age: 22, address: 'Guangzhou' },
   { id: 7, name: 'Test7', role: 'PM', sex: 'Man', age: 9, address: 'Shanghai' },
@@ -160,6 +176,7 @@ const column = ref([
     title: 'Role',
     field: 'role',
     showIcon: true,
+    // showOverflow: false,
     dataType: 'string',
     formatter: ({ cellValue, row, column }) => {
       return `${cellValue}-${row.id}-${column.field}`;
@@ -215,13 +232,13 @@ const handleExpand = () => {
   console.log(1);
 
   filtrBtns?.value.classList.toggle('is-expand');
-  filtrItems.value.classList.toggle('is-expand');
+  filtrItems?.value.classList.toggle('is-expand');
   handleExpandBtnText.value = handleExpandBtnText.value === '展开' ? '收起' : '展开';
   handleExpandBtnIcon.value =
     handleExpandBtnIcon.value === 'IconArrowBottom' ? 'IconArrowTop' : 'IconArrowBottom';
 };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .el-button.k-button + .el-button.k-button {
   margin-left: 0;
 }

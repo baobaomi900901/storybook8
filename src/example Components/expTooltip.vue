@@ -16,21 +16,11 @@
         <KButton>123</KButton>
       </KTooltip>
     </SBExamplePanel>
-
-    <SBExamplePanel label="默认" open>
-      <KSelect v-model="value" placeholder="请选择">
-        <KOption value="1">选项1</KOption>
-        <KOption value="2">选项2</KOption>
-        <KOption value="3">选项3</KOption>
-      </KSelect>
-    </SBExamplePanel>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import { KTooltip, KSelect, KOption, KButton } from '@components';
+import { ref } from 'vue';
 
 const value = ref();
 </script>

@@ -96,6 +96,11 @@ const data = [
     path: '/ant-pro/details-view',
     icon: 'IconFile',
   },
+  {
+    name: '工具市场',
+    path: '/ant-pro/tool-market',
+    icon: 'IconFile',
+  },
 ];
 </script>
 <style scoped></style>

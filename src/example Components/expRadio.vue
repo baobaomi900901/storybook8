@@ -137,44 +137,80 @@
       </div>
     </SBExamplePanel>
     <SBExamplePanel label="group__button" open>
-      <div class="flex flex-row gap-4">
-        <div class="flex items-star gap-4">
-          <KRadioGroup v-model="value" button size="sm" column>
-            <KRadio
-              v-for="item in radioData"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              button
-            ></KRadio>
-            <KRadio v-model="value" label="直角" value="直角" button disabled></KRadio>
-          </KRadioGroup>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-row gap-4">
+          <div class="flex items-star gap-4">
+            <KRadioGroup v-model="value" button size="sm">
+              <KRadio
+                v-for="item in radioData"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+                button
+              ></KRadio>
+              <KRadio v-model="value" label="直角" value="直角" button disabled></KRadio>
+            </KRadioGroup>
+          </div>
+          <br />
+          <div class="flex items-star gap-4">
+            <KRadioGroup v-model="value" button>
+              <KRadio
+                v-for="item in radioData"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+                button
+              ></KRadio>
+              <KRadio v-model="value" label="直角" value="直角" button disabled></KRadio>
+            </KRadioGroup>
+          </div>
+          <br />
+          <div class="flex items-star gap-4">
+            <KRadioGroup v-model="value" button size="lg">
+              <KRadio
+                v-for="item in radioData"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+                button
+              ></KRadio>
+              <KRadio v-model="value" label="直角" value="直角" button disabled></KRadio>
+            </KRadioGroup>
+          </div>
         </div>
-        <br />
-        <div class="flex items-star gap-4">
-          <KRadioGroup v-model="value" button column>
-            <KRadio
-              v-for="item in radioData"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              button
-            ></KRadio>
-            <KRadio v-model="value" label="直角" value="直角" button disabled></KRadio>
-          </KRadioGroup>
-        </div>
-        <br />
-        <div class="flex items-star gap-4">
-          <KRadioGroup v-model="value" button size="lg" column>
-            <KRadio
-              v-for="item in radioData"
-              :key="item.value"
-              :label="item.label"
-              :value="item.value"
-              button
-            ></KRadio>
-            <KRadio v-model="value" label="直角" value="直角" button disabled></KRadio>
-          </KRadioGroup>
+        <div class="flex flex-row gap-4">
+          <div class="flex items-star gap-4">
+            <KRadioGroup v-model="value" button size="sm" column>
+              <KRadio
+                v-for="item in radioData"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></KRadio>
+            </KRadioGroup>
+          </div>
+          <br />
+          <div class="flex items-star gap-4">
+            <KRadioGroup v-model="value" button column>
+              <KRadio
+                v-for="item in radioData"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></KRadio>
+            </KRadioGroup>
+          </div>
+          <br />
+          <div class="flex items-star gap-4">
+            <KRadioGroup v-model="value" button size="lg" column>
+              <KRadio
+                v-for="item in radioData"
+                :key="item.value"
+                :label="item.label"
+                :value="item.value"
+              ></KRadio>
+            </KRadioGroup>
+          </div>
         </div>
       </div>
     </SBExamplePanel>

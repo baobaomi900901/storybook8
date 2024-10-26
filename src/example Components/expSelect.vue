@@ -6,47 +6,64 @@
 * @version V3.0.0
 !-->
 <template>
-  <div class="epx-container">
-    <div class="epx-title">KSelect</div>
-    <div class="epx-title-sub">size:</div>
-    <div class="flex items-start gap-2 w-60">
-      <KSelect v-model="value">
-        <KOption
-          v-for="item in data"
-          :key="item.value"
-          :value="item.value"
-          :label="item.label"
-        ></KOption>
-      </KSelect>
-      <KSelect v-model="value" size="sm">
-        <KOption
-          v-for="item in data"
-          :key="item.value"
-          :value="item.value"
-          :label="item.label"
-        ></KOption>
-      </KSelect>
-    </div>
+  <div class="epx-container grid grid-cols-4 gap-4">
+    <SBExamplePanel label="size" open>
+      <div class="flex flex-col items-start gap-2 w-full">
+        <KSelect v-model="value" size="sm">
+          <KOption
+            v-for="item in data"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></KOption>
+        </KSelect>
+        <KSelect v-model="value">
+          <KOption
+            v-for="item in data"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></KOption>
+        </KSelect>
+        <KSelect v-model="value" size="lg">
+          <KOption
+            v-for="item in data"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></KOption>
+        </KSelect>
+      </div>
+    </SBExamplePanel>
 
-    <div class="epx-title-sub">禁用:</div>
-    <div class="flex items-start gap-2 w-60">
-      <KSelect v-model="value" disabled>
-        <KOption
-          v-for="item in data"
-          :key="item.value"
-          :value="item.value"
-          :label="item.label"
-        ></KOption>
-      </KSelect>
-      <KSelect v-model="value" size="sm" disabled>
-        <KOption
-          v-for="item in data"
-          :key="item.value"
-          :value="item.value"
-          :label="item.label"
-        ></KOption>
-      </KSelect>
-    </div>
+    <SBExamplePanel label="disabled" open>
+      <div class="flex flex-col items-start gap-2 w-full">
+        <KSelect v-model="value" size="sm" disabled>
+          <KOption
+            v-for="item in data"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></KOption>
+        </KSelect>
+        <KSelect v-model="value" size="base" disabled>
+          <KOption
+            v-for="item in data"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></KOption>
+        </KSelect>
+        <KSelect v-model="value" size="lg" disabled>
+          <KOption
+            v-for="item in data"
+            :key="item.value"
+            :value="item.value"
+            :label="item.label"
+          ></KOption>
+        </KSelect>
+      </div>
+    </SBExamplePanel>
   </div>
 </template>
 

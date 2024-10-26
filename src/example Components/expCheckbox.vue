@@ -9,8 +9,46 @@
   <div class="epx-container">
     <div class="epx-title">多选</div>
     <SBExamplePanel label="按钮类型" open>
+      <div class="flex flex-col gap-4">
+        <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange" size="sm">
+          <KCheckbox
+            v-for="item in radioData"
+            :key="item"
+            :label="item.value"
+            :value="item.value"
+            color="success"
+          >
+            {{ item.label }}
+          </KCheckbox>
+        </KCheckboxGroup>
+        <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange">
+          <KCheckbox
+            v-for="item in radioData"
+            :key="item"
+            :label="item.value"
+            :value="item.value"
+            color="success"
+          >
+            {{ item.label }}
+          </KCheckbox>
+        </KCheckboxGroup>
+        <KCheckboxGroup v-model="checkedCities" @change="handleCheckedCitiesChange" size="lg">
+          <KCheckbox
+            v-for="item in radioData"
+            :key="item"
+            :label="item.value"
+            :value="item.value"
+            color="success"
+          >
+            {{ item.label }}
+          </KCheckbox>
+        </KCheckboxGroup>
+      </div>
+    </SBExamplePanel>
+
+    <SBExamplePanel label="按钮类型" open>
       <div>
-        <div class="flex items-center gap-4">
+        <div class="flex">
           <KCheckbox v-model="value" label="烧饼"></KCheckbox>
           <KCheckbox v-model="value2" label="包子"></KCheckbox>
           <KCheckbox v-model="value2" label="馒头" disabled></KCheckbox>
@@ -38,7 +76,7 @@
             </KCheckbox>
           </KCheckboxGroup>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center">
           <KRadio
             v-for="item in radioData"
             :key="item.value"
@@ -69,7 +107,7 @@
             </KCheckbox>
           </KCheckboxGroup>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center">
           <KRadio
             v-for="item in radioData"
             :key="item.value"
@@ -101,7 +139,7 @@
             </KCheckbox>
           </KCheckboxGroup>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center">
           <KRadio
             v-for="item in radioData"
             :key="item.value"
@@ -140,6 +178,22 @@
         </KCheckboxGroup>
       </div>
     </SBExamplePanel>
+
+    <SBExamplePanel label="disabled:" open>
+      <div class="flex items-center gap-4">
+        <KCheckboxGroup v-model="checkedCities" :min="0" :max="2">
+          <KCheckbox v-for="city in cities" :key="city" :label="city" :value="city" disabled>
+            {{ city }}
+          </KCheckbox>
+        </KCheckboxGroup>
+      </div>
+    </SBExamplePanel>
+
+    <SBExamplePanel label="disabled:" open>
+      <div class="flex items-center gap-4">
+        <k-checkbox v-model="checked1" label="Option 1" size="large" disabled />
+      </div>
+    </SBExamplePanel>
   </div>
 </template>
 
@@ -176,10 +230,12 @@ const value5 = ref('1');
 
 const valueMoby = ref('1');
 
+const checked1 = ref(true);
+
 // 全选
 const checkAll = ref(false);
 const isIndeterminate = ref(false);
-const checkedCities = ref([]);
+const checkedCities = ref(['Shanghai']);
 const cities = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen'];
 
 const checkedCities2 = ref([]);

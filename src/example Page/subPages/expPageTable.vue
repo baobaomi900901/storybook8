@@ -15,35 +15,34 @@
 * @fileName  expPageTable
 * @author moby
 * @date 2024-07-23 15:16:18
+*       pageIcon="IconAomMenuAOMRZColor"
+./vite.svg
 !-->
 <template>
   <div id="expPageTable" class="expPageTable h-full">
     <KPageTableView
-      showViewBus
-      viewBusTitle="视图"
-      viewBusInfo="描述信息"
-      viewBusRefresh
-      pageIcon="IconAomMenuAOMRZColor"
-      pageTitle="用户管理"
-      pageInfo="用户管理页面描述信息"
-      @refresh="() => console.log('刷新')"
+      show-aside
+      aside-title="视图"
+      aside-info="描述信息"
+      aside-refresh
+      page-icon="IconAomMenuAOMRZColor"
+      page-title="用户管理"
+      page-info="用户管理页面描述信息"
     >
-      <template #extra-viewBus-body>view-bus-body</template>
-      <template #extra-page-head-btn>
-        <KButton @click="() => console.log('新增')" main>新增</KButton>
-        <KButton @click="() => console.log('导出')">导出</KButton>
+      <template #aside>
+        <div class="bg-gray-100 w-full">123</div>
       </template>
-      <template #extra-page-body>
-        <div class="h-full">
-          <k-tree-table
-            :data="tableData"
-            :column="column1"
-            :show-page="false"
-            border
-          ></k-tree-table>
+      <template #aside-toolbar>
+        <KButton text>默认刷新按钮</KButton>
+      </template>
+      <template #toolbar>
+        <div>
+          工具栏插槽
+          <KButton main>新增</KButton>
         </div>
-        123
       </template>
+
+      <p>页面默认插槽</p>
     </KPageTableView>
   </div>
 </template>

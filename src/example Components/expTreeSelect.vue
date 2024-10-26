@@ -17,7 +17,7 @@
         !-->
       <KTreeSelect
         v-model="value"
-        :data="data"
+        :data="data2"
         :placeholder="'请选择'"
         show-checkbox
         check-strictly
