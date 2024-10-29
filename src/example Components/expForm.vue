@@ -40,6 +40,16 @@
             :shortcuts="shortcuts"
           />
         </k-form-item>
+
+        <k-form-item label="时间" prop="time">
+          <k-date-picker
+            v-model="timeValue"
+            type="datetime"
+            placeholder="Select date and time"
+            :shortcuts="shortcuts"
+            :default-time="defaultTime"
+          />
+        </k-form-item>
         <k-form-item label="开关">
           <k-switch v-model="switchValue" switchOnColor="red" switchOffColor="green"></k-switch>
         </k-form-item>
@@ -138,6 +148,15 @@
             start-placeholder="Start date"
             end-placeholder="End date"
             :shortcuts="shortcuts"
+          />
+        </k-form-item>
+        <k-form-item label="时间" prop="time">
+          <k-date-picker
+            v-model="timeValue"
+            type="datetime"
+            placeholder="Select date and time"
+            :shortcuts="shortcuts"
+            :default-time="defaultTime"
           />
         </k-form-item>
         <k-form-item label="开关">
@@ -286,6 +305,8 @@ const rules = {
   ],
   // date 日期段验证
   date: [{ required: true, type: 'array', message: '计划变更时间不能为空', trigger: 'blur' }],
+  // time
+  time: [{ required: true, type: 'date', message: '计划变更时间不能为空', trigger: 'blur' }],
 };
 
 const checkAll = ref(false);
@@ -357,6 +378,31 @@ const shortcuts = [
 ];
 
 const switchValue = ref(false);
+
+const timeValue = ref();
+const shortcuts2 = [
+  {
+    text: 'Today',
+    value: new Date(),
+  },
+  {
+    text: 'Yesterday',
+    value: () => {
+      const date = new Date();
+      date.setDate(date.getDate() - 1);
+      return date;
+    },
+  },
+  {
+    text: 'A week ago',
+    value: () => {
+      const date = new Date();
+      date.setDate(date.getDate() - 7);
+      return date;
+    },
+  },
+];
+const defaultTime = new Date(2000, 1, 1, 12, 0, 0);
 </script>
 <style scoped>
 .bbm {

@@ -12,17 +12,21 @@ import 'ksw-vue-icon/styles/icon.css';
 import SBExamplePanel from './components/SBExamplePanel.vue';
 
 // 源码
-import install from '../kswux/package/index'; // 源码
+import install from '../kswux/package/index';
 
 // 打包
 // import install from '../kswux/kingsware-ui/index'; // npm包
 // import '../kswux/kingsware-ui/style.css'; // 样式
+
+// npm 包
+// import install from '@ksware/ksw-ux';
+// import '@ksware/ksw-ux/kingsware-ui/style.css';
 
 const app = createApp(App);
 app.use(router);
 // app.use(elementPlus);
 app.use(KswIcon);
 app.use(createPinia());
-app.use(install, { styleModule: 'AOM' }); // 全局注册组件 GFAOM, AOM
+app.use(install, { styleModule: 'GFAOM' }); // 全局注册组件 GFAOM, AOM
 app.mount('#app');
 app.component('SBExamplePanel', SBExamplePanel);

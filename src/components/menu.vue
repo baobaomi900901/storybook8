@@ -1,6 +1,12 @@
 <template>
   <div id="menu" class="menu" :class="[{ show: store.showMenuType }]">
-    <router-link v-for="item in menuItem" :key="item.path" :to="item.path" class="menu-item">
+    <router-link
+      v-for="item in menuItem"
+      :key="item.path"
+      :to="item.path"
+      class="menu-item"
+      style="color: var(--k-theme-test)"
+    >
       <span class="">{{ item.name }}</span>
     </router-link>
   </div>
