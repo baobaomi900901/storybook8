@@ -11,8 +11,10 @@ import { KswIcon } from 'ksw-vue-icon';
 import 'ksw-vue-icon/styles/icon.css';
 import SBExamplePanel from './components/SBExamplePanel.vue';
 
-// 测试分支
+// 源码
 import install from '../kswux/package/index'; // 源码
+
+// 打包
 // import install from '../kswux/kingsware-ui/index'; // npm包
 // import '../kswux/kingsware-ui/style.css'; // 样式
 

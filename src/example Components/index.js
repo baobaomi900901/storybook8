@@ -21,6 +21,8 @@ import expCollapse from './expCollapse.vue';
 import expFilterForm from './expFilterForm.vue';
 // expDetails
 import expDetails from './expDetails.vue';
+// expSteps
+import expSteps from './expSteps.vue';
 
 export {
   expButton,
@@ -39,4 +41,5 @@ export {
   expCollapse,
   expFilterForm,
   expDetails,
+  expSteps,
 };
