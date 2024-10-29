@@ -7,7 +7,7 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="epx-title">组件</div>
+    <div class="epx-title">tooltip</div>
     <SBExamplePanel label="默认" open>
       <!-- visible -->
       <KTooltip

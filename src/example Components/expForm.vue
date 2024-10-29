@@ -7,7 +7,7 @@
 !-->
 <template>
   <div class="epx-container grid grid-cols-2 auto-rows-max gap-4">
-    <div class="epx-title col-span-2">组件</div>
+    <div class="epx-title col-span-2">表单</div>
     <SBExamplePanel label="默认" open>
       <k-form
         ref="myForm"
@@ -17,8 +17,34 @@
         label-width="auto"
         class="w-full"
       >
+        <k-form-item label="日期">
+          <k-date-picker
+            v-model="value2"
+            type="daterange"
+            unlink-panels
+            range-separator="To"
+            start-placeholder="Start date"
+            end-placeholder="End date"
+            :shortcuts="shortcuts"
+            disabled
+          />
+        </k-form-item>
+        <k-form-item label="日期" prop="date">
+          <k-date-picker
+            v-model="value2"
+            type="daterange"
+            unlink-panels
+            range-separator="To"
+            start-placeholder="Start date"
+            end-placeholder="End date"
+            :shortcuts="shortcuts"
+          />
+        </k-form-item>
+        <k-form-item label="开关">
+          <k-switch v-model="switchValue" switchOnColor="red" switchOffColor="green"></k-switch>
+        </k-form-item>
         <k-form-item ref="myNameItem" label="姓名" prop="name">
-          <k-input v-model="formData.name"></k-input>
+          <k-input v-model="formData.name" disabled></k-input>
         </k-form-item>
         <k-form-item label="性别" prop="sex">
           <k-select v-model="formData.sex">
@@ -36,7 +62,7 @@
             @keyup.enter.native="() => console.log('简述')"
           ></k-input>
         </k-form-item>
-        <k-form-item>
+        <k-form-item label="URL">
           <KInput v-model="formData.url" placeholder="请输入url">
             <template #append>
               <KButtonGroup>
@@ -62,6 +88,7 @@
             v-model="checkAll"
             :indeterminate="isIndeterminate"
             @change="handleCheckAllChange"
+            class="!mr-4"
           >
             Check all
           </k-checkbox>
@@ -89,8 +116,33 @@
         label-position="top"
         label-width="6rem"
         class="w-full"
-        size="sm"
+        size="lg"
       >
+        <k-form-item label="日期">
+          <k-date-picker
+            v-model="value2"
+            type="daterange"
+            unlink-panels
+            range-separator="To"
+            start-placeholder="Start date"
+            end-placeholder="End date"
+            :shortcuts="shortcuts"
+          />
+        </k-form-item>
+        <k-form-item label="日期" prop="date">
+          <k-date-picker
+            v-model="value2"
+            type="daterange"
+            unlink-panels
+            range-separator="To"
+            start-placeholder="Start date"
+            end-placeholder="End date"
+            :shortcuts="shortcuts"
+          />
+        </k-form-item>
+        <k-form-item label="开关">
+          <k-switch v-model="switchValue"></k-switch>
+        </k-form-item>
         <k-form-item ref="myNameItem" label="姓名" prop="name">
           <k-input v-model="formData.name"></k-input>
         </k-form-item>
@@ -110,7 +162,7 @@
             @keyup.enter.native="() => console.log('简述')"
           ></k-input>
         </k-form-item>
-        <k-form-item>
+        <k-form-item label="URL">
           <KInput v-model="formData.url" placeholder="请输入url">
             <template #append>
               <KButtonGroup>
@@ -136,6 +188,7 @@
             v-model="checkAll"
             :indeterminate="isIndeterminate"
             @change="handleCheckAllChange"
+            class="!mr-4"
           >
             Check all
           </k-checkbox>
@@ -144,13 +197,6 @@
               {{ city }}
             </k-checkbox>
           </k-checkbox-group>
-        </k-form-item>
-        <k-form-item>
-          <div class="bbm w-full border-t pt-4 flex items-center">
-            <k-checkbox label="111" value="1111">不再更改</k-checkbox>
-            <k-button main @click="submit(myForm)">submit</k-button>
-            <k-button secondary @click="sds(myNameItem)">check</k-button>
-          </div>
         </k-form-item>
       </k-form>
     </SBExamplePanel>
@@ -226,6 +272,7 @@ const formData = ref({
   age: undefined,
   desc: '',
   url: '',
+  date: '',
 });
 
 const rules = {
@@ -237,11 +284,13 @@ const rules = {
     { required: true, message: '请输入简述', trigger: 'blur' },
     { min: 5, max: 100, message: '长度在 5 到 100 个字符', trigger: 'blur' },
   ],
+  // date 日期段验证
+  date: [{ required: true, type: 'array', message: '计划变更时间不能为空', trigger: 'blur' }],
 };
 
 const checkAll = ref(false);
 const isIndeterminate = ref(true);
-const checkedCities = ref(['Shanghai', 'Beijing']);
+const checkedCities = ref();
 const cities = ['包子', '饺子', '油条'];
 
 const radioValue = ref('直角');
@@ -274,6 +323,40 @@ const visiblesd = ref(false);
 function showAFilter() {
   visiblesd.value = true;
 }
+
+const value2 = ref('');
+
+const shortcuts = [
+  {
+    text: 'Last week',
+    value: () => {
+      const end = new Date();
+      const start = new Date();
+      start.setTime(start.getTime() - 3600 * 1000 * 24 * 7);
+      return [start, end];
+    },
+  },
+  {
+    text: 'Last month',
+    value: () => {
+      const end = new Date();
+      const start = new Date();
+      start.setTime(start.getTime() - 3600 * 1000 * 24 * 30);
+      return [start, end];
+    },
+  },
+  {
+    text: 'Last 3 months',
+    value: () => {
+      const end = new Date();
+      const start = new Date();
+      start.setTime(start.getTime() - 3600 * 1000 * 24 * 90);
+      return [start, end];
+    },
+  },
+];
+
+const switchValue = ref(false);
 </script>
 <style scoped>
 .bbm {

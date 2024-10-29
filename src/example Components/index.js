@@ -23,6 +23,8 @@ import expFilterForm from './expFilterForm.vue';
 import expDetails from './expDetails.vue';
 // expSteps
 import expSteps from './expSteps.vue';
+// expSwitch
+import expSwitch from './expSwitch.vue';
 
 export {
   expButton,
@@ -42,4 +44,5 @@ export {
   expFilterForm,
   expDetails,
   expSteps,
+  expSwitch,
 };

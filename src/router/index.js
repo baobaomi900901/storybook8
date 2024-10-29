@@ -21,6 +21,7 @@ import {
   expFilterForm,
   expDetails,
   expSteps,
+  expSwitch,
 } from '../example Components';
 
 // 引入示例页面
@@ -67,6 +68,7 @@ const routes = [
       { path: 'filter-form', component: expFilterForm, name: 'filter-form' },
       { path: 'details', component: expDetails, name: 'details' },
       { path: 'steps', component: expSteps, name: 'steps' },
+      { path: 'switch', component: expSwitch, name: 'switch' },
     ],
   },
   // template
