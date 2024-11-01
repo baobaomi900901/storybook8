@@ -2,6 +2,8 @@
   <!--     @change="(a) => console.log(a)"
     @reset="(a) => console.log(a)"
     @search="(a) => console.log(a)" -->
+  <!-- :columns="4" -->
+  <!--   visible -->
   <div class="bg-gray-100 p-10">
     <div class="bg-white rounded-lg shadow-lg p-10">
       <k-filter-form
@@ -10,8 +12,7 @@
         @change="(data) => console.log('change =>>', data)"
         @reset="(data) => console.log('reset =>>', data)"
         @search="(data) => console.log('search =>>', data)"
-        :columns="4"
-        visible
+        showColon
       >
         <!-- 自定义按钮 -->
         <!-- <template #action>
@@ -66,11 +67,10 @@ const items = ref([
     label: '职业',
     type: 'select',
     prop: 'career',
-    column: 2,
     value: '0',
     options: [
       { label: '政府机构/国有企业员工', value: '0' },
-      { label: '民营企业人工', value: '1' },
+      { label: '下一级', value: '1' },
     ],
     attrs: {
       onChange: (value: any) => {
@@ -87,8 +87,8 @@ const items = ref([
       return formData.career === '1';
     },
     options: [
-      { label: '政委', value: '1' },
-      { label: '总经理', value: '2' },
+      { label: '政委', value: '0' },
+      { label: '下一级', value: '1' },
     ],
   },
   {
@@ -99,9 +99,10 @@ const items = ref([
     visible: (formData: any) => {
       return formData.career2 === '1';
     },
+    column: 2,
     options: [
-      { label: '政委', value: '1' },
-      { label: '总经理', value: '2' },
+      { label: '政委', value: '0' },
+      { label: '下一级', value: '1' },
     ],
   },
   {
@@ -109,13 +110,12 @@ const items = ref([
     type: 'select',
     prop: 'career4',
     value: '',
-    column: 2,
     visible: (formData: any) => {
       return formData.career3 === '1';
     },
     options: [
-      { label: '政委', value: '1' },
-      { label: '总经理', value: '2' },
+      { label: '政委', value: '0' },
+      { label: '下一级', value: '1' },
     ],
   },
   {
@@ -123,21 +123,21 @@ const items = ref([
     type: 'select',
     prop: 'career5',
     value: '',
-    column: 2,
     visible: (formData: any) => {
       return formData.career4 === '1';
     },
+    column: 2,
     options: [
-      { label: '政委', value: '1' },
-      { label: '总经理', value: '2' },
+      { label: '政委', value: '0' },
+      { label: '下一级', value: '1' },
     ],
   },
   {
     label: '兴趣爱好',
     type: 'checkbox',
-    column: 2,
     prop: 'interests',
     value: ['0', '2', '4'],
+    column: 1,
     options: [
       { label: '体育运动', value: '0', size: 'sm' },
       { label: '音乐', value: '1' },
@@ -171,7 +171,6 @@ const items = ref([
     // 自定义渲染
     render: (item: any) => <KInput type={'textarea'} v-model={item['comment']} />,
     value: '这是一个示例评论',
-    column: 2,
   },
 ]);
 </script>

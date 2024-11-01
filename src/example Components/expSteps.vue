@@ -9,11 +9,21 @@
   <div class="epx-container">
     <div class="epx-title">步骤条</div>
     <SBExamplePanel label="按钮类型" open>
-      <div class="">
+      <div class="overflow-hidden">
         <k-steps style="width: 800px" :active="active" finish-status="success" useAntStyle>
           <k-step title="Step 1" />
           <k-step title="Step 2" />
           <k-step title="Step 3" />
+        </k-steps>
+        <k-button style="margin-top: 12px" @click="next">Next step</k-button>
+      </div>
+    </SBExamplePanel>
+    <SBExamplePanel label="按钮类型" open>
+      <div class="overflow-hidden w-full border">
+        <k-steps style="width: 100%" :active="active" finish-status="success" useAntStyle>
+          <k-step title="Step 1" />
+          <k-step title="Step 2" />
+          <k-step title="Step 3333333333333333332end" />
         </k-steps>
         <k-button style="margin-top: 12px" @click="next">Next step</k-button>
       </div>

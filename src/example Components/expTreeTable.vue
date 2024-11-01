@@ -1,10 +1,70 @@
 <template>
-  <div :style="{ height: '300px' }">
-    <k-tree-table :data="tableData" :column="columnPro" :show-page="false" border></k-tree-table>
+  <div class="epx-container grid auto-rows-max gap-4 w-full">
+    <div class="epx-title">表单</div>
+    <SBExamplePanel label="默认" open>
+      <div :style="{ height: '', width: '100%' }">
+        <k-tree-table
+          :column-config="{ resizable: true }"
+          :data="tableData2"
+          :column="column2"
+          :widgets="widgets"
+          :showDescription="false"
+          size="medium"
+          useAntStyle
+        ></k-tree-table>
+      </div>
+    </SBExamplePanel>
+    <!-- <SBExamplePanel label="默认">
+      <div :style="{ height: '300px', width: '100%' }">
+        <k-tree-table
+          :data="tableData"
+          :column="column1"
+          :show-page="false"
+          :column-config="{ resizable: true }"
+          border="inner"
+          round
+        >
+          <template #address>
+            <k-button-container>
+              <k-button text>编辑</k-button>
+              <k-button text>删除</k-button>
+              <k-button text>详情</k-button>
+              <k-button text>编辑</k-button>
+              <k-button text>删除</k-button>
+              <k-button text>详情</k-button>
+            </k-button-container>
+          </template>
+        </k-tree-table>
+      </div>
+    </SBExamplePanel>
+    <SBExamplePanel label="多列头">
+      <div :style="{ height: '300px', width: '100%' }">
+        <k-tree-table
+          :data="tableData"
+          :column="columnPro"
+          :show-page="false"
+          :column-config="{ resizable: true }"
+          border
+          round
+        >
+          <template #address>
+            <k-button-container>
+              <k-button text>编辑</k-button>
+              <k-button text>删除</k-button>
+              <k-button text>详情</k-button>
+              <k-button text>编辑</k-button>
+              <k-button text>删除</k-button>
+              <k-button text>详情</k-button>
+            </k-button-container>
+          </template>
+        </k-tree-table>
+      </div>
+    </SBExamplePanel> -->
   </div>
 </template>
 
 <script lang="tsx" setup>
+import { IconAdd } from 'ksw-vue-icon';
 import { ref, reactive } from 'vue';
 
 const column1 = ref([
@@ -84,6 +144,7 @@ const columnPro = [
       {
         title: 'Address',
         field: 'address',
+        width: '250px',
         dataType: 'string',
       },
     ],
@@ -145,6 +206,74 @@ const tableData = reactive([
   { id: 14, name: 'Test6', role: 'Test', sex: 'Women', age: 22, address: 'Guangzhou' },
   { id: 15, name: 'Test7', role: 'PM', sex: 'Man', age: 9, address: 'Shanghai' },
   { id: 16, name: 'Test8', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' },
+]);
+
+const column2 = ref([
+  {
+    title: 'Id',
+    field: 'id',
+    width: '100',
+    dataType: 'number',
+  },
+  {
+    title: 'Name',
+    field: 'name',
+  },
+  {
+    title: 'Role',
+    field: 'role',
+  },
+  {
+    title: 'Sex',
+    field: 'sex',
+  },
+  {
+    title: 'Age',
+    field: 'age',
+    dataType: 'number',
+  },
+  {
+    title: 'Address',
+    field: 'address',
+  },
+]);
+
+const tableData2 = [
+  { id: 10001, name: 'Test1', role: 'Develop', sex: 'Man', age: 28, address: 'test abc' },
+  { id: 10002, name: 'Test2', role: 'Test', sex: 'Women', age: 22, address: 'Guangzhou' },
+  { id: 10003, name: 'Test3', role: 'PM', sex: 'Man', age: 32, address: 'Shanghai' },
+  { id: 10004, name: 'Test4', role: 'Designer', sex: 'Women', age: 23, address: 'test abc' },
+];
+
+const widgets = ref([
+  {
+    id: 'customRefresh',
+    widget: () => (
+      <KButton
+        text
+        onCilck={() => {
+          console.log('refresh');
+        }}>
+        <IconRefresh color='gray' />
+      </KButton>
+    ),
+  },
+  {
+    id: 'sizeControl',
+    widget: () => (
+      <KButton text>
+        <IconSizeControls color='gray' />
+      </KButton>
+    ),
+  },
+  {
+    id: 'transfer',
+    widget: () => (
+      <KButton text>
+        <IconSetting color='gray' />
+      </KButton>
+    ),
+  },
 ]);
 </script>
 <style scoped></style>

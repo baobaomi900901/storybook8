@@ -16,6 +16,7 @@
         label-position="left"
         label-width="auto"
         class="w-full"
+        showColon
       >
         <k-form-item label="日期">
           <k-date-picker
@@ -26,7 +27,6 @@
             start-placeholder="Start date"
             end-placeholder="End date"
             :shortcuts="shortcuts"
-            disabled
           />
         </k-form-item>
         <k-form-item label="日期" prop="date">
@@ -54,7 +54,7 @@
           <k-switch v-model="switchValue" switchOnColor="red" switchOffColor="green"></k-switch>
         </k-form-item>
         <k-form-item ref="myNameItem" label="姓名" prop="name">
-          <k-input v-model="formData.name" disabled></k-input>
+          <k-input v-model="formData.name"></k-input>
         </k-form-item>
         <k-form-item label="性别" prop="sex">
           <k-select v-model="formData.sex">
@@ -127,6 +127,7 @@
         label-width="6rem"
         class="w-full"
         size="lg"
+        showColon
       >
         <k-form-item label="日期">
           <k-date-picker

@@ -11,7 +11,7 @@
 
     <div class="epx-title-sub">type:</div>
     <div class="flex items-start gap-2">
-      <KInputNumber v-model="num" :min="1" :max="10" @change="handleChange" />
+      <KInputNumber v-model="value" :min="1" :max="10" @change="handleChange" />
     </div>
   </div>
 </template>
