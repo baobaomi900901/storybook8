@@ -35,9 +35,24 @@
       <div class="flex flex-col gap-4">
         <div class="flex items-start gap-2">
           <KTag size="lg" closable>default</KTag>
-          <KTag size="lg" color="#ff5500" closable>default</KTag>
-          <KTag size="lg" color="#ff5500" closable border>default</KTag>
-          <KTag size="lg" color="#ff5500" closable point>default</KTag>
+          <KTag size="lg" type="success" closable>default</KTag>
+          <KTag size="lg" type="warning" closable>default</KTag>
+          <KTag size="lg" type="info" closable>default</KTag>
+          <KTag size="lg" type="danger" closable>default</KTag>
+        </div>
+        <div class="flex items-start gap-2">
+          <KTag size="lg" border closable>default</KTag>
+          <KTag size="lg" type="success" border closable>default</KTag>
+          <KTag size="lg" type="warning" border closable>default</KTag>
+          <KTag size="lg" type="info" border closable>default</KTag>
+          <KTag size="lg" type="danger" border closable>default</KTag>
+        </div>
+        <div class="flex items-start gap-2">
+          <KTag size="lg" point closable>default</KTag>
+          <KTag size="lg" type="success" point closable>default</KTag>
+          <KTag size="lg" type="warning" point closable>default</KTag>
+          <!-- <KTag size="lg" type="info" point closable>default</KTag> -->
+          <!-- <KTag size="lg" type="danger" point closable>default</KTag> -->
         </div>
       </div>
     </SBExamplePanel>

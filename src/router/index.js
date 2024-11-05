@@ -22,6 +22,7 @@ import {
   expDetails,
   expSteps,
   expSwitch,
+  expView,
 } from '../example Components';
 
 // 引入示例页面
@@ -69,6 +70,7 @@ const routes = [
       { path: 'details', component: expDetails, name: 'details' },
       { path: 'steps', component: expSteps, name: 'steps' },
       { path: 'switch', component: expSwitch, name: 'switch' },
+      { path: 'view', component: expView, name: 'view' },
     ],
   },
   // template

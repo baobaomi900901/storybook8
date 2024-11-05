@@ -13,7 +13,7 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@headlessui/vue": "^1.7.22",
-    "@ksware/ksw-ux": "^0.0.76",
+    "@ksware/ksw-ux": "^0.0.79",
     "@mdx-js/vue": "^3.0.1",
     "apcach": "^0.6.4",
     "chroma-js": "^2.4.2",

@@ -10,14 +10,70 @@
     <div class="epx-title">KTabs, KTabPane</div>
 
     <SBExamplePanel label="默认" open>
-      <KTabs v-model="activeName" class="w-full">
-        <KTabPane label="tab1" name="tab1" closable>
-          <template #label>tab1123123123123123123123123123123123123123123123123123123123</template>
-          Curren tab is tab1
-        </KTabPane>
-        <KTabPane label="tab2" :icon="Edit" name="tab2" closable>Curren tab is tab2</KTabPane>
-        <KTabPane label="tab3" name="tab3">Curren tab is tab3</KTabPane>
-      </KTabs>
+      <div style="width: 1000px">
+        <KTabs v-model="activeName" class="w-full">
+          <KTabPane
+            label="tab1123123123123123123123123123123123123123123123123123123123"
+            name="tab1"
+            closable
+          >
+            Curren tab is tab1
+          </KTabPane>
+          <KTabPane label="tab2" :icon="Edit" name="tab2" closable>
+            <template #label>
+              <IconAdd />
+              Curren tab is tab2
+            </template>
+            Curren tab is tab2
+          </KTabPane>
+          <KTabPane label="tab3" name="tab3">
+            <template #label>
+              <IconAdd />
+              Curren tab is tab2
+            </template>
+            Curren tab is tab3
+          </KTabPane>
+          <KTabPane label="tab4 123123123123 阿斯顿发山东 12312312" name="tab4">
+            Curren tab is tab4
+          </KTabPane>
+          <KTabPane label="tab5" name="tab5">Curren tab is tab5</KTabPane>
+          <KTabPane label="tab6" name="tab6">Curren tab is tab6</KTabPane>
+          <KTabPane label="tab7" name="tab7">Curren tab is tab7</KTabPane>
+        </KTabs>
+      </div>
+    </SBExamplePanel>
+
+    <SBExamplePanel label="默认" open>
+      <!-- type="card" -->
+      <div class="bg-gray-100 p-4" style="width: 1000px">
+        <KTabs v-model="activeName" type="card" class="w-full">
+          <KTabPane
+            label="tab1123123123123123123123123123123123123123123123123123123123"
+            name="tab1"
+            closable
+          >
+            Curren tab is tab1
+          </KTabPane>
+          <KTabPane label="tab2" :icon="Edit" name="tab2" closable>
+            <template #label>
+              <IconAdd />
+              Curren tab is tab2
+            </template>
+            Curren tab is tab2
+          </KTabPane>
+          <KTabPane label="tab3" name="tab3">
+            <template #label>
+              <IconAdd />
+              Curren tab is tab2
+            </template>
+            Curren tab is tab3
+          </KTabPane>
+          <KTabPane label="tab4" name="tab4">Curren tab is tab4</KTabPane>
+          <KTabPane label="tab5" name="tab5">Curren tab is tab5</KTabPane>
+          <KTabPane label="tab6" name="tab6">Curren tab is tab6</KTabPane>
+          <KTabPane label="tab7" name="tab7">Curren tab is tab7</KTabPane>
+        </KTabs>
+      </div>
     </SBExamplePanel>
   </div>
 </template>

@@ -25,6 +25,8 @@ import expDetails from './expDetails.vue';
 import expSteps from './expSteps.vue';
 // expSwitch
 import expSwitch from './expSwitch.vue';
+// expView
+import expView from './expView.vue';
 
 export {
   expButton,
@@ -45,4 +47,5 @@ export {
   expDetails,
   expSteps,
   expSwitch,
+  expView,
 };
