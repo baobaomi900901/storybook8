@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 
 // 引入页面
-import { home, pageComponents, pageTemplate, pageAntPro } from '../pages';
+import { home, pageComponents, pageTemplate, pageAntPro, pageIDE } from '../pages';
 // 引入示例组件
 import {
   expButton,
@@ -23,7 +23,9 @@ import {
   expSteps,
   expSwitch,
   expView,
-} from '../example Components';
+  expSliderButton,
+  expDialog,
+} from '../example_Components';
 
 // 引入示例页面
 import {
@@ -35,10 +37,13 @@ import {
   echartsDemo,
   customColorHooksDev,
   webStatus,
-} from '../example Page';
+} from '../example_Page';
 
 // 引入仿 ant pro 的页面
-import { tableView, cardView, detailsView, toolMarket } from '../example ant';
+import { tableView, cardView, detailsView, toolMarket } from '../example_ant';
+
+// 引入 IDE 页面
+import { IDEPage } from '../example_IDE';
 
 const routes = [
   {
@@ -71,6 +76,8 @@ const routes = [
       { path: 'steps', component: expSteps, name: 'steps' },
       { path: 'switch', component: expSwitch, name: 'switch' },
       { path: 'view', component: expView, name: 'view' },
+      { path: 'slider-button', component: expSliderButton, name: 'slider-button' },
+      { path: 'dialog', component: expDialog, name: 'dialog' },
     ],
   },
   // template
@@ -110,6 +117,13 @@ const routes = [
       { path: 'details-view', component: detailsView, name: 'details-view' },
       { path: 'tool-market', component: toolMarket, name: 'tool-market' },
     ],
+  },
+  // IDEPage
+  {
+    path: '/ide',
+    component: pageIDE,
+    name: 'IDE',
+    children: [{ path: 'ide_page', component: IDEPage, name: 'ide_page' }],
   },
 ];
 

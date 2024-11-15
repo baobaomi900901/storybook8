@@ -2,6 +2,8 @@
 
 import guangfa from './theme/theme-guangfa';
 
+// import { gf } from 'kswux/theme/';
+
 export default {
   content: [
     './index.html',
@@ -10,7 +12,7 @@ export default {
     './kswux-ant/package/**/*.{vue,js,ts,jsx,tsx,md,mdx}',
   ],
   theme: {
-    extend: guangfa,
+    // extend: gf,
     screens: {
       '2xs': '768px',
       xs: '1280px',

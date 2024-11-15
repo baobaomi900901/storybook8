@@ -27,6 +27,6 @@ app.use(router);
 // app.use(elementPlus);
 app.use(KswIcon);
 app.use(createPinia());
-app.use(install, { styleModule: 'GFAOM' }); // 全局注册组件 GFAOM, AOM
+app.use(install, { styleModule: 'KingAutometa' }); // 全局注册组件 GFAOM, AOM
 app.mount('#app');
 app.component('SBExamplePanel', SBExamplePanel);

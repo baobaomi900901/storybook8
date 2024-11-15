@@ -32,6 +32,10 @@ const data = [
     name: 'ant-pro | 模板',
     path: '/ant-pro',
   },
+  {
+    name: 'IDE | 编辑器',
+    path: '/ide',
+  },
 ];
 
 const showMenuClick = () => {

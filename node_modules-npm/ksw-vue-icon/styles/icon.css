@@ -1,0 +1,39 @@
+.ksw-icon {
+  display: inline-block;
+  color: inherit;
+  font-style: normal;
+  line-height: 0;
+  text-align: center;
+  text-transform: none;
+  vertical-align: -0.125em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.ksw-icon svg {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.ksw-icon-spin svg {
+  animation: ksw-icon-spin 1s infinite linear;
+}
+.ksw-icon-grayscale {
+  filter: grayscale(1);
+  opacity: 0.8;
+}
+.ksw-icon-rtl {
+  transform: scaleX(-1);
+}
+@keyframes ksw-icon-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes ksw-icon-spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

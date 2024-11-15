@@ -6,5 +6,7 @@ import pageComponents from './pageComponents.vue';
 import pageTemplate from './pageTemplate.vue';
 // pageAntPro
 import pageAntPro from './pageAntPro.vue';
+// pageIDE
+import pageIDE from './pageIDE.vue';
 
-export { home, pageComponents, pageTemplate, pageAntPro };
+export { home, pageComponents, pageTemplate, pageAntPro, pageIDE };
