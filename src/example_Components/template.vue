@@ -8,7 +8,7 @@
 <template>
   <div class="epx-container">
     <div class="epx-title">组件</div>
-    <SBExamplePanel label="默认">内容</SBExamplePanel>
+    <SBExamplePanel label="默认" open>内容</SBExamplePanel>
   </div>
 </template>
 

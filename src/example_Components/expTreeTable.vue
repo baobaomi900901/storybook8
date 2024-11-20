@@ -13,23 +13,29 @@
           useAntStyle
         ></k-tree-table>
       </div>
-      <KTreeTable :data="tableData" :column="column" use-ant-style>
-        <template #enabled="{ row }">
-          {{ row.enabled === 1 ? '启用' : '禁用' }}
-        </template>
-        <template #collectType="{ row }">
-          {{ row.collectType === 0 ? '全部采集' : '部分采集' }}
-        </template>
-        <template #opt="{ row }">
-          <KButton text @click="onEdit(row)">编辑</KButton>
-          <KPopconfirm title="您确定要删除吗?" @confirm="onDel(row)">
-            <template #reference>
-              <KButton text type="danger">删除</KButton>
-            </template>
-          </KPopconfirm>
-        </template>
-      </KTreeTable>
     </SBExamplePanel>
+
+    <SBExamplePanel label="antd风格" open>
+      <div :style="{ height: '100%', width: '100%' }">
+        <KTreeTable :data="tableData2" :column="column2" use-ant-style>
+          <template #enabled="{ row }">
+            {{ row.enabled === 1 ? '启用' : '禁用' }}
+          </template>
+          <template #collectType="{ row }">
+            {{ row.collectType === 0 ? '全部采集' : '部分采集' }}
+          </template>
+          <template #opt="{ row }">
+            <KButton text @click="onEdit(row)">编辑</KButton>
+            <KPopconfirm title="您确定要删除吗?" @confirm="onDel(row)">
+              <template #reference>
+                <KButton text type="danger">删除</KButton>
+              </template>
+            </KPopconfirm>
+          </template>
+        </KTreeTable>
+      </div>
+    </SBExamplePanel>
+
     <!-- <SBExamplePanel label="默认">
       <div :style="{ height: '300px', width: '100%' }">
         <k-tree-table
@@ -112,7 +118,6 @@ const column1 = ref([
     field: 'address',
   },
 ]);
-
 const columnPro = [
   {
     title: 'Id',
@@ -223,7 +228,6 @@ const tableData = reactive([
   { id: 15, name: 'Test7', role: 'PM', sex: 'Man', age: 9, address: 'Shanghai' },
   { id: 16, name: 'Test8', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' },
 ]);
-
 const column2 = ref([
   {
     title: 'Id',
@@ -253,14 +257,12 @@ const column2 = ref([
     field: 'address',
   },
 ]);
-
 const tableData2 = [
   { id: 10001, name: 'Test1', role: 'Develop', sex: 'Man', age: 28, address: 'test abc' },
   { id: 10002, name: 'Test2', role: 'Test', sex: 'Women', age: 22, address: 'Guangzhou' },
   { id: 10003, name: 'Test3', role: 'PM', sex: 'Man', age: 32, address: 'Shanghai' },
   { id: 10004, name: 'Test4', role: 'Designer', sex: 'Women', age: 23, address: 'test abc' },
 ];
-
 const widgets = ref([
   {
     id: 'customRefresh',

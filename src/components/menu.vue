@@ -1,7 +1,7 @@
 <template>
   <div id="menu" class="menu" :class="[{ show: store.showMenuType }]">
     <router-link
-      v-for="item in menuItem"
+      v-for="item in menuItemSort"
       :key="item.path"
       :to="item.path"
       class="menu-item"
@@ -21,6 +21,10 @@ const store = useMainStore();
 const props = defineProps({
   menuItem: undefined,
   showProjectName: false,
+});
+
+const menuItemSort = props.menuItem.sort((a, b) => {
+  return a.path.localeCompare(b.path);
 });
 </script>
 <style scoped>
