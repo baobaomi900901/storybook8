@@ -1,6 +1,28 @@
 <template>
   <div class="epx-container grid auto-rows-max gap-4 w-full">
     <div class="epx-title">树表格</div>
+
+    <div :style="{ height: '300px', width: '100%', 'min-width': '0' }">
+      <k-tree-table
+        :data="tableData"
+        :column="columnPro"
+        :show-page="false"
+        :column-config="{ resizable: true }"
+        border
+        round
+      >
+        <template #address>
+          <k-button-container>
+            <k-button text>编辑</k-button>
+            <k-button text>删除</k-button>
+            <k-button text>详情</k-button>
+            <k-button text>编辑</k-button>
+            <k-button text>删除</k-button>
+            <k-button text>详情</k-button>
+          </k-button-container>
+        </template>
+      </k-tree-table>
+    </div>
     <SBExamplePanel label="antd风格" open>
       <div :style="{ height: '100%', width: '100%' }">
         <k-tree-table
@@ -36,7 +58,7 @@
       </div>
     </SBExamplePanel>
 
-    <!-- <SBExamplePanel label="默认">
+    <SBExamplePanel label="默认" open>
       <div :style="{ height: '300px', width: '100%' }">
         <k-tree-table
           :data="tableData"
@@ -59,7 +81,7 @@
         </k-tree-table>
       </div>
     </SBExamplePanel>
-    <SBExamplePanel label="多列头">
+    <SBExamplePanel label="多列头" open>
       <div :style="{ height: '300px', width: '100%' }">
         <k-tree-table
           :data="tableData"
@@ -81,7 +103,7 @@
           </template>
         </k-tree-table>
       </div>
-    </SBExamplePanel> -->
+    </SBExamplePanel>
   </div>
 </template>
 

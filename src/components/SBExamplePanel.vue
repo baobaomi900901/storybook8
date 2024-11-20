@@ -6,7 +6,7 @@
 * @version V3.0.0
 !-->
 <template>
-  <div class="SBExamplePanel w-full pt-2">
+  <div class="SBExamplePanel w-full pt-2 min-w-0">
     <div class="w-full rounded-2xl">
       <Disclosure v-slot="{ open }" :defaultOpen="open">
         <DisclosureButton

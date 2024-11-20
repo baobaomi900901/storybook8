@@ -1,7 +1,7 @@
 <template>
   <div id="menu" class="menu" :class="[{ show: store.showMenuType }]">
     <router-link
-      v-for="item in menuItemSort"
+      v-for="item in menuItems"
       :key="item.path"
       :to="item.path"
       class="menu-item"
@@ -14,17 +14,26 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive, onMounted, computed } from 'vue';
 import useMainStore from '../store';
 const store = useMainStore();
 
 const props = defineProps({
   menuItem: undefined,
   showProjectName: false,
+  customSort: undefined,
 });
 
-const menuItemSort = props.menuItem.sort((a, b) => {
-  return a.path.localeCompare(b.path);
+const menuItems = computed(() => {
+  if (props.customSort) {
+    // 如果 customSort 为 true，直接返回原数组
+    return props.menuItem;
+  } else {
+    // 如果 customSort 为 false，返回排序后的数组
+    return [...props.menuItem].sort((a, b) => {
+      return a.path.localeCompare(b.path);
+    });
+  }
 });
 </script>
 <style scoped>
@@ -34,15 +43,16 @@ const menuItemSort = props.menuItem.sort((a, b) => {
 .menu {
   font-size: 0.75rem;
   gap: 0.5rem;
-  display: flex;
   border: 1px solid #eee;
   padding: 0.25rem 2rem;
   display: none;
   position: relative;
 }
 .show {
-  display: inline-block;
+  display: inline-flex;
+  flex-wrap: wrap;
   /* visibility: hidden; */
+  transition: visibility 0.3s ease-in-out;
 }
 .router-link-active {
   color: #1890ff;
