@@ -1,7 +1,5 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-// import elementPlus from 'element-plus';
-// import 'element-plus/dist/index.css'; // 禁用
 import './style.css';
 import '../public/result.css'; // 全局字体
 import router from './router';
@@ -12,21 +10,26 @@ import 'ksw-vue-icon/styles/icon.css';
 import SBExamplePanel from './components/SBExamplePanel.vue';
 
 // 源码
-import install from '../kswux/package/index';
+// import install from '../kswux/package/index';
 
 // 打包
 // import install from '../kswux/kingsware-ui/index';
 // import '../kswux/kingsware-ui/style.css';
 
 // npm 包
-// import install from '@ksware/ksw-ux';
-// import '@ksware/ksw-ux/kingsware-ui/style.css';
+import install from '@ksware/ksw-ux';
+import '@ksware/ksw-ux/kingsware-ui/style.css';
+// import '../node_modules/@ksware/ksw-ux/kingsware-ui/theme/GFAOM/theme.css';
+
+// npm 测试包
+// import install from 'ksw-ux';
+// import 'ksw-ux/kingsware-ui/style.css';
 
 const app = createApp(App);
 app.use(router);
 // app.use(elementPlus);
-app.use(KswIcon);
+app.use(KswIcon, { projectName: 'Guangfa' }); // 图标引入添加项目名称
 app.use(createPinia());
-app.use(install, { styleModule: 'KingAutometa' }); // 全局注册组件 GFAOM, AOM
+app.use(install, { styleModule: 'GFAOM' }); // 全局注册组件 GFAOM, AOM, KingAutometa
 app.mount('#app');
 app.component('SBExamplePanel', SBExamplePanel);

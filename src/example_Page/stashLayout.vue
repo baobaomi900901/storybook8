@@ -49,7 +49,6 @@
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
-import { KButton, KDropdown, KDropdownItem } from '@components';
 import KMenu from '../components/KMenu.vue';
 import { useRouter } from 'vue-router';
 
@@ -214,7 +213,7 @@ onMounted(() => {
 });
 </script>
 <style lang="less" scoped>
-@import url('../../kswux/package/style/general.less');
+@import url('@/style/general.less');
 .aom-head-content {
 }
 .k-avatar {

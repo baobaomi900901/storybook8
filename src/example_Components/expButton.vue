@@ -345,8 +345,6 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KButton } from '@components';
-import KButtonGroup from '../components/ButtonGroup.vue';
 
 const handleClick = () => {
   console.log('click');

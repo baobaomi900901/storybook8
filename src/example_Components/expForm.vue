@@ -282,9 +282,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from 'vue';
-import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import { KForm, KFormItem, KInput, KCheckbox, KButton } from '@components';
+import { ref } from 'vue';
 
 const formData = ref({
   name: '',

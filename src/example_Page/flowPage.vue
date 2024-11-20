@@ -193,8 +193,8 @@
 import { ref, reactive } from 'vue';
 </script>
 <style lang="less">
-@import url('../../kswux/package/style/general.less');
-@import url('../../kswux/package/style/variable.css');
+// @import url('../../kswux/packages/style/general.less');
+// @import url('../../kswux/packages/style/variable.css');
 
 @property --rotate {
   syntax: '<angle>';

@@ -74,7 +74,7 @@
 import { ref, reactive } from 'vue';
 import antMenu from '../components/antMenu.vue';
 import { useRouter } from 'vue-router';
-import { KTag } from '@ksware/ksw-ux';
+// import { KTag } from '@ksware/ksw-ux';
 import useMainStore from '@src/store';
 const store = useMainStore();
 const router = useRouter();

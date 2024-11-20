@@ -18,7 +18,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KInputNumber } from '@components';
+// import { KInputNumber } from '@components';
 
 const value = ref();
 </script>

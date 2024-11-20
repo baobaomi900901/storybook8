@@ -7,7 +7,7 @@
     >
       <span>👁</span>
     </div>
-    <Menu :menuItem="data" />
+    <Menu :menuItem="data" :showProjectName="true" />
     <router-view />
   </div>
 </template>

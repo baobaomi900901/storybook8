@@ -28,7 +28,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KCollapse, KCollapseItem } from '@components';
+// import { KCollapse, KCollapseItem } from '@components';
 
 const value = ref();
 </script>

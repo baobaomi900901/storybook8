@@ -23,7 +23,6 @@
 import { ref, reactive, onMounted } from 'vue';
 import { calcContrast } from 'apcach';
 import { parse, clampChroma, converter } from 'culori';
-import { KButton } from '@components';
 
 const hslPanel = document.getElementById('hslPanel');
 const sliderHue = ref();

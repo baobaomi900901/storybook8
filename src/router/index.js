@@ -25,6 +25,7 @@ import {
   expView,
   expSliderButton,
   expDialog,
+  expPagination,
 } from '../example_Components';
 
 // 引入示例页面
@@ -78,6 +79,7 @@ const routes = [
       { path: 'view', component: expView, name: 'view' },
       { path: 'slider-button', component: expSliderButton, name: 'slider-button' },
       { path: 'dialog', component: expDialog, name: 'dialog' },
+      { path: 'pagination', component: expPagination, name: 'pagination' },
     ],
   },
   // template

@@ -12,8 +12,8 @@ dependencies:
     specifier: ^1.7.22
     version: 1.7.23(vue@3.5.12)
   '@ksware/ksw-ux':
-    specifier: ^0.0.85
-    version: 0.0.85(chinese-lunar-calendar@1.0.1)(element-plus@2.8.7)(ksw-vue-icon@2.3.0)(lodash-es@4.17.21)(sortablejs@1.15.3)(vue-i18n@9.14.1)(vue@3.5.12)(vxe-pc-ui@4.2.43)(vxe-table@4.8.2)
+    specifier: ^0.0.87
+    version: 0.0.87(chinese-lunar-calendar@1.0.1)(element-plus@2.8.7)(ksw-vue-icon@2.3.3)(lodash-es@4.17.21)(sortablejs@1.15.3)(vue-i18n@9.14.1)(vue@3.5.12)(vxe-pc-ui@4.3.0)(vxe-table@4.8.10)
   '@mdx-js/vue':
     specifier: ^3.0.1
     version: 3.1.0(vue@3.5.12)
@@ -29,9 +29,12 @@ dependencies:
   element-plus:
     specifier: ^2.7.6
     version: 2.8.7(vue@3.5.12)
+  ksw-ux:
+    specifier: ^0.0.72
+    version: 0.0.72(chinese-lunar-calendar@1.0.1)(element-plus@2.8.7)(ksw-vue-icon@2.3.3)(lodash-es@4.17.21)(sortablejs@1.15.3)(vue-i18n@9.14.1)(vue@3.5.12)(vxe-pc-ui@4.3.0)(vxe-table@4.8.10)
   ksw-vue-icon:
-    specifier: ^2.2.34
-    version: 2.3.0(vue@3.5.12)
+    specifier: ^2.3.3
+    version: 2.3.3(vue@3.5.12)
   pinia:
     specifier: ^2.1.7
     version: 2.2.6(typescript@5.6.3)(vue@3.5.12)
@@ -938,8 +941,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.5.0
     dev: true
 
-  /@ksware/ksw-ux@0.0.85(chinese-lunar-calendar@1.0.1)(element-plus@2.8.7)(ksw-vue-icon@2.3.0)(lodash-es@4.17.21)(sortablejs@1.15.3)(vue-i18n@9.14.1)(vue@3.5.12)(vxe-pc-ui@4.2.43)(vxe-table@4.8.2):
-    resolution: {integrity: sha512-1sB6kBIFCDQaN+lJdt1wCHcoNuSmM2tT+b1lY2sGKgXqu0KYozw/1yBWPuXYQNiPW/Dtq96y9zZdxONpR2gosw==}
+  /@ksware/ksw-ux@0.0.87(chinese-lunar-calendar@1.0.1)(element-plus@2.8.7)(ksw-vue-icon@2.3.3)(lodash-es@4.17.21)(sortablejs@1.15.3)(vue-i18n@9.14.1)(vue@3.5.12)(vxe-pc-ui@4.3.0)(vxe-table@4.8.10):
+    resolution: {integrity: sha512-OVeiTd+uC1CvE64cjAjPh9YujDoZANh9ZL/HjzOgdOlXIX2oc5VLFSHmJgFLwCoq2cKcKh6+ZWshV3bPPMPLtw==}
     peerDependencies:
       chinese-lunar-calendar: ^1.0.1
       element-plus: ^2.8.0
@@ -954,15 +957,15 @@ packages:
       chinese-lunar-calendar: 1.0.1
       element-plus: 2.8.7(vue@3.5.12)
       i: 0.3.7
-      ksw-vue-icon: 2.3.0(vue@3.5.12)
+      ksw-vue-icon: 2.3.3(vue@3.5.12)
       lodash-es: 4.17.21
       npm: 10.9.0
       overlayscrollbars: 2.10.0
       sortablejs: 1.15.3
       vue: 3.5.12(typescript@5.6.3)
       vue-i18n: 9.14.1(vue@3.5.12)
-      vxe-pc-ui: 4.2.43(vue@3.5.12)
-      vxe-table: 4.8.2(vue@3.5.12)
+      vxe-pc-ui: 4.3.0(vue@3.5.12)
+      vxe-table: 4.8.10(vue@3.5.12)
     dev: false
 
   /@mdx-js/react@3.1.0(@types/react@18.3.12)(react@18.3.1):
@@ -2837,8 +2840,35 @@ packages:
       promise: 7.3.1
     dev: true
 
-  /ksw-vue-icon@2.3.0(vue@3.5.12):
-    resolution: {integrity: sha512-awxPfEuX3l3gKtxZPh7b6OjZ/1aesWTJiX0bHyTQ7CbFIR/igr+egwa2ZW5yCi/LVsPyKQAhnalWIyfc5WsiNA==}
+  /ksw-ux@0.0.72(chinese-lunar-calendar@1.0.1)(element-plus@2.8.7)(ksw-vue-icon@2.3.3)(lodash-es@4.17.21)(sortablejs@1.15.3)(vue-i18n@9.14.1)(vue@3.5.12)(vxe-pc-ui@4.3.0)(vxe-table@4.8.10):
+    resolution: {integrity: sha512-0TOw6He7KOtp2l4mSju+/dBYka+TUumWRB+MgdVOxmX68fZS3jFXK5TfKJg9Bv7gAqrHHqC93dppU5/0PDYUnA==}
+    peerDependencies:
+      chinese-lunar-calendar: ^1.0.1
+      element-plus: ^2.8.0
+      ksw-vue-icon: latest
+      lodash-es: ^4.17.21
+      sortablejs: ^1.15.2
+      vue: ^3.4.21
+      vue-i18n: ^9.13.1
+      vxe-pc-ui: ^4.0.82
+      vxe-table: ^4.7.96
+    dependencies:
+      chinese-lunar-calendar: 1.0.1
+      element-plus: 2.8.7(vue@3.5.12)
+      i: 0.3.7
+      ksw-vue-icon: 2.3.3(vue@3.5.12)
+      lodash-es: 4.17.21
+      npm: 10.9.0
+      overlayscrollbars: 2.10.0
+      sortablejs: 1.15.3
+      vue: 3.5.12(typescript@5.6.3)
+      vue-i18n: 9.14.1(vue@3.5.12)
+      vxe-pc-ui: 4.3.0(vue@3.5.12)
+      vxe-table: 4.8.10(vue@3.5.12)
+    dev: false
+
+  /ksw-vue-icon@2.3.3(vue@3.5.12):
+    resolution: {integrity: sha512-rdWsfWEEp2HWRIG3hP5eZXnG/IvvjtBopOWyURlJhZGzgksLEMJnGShZ2mPQM9yCwBmtgGsefm4pgVA8p0uQVw==}
     peerDependencies:
       vue: ^3.4.21
     dependencies:
@@ -4080,18 +4110,18 @@ packages:
       '@vue/shared': 3.5.12
       typescript: 5.6.3
 
-  /vxe-pc-ui@4.2.43(vue@3.5.12):
-    resolution: {integrity: sha512-/C9hi1jfZlYjdNlAJSw+BVVRQZEWeZzeNFmSionF2OkClY+C9kN8lLVwpFQ1KWFrfKFesdA2B7g6b5VrgnOmxQ==}
+  /vxe-pc-ui@4.3.0(vue@3.5.12):
+    resolution: {integrity: sha512-XL1i08eHaEfGn4sCIZ3sUOkHSCX/d35m0bD/7tDSdMK4RioTMyFtydOSuSoUtf3e/d6ne568S0wzyG3gl+tHEg==}
     dependencies:
       '@vxe-ui/core': 4.0.16(vue@3.5.12)
     transitivePeerDependencies:
       - vue
     dev: false
 
-  /vxe-table@4.8.2(vue@3.5.12):
-    resolution: {integrity: sha512-QtdvdYYGOgoEma2eHT6yzOhpTmhvwpAx8xA0epISghSeM6750/z89kOg0/lNldzccnmEUWUfCksLM8S+87w/qA==}
+  /vxe-table@4.8.10(vue@3.5.12):
+    resolution: {integrity: sha512-GSZSIcu4Mi3eX5Xkah2FySx83h9ySrDIg7H7BhUrpv5s5xZUUC5pQeaB0ZFXl826Uh1vcD7cqzTEiOUkw+oE5w==}
     dependencies:
-      vxe-pc-ui: 4.2.43(vue@3.5.12)
+      vxe-pc-ui: 4.3.0(vue@3.5.12)
     transitivePeerDependencies:
       - vue
     dev: false

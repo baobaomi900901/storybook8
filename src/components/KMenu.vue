@@ -22,8 +22,8 @@ const props = defineProps({
 });
 </script>
 <style lang="less" scoped>
-@import url('../../kswux/package/style/variable.css');
-@import url('../../kswux/package/style/general.less');
+// @import url('../../kswux/packages/style/variable.css');
+// @import url('../../kswux/packages/style/general.less');
 * {
   box-sizing: border-box;
 }

@@ -1,8 +1,8 @@
 <template>
   <div class="epx-container grid auto-rows-max gap-4 w-full">
-    <div class="epx-title">表单</div>
-    <SBExamplePanel label="默认" open>
-      <div :style="{ height: '', width: '100%' }">
+    <div class="epx-title">树表格</div>
+    <SBExamplePanel label="antd风格" open>
+      <div :style="{ height: '100%', width: '100%' }">
         <k-tree-table
           :column-config="{ resizable: true }"
           :data="tableData2"
@@ -13,6 +13,22 @@
           useAntStyle
         ></k-tree-table>
       </div>
+      <KTreeTable :data="tableData" :column="column" use-ant-style>
+        <template #enabled="{ row }">
+          {{ row.enabled === 1 ? '启用' : '禁用' }}
+        </template>
+        <template #collectType="{ row }">
+          {{ row.collectType === 0 ? '全部采集' : '部分采集' }}
+        </template>
+        <template #opt="{ row }">
+          <KButton text @click="onEdit(row)">编辑</KButton>
+          <KPopconfirm title="您确定要删除吗?" @confirm="onDel(row)">
+            <template #reference>
+              <KButton text type="danger">删除</KButton>
+            </template>
+          </KPopconfirm>
+        </template>
+      </KTreeTable>
     </SBExamplePanel>
     <!-- <SBExamplePanel label="默认">
       <div :style="{ height: '300px', width: '100%' }">

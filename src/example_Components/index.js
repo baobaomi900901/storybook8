@@ -31,6 +31,8 @@ import expView from './expView.vue';
 import expSliderButton from './expSliderButton.vue';
 // expDialog
 import expDialog from './expDialog.vue';
+// expPagination
+import expPagination from './expPagination.vue';
 
 export {
   expButton,
@@ -54,4 +56,5 @@ export {
   expView,
   expSliderButton,
   expDialog,
+  expPagination,
 };

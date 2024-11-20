@@ -9,6 +9,7 @@
     >
       <span class="">{{ item.name }}</span>
     </router-link>
+    <span v-show="showProjectName" class="theme-name"></span>
   </div>
 </template>
 
@@ -19,6 +20,7 @@ const store = useMainStore();
 
 const props = defineProps({
   menuItem: undefined,
+  showProjectName: false,
 });
 </script>
 <style scoped>
@@ -32,6 +34,7 @@ const props = defineProps({
   border: 1px solid #eee;
   padding: 0.25rem 2rem;
   display: none;
+  position: relative;
 }
 .show {
   display: inline-block;
@@ -43,5 +46,17 @@ const props = defineProps({
 .menu-item {
   border-right: 1px solid #eee;
   padding: 0 0.5rem;
+}
+.theme-name {
+  display: inline-block;
+  position: absolute;
+  right: 1rem;
+}
+.theme-name::after {
+  content: var(--theme-name);
+  background: var(--k-theme-test);
+  color: #fff;
+  padding: 0.225rem 1rem;
+  border-radius: 0.25rem;
 }
 </style>

@@ -100,11 +100,11 @@
 
 <script lang="ts" setup>
 import { ref, reactive, onMounted, nextTick } from 'vue';
-import { KTabs, KTabPane, KButton } from '@components';
+// import { KTabs, KTabPane, KButton } from '@components';
 import { Edit, Star, Delete, Eleme } from '@element-plus/icons-vue';
-import { genRandomStr } from '../../kswux/package/utils/index';
+// import { genRandomStr } from '../../kswux/package/utils/index';
 
-const id = `_${genRandomStr(8)}`;
+// const id = `_${genRandomStr(8)}`;
 const activeName = ref('tab1');
 
 let type = true;
@@ -122,8 +122,8 @@ nextTick(() => {
   // console.log('boxWidth', boxWidth);
 
   // 监听 el-tabs__nav-scroll 位置
-  tabItems = document.querySelectorAll(`#${id} .el-tabs__item`);
-  elTabsNav = document.querySelector(`#${id} .el-tabs__nav`);
+  tabItems = document.querySelectorAll(`.el-tabs__item`);
+  elTabsNav = document.querySelector(`.el-tabs__nav`);
   if (elTabsNav) {
     elTabsNavTTX = elTabsNav?.style?.transform;
     // 提取 elTabsNavTTX 中的数字

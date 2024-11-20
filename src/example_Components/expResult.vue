@@ -76,7 +76,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
-import { KButton, KResult } from '@components';
+// import { KButton, KResult } from '@components';
 
 const value = ref();
 </script>

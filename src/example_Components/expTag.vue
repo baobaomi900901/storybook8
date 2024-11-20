@@ -92,7 +92,6 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KTag } from '@components';
 
 const value = ref();
 </script>

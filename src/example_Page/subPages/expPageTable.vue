@@ -49,8 +49,8 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KPageViewBus, KPageTableView } from '@templates';
-import { KButton, KTreeTable } from '@components';
+// import { KPageViewBus, KPageTableView } from '@templates';
+// import { KButton, KTreeTable } from '@components';
 
 const column1 = ref([
   {
@@ -140,8 +140,8 @@ const tableData = reactive([
 ]);
 </script>
 <style lang="less">
-@import url('../../../kswux/package/style/variable.css');
-@import url('../../../kswux/package/style/general.less');
+@import url('../../../kswux/packages/style/variable.css');
+@import url('../../../kswux/packages/style/general.less');
 .expPageTable {
 }
 

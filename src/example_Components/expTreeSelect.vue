@@ -36,7 +36,7 @@
 
 <script setup>
 import { ref, reactive } from 'vue';
-import { KTreeSelect } from '@components';
+// import { KTreeSelect } from '@components';
 
 const value = ref();
 const handleChange = (...val) => {
