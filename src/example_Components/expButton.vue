@@ -318,7 +318,7 @@
 
     <SBExamplePanel label="button-group" open>
       <div class="flex flex-col gap-2">
-        <KButtonGroup>
+        <KButtonGroup size="sm">
           <KButton @click="handleClick('运行')">普通</KButton>
           <KButton>普通</KButton>
           <KButton>普通</KButton>
