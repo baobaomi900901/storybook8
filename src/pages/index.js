@@ -8,5 +8,7 @@ import pageTemplate from './pageTemplate.vue';
 import pageAntPro from './pageAntPro.vue';
 // pageIDE
 import pageIDE from './pageIDE.vue';
+// temporarily
+import pageTemporarily from './pageTemporarily.vue';
 
-export { home, pageComponents, pageTemplate, pageAntPro, pageIDE };
+export { home, pageComponents, pageTemplate, pageAntPro, pageIDE, pageTemporarily };

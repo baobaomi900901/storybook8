@@ -19,7 +19,6 @@ import install from '../kswux/packages/index';
 // npm 包
 // import install from '@ksware/ksw-ux';
 // import '@ksware/ksw-ux/kingsware-ui/style.css';
-// import '../node_modules/@ksware/ksw-ux/kingsware-ui/theme/GFAOM/theme.css';
 
 // npm 测试包
 // import install from 'ksw-ux';

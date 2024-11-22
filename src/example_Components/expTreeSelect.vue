@@ -21,6 +21,7 @@
         :placeholder="'请选择'"
         show-checkbox
         check-strictly
+        collapse-tags
         multiple
         filterable
         clearable

@@ -9,7 +9,7 @@
   <div class="epx-container">
     <div class="epx-title">KRadio, KRadioGroup</div>
 
-    <SBExamplePanel label="单独使用">
+    <!-- <SBExamplePanel label="单独使用">
       <div class="flex items-star gap-4">
         <KRadio
           v-for="item in radioData"
@@ -256,7 +256,7 @@
           </KRadioGroup>
         </div>
       </div>
-    </SBExamplePanel>
+    </SBExamplePanel> -->
     <SBExamplePanel label="自定义颜色" open>
       <div class="flex flex-col items-star gap-4">
         <KRadioGroup v-model="value">

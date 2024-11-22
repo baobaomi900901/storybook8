@@ -19,24 +19,14 @@ import { useRouter } from 'vue-router';
 import useMainStore from './store';
 const store = useMainStore();
 const router = useRouter();
-const data = [
-  {
-    name: 'components | 组件',
-    path: '/components',
-  },
-  {
-    name: 'template | 模板',
-    path: '/template',
-  },
-  {
-    name: 'ant-pro | 模板',
-    path: '/ant-pro',
-  },
-  {
-    name: 'IDE | 编辑器',
-    path: '/ide',
-  },
-];
+
+const data = [];
+const routerPath = router.options.routes;
+
+routerPath.forEach((item) => {
+  if (item.path == '/') return;
+  data.push(item);
+});
 
 const showMenuClick = () => {
   store.showMenuType = !store.showMenuType;

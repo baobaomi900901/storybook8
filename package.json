@@ -13,7 +13,6 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@headlessui/vue": "^1.7.22",
-    "@ksware/ksw-ux": "^0.0.87",
     "@mdx-js/vue": "^3.0.1",
     "apcach": "^0.6.4",
     "chroma-js": "^2.4.2",
@@ -29,6 +28,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
     "@iframe-resizer/child": "^5.1.4",
+    "@ksware/ksw-ux": "^0.0.89",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",
