@@ -32,7 +32,7 @@
 
     <SBExamplePanel label="渲染树形结构" open>
       <div ref="expView" class="expView h-fit w-full">
-        <div ref="toolMarket" class="toolMarket p-6 bg-gray-200 flex-1 w-full h-96">
+        <div ref="toolMarket" class="toolMarket p-6 bg-gray-200 flex-1 w-full h-80">
           <div class="bg-white rounded-md w-full h-full">
             <k-view
               default-active="free"
