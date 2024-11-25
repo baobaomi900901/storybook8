@@ -109,6 +109,7 @@
 </template>
 
 <script lang="tsx" setup>
+import { da } from 'element-plus/es/locale';
 import { IconAdd } from 'ksw-vue-icon';
 import { ref, reactive } from 'vue';
 
@@ -349,35 +350,6 @@ const tableData2 = [
   { id: 10066, name: 'Test2', role: 'Test', sex: 'Women', age: 22, address: 'Guangzhou' },
   { id: 10067, name: 'Test3', role: 'PM', sex: 'Man', age: 32, address: 'Shanghai' },
 ];
-const widgets = ref([
-  {
-    id: 'customRefresh',
-    widget: () => (
-      <KButton
-        text
-        onCilck={() => {
-          console.log('refresh');
-        }}>
-        <IconRefresh color='gray' />
-      </KButton>
-    ),
-  },
-  {
-    id: 'sizeControl',
-    widget: () => (
-      <KButton text>
-        <IconSizeControls color='gray' />
-      </KButton>
-    ),
-  },
-  {
-    id: 'transfer',
-    widget: () => (
-      <KButton text>
-        <IconSetting color='gray' />
-      </KButton>
-    ),
-  },
-]);
+const widgets = ref(['filter', 'sizeControl', 'transfer']);
 </script>
 <style scoped></style>

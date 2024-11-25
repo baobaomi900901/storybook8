@@ -55,6 +55,7 @@
               @drag="(value) => console.log('drag', value)"
               @visible="handleVisible"
               :showArrow="false"
+              defaultActive="children6"
             >
               <template #all>all</template>
               <template #free>free</template>
