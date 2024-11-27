@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 
 // 引入页面
-import { home, pageComponents, pageTemplate, pageAntPro, pageIDE, pageTemporarily } from '../pages';
+import { home, pageComponents, pageTemplate, pageIDE, pageTemporarily } from '../pages';
 
 // 引入示例组件
 import {
@@ -17,7 +17,6 @@ import {
   expTooltip,
   expForm,
   expResult,
-  expTreeTable,
   expCollapse,
   expFilterForm,
   expDetails,
@@ -28,7 +27,11 @@ import {
   expDialog,
   expPagination,
   expTree,
+  expUpload,
+  expScriptInput,
 } from '../example_Components';
+
+import { expTreeTable, useAntStyle } from '../example_Components/expTreeTable';
 
 // 引入示例页面
 import {
@@ -43,7 +46,7 @@ import {
 } from '../example_Page';
 
 // 引入仿 ant pro 的页面
-import { tableView, cardView, detailsView, toolMarket } from '../example_ant';
+import { pageAntPro, tableView, cardView, detailsView, toolMarket } from '../example_ant';
 
 // 引入 IDE 页面
 import { IDEPage } from '../example_IDE';
@@ -72,7 +75,12 @@ const routes = [
       { path: 'tooltip', component: expTooltip, name: 'tooltip' },
       { path: 'form', component: expForm, name: 'form' },
       { path: 'result', component: expResult, name: 'result' },
-      { path: 'tree-table', component: expTreeTable, name: 'tree-table' },
+      {
+        path: 'tree-table',
+        component: expTreeTable,
+        name: 'tree-table',
+        children: [{ path: 'use-ant-style', component: useAntStyle, name: 'use-ant-style' }],
+      },
       { path: 'collapse', component: expCollapse, name: 'collapse' },
       { path: 'filter-form', component: expFilterForm, name: 'filter-form' },
       { path: 'details', component: expDetails, name: 'details' },
@@ -83,6 +91,8 @@ const routes = [
       { path: 'dialog', component: expDialog, name: 'dialog' },
       { path: 'pagination', component: expPagination, name: 'pagination' },
       { path: 'tree', component: expTree, name: 'tree' },
+      { path: 'upload', component: expUpload, name: 'upload' },
+      { path: 'script-input', component: expScriptInput, name: 'script-input' },
     ],
   },
   // template

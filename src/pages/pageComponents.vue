@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import Menu from '../components/menu.vue';
 import { useRouter } from 'vue-router';
 const router = useRouter();
@@ -26,6 +26,19 @@ routerPath.forEach((item) => {
     item.path = '/components/' + item.path;
   }
   data.push(item);
+});
+
+onMounted(() => {
+  // 如果存在连接, 则跳转到连接
+  const url = window.location.href;
+  const index = url.indexOf('?');
+  if (index > 0) {
+    const link = url.substring(index + 1);
+    const linkItem = data.find((item) => item.path === link);
+    if (linkItem) {
+      router.push(linkItem.path);
+    }
+  }
 });
 </script>
 <style scoped></style>

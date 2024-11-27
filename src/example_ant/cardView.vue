@@ -21,7 +21,7 @@
         <span class="text-gray-400">{{ '自定义内容' + ' ' + i }}</span>
       </template>
     </KCard>
-    <KCard :title="'自定义标题' + ' ' + i" v-for="i in 2" :key="i" col="3">
+    <KCard :title="'自定义标题' + ' ' + i" v-for="i in 2" :key="i" :col="3">
       <template #extra-header-btns>
         <KButton text>
           <IconMore color="black" />
@@ -31,7 +31,7 @@
         <span class="text-gray-400">{{ '自定义内容' + ' ' + i }}</span>
       </template>
     </KCard>
-    <KCard :title="'自定义标题' + ' ' + i" v-for="i in 1" :key="i" col="6">
+    <KCard :title="'自定义标题' + ' ' + i" v-for="i in 1" :key="i" :col="6">
       <template #extra-header-btns>
         <KButton text>
           <IconMore color="black" />
@@ -41,7 +41,7 @@
         <span class="text-gray-400">{{ '自定义内容' + ' ' + i }}</span>
       </template>
     </KCard>
-    <KCard :title="'自定义标题' + ' ' + i" v-for="i in 1" :key="i" col="6">
+    <KCard :title="'自定义标题' + ' ' + i" v-for="i in 1" :key="i" :col="6">
       <template #extra-header-btns>
         <KButton text>
           <IconMore color="black" />
@@ -51,7 +51,7 @@
         <span class="text-gray-400">{{ '自定义内容' + ' ' + i }}</span>
       </template>
     </KCard>
-    <KCard :title="'自定义标题' + ' ' + i" v-for="i in 1" :key="i" col="6">
+    <KCard :title="'自定义标题' + ' ' + i" v-for="i in 1" :key="i" :col="6">
       <template #extra-header-btns>
         <KButton text>
           <IconMore color="black" />

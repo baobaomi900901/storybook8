@@ -23,11 +23,11 @@
     <KPageTableView
       show-aside
       aside-title="视图"
-      aside-info="描述信息"
+      aside-info=""
       aside-refresh
       page-icon="IconAomMenuAOMRZColor"
-      page-title="用户管理"
-      page-info="用户管理页面描述信息"
+      page-title="用户管理111"
+      page-info=""
     >
       <template #aside>
         <div class="bg-gray-100 w-full">123</div>

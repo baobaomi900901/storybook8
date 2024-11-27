@@ -1,110 +1,27 @@
+<!--
+* @description  参数1
+* @fileName  useAntStyle
+* @author userName
+* @date 2024-11-27 10:19:14
+* @version V3.0.0
+!-->
 <template>
-  <div class="epx-container grid auto-rows-max gap-4 w-full">
-    <div class="epx-title">树表格</div>
-
-    <SBExamplePanel label="antd风格" open>
-      <div :style="{ height: '100%', width: '100%' }">
-        <k-tree-table
-          :column-config="{ resizable: true }"
-          :data="tableData2"
-          :column="column2"
-          :widgets="widgets"
-          :showDescription="false"
-          size="medium"
-          useAntStyle
-        ></k-tree-table>
-      </div>
-    </SBExamplePanel>
-
-    <div :style="{ height: '300px', width: '100%', 'min-width': '0' }">
-      <k-tree-table
-        :data="tableData"
-        :column="columnPro"
-        :show-page="false"
-        :column-config="{ resizable: true }"
-        border
-        round
-      >
-        <template #address>
-          <k-button-container>
-            <k-button text>编辑</k-button>
-            <k-button text>删除</k-button>
-            <k-button text>详情</k-button>
-            <k-button text>编辑</k-button>
-            <k-button text>删除</k-button>
-            <k-button text>详情</k-button>
-          </k-button-container>
-        </template>
-      </k-tree-table>
+  <div ref="useAntStyle" class="useAntStyle">
+    <div class="epx-container grid auto-rows-max gap-4 w-full">
+      <SBExamplePanel label="useAntStyle" open>
+        <div :style="{ height: '100%', width: '100%' }">
+          <k-tree-table
+            :column-config="{ resizable: true }"
+            :data="tableData2"
+            :column="column2"
+            :widgets="widgets"
+            :showDescription="false"
+            size="medium"
+            useAntStyle
+          ></k-tree-table>
+        </div>
+      </SBExamplePanel>
     </div>
-
-    <SBExamplePanel label="antd风格" open>
-      <div :style="{ height: '100%', width: '100%' }">
-        <KTreeTable :data="tableData2" :column="column2" use-ant-style>
-          <template #enabled="{ row }">
-            {{ row.enabled === 1 ? '启用' : '禁用' }}
-          </template>
-          <template #collectType="{ row }">
-            {{ row.collectType === 0 ? '全部采集' : '部分采集' }}
-          </template>
-          <template #opt="{ row }">
-            <KButton text @click="onEdit(row)">编辑</KButton>
-            <KPopconfirm title="您确定要删除吗?" @confirm="onDel(row)">
-              <template #reference>
-                <KButton text type="danger">删除</KButton>
-              </template>
-            </KPopconfirm>
-          </template>
-        </KTreeTable>
-      </div>
-    </SBExamplePanel>
-
-    <SBExamplePanel label="默认" open>
-      <div :style="{ height: '300px', width: '100%' }">
-        <k-tree-table
-          :data="tableData"
-          :column="column1"
-          :show-page="false"
-          :column-config="{ resizable: true }"
-          border="inner"
-          round
-        >
-          <template #address>
-            <k-button-container>
-              <k-button text>编辑</k-button>
-              <k-button text>删除</k-button>
-              <k-button text>详情</k-button>
-              <k-button text>编辑</k-button>
-              <k-button text>删除</k-button>
-              <k-button text>详情</k-button>
-            </k-button-container>
-          </template>
-        </k-tree-table>
-      </div>
-    </SBExamplePanel>
-    <SBExamplePanel label="多列头" open>
-      <div :style="{ height: '300px', width: '100%' }">
-        <k-tree-table
-          :data="tableData"
-          :column="columnPro"
-          :show-page="false"
-          :column-config="{ resizable: true }"
-          border
-          round
-        >
-          <template #address>
-            <k-button-container>
-              <k-button text>编辑</k-button>
-              <k-button text>删除</k-button>
-              <k-button text>详情</k-button>
-              <k-button text>编辑</k-button>
-              <k-button text>删除</k-button>
-              <k-button text>详情</k-button>
-            </k-button-container>
-          </template>
-        </k-tree-table>
-      </div>
-    </SBExamplePanel>
   </div>
 </template>
 

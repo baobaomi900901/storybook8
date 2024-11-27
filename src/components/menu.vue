@@ -1,12 +1,6 @@
 <template>
   <div id="menu" class="menu" :class="[{ show: store.showMenuType }]">
-    <router-link
-      v-for="item in menuItems"
-      :key="item.path"
-      :to="item.path"
-      class="menu-item"
-      style="color: var(--k-theme-test)"
-    >
+    <router-link v-for="item in menuItems" :key="item.path" :to="item.path" class="menu-item">
       <span class="">{{ item.name }}</span>
     </router-link>
     <span v-show="showProjectName" class="theme-name"></span>
@@ -36,7 +30,7 @@ const menuItems = computed(() => {
   }
 });
 </script>
-<style scoped>
+<style lang="less" scoped>
 * {
   box-sizing: border-box;
 }
@@ -44,7 +38,7 @@ const menuItems = computed(() => {
   font-size: 0.75rem;
   gap: 0.5rem;
   border: 1px solid #eee;
-  padding: 0.25rem 2rem;
+  padding: 0.25rem 1rem;
   display: none;
   position: relative;
 }
@@ -54,12 +48,23 @@ const menuItems = computed(() => {
   /* visibility: hidden; */
   transition: visibility 0.3s ease-in-out;
 }
-.router-link-active {
-  color: #1890ff;
-}
 .menu-item {
-  border-right: 1px solid #eee;
-  padding: 0 0.5rem;
+  margin: 0 0.5rem;
+  position: relative;
+  box-sizing: border-box;
+  border-bottom: 2px dotted transparent;
+  &::after {
+    content: '';
+    position: absolute;
+    right: -0.75rem;
+    height: 100%;
+    width: 1px;
+    background: #eee;
+  }
+}
+.router-link-active {
+  color: var(--k-theme-test);
+  border-bottom-color: var(--k-theme-test);
 }
 .theme-name {
   display: inline-block;

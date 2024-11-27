@@ -11,14 +11,20 @@
       ref="menuView"
       :options="viewOptions"
       default-active="option1"
-      @select="(a) => console.log(a)"
+      @select="
+        (path) => {
+          selectPath(path);
+        }
+      "
     >
       <template #app-logo>
         <img class="w-6 h-6" src="/vite.svg" alt="logo" />
         <span class="ml-2 !text-base text-white text-nowrap">广发变更管控系统</span>
       </template>
       <template #header></template>
-      <template #main>Main</template>
+      <template #main>
+        <router-view />
+      </template>
       <template #footer>Footer</template>
     </k-menu-view>
   </div>
@@ -26,33 +32,36 @@
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
+import KCardView from 'cardView.vue';
+import { useRouter } from 'vue-router';
+const router = useRouter();
 
 const viewOptions = [
   {
-    title: 'Option1',
+    title: '菜单层级示例(一级)',
     index: 'option1',
     icon: 'IconAdd',
     disabled: false,
     children: [
       {
-        title: 'Option1-1',
-        index: 'option1-1',
+        title: 'option1-1',
+        index: '',
         children: [
           {
             title: 'Option1-1-1',
-            index: 'option1-1-1',
+            index: '',
             disabled: false,
             icon: 'IconFilter',
           },
           {
             title: 'Option1-1-2',
-            index: 'option1-1-2',
+            index: '',
             disabled: false,
             icon: 'IconRanking',
           },
           {
             title: 'Option1-1-3',
-            index: 'option1-1-3',
+            index: '',
             disabled: false,
             icon: 'IconOrganization',
           },
@@ -61,29 +70,48 @@ const viewOptions = [
       },
       {
         title: 'Option1-2',
-        index: 'option1-2',
+        index: '',
         disabled: false,
       },
       {
         title: 'Option1-3',
-        index: 'option1-3',
+        index: '',
         disabled: false,
       },
     ],
   },
   {
-    title: 'Option2',
-    index: 'option2',
+    title: 'cardView',
+    index: 'card-view',
     disabled: false,
-    icon: 'IconFlow',
+    icon: 'IconMenuDefColor',
   },
   {
-    title: 'Option3',
-    index: 'option3',
+    title: 'tableView',
+    index: 'table-view',
     disabled: false,
-    icon: 'IconSystemTypeWindowsColor',
+    icon: 'IconMenuDefColor',
+  },
+  {
+    title: 'detailsView',
+    index: 'details-view',
+    disabled: false,
+    icon: 'IconMenuDefColor',
+  },
+  {
+    title: 'toolMarket',
+    index: 'tool-market',
+    disabled: false,
+    icon: 'IconMenuDefColor',
   },
 ];
+
+function selectPath(path: string) {
+  if (!path) {
+    console.log('没有路由');
+  }
+  router.push(`/ant-pro/${path}`);
+}
 </script>
 
 <style lang="less" scoped></style>

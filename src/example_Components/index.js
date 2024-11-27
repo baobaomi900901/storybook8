@@ -13,8 +13,6 @@ import expTooltip from './expTooltip.vue';
 import expForm from './expForm.vue';
 // expResult
 import expResult from './expResult.vue';
-// expTreeTable
-import expTreeTable from './expTreeTable.vue';
 // expCollapse
 import expCollapse from './expCollapse.vue';
 // expFilterForm
@@ -35,6 +33,10 @@ import expDialog from './expDialog.vue';
 import expPagination from './expPagination.vue';
 // expTree
 import expTree from './expTree.vue';
+// expUpload
+import expUpload from './expUpload.vue';
+// expScriptInput
+import expScriptInput from './expScriptInput.vue';
 
 export {
   expButton,
@@ -49,7 +51,6 @@ export {
   expTooltip,
   expForm,
   expResult,
-  expTreeTable,
   expCollapse,
   expFilterForm,
   expDetails,
@@ -60,4 +61,6 @@ export {
   expDialog,
   expPagination,
   expTree,
+  expUpload,
+  expScriptInput,
 };
