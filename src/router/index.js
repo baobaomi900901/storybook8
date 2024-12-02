@@ -29,6 +29,7 @@ import {
   expTree,
   expUpload,
   expScriptInput,
+  expDateTimePicker,
 } from '../example_Components';
 
 import { expTreeTable, useAntStyle } from '../example_Components/expTreeTable';
@@ -93,6 +94,7 @@ const routes = [
       { path: 'tree', component: expTree, name: 'tree' },
       { path: 'upload', component: expUpload, name: 'upload' },
       { path: 'script-input', component: expScriptInput, name: 'script-input' },
+      { path: 'date-time-picker', component: expDateTimePicker, name: 'date-time-picker' },
     ],
   },
   // template

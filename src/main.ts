@@ -1,9 +1,10 @@
-import { createApp } from 'vue';
+import { createApp, watch } from 'vue';
 import App from './App.vue';
 import './style.css';
 import '../public/result.css'; // 全局字体
 import router from './router';
 import { createPinia } from 'pinia';
+import useMainStore from './store';
 // 图标
 import { KswIcon } from 'ksw-vue-icon';
 import 'ksw-vue-icon/styles/icon.css';
@@ -26,9 +27,13 @@ import install from '../kswux/packages/index';
 
 const app = createApp(App);
 app.use(router);
+app.use(createPinia());
+
+const store = useMainStore();
+
 // app.use(elementPlus);
 app.use(KswIcon, { projectName: 'Guangfa' }); // 图标引入添加项目名称
-app.use(createPinia());
+
 app.use(install, { styleModule: 'GFAOM' }); // 全局注册组件 GFAOM, AOM, KingAutometa
 app.mount('#app');
 app.component('SBExamplePanel', SBExamplePanel);

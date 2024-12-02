@@ -8,11 +8,15 @@
 <template>
   <div class="epx-container">
     <div class="epx-title">脚本输入框</div>
-    <SBExamplePanel label="默认" open>
-      <k-script-input ref="scriptInput" :options="options">
-        <template #prepend>请输入脚本</template>
-        <template #append><k-button main @click="clear">Clear</k-button></template>
+    <SBExamplePanel label="默认" open class="">
+      <k-script-input v-model="text" ref="scriptInput" :options="data" use-tree class="vvn w-80">
+        <template #prepend></template>
+        <template #append></template>
+        <!-- <template #append><k-button main @click="clear">Clear</k-button></template> -->
       </k-script-input>
+    </SBExamplePanel>
+    <SBExamplePanel label="默认" open>
+      <k-input v-model="text" placeholder="请输入脚本"></k-input>
     </SBExamplePanel>
   </div>
 </template>
@@ -20,16 +24,43 @@
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
 
-const options = ref([
-  { label: 'Option1', value: 1 },
-  { label: 'Option2', value: 2 },
-  { label: 'Option3', value: 3 },
-  { label: 'Option4', value: 4 },
-]);
+// optional 控制是否可选
+const data = [
+  { label: 'option1', value: 'value1', pid: null },
+  { label: 'option1-1', value: 'value1-1', pid: 'value1', optional: false },
+  { label: 'option1-2', value: 'value1-2', pid: 'value1', optional: true },
+  { label: 'option1-2-1', value: 'value1-2-1', pid: 'value1-2' },
+  { label: 'option1-2-2', value: 'value1-2-2', pid: 'value1-2' },
+  { label: 'option1-2-3', value: 'value1-2-3', pid: 'value1-2' },
+  { label: 'option1-3', value: 'value1-3', pid: 'value1' },
+  { label: 'option2', value: 'value2', pid: null },
+  { label: 'option2-1', value: 'value2-1', pid: 'value2' },
+  { label: 'option2-2', value: 'value2-2', pid: 'value2' },
+  { label: 'option2-3', value: 'value2-3', pid: 'value2' },
+  { label: 'option3', value: 'value3', pid: null },
+  { label: 'option3-1', value: 'value3-1', pid: 'value3' },
+  { label: 'option3-2', value: 'value3-2', pid: 'value3' },
+  { label: 'option3-3', value: 'value3-3', pid: 'value3' },
+];
 
 const scriptInput = ref();
+const modeStatus = ref(false);
+
+// 清除
 function clear() {
   scriptInput.value?.clear();
 }
+
+// 切换模式
+function toggleMode() {
+  scriptInput.value?.toggleMode();
+}
+
+// 显示弹窗
+function showPopper() {
+  scriptInput.value?.showPopper?.();
+}
+
+const text = ref('');
 </script>
 <style scoped></style>

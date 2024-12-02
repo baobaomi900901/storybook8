@@ -6,84 +6,78 @@
 * @version V3.0.0
 !-->
 <template>
-  <div :style="{ height: '100%', overflow: 'auto' }">
-    <k-menu-view
-      ref="menuView"
-      :options="viewOptions"
-      default-active="option1"
-      @select="(a) => console.log(a)"
-    >
-      <template #app-logo>
-        <img class="w-6 h-6" src="/vite.svg" alt="logo" />
-        <span class="ml-2 !text-base text-white text-nowrap">广发变更管控系统</span>
-      </template>
-      <template #header></template>
-      <template #main>Main</template>
-      <template #footer>Footer</template>
-    </k-menu-view>
+  <div class="block">
+    <KDetails class="mt-5" :abstract="lstInfo" direction="horizontal"></KDetails>
   </div>
 </template>
 
 <script lang="tsx" setup>
-import { ref, reactive } from 'vue';
-
-const viewOptions = [
+import { ref, reactive, computed } from 'vue';
+import { KDetails, KSteps, KStep } from 'ksw-ux';
+const stepActive = ref(0);
+const stepList = reactive([
+  // { key: 'paramsConfig', text: '工具参数', has: false, stepType: 3 }, // （暂不显示）
+  { key: 'changeControl', text: '风险预测', has: false, stepType: 4, fun: () => {} },
   {
-    title: 'Option1',
-    index: 'option1',
-    icon: 'IconAdd',
-    disabled: false,
-    children: [
-      {
-        title: 'Option1-1',
-        index: 'option1-1',
-        children: [
-          {
-            title: 'Option1-1-1',
-            index: 'option1-1-1',
-            disabled: false,
-            icon: 'IconFilter',
-          },
-          {
-            title: 'Option1-1-2',
-            index: 'option1-1-2',
-            disabled: false,
-            icon: 'IconRanking',
-          },
-          {
-            title: 'Option1-1-3',
-            index: 'option1-1-3',
-            disabled: false,
-            icon: 'IconOrganization',
-          },
-        ],
-        disabled: false,
-      },
-      {
-        title: 'Option1-2',
-        index: 'option1-2',
-        disabled: false,
-      },
-      {
-        title: 'Option1-3',
-        index: 'option1-3',
-        disabled: false,
-      },
-    ],
+    key: 'pre',
+    text: '前置准备',
+    has: false,
+    stepType: 1,
+    fun: (res) => {
+      setExecutionData('pre', res);
+    },
   },
   {
-    title: 'Option2',
-    index: 'option2',
-    disabled: false,
-    icon: 'IconFlow',
+    key: 'execution',
+    text: '执行变更',
+    has: false,
+    stepType: 0,
+    fun: (res) => {
+      setExecutionData('execution', res);
+    },
   },
   {
-    title: 'Option3',
-    index: 'option3',
-    disabled: false,
-    icon: 'IconSystemTypeWindowsColor',
+    key: 'post',
+    text: '后置检查',
+    has: false,
+    stepType: 2,
+    fun: (res) => {
+      setExecutionData('post', res);
+    },
   },
-];
+]);
+const lstInfo = computed(() => {
+  const data = [
+    { label: '开始时间', value: 1, column: 1 },
+    { label: '结束时间', value: 2, column: 1 },
+    {
+      label: '耗时',
+      value: 4,
+      column: 1,
+    },
+    {
+      label: '执行进度',
+      column: 10,
+      render: () => {
+        return (
+          <KSteps active={stepActive.value} capsule process-status='finish' finish-status='success'>
+            {stepList.map((item, index) => {
+              return <KStep key={index} title={item.text} />;
+            })}
+          </KSteps>
+        );
+      },
+    },
+  ];
+  if (0 === 0) {
+    data.push({
+      label: '错误信息',
+      column: 3,
+      value: 4,
+    });
+  }
+  return data;
+});
 </script>
 
 <style lang="less" scoped></style>

@@ -19,8 +19,7 @@
     "culori": "^4.0.1",
     "element-plus": "^2.7.6",
     "ksw-ux": "^0.0.72",
-    "ksw-vue-icon": "^2.3.3",
-    "pinia": "^2.1.7",
+    "pinia": "^2.2.7",
     "tailwind-scrollbar-hide": "^1.1.7",
     "vue": "^3.4.27",
     "vue-router": "^4.1.6"
@@ -28,7 +27,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
     "@iframe-resizer/child": "^5.1.4",
-    "@ksware/ksw-ux": "^0.0.89",
+    "@ksware/ksw-ux": "^0.0.98",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",
@@ -41,6 +40,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "autoprefixer": "^10.4.20",
+    "ksw-vue-icon": "^2.3.5",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "postcss": "^8.4.41",

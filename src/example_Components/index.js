@@ -37,6 +37,8 @@ import expTree from './expTree.vue';
 import expUpload from './expUpload.vue';
 // expScriptInput
 import expScriptInput from './expScriptInput.vue';
+// expDateTimePicker
+import expDateTimePicker from './expDateTimePicker.vue';
 
 export {
   expButton,
@@ -63,4 +65,5 @@ export {
   expTree,
   expUpload,
   expScriptInput,
+  expDateTimePicker,
 };

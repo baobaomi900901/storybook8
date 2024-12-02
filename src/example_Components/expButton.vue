@@ -189,30 +189,37 @@
       </KButton>
     </SBExamplePanel>
 
-    <SBExamplePanel label="el-颜色">
-      <KButton type="danger" main>主要</KButton>
-      <KButton type="danger" main>成功</KButton>
-      <KButton type="danger" main>警告</KButton>
-      <KButton type="danger" main>危险</KButton>
-      <KButton type="danger" main>信息</KButton>
-      <br />
-      <KButton type="danger" secondary>按钮</KButton>
-      <KButton type="danger" secondary>按钮</KButton>
-      <KButton type="danger" secondary>按钮</KButton>
-      <KButton type="danger" secondary>按钮</KButton>
-      <KButton type="danger" secondary>按钮</KButton>
-      <br />
-      <KButton type="danger" text>按钮</KButton>
-      <KButton type="danger" text>按钮</KButton>
-      <KButton type="danger" text>按钮</KButton>
-      <KButton type="danger" text>按钮</KButton>
-      <KButton type="danger" text>按钮</KButton>
-      <br />
-      <KButton type="danger" icon><IconAdd /></KButton>
-      <KButton type="danger" icon><IconAdd /></KButton>
-      <KButton type="danger" icon><IconAdd /></KButton>
-      <KButton type="danger" icon><IconAdd /></KButton>
-      <KButton type="danger" icon><IconAdd /></KButton>
+    <SBExamplePanel label="el颜色">
+      <div class="flex flex-col gap-2">
+        <div class="flex items-star gap-4">
+          <KButton type="primary" main>主要</KButton>
+          <KButton type="success" main>成功</KButton>
+          <KButton type="warning" main>警告</KButton>
+          <KButton type="danger" main>危险</KButton>
+          <KButton type="info" main>信息</KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton type="primary" secondary>主要</KButton>
+          <KButton type="success" secondary>成功</KButton>
+          <KButton type="warning" secondary>警告</KButton>
+          <KButton type="danger" secondary>危险</KButton>
+          <KButton type="info" secondary>信息</KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton type="primary" text>主要</KButton>
+          <KButton type="success" text>成功</KButton>
+          <KButton type="warning" text>警告</KButton>
+          <KButton type="danger" text>危险</KButton>
+          <KButton type="info" text>信息</KButton>
+        </div>
+        <div class="flex items-star gap-4">
+          <KButton type="primary" icon><IconAdd /></KButton>
+          <KButton type="success" icon><IconAdd /></KButton>
+          <KButton type="warning" icon><IconAdd /></KButton>
+          <KButton type="danger" icon><IconAdd /></KButton>
+          <KButton type="info" icon><IconAdd /></KButton>
+        </div>
+      </div>
     </SBExamplePanel>
 
     <SBExamplePanel label="icon-参数">
