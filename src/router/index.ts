@@ -30,9 +30,11 @@ import {
   expUpload,
   expScriptInput,
   expDateTimePicker,
-} from '../example_Components';
+  expDropdown,
+  expIconPopver,
+} from '../example_components';
 
-import { expTreeTable, useAntStyle } from '../example_Components/expTreeTable';
+import { expTreeTable, useAntStyle } from '../example_components/expTreeTable';
 
 // 引入示例页面
 import {
@@ -44,13 +46,14 @@ import {
   echartsDemo,
   customColorHooksDev,
   webStatus,
-} from '../example_Page';
+  epxKDetails,
+} from '../example_template';
 
 // 引入仿 ant pro 的页面
 import { pageAntPro, tableView, cardView, detailsView, toolMarket } from '../example_ant';
 
 // 引入 IDE 页面
-import { IDEPage } from '../example_IDE';
+import { IDEPage } from '../example_ide';
 
 const routes = [
   {
@@ -84,6 +87,7 @@ const routes = [
       },
       { path: 'collapse', component: expCollapse, name: 'collapse' },
       { path: 'filter-form', component: expFilterForm, name: 'filter-form' },
+      // expDetails
       { path: 'details', component: expDetails, name: 'details' },
       { path: 'steps', component: expSteps, name: 'steps' },
       { path: 'switch', component: expSwitch, name: 'switch' },
@@ -95,6 +99,8 @@ const routes = [
       { path: 'upload', component: expUpload, name: 'upload' },
       { path: 'script-input', component: expScriptInput, name: 'script-input' },
       { path: 'date-time-picker', component: expDateTimePicker, name: 'date-time-picker' },
+      { path: 'dropdown', component: expDropdown, name: 'dropdown' },
+      { path: 'icon-popover', component: expIconPopver, name: 'icon-popover' },
     ],
   },
   // template

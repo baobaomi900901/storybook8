@@ -9,14 +9,17 @@ import echartsDemo from './echartsDemo.vue';
 import customColorHooksDev from './customColorHooksDev.vue';
 // webStatus
 import webStatus from './webStatus.vue';
+// epxKDetails
+import epxKDetails from './epxKDetails.vue';
 
 export {
-  flowPage, 
-  customColor, 
-  stashLayout, 
-  expPageTable, 
-  expPageTable2, 
-  echartsDemo, 
-  customColorHooksDev, 
-  webStatus 
+  flowPage,
+  customColor,
+  stashLayout,
+  expPageTable,
+  expPageTable2,
+  echartsDemo,
+  customColorHooksDev,
+  webStatus,
+  epxKDetails,
 };

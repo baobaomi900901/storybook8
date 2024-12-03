@@ -29,6 +29,12 @@
             :shortcuts="shortcuts"
           />
         </k-form-item>
+        <k-form-item label="变量">
+          <k-script-input v-model="text" :options="data" use-tree class="" />
+        </k-form-item>
+        <k-form-item label="变量2">
+          <k-script-input v-model="text2" :options="data" use-tree class="" />
+        </k-form-item>
         <k-form-item label="日期" prop="date">
           <k-date-picker
             v-model="value2"
@@ -139,6 +145,12 @@
             end-placeholder="End date"
             :shortcuts="shortcuts"
           />
+        </k-form-item>
+        <k-form-item label="变量">
+          <k-script-input v-model="text3" :options="data" use-tree class="" />
+        </k-form-item>
+        <k-form-item label="变量2">
+          <k-script-input v-model="text4" :options="data" use-tree class="" />
         </k-form-item>
         <k-form-item label="日期" prop="date">
           <k-date-picker
@@ -327,6 +339,30 @@ const radioData = [
     value: '肠粉',
     label: '肠粉',
   },
+];
+
+const text = ref('');
+const text2 = ref('');
+const text3 = ref('');
+const text4 = ref('');
+
+// optional 控制是否可选
+const data = [
+  { label: 'option1', value: 'value1', pid: null },
+  { label: 'option1-1', value: 'value1-1', pid: 'value1', optional: false },
+  { label: 'option1-2', value: 'value1-2', pid: 'value1', optional: true },
+  { label: 'option1-2-1', value: 'value1-2-1', pid: 'value1-2' },
+  { label: 'option1-2-2', value: 'value1-2-2', pid: 'value1-2' },
+  { label: 'option1-2-3', value: 'value1-2-3', pid: 'value1-2' },
+  { label: 'option1-3', value: 'value1-3', pid: 'value1' },
+  { label: 'option2', value: 'value2', pid: null },
+  { label: 'option2-1', value: 'value2-1', pid: 'value2' },
+  { label: 'option2-2', value: 'value2-2', pid: 'value2' },
+  { label: 'option2-3', value: 'value2-3', pid: 'value2' },
+  { label: 'option3', value: 'value3', pid: null },
+  { label: 'option3-1', value: 'value3-1', pid: 'value3' },
+  { label: 'option3-2', value: 'value3-2', pid: 'value3' },
+  { label: 'option3-3', value: 'value3-3', pid: 'value3' },
 ];
 
 const handleCheckAllChange = (val: boolean) => {

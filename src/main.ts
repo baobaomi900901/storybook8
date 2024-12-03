@@ -34,6 +34,6 @@ const store = useMainStore();
 // app.use(elementPlus);
 app.use(KswIcon, { projectName: 'Guangfa' }); // 图标引入添加项目名称
 
-app.use(install, { styleModule: 'GFAOM' }); // 全局注册组件 GFAOM, AOM, KingAutometa
+app.use(install, { styleModule: 'KingAutometa' }); // 全局注册组件 GFAOM, AOM, KingAutometa
 app.mount('#app');
 app.component('SBExamplePanel', SBExamplePanel);

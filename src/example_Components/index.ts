@@ -39,6 +39,10 @@ import expUpload from './expUpload.vue';
 import expScriptInput from './expScriptInput.vue';
 // expDateTimePicker
 import expDateTimePicker from './expDateTimePicker.vue';
+// expDropdown
+import expDropdown from './expDropdown.vue';
+// expIconPopver
+import expIconPopver from './expIconPopver.vue';
 
 export {
   expButton,
@@ -66,4 +70,6 @@ export {
   expUpload,
   expScriptInput,
   expDateTimePicker,
+  expDropdown,
+  expIconPopver,
 };

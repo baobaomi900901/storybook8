@@ -40,7 +40,7 @@
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^4.0.0",
     "autoprefixer": "^10.4.20",
-    "ksw-vue-icon": "^2.3.5",
+    "ksw-vue-icon": "^2.3.8",
     "less": "^4.2.0",
     "less-loader": "^12.2.0",
     "postcss": "^8.4.41",

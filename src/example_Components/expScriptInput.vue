@@ -9,7 +9,10 @@
   <div class="epx-container">
     <div class="epx-title">脚本输入框</div>
     <SBExamplePanel label="默认" open class="">
-      <k-script-input v-model="text" ref="scriptInput" :options="data" use-tree class="vvn w-80">
+      <k-script-input v-model="text" :options="data" expandAll use-tree class="vvn w-80">
+        <!-- <template #append><k-button main @click="clear">Clear</k-button></template> -->
+      </k-script-input>
+      <k-script-input v-model="text2" :options="data" use-tree class="vvn w-80">
         <template #prepend></template>
         <template #append></template>
         <!-- <template #append><k-button main @click="clear">Clear</k-button></template> -->
@@ -23,6 +26,9 @@
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
+
+const text = ref('');
+const text2 = ref('');
 
 // optional 控制是否可选
 const data = [
@@ -60,7 +66,5 @@ function toggleMode() {
 function showPopper() {
   scriptInput.value?.showPopper?.();
 }
-
-const text = ref('');
 </script>
 <style scoped></style>
