@@ -7,7 +7,7 @@
 !-->
 <template>
   <div :style="{ height: '100%', overflow: 'auto' }">
-    <k-menu-view
+    <KMenuView
       ref="menuView"
       :options="viewOptions"
       default-active="option1"
@@ -26,7 +26,7 @@
         <router-view />
       </template>
       <template #footer>Footer</template>
-    </k-menu-view>
+    </KMenuView>
   </div>
 </template>
 

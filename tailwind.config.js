@@ -8,8 +8,8 @@ export default {
   content: [
     './index.html',
     './src/**/*.{vue,js,ts,jsx,tsx,md,mdx}',
-    './kswux/package/**/*.{vue,js,ts,jsx,tsx,md,mdx}',
-    './kswux-ant/package/**/*.{vue,js,ts,jsx,tsx,md,mdx}',
+    './kswux/packages/**/*.{vue,js,ts,jsx,tsx,md,mdx}',
+    './kswux-ant/packages/**/*.{vue,js,ts,jsx,tsx,md,mdx}',
   ],
   theme: {
     // extend: gf,

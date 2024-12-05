@@ -1,7 +1,7 @@
 <template>
   <div id="KMenu" class="k-menu h-10 flex justify-start items-center">
     <router-link
-      v-for="item in menuItem"
+      v-for="item in menuItems"
       :key="item.path"
       :to="item.path"
       class="k-menu-item h-10 flex items-center pl-4 pr-8 border-r"
@@ -14,11 +14,30 @@
 </template>
 
 <script setup>
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import useMainStore from '../store';
 
 const props = defineProps({
-  menuItem: undefined,
+  menuItem: {
+    type: Array,
+    default: () => [],
+  },
+  customSort: {
+    type: Boolean,
+    default: false,
+  },
+});
+
+const menuItems = computed(() => {
+  if (props.customSort) {
+    // 如果 customSort 为 true，直接返回原数组
+    return props.menuItem;
+  } else {
+    // 如果 customSort 为 false，返回排序后的数组
+    return [...props.menuItem].sort((a, b) => {
+      return a.path.localeCompare(b.path);
+    });
+  }
 });
 </script>
 <style lang="less" scoped>

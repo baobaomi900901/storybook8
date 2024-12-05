@@ -42,15 +42,13 @@
         </div>
       </template>
 
-      <p>页面默认插槽</p>
+      <p>页面默认插槽123123123</p>
     </KPageTableView>
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
-// import { KPageViewBus, KPageTableView } from '@templates';
-// import { KButton, KTreeTable } from '@components';
 
 const column1 = ref([
   {
@@ -139,12 +137,4 @@ const tableData = reactive([
   { id: 16, name: 'Test8', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' },
 ]);
 </script>
-<style lang="less">
-@import url('../../../kswux/packages/style/variable.css');
-@import url('../../../kswux/packages/style/general.less');
-.expPageTable {
-}
-
-.left {
-}
-</style>
+<style lang="less"></style>

@@ -34,7 +34,7 @@
           <div ref="menu" class="menu" />
         </div>
         <div class="tabs h-10 w-full flex-1">
-          <KMenu :menuItem="data" />
+          <KMenu :menuItem="data" customSort />
         </div>
         <div class="edit w-10 h-10 flex justify-center items-center border-l">
           <IconTriangleBottom size="24" />
@@ -49,37 +49,27 @@
 
 <script setup>
 import { ref, reactive, onMounted } from 'vue';
-import KMenu from '../components/KMenu.vue';
+import KMenu from '../../components/KMenu.vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const data = [];
 // 读取router 结构
 // components路由下的子路由
-const routerPath = reactive(router.currentRoute.value.matched[0].children[4].children);
-// console.log(routerPath);
+const routerPath = reactive(router.currentRoute.value.matched[0].children[1].children);
 
+// 获取当前 路径
+const currentPath = ref(router.currentRoute.value.path);
 routerPath.forEach((item) => {
-  // console.log(item);
-  // if (!item.path.includes('/template/')) {
-  item.path = '/template/stash-layout/' + item.path;
-  // }
+  if (!item.path.includes('/template/stash-layout/')) {
+    item.path = '/template/stash-layout/' + item.path;
+  }
   data.push(item);
 });
 const menu = ref();
 
-const MenuData = [
-  {
-    name: '首页',
-    path: '/template/stash-layout/exp-page-table',
-    close: true,
-    // icon: 'IconAdd',
-  },
-  { name: '一级页面', path: '/template/stash-layout/exp-page-table2', close: false },
-];
-
 const avatarData = {
-  name: '欧阳',
+  name: '上官海棠',
   id: '123456',
 };
 // const avatarData = {
@@ -482,6 +472,6 @@ onMounted(() => {
 }
 
 .aom-body {
-  background: linear-gradient(180deg, #69b4ff 0%, #b1d2ff 16%, #b1d2ff 27%);
+  background: linear-gradient(180deg, #b1d2ff 0%, #b1d2ff 16%, #b1d2ff 27%);
 }
 </style>

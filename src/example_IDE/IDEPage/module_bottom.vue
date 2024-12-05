@@ -12,8 +12,9 @@
   >
     <div class="menu-container h-10 flex items-center gap-4 px-4 text-sm">
       <div
-        v-for="(item, index) in props.items"
+        v-for="item in props.items"
         @click="handleClick(item)"
+        :key="item.name"
         class="menu-item w-fit h-full px-2 text-center cursor-pointer relative flex justify-center items-center border-t-2 border-transparent box-border"
         :class="[{ '!border-blue-500 font-bold text-blue-500': active === item.name }]"
       >

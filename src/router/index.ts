@@ -37,17 +37,7 @@ import {
 import { expTreeTable, useAntStyle } from '../example_components/expTreeTable';
 
 // 引入示例页面
-import {
-  flowPage,
-  customColor,
-  stashLayout,
-  expPageTable,
-  expPageTable2,
-  echartsDemo,
-  customColorHooksDev,
-  webStatus,
-  epxKDetails,
-} from '../example_template';
+import { flowPage, stashLayout, PageTableView, PageDetails, KMenuView } from '../example_template';
 
 // 引入仿 ant pro 的页面
 import { pageAntPro, tableView, cardView, detailsView, toolMarket } from '../example_ant';
@@ -110,23 +100,16 @@ const routes = [
     name: 'template',
     children: [
       { path: 'flow-page', component: flowPage, name: 'flow-page' },
-      { path: 'custom-color', component: customColor, name: 'custom-color' },
-      { path: 'echarts-demo', component: echartsDemo, name: 'echarts-Demo' },
-      {
-        path: 'custom-color-hooks-dev',
-        component: customColorHooksDev,
-        name: 'custom-color-hooks-dev',
-      },
       {
         path: 'stash-layout',
         component: stashLayout,
         name: 'stash-layout',
         children: [
-          { path: 'exp-page-table', component: expPageTable, name: '一级页面' },
-          { path: 'exp-page-table2', component: expPageTable2, name: '详情页' },
+          { path: 'page-table-view', component: PageTableView, name: '视图页面' },
+          { path: 'page-details', component: PageDetails, name: '详情页面' },
         ],
       },
-      { path: 'web-status', component: webStatus, name: 'web-status' },
+      { path: 'k-menu-view', component: KMenuView, name: 'k-menu-view' },
     ],
   },
   // ant pro

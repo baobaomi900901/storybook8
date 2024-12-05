@@ -13,9 +13,18 @@ import useMainStore from '../store';
 const store = useMainStore();
 
 const props = defineProps({
-  menuItem: undefined,
-  showProjectName: false,
-  customSort: undefined,
+  menuItem: {
+    type: Array,
+    default: () => [],
+  },
+  customSort: {
+    type: Boolean,
+    default: false,
+  },
+  showProjectName: {
+    type: Boolean,
+    default: false,
+  },
 });
 
 const menuItems = computed(() => {

@@ -8,6 +8,16 @@
 <template>
   <div class="block">
     <KDetails class="mt-5" :abstract="lstInfo" direction="horizontal"></KDetails>
+
+    <div ref="bbm" style="background-color: var(--k-theme-primary)">primary</div>
+    <div style="background-color: var(--k-theme-info)">info</div>
+    <div style="background-color: var(--k-theme-success)">success</div>
+    <div style="background-color: var(--k-theme-danger)">danger</div>
+    <div style="background-color: var(--k-theme-warning)">warning</div>
+
+    <KSteps :active="actives" align-center capsule>
+      <KStep v-for="item in ['基本信息', '工具配置']" :key="item" :title="item" />
+    </KSteps>
   </div>
 </template>
 
@@ -78,6 +88,8 @@ const lstInfo = computed(() => {
   }
   return data;
 });
+
+const actives = ref(0);
 </script>
 
 <style lang="less" scoped></style>

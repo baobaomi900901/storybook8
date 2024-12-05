@@ -9,26 +9,48 @@
   <div class="epx-container">
     <div class="epx-title">脚本输入框</div>
     <SBExamplePanel label="默认" open class="">
-      <k-script-input v-model="text" :options="data" expandAll use-tree class="vvn w-80">
-        <!-- <template #append><k-button main @click="clear">Clear</k-button></template> -->
-      </k-script-input>
-      <k-script-input v-model="text2" :options="data" use-tree class="vvn w-80">
-        <template #prepend></template>
-        <template #append></template>
+      <k-script-input
+        v-model="text"
+        ref="scriptInput"
+        :options="data"
+        expandAll
+        use-tree
+        class="vvn !w-80"
+        @change="changeValueAndMode"
+      >
         <!-- <template #append><k-button main @click="clear">Clear</k-button></template> -->
       </k-script-input>
     </SBExamplePanel>
-    <SBExamplePanel label="默认" open>
-      <k-input v-model="text" placeholder="请输入脚本"></k-input>
+    <SBExamplePanel label="返显" open>
+      <div class="flex flex-col">
+        <span>mode:{{ modeStatus ? 'true' : 'false' }}</span>
+        <span>value:{{ text }}</span>
+
+        <br />
+
+        <k-script-input
+          v-model="text2"
+          :options="data"
+          ref="scriptInput2"
+          expandAll
+          use-tree
+          class="vvn !w-80"
+        ></k-script-input>
+      </div>
     </SBExamplePanel>
   </div>
 </template>
 
 <script lang="tsx" setup>
-import { ref, reactive } from 'vue';
+import { ref, reactive, nextTick } from 'vue';
 
 const text = ref('');
 const text2 = ref('');
+
+const scriptInput = ref();
+const modeStatus = ref();
+
+const scriptInput2 = ref();
 
 // optional 控制是否可选
 const data = [
@@ -49,8 +71,15 @@ const data = [
   { label: 'option3-3', value: 'value3-3', pid: 'value3' },
 ];
 
-const scriptInput = ref();
-const modeStatus = ref(false);
+function changeValueAndMode(params: type) {
+  modeStatus.value = scriptInput.value?.isStringMode();
+
+  // 返显
+  nextTick(() => {
+    scriptInput2.value?.setStringMode(modeStatus.value);
+    text2.value = text.value;
+  });
+}
 
 // 清除
 function clear() {

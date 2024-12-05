@@ -7,11 +7,6 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="w-80 h-80 bg-red-200 relative">
-      <div class="relative h-full">
-        <div class="bbm w-40 h-40 bg-blue-500">Steps 步骤条</div>
-      </div>
-    </div>
     <div class="epx-title">步骤条</div>
     <SBExamplePanel label="按钮类型" open>
       <div class="overflow-hidden">
@@ -33,6 +28,11 @@
         <k-button style="margin-top: 12px" @click="next">Next step</k-button>
       </div>
     </SBExamplePanel>
+    <SBExamplePanel label="按钮类型" open>
+      <KSteps :active="active2" align-center capsule>
+        <KStep v-for="item in ['基本信息', '工具配置']" :title="item" :key="item" />
+      </KSteps>
+    </SBExamplePanel>
   </div>
 </template>
 
@@ -40,6 +40,8 @@
 import { ref } from 'vue';
 
 const active = ref(0);
+
+const active2 = ref(0);
 
 const next = () => {
   if (active.value++ > 2) active.value = 0;

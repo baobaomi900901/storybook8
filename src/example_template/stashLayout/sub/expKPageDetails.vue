@@ -1,8 +1,8 @@
 <template>
   <div id="expPageTable2" class="expPageTable2 h-full">
     <KPageDetails
-      icon="IconAomMenuAOMRZColor"
-      title="功能详情页"
+      pageIcon="IconAomMenuAOMRZColor"
+      pageTitle="功能详情页"
       info="这里是功能详情页的描述信息"
       :abstract="abstract"
       class="w-full h-full flex flex-col"
@@ -12,7 +12,7 @@
         <KButton>取消</KButton>
       </template>
       <template #extra-head-body></template>
-      <!-- <div class="KPageDetailsBody w-full h-full flex flex-col bg-white rounded flex-1 px-4">
+      <div class="KPageDetailsBody w-full h-full flex flex-col bg-white rounded flex-1 px-4">
         <KTabs v-model="activeName" class="w-full">
           <KTabPane label="详情" name="tab1">
             <div class="content grid grid-cols-2 gap-4 px-4">
@@ -28,7 +28,7 @@
             </div>
           </KTabPane>
         </KTabs>
-      </div> -->
+      </div>
     </KPageDetails>
   </div>
 </template>

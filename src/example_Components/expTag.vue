@@ -9,18 +9,19 @@
   <div class="epx-container grid grid-cols-4 auto-rows-max gap-4">
     <div class="epx-title col-span-4">组件</div>
 
-    <!-- <SBExamplePanel label="默认" open>
+    <SBExamplePanel label="默认" open class="col-span-4">
       <div class="flex items-start gap-2">
-        <KTag color="red">default</KTag>
-        <KTag type="primary">primary</KTag>
-        <KTag type="success">success</KTag>
-        <KTag type="warning">warning</KTag>
-        <KTag type="info">info</KTag>
-        <KTag type="danger">error</KTag>
+        <KTag color="#93c5fd">待执行</KTag>
+        <KTag color="#d3d4d5">禁用</KTag>
+        <KTag color="primary">正在执行</KTag>
+        <KTag color="success">成功</KTag>
+        <KTag color="warning">超时</KTag>
+        <KTag color="danger">失败</KTag>
+        <KTag color="#f87171">部分失败</KTag>
       </div>
     </SBExamplePanel>
 
-    <SBExamplePanel label="point" open>
+    <SBExamplePanel label="point" open class="col-span-4">
       <div class="flex items-start gap-2">
         <KTag point>default</KTag>
         <KTag type="primary" point>primary</KTag>
@@ -29,9 +30,9 @@
         <KTag type="info" point>info</KTag>
         <KTag type="danger" point>error</KTag>
       </div>
-    </SBExamplePanel> -->
+    </SBExamplePanel>
 
-    <SBExamplePanel label="border" open>
+    <SBExamplePanel label="border" open class="col-span-4">
       <div class="flex flex-col gap-4">
         <div class="flex items-start gap-2">
           <KTag size="lg" closable>default</KTag>
@@ -91,6 +92,7 @@
 </template>
 
 <script setup>
+import { KTag } from '@ksware/ksw-ux';
 import { ref, reactive } from 'vue';
 
 const value = ref();
