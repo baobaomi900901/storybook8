@@ -18,7 +18,8 @@
       </div>
     </div>
     <div
-      class="content w-72 relative overflow-hidden flex flex-col"
+      ref="RefModuleRight"
+      class="content relative overflow-hidden flex flex-col w-80"
       :class="{ 'is-colse': drawerStatus }"
     >
       <div
@@ -43,18 +44,85 @@
         <slot :name="active"></slot>
       </div>
     </div>
+    <div
+      class="handle-item left"
+      @mousedown.prevent="initDrag('left', $event, RefModuleRight)"
+    ></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { ModuleRightProps } from './type';
-
-const drawerStatus = ref(false);
 
 const props = withDefaults(defineProps<ModuleRightProps>(), {});
 
-const emits = defineEmits(['change']);
+const drawerStatus = ref(false);
+
+const RefModuleRight = ref();
+const width = ref(288);
+const height = ref(288);
+let startX = 0;
+let startY = 0;
+let startWidth = 0;
+let startHeight = 0;
+
+onMounted(() => {
+  RefModuleRight.value.style.setProperty('--width', `${width.value}px`);
+});
+
+function initDrag(side: string, event: MouseEvent, changeTarget) {
+  startX = event.clientX;
+  startY = event.clientY;
+  startWidth = changeTarget ? changeTarget.offsetWidth : 0;
+  startHeight = changeTarget ? changeTarget.offsetHeight : 0;
+  const doDrag = (e: MouseEvent) => {
+    let dx = e.clientX - startX;
+    let dy = e.clientY - startY;
+    if (side === 'left') {
+      width.value = startWidth - dx;
+      changeTarget.style.setProperty(
+        '--transition',
+        'width 0 ease ,  box-shadow 0.2s ease-in-out;',
+      );
+      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
+      if (width.value > 600) {
+        width.value = 600;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      } else if (width.value < 288) {
+        width.value = 288;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      }
+      changeTarget.style.setProperty('--width', `${width.value}px`);
+    }
+    if (side === 'right') {
+      width.value = startWidth + dx;
+      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
+      if (width.value > 600) {
+        width.value = 600;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      } else if (width.value < 288) {
+        width.value = 288;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      }
+      changeTarget.style.setProperty('--width', `${width.value}px`);
+    }
+    if (side === 'top') {
+      height.value = startHeight - dy;
+    }
+  };
+  const stopDrag = () => {
+    changeTarget.style.setProperty(
+      '--transition',
+      'width 0.2s ease-in-out, box-shadow 0.2s ease-in-out',
+    );
+    changeTarget.style.setProperty('--bgc', `#fff`);
+    document.removeEventListener('mousemove', doDrag);
+    document.removeEventListener('mouseup', stopDrag);
+  };
+  document.addEventListener('mousemove', doDrag);
+  document.addEventListener('mouseup', stopDrag);
+}
 
 const active = ref(props.active ?? props.items[0].name);
 
@@ -68,11 +136,19 @@ function handleClick(item: any) {
     drawerStatus.value = false;
   }
 }
+
+const emits = defineEmits(['change']);
 </script>
 <style lang="less" scoped>
 .module_right {
+  position: relative;
   .content {
-    transition: all 0.2s ease-in-out 0.1s;
+    --bgc: #fff;
+    --transition: width 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: var(--transition);
+    width: var(--width);
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: inset 0 0 0px 2px var(--bgc);
     &.is-colse {
       width: 0;
       transition: all 0.2s ease-in-out 0.1s;
@@ -99,6 +175,17 @@ function handleClick(item: any) {
           opacity: 0;
         }
       }
+    }
+  }
+  .handle-item {
+    position: absolute;
+    &.left {
+      top: 0;
+      left: -0.75rem;
+      bottom: 0;
+      width: 0.75rem;
+      cursor: ew-resize;
+      background: transparent;
     }
   }
 }

@@ -14,9 +14,7 @@
       </moduleLeft>
       <div class="flex flex-col flex-1 px-3">
         <moduleMain>
-          <div class="bg-green-500 w-full h-full">
-            <IconIdeDigitalAsset></IconIdeDigitalAsset>
-          </div>
+          <div class="bg-green-500 w-full h-full">main</div>
         </moduleMain>
         <moduleBottom :items="bottomItems">
           <template #a-action>

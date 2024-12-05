@@ -6,10 +6,7 @@
 * @version V3.0.0
 !-->
 <template>
-  <div
-    ref="module_bottom"
-    class="module_bottom bg-white relative flex flex-col-reverse rounded-tl-lg rounded-tr-lg overflow-hidden"
-  >
+  <div class="module_bottom bg-white relative flex flex-col-reverse rounded-tl-lg rounded-tr-lg">
     <div class="menu-container h-10 flex items-center gap-4 px-4 text-sm">
       <div
         v-for="item in props.items"
@@ -25,7 +22,8 @@
       </div>
     </div>
     <div
-      class="content p-3 relative overflow-hidden flex flex-col h-56"
+      ref="RefModuleBottom"
+      class="content p-3 relative overflow-hidden flex flex-col"
       :class="{ 'is-colse': drawerStatus }"
     >
       <div class="content-heard flex justify-between">
@@ -52,17 +50,33 @@
         <slot :name="active"></slot>
       </div>
     </div>
+    <div
+      class="handle-item top"
+      @mousedown.prevent="initDrag('top', $event, RefModuleBottom)"
+    ></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import { ModuleBottomProps } from './type';
 
 const drawerStatus = ref(false);
 
 const props = withDefaults(defineProps<ModuleBottomProps>(), {
   items: () => [],
+});
+
+const RefModuleBottom = ref();
+const width = ref(288);
+const height = ref(288);
+let startX = 0;
+let startY = 0;
+let startWidth = 0;
+let startHeight = 0;
+
+onMounted(() => {
+  RefModuleBottom.value.style.setProperty('--height', `${height.value}px`);
 });
 
 const emits = defineEmits(['change']);
@@ -79,13 +93,81 @@ function handleClick(item: any) {
     drawerStatus.value = false;
   }
 }
+
+function initDrag(side: string, event: MouseEvent, changeTarget) {
+  startX = event.clientX;
+  startY = event.clientY;
+  startWidth = changeTarget ? changeTarget.offsetWidth : 0;
+  startHeight = changeTarget ? changeTarget.offsetHeight : 0;
+  const doDrag = (e: MouseEvent) => {
+    let dx = e.clientX - startX;
+    let dy = e.clientY - startY;
+    if (side === 'left') {
+      width.value = startWidth - dx;
+      changeTarget.style.setProperty(
+        '--transition',
+        'width 0 ease ,  box-shadow 0.2s ease-in-out;',
+      );
+      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
+      if (width.value > 600) {
+        width.value = 600;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      } else if (width.value < 288) {
+        width.value = 288;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      }
+      changeTarget.style.setProperty('--width', `${width.value}px`);
+    }
+    if (side === 'right') {
+      width.value = startWidth + dx;
+      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
+      if (width.value > 600) {
+        width.value = 600;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      } else if (width.value < 288) {
+        width.value = 288;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      }
+      changeTarget.style.setProperty('--width', `${width.value}px`);
+    }
+    if (side === 'top') {
+      height.value = startHeight - dy;
+      changeTarget.style.setProperty(
+        '--transition',
+        'height 0 ease 0 ,  box-shadow 0.2s ease-in-out;',
+      );
+      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
+      if (height.value > 600) {
+        height.value = 600;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      } else if (height.value < 188) {
+        height.value = 188;
+        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
+      }
+      changeTarget.style.setProperty('--height', `${height.value}px`);
+    }
+  };
+  const stopDrag = () => {
+    changeTarget.style.setProperty('--bgc', `#fff`);
+    document.removeEventListener('mousemove', doDrag);
+    document.removeEventListener('mouseup', stopDrag);
+  };
+  document.addEventListener('mousemove', doDrag);
+  document.addEventListener('mouseup', stopDrag);
+}
 </script>
 <style lang="less">
 .module_bottom {
+  position: relative;
   .menu-container {
   }
   .content {
-    transition: all 0.2s ease-in-out 0.1s;
+    --bgc: #fff;
+    --transition: width 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: var(--transition);
+    height: var(--height);
+    transition: box-shadow 0.2s ease-in-out;
+    box-shadow: inset 0 0 0px 2px var(--bgc);
     &.is-colse {
       transition: all 0.2s ease-in-out 0.1s;
       height: 0;
@@ -109,6 +191,17 @@ function handleClick(item: any) {
       }
     }
     .content-body {
+    }
+  }
+  .handle-item {
+    position: absolute;
+    &.top {
+      top: -0.75rem;
+      left: 0;
+      width: 100%;
+      height: 0.75rem;
+      cursor: ns-resize;
+      background: transparent;
     }
   }
 }
