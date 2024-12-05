@@ -38,71 +38,17 @@
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import { ModuleLeftProps } from './type';
+import { width, initDrag } from './initeDrag.ts'
 
 const props = withDefaults(defineProps<ModuleLeftProps>(), {});
 
 const RefModuleLeft = ref();
-const width = ref(288);
-const height = ref(288);
-let startX = 0;
-let startY = 0;
-let startWidth = 0;
-let startHeight = 0;
 
 const drawerStatus = ref(false);
 
 onMounted(() => {
   RefModuleLeft.value.style.setProperty('--width', `${width.value}px`);
 });
-
-function initDrag(side: string, event: MouseEvent, changeTarget) {
-  startX = event.clientX;
-  startY = event.clientY;
-  startWidth = changeTarget ? changeTarget.offsetWidth : 0;
-  startHeight = changeTarget ? changeTarget.offsetHeight : 0;
-  const doDrag = (e: MouseEvent) => {
-    let dx = e.clientX - startX;
-    let dy = e.clientY - startY;
-    if (side === 'left') {
-      width.value = startWidth - dx;
-      changeTarget.style.setProperty(
-        '--transition',
-        'width 0 ease ,  box-shadow 0.2s ease-in-out;',
-      );
-      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
-      if (width.value > 600) {
-        width.value = 600;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      } else if (width.value < 288) {
-        width.value = 288;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      }
-      changeTarget.style.setProperty('--width', `${width.value}px`);
-    }
-    if (side === 'right') {
-      width.value = startWidth + dx;
-      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
-      if (width.value > 600) {
-        width.value = 600;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      } else if (width.value < 288) {
-        width.value = 288;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      }
-      changeTarget.style.setProperty('--width', `${width.value}px`);
-    }
-    if (side === 'top') {
-      height.value = startHeight - dy;
-    }
-  };
-  const stopDrag = () => {
-    changeTarget.style.setProperty('--bgc', `#fff`);
-    document.removeEventListener('mousemove', doDrag);
-    document.removeEventListener('mouseup', stopDrag);
-  };
-  document.addEventListener('mousemove', doDrag);
-  document.addEventListener('mouseup', stopDrag);
-}
 </script>
 <style lang="less" scoped>
 .module_left {

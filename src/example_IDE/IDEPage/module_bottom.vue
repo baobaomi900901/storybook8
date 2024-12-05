@@ -60,6 +60,7 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted } from 'vue';
 import { ModuleBottomProps } from './type';
+import { height, initDrag } from './initeDrag.ts'
 
 const drawerStatus = ref(false);
 
@@ -68,12 +69,6 @@ const props = withDefaults(defineProps<ModuleBottomProps>(), {
 });
 
 const RefModuleBottom = ref();
-const width = ref(288);
-const height = ref(288);
-let startX = 0;
-let startY = 0;
-let startWidth = 0;
-let startHeight = 0;
 
 onMounted(() => {
   RefModuleBottom.value.style.setProperty('--height', `${height.value}px`);
@@ -92,68 +87,6 @@ function handleClick(item: any) {
     active.value = item.name;
     drawerStatus.value = false;
   }
-}
-
-function initDrag(side: string, event: MouseEvent, changeTarget) {
-  startX = event.clientX;
-  startY = event.clientY;
-  startWidth = changeTarget ? changeTarget.offsetWidth : 0;
-  startHeight = changeTarget ? changeTarget.offsetHeight : 0;
-  const doDrag = (e: MouseEvent) => {
-    let dx = e.clientX - startX;
-    let dy = e.clientY - startY;
-    if (side === 'left') {
-      width.value = startWidth - dx;
-      changeTarget.style.setProperty(
-        '--transition',
-        'width 0 ease ,  box-shadow 0.2s ease-in-out;',
-      );
-      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
-      if (width.value > 600) {
-        width.value = 600;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      } else if (width.value < 288) {
-        width.value = 288;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      }
-      changeTarget.style.setProperty('--width', `${width.value}px`);
-    }
-    if (side === 'right') {
-      width.value = startWidth + dx;
-      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
-      if (width.value > 600) {
-        width.value = 600;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      } else if (width.value < 288) {
-        width.value = 288;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      }
-      changeTarget.style.setProperty('--width', `${width.value}px`);
-    }
-    if (side === 'top') {
-      height.value = startHeight - dy;
-      changeTarget.style.setProperty(
-        '--transition',
-        'height 0 ease 0 ,  box-shadow 0.2s ease-in-out;',
-      );
-      changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
-      if (height.value > 600) {
-        height.value = 600;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      } else if (height.value < 188) {
-        height.value = 188;
-        changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      }
-      changeTarget.style.setProperty('--height', `${height.value}px`);
-    }
-  };
-  const stopDrag = () => {
-    changeTarget.style.setProperty('--bgc', `#fff`);
-    document.removeEventListener('mousemove', doDrag);
-    document.removeEventListener('mouseup', stopDrag);
-  };
-  document.addEventListener('mousemove', doDrag);
-  document.addEventListener('mouseup', stopDrag);
 }
 </script>
 <style lang="less">
