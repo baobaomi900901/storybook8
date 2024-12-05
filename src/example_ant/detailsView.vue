@@ -37,6 +37,7 @@
       :tabs-config="{
         defaultActive: 'desc',
       }"
+      useItemCollapse
     >
       <!-- <template #head-title>123</template> -->
       <template #head-toolbar>
