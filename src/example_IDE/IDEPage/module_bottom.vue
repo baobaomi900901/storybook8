@@ -23,7 +23,7 @@
     </div>
     <div
       ref="RefModuleBottom"
-      class="content p-3 relative overflow-hidden flex flex-col"
+      class="content p-3 relative overflow-hidden flex flex-col rounded-tl-lg rounded-tr-lg"
       :class="{ 'is-colse': drawerStatus }"
     >
       <div class="content-heard flex justify-between">
@@ -60,7 +60,7 @@
 <script lang="ts" setup>
 import { ref, computed, onMounted } from 'vue';
 import { ModuleBottomProps } from './type';
-import { height, initDrag } from './initeDrag.ts'
+import { height, initDrag } from './initeDrag.ts';
 
 const drawerStatus = ref(false);
 
