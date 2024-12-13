@@ -1,5 +1,5 @@
 <template>
-  <div class="epx-container gap-4 w-full overflow-hidden flex">
+  <div class="epx-container gap-4 w-full overflow-auto flex">
     <!-- <div class="epx-title">树表格</div> -->
 
     <!-- <SBExamplePanel label="antd风格" open> -->
@@ -26,7 +26,7 @@
     </div>
     <!-- </SBExamplePanel> -->
 
-    <!-- <SBExamplePanel label="antd风格" open>
+    <SBExamplePanel label="antd风格" open>
       <div :style="{ height: '100%', width: '100%' }">
         <KTreeTable :data="tableData2" :column="column2" use-ant-style>
           <template #enabled="{ row }">
@@ -92,7 +92,7 @@
           </template>
         </k-tree-table>
       </div>
-    </SBExamplePanel> -->
+    </SBExamplePanel>
   </div>
 </template>
 

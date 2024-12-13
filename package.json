@@ -19,7 +19,7 @@
     "culori": "^4.0.1",
     "element-plus": "^2.7.6",
     "ksw-ux": "^0.0.72",
-    "ksw-vue-icon": "latest",
+    "ksw-vue-icon": "^2.3.16",
     "pinia": "^2.2.7",
     "tailwind-scrollbar-hide": "^1.1.7",
     "vue": "^3.4.27",

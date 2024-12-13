@@ -7,6 +7,9 @@
 !-->
 <template>
   <div class="epx-container">
+    <div>
+      <IconRPADataColor />
+    </div>
     <div class="epx-title">脚本输入框</div>
     <SBExamplePanel label="默认" open class="">
       <k-script-input
@@ -17,8 +20,11 @@
         use-tree
         class="vvn !w-80"
         @change="changeValueAndMode"
+        primitive
       >
-        <!-- <template #append><k-button main @click="clear">Clear</k-button></template> -->
+        <template #append>
+          <k-button>123</k-button>
+        </template>
       </k-script-input>
     </SBExamplePanel>
     <SBExamplePanel label="返显" open>

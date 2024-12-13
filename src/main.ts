@@ -11,11 +11,11 @@ import 'ksw-vue-icon/styles/icon.css';
 import SBExamplePanel from './components/SBExamplePanel.vue';
 
 // 源码
-import install from '../kswux/packages/index';
+// import install from '../kswux/packages/index';
 
 // 打包
-// import install from '../kswux/kingsware-ui/index';
-// import '../kswux/kingsware-ui/style.css';
+import install from '../kswux/kingsware-ui/index';
+import '../kswux/kingsware-ui/style.css';
 
 // npm 包
 // import install from '@ksware/ksw-ux';
@@ -32,7 +32,7 @@ app.use(createPinia());
 const store = useMainStore();
 
 // app.use(elementPlus);
-app.use(KswIcon, { projectName: 'Guangfa' }); // 图标引入添加项目名称
+app.use(KswIcon, { projectName: 'KingAutometa' }); // 图标引入添加项目名称
 
 app.use(install, { styleModule: 'GFAOM' }); // 全局注册组件 GFAOM, AOM, KingAutometa
 app.mount('#app');
