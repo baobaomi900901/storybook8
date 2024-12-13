@@ -15,6 +15,8 @@
 </template>
 
 <script lang="tsx" setup>
+import { column } from 'element-plus/es/components/table-v2/src/common';
+
 const abstract = [
   {
     label: '姓名',
@@ -33,6 +35,7 @@ const abstract = [
   {
     label: '年龄',
     value: '25',
+    column: 2, // 占几行, 会计算最大行数
   },
   {
     label: '职业(2)',
@@ -49,6 +52,17 @@ const abstract = [
   {
     label: '年龄',
     value: '25',
+  },
+  {
+    label: '自定义div',
+    column: 10, // 占几行, 会计算最大行数
+    render: () => {
+      return (
+        <div style='background-color: #ff5500'>
+          <span style='color: white'>自定义div</span>
+        </div>
+      );
+    },
   },
 ];
 </script>

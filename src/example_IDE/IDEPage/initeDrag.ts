@@ -3,16 +3,20 @@ import { ref } from 'vue';
 const width = ref<number>(288);
 const height = ref<number>(288);
 
+console.log('@');
+
 function initDrag(side: string, event: MouseEvent, changeTarget: HTMLElement) {
   const startX = event.clientX;
   const startY = event.clientY;
   const startWidth = changeTarget ? changeTarget.offsetWidth : 0;
   const startHeight = changeTarget ? changeTarget.offsetHeight : 0;
-  
+
+  console.log(123);
+
   const doDrag = (e: MouseEvent) => {
     let dx = e.clientX - startX;
     let dy = e.clientY - startY;
-    
+
     if (side === 'left') {
       width.value = startWidth - dx;
       changeTarget.style.setProperty(
@@ -71,4 +75,8 @@ function initDrag(side: string, event: MouseEvent, changeTarget: HTMLElement) {
   document.addEventListener('mouseup', stopDrag);
 }
 
-export { width, height, initDrag };
+function bbm(params: type) {
+  console.log('bbm');
+}
+
+export { width, height, initDrag, bbm };

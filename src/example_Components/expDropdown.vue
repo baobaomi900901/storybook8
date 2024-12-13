@@ -15,9 +15,9 @@
                 border-bottom-left-radius: 0;
               " -->
       <k-button-group>
-        <k-button>
-          <IconAdd color="var(--k-theme-primary)"></IconAdd>
-          捕获新元素
+        <k-button main>
+          <IconAdd color="#fff"></IconAdd>
+          创建
         </k-button>
         <K-dropdown
           ref="myDropdown"
@@ -27,16 +27,16 @@
           @click="() => console.log(111)"
         >
           <template #title>
-            <k-button icon>
-              <IconArrowBottom color="var(--k-theme-primary)" />
+            <k-button main>
+              <IconArrowBottom color="#fff" />
             </k-button>
           </template>
 
           <k-dropdown-item command="a" @click="console.log('click Action 1')">
-            Action 1
+            创建应用
           </k-dropdown-item>
           <k-dropdown-item command="b" @click="console.log('click Action 2')">
-            Action 2
+            创建分组
           </k-dropdown-item>
           <k-dropdown-item command="c" @click="console.log('click a')">Action 3</k-dropdown-item>
           <k-dropdown-item command="d" disabled>Action 4</k-dropdown-item>
@@ -45,6 +45,31 @@
           </k-dropdown-item>
         </K-dropdown>
       </k-button-group>
+    </SBExamplePanel>
+    <SBExamplePanel label="默认" open>
+      <K-dropdown
+        ref="myDropdown"
+        title="Click Here"
+        @command="(command) => console.log(command)"
+        @click="() => console.log(111)"
+      >
+        <template #title>
+          <k-button main>
+            <IconAdd color="#fff"></IconAdd>
+            创建
+            <IconArrowBottom color="#fff" />
+          </k-button>
+        </template>
+
+        <k-dropdown-item command="a" @click="console.log('click Action 1')">
+          <IconAdd color="var(--k-theme-primary)" class="mr-1"></IconAdd>
+          创建应用
+        </k-dropdown-item>
+        <k-dropdown-item command="b" @click="console.log('click Action 2')">
+          <IconAdd color="var(--k-theme-primary)" class="mr-1"></IconAdd>
+          创建分组
+        </k-dropdown-item>
+      </K-dropdown>
     </SBExamplePanel>
     <SBExamplePanel label="split-button | 样式待优化" open>
       <!-- style="

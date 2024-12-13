@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router';
 
 // 引入页面
-import { home, pageComponents, pageTemplate, pageIDE, pageTemporarily } from '../pages';
+import { home, pageComponents, pageTemplate, pageIDE, pageExample } from '../pages';
 
 // 引入示例组件
 import {
@@ -131,11 +131,11 @@ const routes = [
     name: 'IDE',
     children: [{ path: 'ide_page', component: IDEPage, name: 'ide_page' }],
   },
-  // pageTemporarily
+  // pageExample
   {
-    path: '/temporarily',
-    component: pageTemporarily,
-    name: 'temporarily',
+    path: '/example',
+    component: pageExample,
+    name: 'example',
   },
 ];
 

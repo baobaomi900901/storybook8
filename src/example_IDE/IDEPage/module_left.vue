@@ -25,22 +25,29 @@
     >
       <span class="text-lg font-bold select-none">{{ title }}</span>
     </div>
-    <div class="content w-full pt-2 overflow-hidden flex-1" :class="{ 'is-colse': drawerStatus }">
+    <div
+      ref="RefContent"
+      class="content w-full pt-2 overflow-hidden flex-1"
+      :class="{ 'is-colse': drawerStatus }"
+    >
       <slot></slot>
     </div>
     <div
       class="handle-item right"
-      @mousedown.prevent="initDrag('right', $event, RefModuleLeft)"
+      @mousedown.prevent="(e) => initDrag('right', e, RefModuleLeft)"
     ></div>
+    <!-- @mousedown.prevent="() => initDrag('right', $event, RefModuleLeft)" -->
   </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted } from 'vue';
 import { ModuleLeftProps } from './type';
-import { width, initDrag } from './initeDrag.ts'
+import { width, initDrag, bbm } from './initeDrag.ts';
 
 const props = withDefaults(defineProps<ModuleLeftProps>(), {});
+
+console.log(initDrag);
 
 const RefModuleLeft = ref();
 
@@ -53,10 +60,14 @@ onMounted(() => {
 <style lang="less" scoped>
 .module_left {
   --bgc: #fff;
+  --scale: 1;
+  --reScale: 1;
   position: relative;
   width: var(--width);
   transition: box-shadow 0.2s ease-in-out;
   box-shadow: inset 0 0 0px 2px var(--bgc);
+  transform: scaleX(var(--scale, 1));
+  transform-origin: left center;
   .module_left_title {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -82,6 +93,8 @@ onMounted(() => {
   }
   .content {
     transition: all 0.2s ease-in-out 0.1s;
+    transform: scaleX(var(--reScale, 1));
+    transform-origin: left center;
     &.is-colse {
       width: 0;
       transition: all 0.2s ease-in-out 0.1s;

@@ -11,12 +11,26 @@
     <SBExamplePanel label="默认" open>
       <k-date-picker v-model="value1" type="datetime" placeholder="Select date and time" />
     </SBExamplePanel>
+
+    <SBExamplePanel label="快捷选项" open>
+      <k-date-picker v-model="value1" type="datetimerange" placeholder="Select date and time" />
+      <k-date-picker
+        v-model="value2"
+        type="datetimerange"
+        start-placeholder="Start date"
+        end-placeholder="End date"
+        format="YYYY-MM-DD HH:mm:ss"
+        date-format="YYYY/MM/DD ddd"
+        time-format="A hh:mm:ss"
+      />
+    </SBExamplePanel>
   </div>
 </template>
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
 const value1 = ref('');
+const value2 = ref('');
 const shortcuts = [
   {
     text: 'Today',

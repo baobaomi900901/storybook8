@@ -23,12 +23,13 @@
     "pinia": "^2.2.7",
     "tailwind-scrollbar-hide": "^1.1.7",
     "vue": "^3.4.27",
+    "vue-resizer": "^1.1.9",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
     "@iframe-resizer/child": "^5.1.4",
-    "@ksware/ksw-ux": "^0.0.95",
+    "@ksware/ksw-ux": "^0.0.108",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",

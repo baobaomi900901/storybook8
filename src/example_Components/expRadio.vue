@@ -265,9 +265,16 @@
             :key="item.value"
             :label="item.label"
             :value="item.value"
+            @click.prevent="handleClick(item.value)"
             color="#ff5500"
           ></KRadio>
-          <KRadio v-model="value" label="直角" value="直角" color="#ff5500" disabled></KRadio>
+          <KRadio
+            v-model="value"
+            label="直角"
+            value="直角"
+            color="#ff5500"
+            @click.prevent="handleClick('直角')"
+          ></KRadio>
         </KRadioGroup>
         <KRadioGroup v-model="value" button>
           <KRadio
@@ -306,5 +313,10 @@ const radioData = [
 ];
 
 const lstDateType = ['本月', '本季度', '本年'];
+
+const handleClick = (bbm) => {
+  console.log(bbm);
+  value.value = bbm;
+};
 </script>
 <style scoped></style>
