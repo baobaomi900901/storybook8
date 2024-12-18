@@ -37,6 +37,7 @@
       :tabs-config="{
         defaultActive: 'desc',
       }"
+      direction="vertical"
       useItemCollapse
     >
       <!-- <template #head-title>123</template> -->
