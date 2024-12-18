@@ -194,6 +194,11 @@
         <k-checkbox v-model="checked1" label="Option 1" size="large" disabled />
       </div>
     </SBExamplePanel>
+
+    <SBExamplePanel label="按钮类型" open>
+      <k-checkbox v-model="checked1" label="Option 1" border color="red" />
+      <k-button>按钮类型</k-button>
+    </SBExamplePanel>
   </div>
 </template>
 

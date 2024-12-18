@@ -61,9 +61,9 @@ const scriptInput2 = ref();
 // optional 控制是否可选
 const data = [
   { label: 'option1', value: 'value1', pid: null },
-  { label: 'option1-1', value: 'value1-1', pid: 'value1', optional: false },
-  { label: 'option1-2', value: 'value1-2', pid: 'value1', optional: true },
-  { label: 'option1-2-1', value: 'value1-2-1', pid: 'value1-2' },
+  { label: 'option1-1', value: 'value1-1', pid: 'value1' },
+  { label: 'option1-2', value: 'value1-2', pid: 'value1' },
+  { label: 'option1-2-1', value: 'value1-2-1', pid: 'value1-2', optional: false },
   { label: 'option1-2-2', value: 'value1-2-2', pid: 'value1-2' },
   { label: 'option1-2-3', value: 'value1-2-3', pid: 'value1-2' },
   { label: 'option1-3', value: 'value1-3', pid: 'value1' },
