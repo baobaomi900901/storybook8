@@ -3,7 +3,7 @@
     <KPageDetails
       pageIcon="IconAomMenuAOMRZColor"
       pageTitle="功能详情页"
-      info="这里是功能详情页的描述信息"
+      descriptions="这里是功能详情页的描述信息"
       :abstract="abstract"
       class="w-full h-full flex flex-col"
     >

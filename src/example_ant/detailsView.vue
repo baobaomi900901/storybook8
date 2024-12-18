@@ -29,7 +29,7 @@
       ref="ks"
       icon="IconAomMenuAOMRZColor"
       title="功能详情页"
-      info="这里是功能详情页的描述信息"
+      descriptions="这里是功能详情页的描述信息"
       :abstract="abstract"
       :columns="4"
       :tabs="tabs"
@@ -60,6 +60,7 @@ const abstract = [
   {
     label: '姓名',
     value: '张三',
+    direction: 'vertical',
   },
   {
     label: '性别',
