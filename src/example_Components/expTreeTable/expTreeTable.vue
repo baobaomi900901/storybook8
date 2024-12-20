@@ -1,31 +1,5 @@
 <template>
   <div class="epx-container gap-4 w-full overflow-auto flex">
-    <!-- <div class="epx-title">树表格</div> -->
-
-    <!-- <SBExamplePanel label="antd风格" open> -->
-    <div class="flex-1 flex min-w-0 overflow-hidden">
-      <div class="h-full min-w-0 w-full">
-        <div class="h-full min-w-0 w-full">
-          <div class="h-full overflow-auto min-w-0 w-full">
-            <k-tree-table
-              :column-config="{ resizable: true }"
-              :data="tableData2.slice(0, 100)"
-              :column="column2"
-              :widgets="widgets"
-              :showDescription="false"
-              size="medium"
-              :show-page="false"
-              useAntStyle
-              show-batch-operation
-              :batch-operations="ass"
-              height="300px"
-            ></k-tree-table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- </SBExamplePanel> -->
-
     <SBExamplePanel label="antd风格" open>
       <div :style="{ height: '100%', width: '100%' }">
         <KTreeTable :data="tableData2" :column="column2" use-ant-style>
