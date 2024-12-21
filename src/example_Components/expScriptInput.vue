@@ -12,51 +12,52 @@
     </div>
     <div class="epx-title">脚本输入框</div>
     <SBExamplePanel label="默认" open class="">
-      <k-script-input
-        v-model="text"
-        ref="scriptInput"
-        :options="data"
-        expandAll
-        use-tree
-        class="vvn !w-80"
-        @change="changeValueAndMode"
-        primitive
-      >
-        <template #append>
-          <k-button>123</k-button>
-        </template>
-      </k-script-input>
-    </SBExamplePanel>
-    <SBExamplePanel label="返显" open>
-      <div class="flex flex-col">
-        <span>mode:{{ modeStatus ? 'true' : 'false' }}</span>
-        <span>value:{{ text }}</span>
+      <div class="flex flex-col gap-4 justify-center items-center">
+        <div class="flex gap-4">
+          <div class="flex flex-col gap-4 justify-center items-center">
+            <k-button main @click="showModeSwitch = !showModeSwitch">
+              {{ showModeSwitch ? '显示模式切换' : '隐藏模式切换' }}
+            </k-button>
+            <k-button @click="toggleMode" :disabled="!showModeSwitch" class="!ml-0">
+              toggleMode
+            </k-button>
+          </div>
+          <k-script-input
+            v-model="text"
+            ref="scriptInput"
+            :show-popper-switch="showPopperSwitch"
+            :show-mode-switch="showModeSwitch"
+            default-mode="string"
+            :options="data"
+            height="100px"
+            use-tree
+            :tree-config="{ expandAll: true }"
+            @change="onChange"
+            class="vvn w-80"
+          >
+            <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->
+            <template #append><k-button @click="clear">Clear</k-button></template>
+          </k-script-input>
 
-        <br />
-
-        <k-script-input
-          v-model="text2"
-          :options="data"
-          ref="scriptInput2"
-          expandAll
-          use-tree
-          class="vvn !w-80"
-        ></k-script-input>
+          <div class="flex flex-col gap-4 justify-center items-center">
+            <k-button main @click="showPopperSwitch = !showPopperSwitch">
+              {{ showPopperSwitch ? '显示弹窗' : '隐藏弹窗' }}
+            </k-button>
+            <k-button @click="showPopper" :disabled="!showPopperSwitch" class="!ml-0">
+              showPopper
+            </k-button>
+          </div>
+        </div>
+        <k-button main @click="change">change</k-button>
+        <k-button main @click="changeMode">changeMode</k-button>
       </div>
     </SBExamplePanel>
   </div>
 </template>
 
 <script lang="tsx" setup>
-import { ref, reactive, nextTick } from 'vue';
-
-const text = ref('');
-const text2 = ref('');
-
-const scriptInput = ref();
-const modeStatus = ref();
-
-const scriptInput2 = ref();
+import SBExamplePanel from '@src/components/SBExamplePanel.vue';
+import { computed, ref, watch, nextTick } from 'vue';
 
 // optional 控制是否可选
 const data = [
@@ -77,14 +78,27 @@ const data = [
   { label: 'option3-3', value: 'value3-3', pid: 'value3' },
 ];
 
-function changeValueAndMode(params: type) {
-  modeStatus.value = scriptInput.value?.isStringMode();
+const scriptInput = ref();
+const showPopperSwitch = ref(false);
+const showModeSwitch = ref(false);
 
-  // 返显
-  nextTick(() => {
-    scriptInput2.value?.setStringMode(modeStatus.value);
-    text2.value = text.value;
-  });
+const text = ref('');
+
+function search() {
+  scriptInput.value?.showPopper?.();
+}
+
+function onChange(value: any) {
+  console.log(value);
+}
+
+let i = 1;
+function change() {
+  text.value += `fx(value1-1) fx(zhj) 1111`;
+}
+
+function changeMode() {
+  scriptInput.value?.toggleMode();
 }
 
 // 清除

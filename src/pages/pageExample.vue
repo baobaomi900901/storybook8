@@ -4,6 +4,8 @@
       :data="tableData"
       :column="column3"
       :show-page="false"
+      :show-search-input="false"
+      :show-filter="false"
       :edit-config="{ trigger: 'dblclick', mode: 'cell' }"
       border
     ></k-tree-table>
