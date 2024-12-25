@@ -5,18 +5,15 @@
 * @date 2024-11-21 11:52:01
 * @version V3.0.0
 !-->
-<template>
-  <div :style="{ height: '100%', overflow: 'auto' }">
-    <KMenuView
-      ref="menuView"
-      :options="viewOptions"
-      default-active="option1"
-      @select="
+
+<!--       @select="
         (path) => {
           selectPath(path);
         }
-      "
-    >
+      " -->
+<template>
+  <div :style="{ height: '100%', overflow: 'auto' }">
+    <KMenuView ref="menuView" :options="viewOptions" default-active="option1">
       <template #app-logo>
         <img class="w-6 h-6" src="/vite.svg" alt="logo" />
         <span class="ml-2 !text-base text-white text-nowrap">广发变更管控系统</span>
@@ -45,17 +42,31 @@ const viewOptions = [
     children: [
       {
         title: 'option1-1',
-        index: '',
+        index: 'option1-1',
         children: [
           {
             title: 'Option1-1-1',
-            index: '',
+            index: 'option1-1-1',
             disabled: false,
             icon: 'IconFilter',
+            children: [
+              {
+                title: 'Option1-1-1-1',
+                index: 'option1-1-1-1',
+                disabled: false,
+                icon: 'IconRanking',
+              },
+              {
+                title: 'Option1-1-1-2',
+                index: 'option1-1-1-2',
+                disabled: false,
+                icon: 'IconRanking',
+              },
+            ],
           },
           {
             title: 'Option1-1-2',
-            index: '',
+            index: 'option1-1-2',
             disabled: false,
             icon: 'IconRanking',
           },
@@ -70,12 +81,12 @@ const viewOptions = [
       },
       {
         title: 'Option1-2',
-        index: '',
+        index: 'Option1-2',
         disabled: false,
       },
       {
         title: 'Option1-3',
-        index: '',
+        index: 'Option1-3',
         disabled: false,
       },
     ],

@@ -92,20 +92,23 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { KMessageBox } from '@ksware/ksw-ux';
+import { KMessageBox, KMessage } from '@ksware/ksw-ux';
+// import { KMessageBox, KMessage } from '../../kswux/packages';
 import { ElMessageBox } from 'element-plus';
 
 const dialogVisible = ref(false);
 const dialogVisible2 = ref(false);
 
 const handleClose = (done: () => void) => {
-  ElMessageBox.confirm('Are you sure to close this dialog?')
-    .then(() => {
-      done();
-    })
-    .catch(() => {
-      // catch error
-    });
+  KMessageBox.confirm('Are you sure to close this dialog?');
+  //     .then(() => {
+  //       done();
+  //     })
+  //     .catch(() => {
+  //       // catch error
+  // });
+  // KMessage.info('关闭弹窗');
+  // done();
 };
 
 const data = [

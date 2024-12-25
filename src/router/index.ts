@@ -122,6 +122,12 @@ const routes = [
       { path: 'card-view', component: cardView, name: 'card-view' },
       { path: 'details-view', component: detailsView, name: 'details-view' },
       { path: 'tool-market', component: toolMarket, name: 'tool-market' },
+      // Option1-1-1
+      {
+        path: 'option1-1-1',
+        component: tableView,
+        name: 'option1-1-1',
+      },
     ],
   },
   // IDEPage

@@ -2,7 +2,7 @@
   <div class="epx-container gap-4 w-full overflow-auto flex">
     <SBExamplePanel label="antd风格" open>
       <div :style="{ height: '100%', width: '100%' }">
-        <KTreeTable :data="tableData2" :column="column2" use-ant-style>
+        <KTreeTable :data="tableData2" :column="column2" use-ant-style :widgets="widgets">
           <template #enabled="{ row }">
             {{ row.enabled === 1 ? '启用' : '禁用' }}
           </template>
@@ -22,27 +22,27 @@
     </SBExamplePanel>
 
     <SBExamplePanel label="默认" open>
-      <div :style="{ height: '300px', width: '100%' }">
-        <k-tree-table
-          :data="tableData"
-          :column="column1"
-          :show-page="false"
-          :column-config="{ resizable: true }"
-          border="inner"
-          round
-        >
-          <template #address>
-            <k-button-container>
-              <k-button text>编辑</k-button>
-              <k-button text>删除</k-button>
-              <k-button text>详情</k-button>
-              <k-button text>编辑</k-button>
-              <k-button text>删除</k-button>
-              <k-button text>详情</k-button>
-            </k-button-container>
-          </template>
-        </k-tree-table>
-      </div>
+      <!-- <div :style="{ height: '300px', width: '100%' }"> -->
+      <k-tree-table
+        :data="tableData2"
+        :column="column1"
+        :show-page="true"
+        :column-config="{ resizable: true }"
+        border="inner"
+        round
+      >
+        <template #address>
+          <k-button-container>
+            <k-button text>编辑</k-button>
+            <k-button text>删除</k-button>
+            <k-button text>详情</k-button>
+            <k-button text>编辑</k-button>
+            <k-button text>删除</k-button>
+            <k-button text>详情</k-button>
+          </k-button-container>
+        </template>
+      </k-tree-table>
+      <!-- </div> -->
     </SBExamplePanel>
     <SBExamplePanel label="多列头" open>
       <div :style="{ height: '300px', width: '100%' }">

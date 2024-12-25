@@ -43,10 +43,11 @@ nextTick(() => {
 
 const items = ref([
   {
-    label: '姓名',
+    label: '姓名123456789012345678901234567890',
     type: 'input',
     prop: 'name',
     value: '张三',
+    'label-width': '100px',
   },
   {
     label: '性别',
