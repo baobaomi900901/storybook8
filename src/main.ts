@@ -11,11 +11,11 @@ import 'ksw-vue-icon/styles/icon.css';
 import SBExamplePanel from './components/SBExamplePanel.vue';
 
 // 源码
-import install from '../kswux/packages/index';
+// import install from '../kswux/packages/index';
 
 // 打包
-// import install from '../kswux/kingsware-ui/index';
-// import '../kswux/kingsware-ui/style.css';
+import install from '../kswux/kingsware-ui/index';
+import '../kswux/kingsware-ui/style.css';
 
 // npm 包
 // import install from '@ksware/ksw-ux';
