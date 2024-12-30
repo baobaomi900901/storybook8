@@ -18,7 +18,8 @@
         class="w-full"
         showColon
       >
-        <k-form-item label="日期">
+        <k-form-item label="日期" prop="date" label-width="100px">
+          <template #label>日期22212312312312312312312312312312312123123123123</template>
           <k-date-picker
             v-model="value2"
             type="daterange"
@@ -135,7 +136,8 @@
         size="lg"
         showColon
       >
-        <k-form-item label="日期">
+        <k-form-item required label="日期">
+          <template #label>日期222</template>
           <k-date-picker
             v-model="value2"
             type="daterange"
@@ -146,7 +148,7 @@
             :shortcuts="shortcuts"
           />
         </k-form-item>
-        <k-form-item label="变量">
+        <k-form-item required label="变量">
           <k-script-input v-model="text3" :options="data" use-tree class="" />
         </k-form-item>
         <k-form-item label="变量2">
@@ -293,7 +295,7 @@
   </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="tsx" setup>
 import { ref } from 'vue';
 
 const formData = ref({
@@ -438,6 +440,27 @@ const shortcuts2 = [
   },
 ];
 const defaultTime = new Date(2000, 1, 1, 12, 0, 0);
+
+const bbm = () => {
+  const formProp = {
+    label: '采集参数',
+    prop: 'Args',
+    required: true,
+    'label-position': 'left',
+  };
+  return (
+    <KForm>
+      <KFormItem {...formProp}>
+        {{
+          label: ({ label }) => {
+            return <span>{label}</span>;
+          },
+          default: () => '测试内容',
+        }}
+      </KFormItem>
+    </KForm>
+  );
+};
 </script>
 <style scoped>
 .bbm {

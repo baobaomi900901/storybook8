@@ -185,7 +185,7 @@ const tableData = reactive([
   {
     id: 1,
     name: 'Test1',
-    role: 'Develop123',
+    role: ' Develop1',
     sex: 'Man',
     age: 28,
     address: 'test abc',
@@ -225,7 +225,7 @@ const tableData = reactive([
     },
   },
   { id: 4, name: 'Test4', role: 'Designer', sex: 'Women', age: 18, address: 'Shanghai' },
-  { id: 5, name: 'Test5', role: 'Develop123', sex: 'Man', age: 39, address: 'test abc' },
+  { id: 5, name: 'Test5', role: ' Develop1', sex: 'Man', age: 39, address: 'test abc' },
   { id: 6, name: 'Test6', role: 'Test', sex: 'Women', age: 22, address: 'Guangzhou' },
   { id: 7, name: 'Test7', role: 'PM', sex: 'Man', age: 9, address: 'Shanghai' },
   { id: 8, name: 'Test8', role: 'Designer', sex: 'Women', age: 24, address: 'Shanghai' },
@@ -272,14 +272,7 @@ const column2 = ref([
   },
 ]);
 const tableData2 = [
-  {
-    id: 10001,
-    name: 'Test1',
-    role: '    Develop[空格]    ',
-    sex: 'Man',
-    age: 28,
-    address: 'test abc',
-  },
+  { id: 10001, name: 'Test1', role: '       Develop123', sex: 'Man', age: 28, address: 'test abc' },
   { id: 10002, name: 'Test2', role: 'Test', sex: 'Women', age: 22, address: 'Guangzhou' },
   { id: 10003, name: 'Test3', role: 'PM', sex: 'Man', age: 32, address: 'Shanghai' },
   { id: 10004, name: 'Test4', role: 'Designer', sex: 'Women', age: 23, address: 'test abc' },

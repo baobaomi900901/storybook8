@@ -3,15 +3,19 @@ import { ref } from 'vue';
 const width = ref<number>(288);
 const height = ref<number>(288);
 
-console.log('@');
+function initDrag(
+  side: string,
+  event: MouseEvent,
+  changeTarget: HTMLElement,
+  minSize = 288,
+  maxSize = 600,
+) {
+  console.log('initDrag', minSize, maxSize);
 
-function initDrag(side: string, event: MouseEvent, changeTarget: HTMLElement) {
   const startX = event.clientX;
   const startY = event.clientY;
   const startWidth = changeTarget ? changeTarget.offsetWidth : 0;
   const startHeight = changeTarget ? changeTarget.offsetHeight : 0;
-
-  console.log(123);
 
   const doDrag = (e: MouseEvent) => {
     let dx = e.clientX - startX;
@@ -54,11 +58,11 @@ function initDrag(side: string, event: MouseEvent, changeTarget: HTMLElement) {
         'height 0 ease 0 ,  box-shadow 0.2s ease-in-out;',
       );
       changeTarget.style.setProperty('--bgc', `var(--k-blue-300)`);
-      if (height.value > 600) {
-        height.value = 600;
+      if (height.value > maxSize) {
+        height.value = maxSize;
         changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
-      } else if (height.value < 188) {
-        height.value = 188;
+      } else if (height.value < minSize) {
+        height.value = minSize;
         changeTarget.style.setProperty('--bgc', `var(--k-red-300)`);
       }
       changeTarget.style.setProperty('--height', `${height.value}px`);

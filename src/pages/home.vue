@@ -1,10 +1,23 @@
 <template>
   <div id="home" class="home ml-12 mt-2">👆🏻选择组件 or 模板👆🏻</div>
   <router-view />
+  <div>
+    <vxe-table
+      border
+      ref="tableRef2"
+      :row-config="{ keyField: 'id', drag: true }"
+      :column-config="{ resizable: true }"
+      :data="tableData"
+    >
+      <vxe-column title="Name" field="name" width="400"></vxe-column>
+    </vxe-table>
+  </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
+
+const tableData = [{ id: 1, name: '            Node1' }];
 </script>
 <style lang="less" scoped>
 .home {

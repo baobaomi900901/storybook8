@@ -52,7 +52,7 @@
     </div>
     <div
       class="handle-item top"
-      @mousedown.prevent="initDrag('top', $event, RefModuleBottom)"
+      @mousedown.prevent="initDrag('top', $event, RefModuleBottom, 100, 800)"
     ></div>
   </div>
 </template>

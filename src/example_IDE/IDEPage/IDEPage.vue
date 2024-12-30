@@ -10,19 +10,9 @@
     <moduleTop></moduleTop>
     <div class="IDEPage-content flex-1 flex bg-slate-100">
       <moduleLeft title="组件库">
-        <div
-          ref="TreeDemo"
-          class="h-full w-32 bg-blue-50"
-          style="transform: scaleX(2); transform-origin: left center"
-        >
-          <div class="bg-red-500 w-10 h-10 rounded-full" style="transform: scaleX(0.5)"></div>
-          <el-tree-v2
-            style="max-width: 100%"
-            :data="data3"
-            :props="props"
-            :width="300"
-            :height="1100"
-          />
+        <div ref="TreeDemo" class="w-32 bg-blue-50">
+          <div class="bg-red-500 w-10 h-10 rounded-full"></div>
+          <el-tree-v2 style="max-width: 100%" :data="data3" :props="props" :width="300" />
         </div>
       </moduleLeft>
       <div class="flex flex-col flex-1 px-3">

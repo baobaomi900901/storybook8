@@ -6,9 +6,12 @@
 * @version V3.0.0
 !-->
 <template>
-  <div id="pageIDE" class="pageIDE"></div>
-  <Menu :menuItem="data" />
-  <router-view />
+  <div id="pageIDE" class="pageIDE h-full flex flex-col">
+    <Menu :menuItem="data" />
+    <div class="flex-1">
+      <router-view />
+    </div>
+  </div>
 </template>
 
 <script setup>

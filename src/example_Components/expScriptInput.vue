@@ -30,7 +30,6 @@
               :show-mode-switch="showModeSwitch"
               default-mode="string"
               :options="data"
-              height="100px"
               use-tree
               onlyOneInput
               :tree-config="{ expandAll: true }"
@@ -51,7 +50,7 @@
             </k-button>
           </div>
         </div>
-        <k-button main @click="change">change</k-button>
+        <k-button main @click="change">edit</k-button>
         <k-button main @click="changeMode">changeMode</k-button>
       </div>
     </SBExamplePanel>
@@ -136,7 +135,7 @@ function onChange(value: any) {
 
 let i = 1;
 function change() {
-  text.value += `fx(value1-1) fx(zhj) 1111`;
+  text.value += `'''fx(C5C20FD0C698406185E647197D8A8AED)'''`;
 }
 
 function changeMode() {

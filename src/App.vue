@@ -1,5 +1,5 @@
 <template>
-  <div id="App" class="App flex flex-col">
+  <div id="App" class="App flex flex-col h-screen">
     <div
       ref="showMenu"
       class="show-menu flex justify-center items-center text-center"
@@ -23,7 +23,10 @@
       "
     ></span>
     <Menu :menuItem="data" :customSort="true" />
-    <router-view />
+
+    <div class="flex-1">
+      <router-view />
+    </div>
   </div>
 </template>
 

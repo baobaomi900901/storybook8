@@ -34,7 +34,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
     "@iframe-resizer/child": "^5.1.4",
-    "@ksware/ksw-ux": "^0.0.120",
+    "@ksware/ksw-ux": "^0.0.124",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",
