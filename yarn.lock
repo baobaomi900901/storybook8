@@ -264,16 +264,6 @@
   resolved "https://registry.npmmirror.com/@element-plus/icons-vue/-/icons-vue-2.3.1.tgz"
   integrity sha512-XxVUZv48RZAd87ucGS48jPf6pKu0yV5UCg9f4FFwtrYxXOwWuVJo6wOvSLKEoMQKjv8GsX/mhP6UsC1lRwbUWg==
 
-"@esbuild/darwin-arm64@0.21.5":
-  version "0.21.5"
-  resolved "https://registry.npmmirror.com/@esbuild/darwin-arm64/-/darwin-arm64-0.21.5.tgz"
-  integrity sha512-DwqXqZyuk5AiWWf3UfLiRDJ5EDd49zg6O9wclZ7kUMv2WRFr4HKjXp/5t8JZ11QbQfUS6/cRCKGwYhtNAY88kQ==
-
-"@esbuild/darwin-arm64@0.24.2":
-  version "0.24.2"
-  resolved "https://registry.npmmirror.com/@esbuild/darwin-arm64/-/darwin-arm64-0.24.2.tgz"
-  integrity sha512-kj3AnYWc+CekmZnS5IPu9D+HWtUI49hbnyqk0FLEJDbzCIQt7hg7ucF1SQAilhtYpIujfaHr6O0UHlzzSPdOeA==
-
 "@floating-ui/core@^1.6.0":
   version "1.6.8"
   resolved "https://registry.npmmirror.com/@floating-ui/core/-/core-1.6.8.tgz"
@@ -383,10 +373,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@ksware/ksw-ux@^0.0.120":
-  version "0.0.120"
-  resolved "https://registry.npmmirror.com/@ksware/ksw-ux/-/ksw-ux-0.0.120.tgz"
-  integrity sha512-OtClQpawjY0UDel9SO6vWe0stYRH6krA1snfh7kuPl7GTzkzSbBwmUXmlJJyAJ4rdxpNmGwO6yAa3VaKzqUeTg==
+"@ksware/ksw-ux@^0.0.128":
+  version "0.0.128"
+  resolved "https://registry.npmmirror.com/@ksware/ksw-ux/-/ksw-ux-0.0.128.tgz"
+  integrity sha512-L7n3yBGP9RA9v6R1dwROQ3PAVqY2o/sWie4WbXDvF61jhqPzffLMe9cRrtfhIcrW297hqt6QNzhp8rGhNXnlog==
   dependencies:
     dom-zindex "^1.0.6"
     i "^0.3.7"
@@ -609,10 +599,15 @@
   resolved "https://registry.npmmirror.com/@sxzz/popperjs-es/-/popperjs-es-2.11.7.tgz"
   integrity sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==
 
-"@rollup/rollup-darwin-arm64@4.29.0":
+"@rollup/rollup-win32-x64-msvc@^4.29.1":
+  version "4.29.1"
+  resolved "https://registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.29.1.tgz"
+  integrity sha512-+10CMg9vt1MoHj6x1pxyjPSMjHTIlqs8/tBztXvPAx24SKs9jwVnKqHJumlH/IzhaPUaj3T6T6wfZr8okdXaIg==
+
+"@rollup/rollup-win32-x64-msvc@4.29.0":
   version "4.29.0"
-  resolved "https://registry.npmmirror.com/@rollup/rollup-darwin-arm64/-/rollup-darwin-arm64-4.29.0.tgz"
-  integrity sha512-I1ZucWPVS96hjAsMSJiGosHTqMulMynrmTN+Xde5OsLcU5SjE0xylBmQ/DbB2psJ+HasINrJYz8HQpojtAw2eA==
+  resolved "https://registry.npmmirror.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.29.0.tgz"
+  integrity sha512-GsFvcTZ7Yj9k94Qm0qgav7pxmQ7lQDR9NjoelRaxeV1UF6JSDfanR/2tHZ8hS7Ps4KPIVf5AElYPRPmN/Q0ZkQ==
 
 "@sigstore/bundle@^3.0.0":
   version "3.0.0"
@@ -633,8 +628,6 @@
 
 "@sigstore/sign@^3.0.0":
   version "3.0.0"
-  resolved "https://registry.npmmirror.com/@sigstore/sign/-/sign-3.0.0.tgz"
-  integrity sha512-UjhDMQOkyDoktpXoc5YPJpJK6IooF2gayAr5LvXI4EL7O0vd58okgfRcxuaH+YTdhvb5aa1Q9f+WJ0c2sVuYIw==
   dependencies:
     "@sigstore/bundle" "^3.0.0"
     "@sigstore/core" "^2.0.0"
@@ -653,8 +646,6 @@
 
 "@sigstore/verify@^2.0.0":
   version "2.0.0"
-  resolved "https://registry.npmmirror.com/@sigstore/verify/-/verify-2.0.0.tgz"
-  integrity sha512-Ggtq2GsJuxFNUvQzLoXqRwS4ceRfLAJnrIHUDrzAD0GgnOhwujJkKkxM/s5Bako07c3WtAs/sZo5PJq7VHjeDg==
   dependencies:
     "@sigstore/bundle" "^3.0.0"
     "@sigstore/core" "^2.0.0"
@@ -973,8 +964,6 @@
 
 "@tufjs/models@3.0.1":
   version "3.0.1"
-  resolved "https://registry.npmmirror.com/@tufjs/models/-/models-3.0.1.tgz"
-  integrity sha512-UUYHISyhCU3ZgN8yaear3cGATHb3SMuKHsQ/nVbHXcmnBf+LzQ/cQfhNG+rfaSHgqGKNEm2cOCLVLELStUQ1JA==
   dependencies:
     "@tufjs/canonical-json" "2.0.0"
     minimatch "^9.0.5"
@@ -1279,8 +1268,6 @@
 
 abbrev@^2.0.0:
   version "2.0.0"
-  resolved "https://registry.npmmirror.com/abbrev/-/abbrev-2.0.0.tgz"
-  integrity sha512-6/mh1E2u2YgEsCHdY0Yx5oW+61gZU+1vXaoiHHrpKeuRNNgFvS+/jrwHiQhB5apAf5oB7UB7E19ol2R2LKH8hQ==
 
 abbrev@^3.0.0:
   version "3.0.0"
@@ -2108,8 +2095,6 @@ fraction.js@^4.3.7:
 
 fs-minipass@^2.0.0:
   version "2.1.0"
-  resolved "https://registry.npmmirror.com/fs-minipass/-/fs-minipass-2.1.0.tgz"
-  integrity sha512-V/JgOLFCS+R6Vcq0slCuaeWEdNC3ouDlJMNIsacH2VtALiu9mV4LPrHc5cDl8k5aw6J8jwgWWpiTo5RYhmIzvg==
   dependencies:
     minipass "^3.0.0"
 
@@ -2119,11 +2104,6 @@ fs-minipass@^3.0.0, fs-minipass@^3.0.3:
   integrity sha512-XUBA9XClHbnJWSfBzjkm6RvPsyg3sryZt06BEQoXcF7EK/xpGaQYJgQKDJSUH5SGZ76Y7pFx1QBnXz09rU5Fbw==
   dependencies:
     minipass "^7.0.3"
-
-fsevents@~2.3.2, fsevents@~2.3.3:
-  version "2.3.3"
-  resolved "https://registry.npmmirror.com/fsevents/-/fsevents-2.3.3.tgz"
-  integrity sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==
 
 function-bind@^1.1.2:
   version "1.1.2"
@@ -2463,8 +2443,6 @@ isexe@^2.0.0:
 
 isexe@^3.1.1:
   version "3.1.1"
-  resolved "https://registry.npmmirror.com/isexe/-/isexe-3.1.1.tgz"
-  integrity sha512-LpB/54B+/2J5hqQ7imZHfdU31OlgQqx7ZicVlkm9kzg9/w8GKLEcFfJl/t7DCEDueOyBAD6zCCwTO6Fzs0NoEQ==
 
 jackspeak@^3.1.2:
   version "3.4.3"
@@ -2883,8 +2861,6 @@ minipass-sized@^1.0.3:
 
 minipass@^3.0.0:
   version "3.3.6"
-  resolved "https://registry.npmmirror.com/minipass/-/minipass-3.3.6.tgz"
-  integrity sha512-DxiNidxSEK+tHG6zOIklvNOwm3hvCrbUrdtzY74U6HKTJxvIDfOUL5W5P2Ghd3DTkhhKPYGqeNUIh5qcM4YBfw==
   dependencies:
     yallist "^4.0.0"
 
@@ -2895,8 +2871,6 @@ minipass@^3.0.0:
 
 minipass@^5.0.0:
   version "5.0.0"
-  resolved "https://registry.npmmirror.com/minipass/-/minipass-5.0.0.tgz"
-  integrity sha512-3FnjYuehv9k6ovOEbyOswadCDPX1piCfhV8ncmYtHOjuPwylVWsghTLo7rabjC3Rx5xD4HDx8Wm1xnMF7S5qFQ==
 
 minizlib@^2.1.1:
   version "2.1.2"
@@ -2963,8 +2937,6 @@ needle@^3.1.0:
 
 negotiator@^1.0.0:
   version "1.0.0"
-  resolved "https://registry.npmmirror.com/negotiator/-/negotiator-1.0.0.tgz"
-  integrity sha512-8Ofs/AUQh8MaEcrlq5xOX0CQ9ypTF5dl78mjlMNfOK08fzpgTHQRQPBxcPlEtIw0yRpws+Zo/3r+5WRby7u3Gg==
 
 node-gyp@^11.0.0:
   version "11.0.0"
@@ -3232,8 +3204,6 @@ pacote@^19.0.0, pacote@^19.0.1:
 
 pacote@^20.0.0:
   version "20.0.0"
-  resolved "https://registry.npmmirror.com/pacote/-/pacote-20.0.0.tgz"
-  integrity sha512-pRjC5UFwZCgx9kUFDVM9YEahv4guZ1nSLqwmWiLUnDbGsjs+U5w7z6Uc8HNR1a6x8qnu5y9xtGE6D1uAuYz+0A==
   dependencies:
     "@npmcli/git" "^6.0.0"
     "@npmcli/installed-package-contents" "^3.0.0"
@@ -3858,8 +3828,6 @@ spdx-exceptions@^2.1.0:
 
 spdx-expression-parse@^3.0.0:
   version "3.0.1"
-  resolved "https://registry.npmmirror.com/spdx-expression-parse/-/spdx-expression-parse-3.0.1.tgz"
-  integrity sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==
   dependencies:
     spdx-exceptions "^2.1.0"
     spdx-license-ids "^3.0.0"
@@ -4056,8 +4024,6 @@ tar@^6.1.11, tar@^6.2.1:
 
 tar@^7.4.3:
   version "7.4.3"
-  resolved "https://registry.npmmirror.com/tar/-/tar-7.4.3.tgz"
-  integrity sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==
   dependencies:
     "@isaacs/fs-minipass" "^4.0.0"
     chownr "^3.0.0"
@@ -4345,19 +4311,19 @@ vue-tsc@^2.0.19:
     "@vue/server-renderer" "3.5.13"
     "@vue/shared" "3.5.13"
 
-vxe-pc-ui@^4.0.82, vxe-pc-ui@^4.3.40:
-  version "4.3.40"
-  resolved "https://registry.npmmirror.com/vxe-pc-ui/-/vxe-pc-ui-4.3.40.tgz"
-  integrity sha512-rhHBweoK0iiDqtHSogUprXA5dnSFYEHIYjnKwsp4/Tx5loROpYbBnq6+VcrpZSaJRkpwIsAHbbTHzNxsrCpoQA==
+vxe-pc-ui@^4.0.82, vxe-pc-ui@^4.3.40, vxe-pc-ui@^4.3.43:
+  version "4.3.47"
+  resolved "https://registry.npmjs.org/vxe-pc-ui/-/vxe-pc-ui-4.3.47.tgz"
+  integrity sha512-SGcbtz0uIcw0FIei4Lrr4ESqMUVPjtW2XuBsikC1GlM4RGzufwT9CpU3AH3m7zIeKaUsI3V+JPShbR9GvTgbpg==
   dependencies:
     "@vxe-ui/core" "^4.0.23"
 
-vxe-table@^4.7.96, vxe-table@^4.9.22, vxe-table@^4.9.33:
-  version "4.9.33"
-  resolved "https://registry.npmmirror.com/vxe-table/-/vxe-table-4.9.33.tgz"
-  integrity sha512-KhLUYeCSL4319rcSS8SFkWeFf+pzCBtHm8ytmwiGnj45M7pYoXWR2fpmvR10pEdKsQgM8MDHxqrxdMejT6yKyw==
+vxe-table@^4.7.96, vxe-table@^4.9.35:
+  version "4.9.35"
+  resolved "https://registry.npmmirror.com/vxe-table/-/vxe-table-4.9.35.tgz"
+  integrity sha512-UYeDISsvx680HJ9PAas9UH2+lra0MtyvqvyEkh/5dLxUQTz8FF2xoSF3+dug0mCyYEoqdFYGarfk1rM8b10Qcw==
   dependencies:
-    vxe-pc-ui "^4.3.40"
+    vxe-pc-ui "^4.3.43"
 
 walk-up-path@^3.0.1:
   version "3.0.1"

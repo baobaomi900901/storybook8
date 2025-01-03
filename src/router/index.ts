@@ -32,6 +32,7 @@ import {
   expDateTimePicker,
   expDropdown,
   expIconPopver,
+  expFormNest,
 } from '../example_components';
 
 import { expTreeTable, useAntStyle } from '../example_components/expTreeTable';
@@ -91,6 +92,7 @@ const routes = [
       { path: 'date-time-picker', component: expDateTimePicker, name: 'date-time-picker' },
       { path: 'dropdown', component: expDropdown, name: 'dropdown' },
       { path: 'icon-popover', component: expIconPopver, name: 'icon-popover' },
+      { path: 'form-nest', component: expFormNest, name: 'form-nest' },
     ],
   },
   // template

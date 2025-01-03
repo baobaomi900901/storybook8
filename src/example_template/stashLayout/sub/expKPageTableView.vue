@@ -41,7 +41,7 @@
           <KButton main>新增</KButton>
         </div>
       </template>
-      <div :style="{ height: '100%', width: '100%' }">
+      <div class="bg-red-500">
         <KTreeTable :data="tableData2" :column="column2" use-ant-style>
           <template #enabled="{ row }">
             <KTag v-if="row.enabled === 1" type="success">启用</KTag>
