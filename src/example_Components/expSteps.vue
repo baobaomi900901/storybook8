@@ -29,9 +29,10 @@
       </div>
     </SBExamplePanel>
     <SBExamplePanel label="按钮类型" open>
-      <KSteps :active="active2" align-center capsule>
+      <KSteps :active="active" align-center capsule>
         <KStep v-for="item in ['基本信息', '工具配置']" :title="item" :key="item" />
       </KSteps>
+      <k-button style="margin-top: 12px" @click="next">Next step</k-button>
     </SBExamplePanel>
   </div>
 </template>
