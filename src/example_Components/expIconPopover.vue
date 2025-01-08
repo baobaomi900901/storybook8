@@ -7,19 +7,19 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="epx-title">iconPopver</div>
+    <div class="epx-title">iconPopover</div>
     <SBExamplePanel label="默认" open>
-      <k-icon-popver @updataIcon="handleUpdate">
+      <k-icon-popover @updateIcon="handleUpdate">
         <div class="my-box">
-          <component :is="searchContent" />
+          <component v-if="searchContent" :is="searchContent" />
         </div>
-      </k-icon-popver>
+      </k-icon-popover>
     </SBExamplePanel>
   </div>
 </template>
 
 <script lang="tsx" setup>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 
 let searchContent = ref('');
 const handleUpdate = (copyContent: string) => {

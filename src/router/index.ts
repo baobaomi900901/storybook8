@@ -31,7 +31,7 @@ import {
   expScriptInput,
   expDateTimePicker,
   expDropdown,
-  expIconPopver,
+  expIconPopover,
   expFormNest,
 } from '../example_components';
 
@@ -91,7 +91,7 @@ const routes = [
       { path: 'script-input', component: expScriptInput, name: 'script-input' },
       { path: 'date-time-picker', component: expDateTimePicker, name: 'date-time-picker' },
       { path: 'dropdown', component: expDropdown, name: 'dropdown' },
-      { path: 'icon-popover', component: expIconPopver, name: 'icon-popover' },
+      { path: 'icon-popover', component: expIconPopover, name: 'icon-popover' },
       { path: 'form-nest', component: expFormNest, name: 'form-nest' },
     ],
   },
