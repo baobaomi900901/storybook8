@@ -30,8 +30,8 @@
             :shortcuts="shortcuts"
           />
         </k-form-item>
-        <k-form-item label="变量">
-          <k-script-input v-model="text" :options="data" use-tree class="" />
+        <k-form-item label="变量_1">
+          <k-script-input v-model="text" :options="data" checkVariableName use-tree class="" />
         </k-form-item>
         <k-form-item label="变量2">
           <k-script-input v-model="text2" :options="data" use-tree class="" />
@@ -148,7 +148,7 @@
             :shortcuts="shortcuts"
           />
         </k-form-item>
-        <k-form-item required label="变量">
+        <k-form-item required label="变量_2">
           <k-script-input v-model="text3" :options="data" use-tree class="" />
         </k-form-item>
         <k-form-item label="变量2">

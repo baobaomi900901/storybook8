@@ -24,6 +24,7 @@ import { ref } from 'vue';
 let searchContent = ref('');
 const handleUpdate = (copyContent: string) => {
   searchContent.value = copyContent;
+  console.log(copyContent);
 };
 </script>
 <style lang="less">

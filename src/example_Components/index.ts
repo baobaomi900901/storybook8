@@ -45,6 +45,10 @@ import expDropdown from './expDropdown.vue';
 import expIconPopover from './expIconPopover.vue';
 // expFormNest
 import expFormNest from './expFormNest.vue';
+// expKeyboard
+import expKeyboard from './expKeyboard.vue';
+// expNotification
+import expNotification from './expNotification.vue';
 
 export {
   expButton,
@@ -75,4 +79,6 @@ export {
   expDropdown,
   expIconPopover,
   expFormNest,
+  expKeyboard,
+  expNotification,
 };

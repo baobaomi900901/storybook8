@@ -33,6 +33,8 @@ import {
   expDropdown,
   expIconPopover,
   expFormNest,
+  expKeyboard,
+  expNotification,
 } from '../example_components';
 
 import { expTreeTable, useAntStyle } from '../example_components/expTreeTable';
@@ -93,6 +95,8 @@ const routes = [
       { path: 'dropdown', component: expDropdown, name: 'dropdown' },
       { path: 'icon-popover', component: expIconPopover, name: 'icon-popover' },
       { path: 'form-nest', component: expFormNest, name: 'form-nest' },
+      { path: 'keyboard', component: expKeyboard, name: 'keyboard' },
+      { path: 'notification', component: expNotification, name: 'notification' },
     ],
   },
   // template

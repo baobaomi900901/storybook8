@@ -6,7 +6,7 @@
 * @version V3.0.0
 !-->
 <template>
-  <div class="module_bottom bg-white relative flex flex-col-reverse rounded-tl-lg rounded-tr-lg">
+  <div class="module_bottom relative flex flex-col-reverse rounded-tl-lg rounded-tr-lg">
     <div class="menu-container h-10 flex items-center gap-4 px-4 text-sm">
       <div
         v-for="item in props.items"

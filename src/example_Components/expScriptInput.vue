@@ -7,9 +7,6 @@
 !-->
 <template>
   <div class="epx-container">
-    <div>
-      <IconRPADataColor />
-    </div>
     <div class="epx-title">脚本输入框</div>
     <SBExamplePanel label="默认" open class="">
       <div class="flex flex-col gap-4 justify-center items-center">
@@ -22,7 +19,7 @@
               toggleMode
             </k-button>
           </div>
-          <div class="w-60">
+          <div class="w-80">
             <k-script-input
               v-model="text"
               ref="scriptInput"
@@ -32,8 +29,10 @@
               :options="data"
               use-tree
               onlyOneInput
+              checkVariableName
               :tree-config="{ expandAll: true }"
               script-key="id"
+              :showPassword="showPassword"
               @change="onChange"
             >
               <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->
@@ -52,6 +51,7 @@
         </div>
         <k-button main @click="change">edit</k-button>
         <k-button main @click="changeMode">changeMode</k-button>
+        <k-button main @click="showPassword = !showPassword">Password</k-button>
       </div>
     </SBExamplePanel>
   </div>
@@ -117,11 +117,156 @@ const data = [
     children: [],
     _X_ROW_CHILD: [],
   },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex4',
+    fxName: 'fx(LoopIndex4)',
+    label: 'LoopIndex4',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex5',
+    fxName: 'fx(LoopIndex5)',
+    label: 'LoopIndex5',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex6',
+    fxName: 'fx(LoopIndex6)',
+    label: 'LoopIndex6',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex7',
+    fxName: 'fx(LoopIndex7)',
+    label: 'LoopIndex7',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex8',
+    fxName: 'fx(LoopIndex8)',
+    label: 'LoopIndex8',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex9',
+    fxName: 'fx(LoopIndex9)',
+    label: 'LoopIndex9',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex10',
+    fxName: 'fx(LoopIndex10)',
+    label: 'LoopIndex10',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex11',
+    fxName: 'fx(LoopIndex11)',
+    label: 'LoopIndex11',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex12',
+    fxName: 'fx(LoopIndex12)',
+    label: 'LoopIndex12',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex13',
+    fxName: 'fx(LoopIndex13)',
+    label: 'LoopIndex13',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex14',
+    fxName: 'fx(LoopIndex14)',
+    label: 'LoopIndex14',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
+  {
+    id: 'C5C20FD0C698406185E647197D8A8AED',
+    value: 'LoopIndex15',
+    fxName: 'fx(LoopIndex15)',
+    label: 'LoopIndex15',
+    name: 'LoopIndex',
+    type: '1',
+    pid: 'LoopIndex2',
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+  },
 ];
 
 const scriptInput = ref();
-const showPopperSwitch = ref(false);
-const showModeSwitch = ref(false);
+const showPopperSwitch = ref(true);
+const showModeSwitch = ref(true);
+const showPassword = ref(false);
 
 const text = ref('');
 

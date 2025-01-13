@@ -11,6 +11,7 @@
 
     <SBExamplePanel label="默认" open>
       <div class="w-80 flex flex-col gap-2">
+        <k-input v-model="value" placeholder="请输入内容"></k-input>
         <KInput v-model="value" size="sm" placeholder="请输入内容">
           <template #prepend>
             <KSelect v-model="selectValue">

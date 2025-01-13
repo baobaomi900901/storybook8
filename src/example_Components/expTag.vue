@@ -11,7 +11,7 @@
 
     <SBExamplePanel label="默认" open class="col-span-4">
       <div class="flex items-start gap-2">
-        <KTag color="#93c5fd">待执行</KTag>
+        <KTag color="#93c5fd" :showOverflow="true">待执行待执行123</KTag>
         <KTag color="#d3d4d5">禁用</KTag>
         <KTag color="primary">正在执行</KTag>
         <KTag color="success">成功</KTag>
@@ -23,7 +23,7 @@
 
     <SBExamplePanel label="point" open class="col-span-4">
       <div class="flex items-start gap-2">
-        <KTag point>default</KTag>
+        <KTag point showOverflow>defaultdefaultdefault</KTag>
         <KTag type="primary" point>primary</KTag>
         <KTag type="success" point>success</KTag>
         <KTag type="warning" point>warning</KTag>
@@ -32,7 +32,7 @@
       </div>
     </SBExamplePanel>
 
-    <SBExamplePanel label="border" open class="col-span-4">
+    <!-- <SBExamplePanel label="border" open class="col-span-4">
       <div class="flex flex-col gap-4">
         <div class="flex items-start gap-2">
           <KTag size="lg" closable>default</KTag>
@@ -52,11 +52,9 @@
           <KTag size="lg" point closable>default</KTag>
           <KTag size="lg" type="success" point closable>default</KTag>
           <KTag size="lg" type="warning" point closable>default</KTag>
-          <!-- <KTag size="lg" type="info" point closable>default</KTag> -->
-          <!-- <KTag size="lg" type="danger" point closable>default</KTag> -->
         </div>
       </div>
-    </SBExamplePanel>
+    </SBExamplePanel> -->
 
     <!-- <SBExamplePanel label="closable" open>
       <div class="flex items-start gap-2">
@@ -92,7 +90,6 @@
 </template>
 
 <script setup>
-import { KTag } from '@ksware/ksw-ux';
 import { ref, reactive } from 'vue';
 
 const value = ref();

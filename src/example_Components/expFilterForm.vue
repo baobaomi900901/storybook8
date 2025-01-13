@@ -65,6 +65,32 @@ const items = ref([
     ],
   },
   {
+    label: '吃点啥',
+    type: 'select',
+    prop: 'food',
+    value: '0',
+    options: [
+      { label: '鸡蛋', value: '0' },
+      { label: '馒头', value: '1' },
+      { label: '面包', value: '2' },
+      { label: '烧麦', value: '3' },
+      { label: '花卷', value: '4' },
+      { label: '小笼包', value: '5' },
+      { label: '大肉包', value: '6' },
+      { label: '蛋挞', value: '7' },
+      { label: '油条', value: '8' },
+    ],
+    attrs: {
+      multiple: true,
+      clearable: true,
+      collapseTags: true,
+      maxCollapseTags: 3,
+      onChange: (value: any) => {
+        console.log('onChange =>>', value);
+      },
+    },
+  },
+  {
     label: '职业',
     type: 'select',
     prop: 'career',

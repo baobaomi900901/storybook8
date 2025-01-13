@@ -27,7 +27,7 @@
         <div class="flex flex-col gap-2">
           <k-script-input
             v-model="text"
-            ref="scriptInput"
+            ref="scriptInputBBM"
             :options="data"
             use-tree
             class="vvn w-full"
@@ -58,6 +58,7 @@
             <template #append></template>
             <!-- <template #append><k-button main @click="clear">Clear</k-button></template> -->
           </k-script-input>
+          <k-input ref="bbm"></k-input>
           <k-script-input
             v-model="text4"
             ref="scriptInput"
@@ -82,6 +83,7 @@
           </k-script-input>
         </div>
         <template #footer>
+          <k-button @click="scriptInputBBM.blur()">blur</k-button>
           <k-button @click="dialogVisible2 = false">Cancel</k-button>
           <k-button main @click="dialogVisible2 = false">Confirm</k-button>
         </template>
@@ -91,7 +93,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, onMounted, nextTick, watch } from 'vue';
 import { KMessageBox, KMessage } from '@ksware/ksw-ux';
 // import { KMessageBox, KMessage } from '../../kswux/packages';
 import { ElMessageBox } from 'element-plus';
@@ -202,5 +204,18 @@ const text2 = ref('');
 const text3 = ref('');
 const text4 = ref('');
 const text5 = ref('');
+
+const scriptInputBBM = ref();
+
+watch(
+  () => dialogVisible2.value,
+  () => {
+    if (dialogVisible2.value) {
+      nextTick(() => {
+        scriptInputBBM.value.focus();
+      });
+    }
+  },
+);
 </script>
 <style scoped></style>

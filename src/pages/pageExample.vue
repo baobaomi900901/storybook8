@@ -1,6 +1,5 @@
 <template>
   <div :style="{ height: '300px' }" class="m-20">
-    <IconArrowToLeft />
     <k-tree-table :data="tableData" :column="column" :show-page="false" :widgets="widgets" border>
       <template #custom1>custom1插槽</template>
     </k-tree-table>
@@ -9,7 +8,6 @@
 
 <script lang="tsx" setup>
 import { ref, reactive } from 'vue';
-import { KButton } from '@ksware/ksw-ux';
 
 const widgets = ref(['search', 'refresh', 'filter', 'transfer']);
 
