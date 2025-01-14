@@ -4,6 +4,9 @@
 * @author userName
 * @date 2024-07-06 16:05:58
 * @version V3.0.0
+* onlyOneInput, 默认 false  // 限制只能选择一个值
+* checkVariableName, 默认 false  // 限制变量名只能包含字母、数字、下划线
+* showPassword, 默认 false  // 密码输入模式
 !-->
 <template>
   <div class="epx-container">
@@ -28,11 +31,9 @@
               default-mode="string"
               :options="data"
               use-tree
-              onlyOneInput
-              checkVariableName
+              valueType="boolean"
               :tree-config="{ expandAll: true }"
               script-key="id"
-              :showPassword="showPassword"
               @change="onChange"
             >
               <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->

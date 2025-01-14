@@ -30,66 +30,96 @@
       </k-filter-form>
     </div>
   </div>
+  <k-button @click="getformdate">getFormData</k-button>
 </template>
 
 <script lang="tsx" setup>
 import { ref, nextTick } from 'vue';
 
 const filterForm = ref<any>();
+const bbm = ref<any>();
 
 nextTick(() => {
   // console.log(filterForm.value);
 });
 
 const items = ref([
+  // {
+  //   label: '姓名123456789012345678901234567890',
+  //   type: 'input',
+  //   prop: 'name',
+  //   value: '张三',
+  //   'label-width': '100px',
+  // },
+  // {
+  //   label: '性别',
+  //   type: 'radio',
+  //   prop: 'gender',
+  //   // 作用与控件本身
+  //   attrs: {
+  //     size: 'lg',
+  //     button: true,
+  //   },
+  //   value: '男', // 默认值
+  //   options: [
+  //     { label: '男', value: '男', color: 'red' }, // 兼容子控件属性
+  //     { label: '女', value: '女' },
+  //   ],
+  // },
   {
-    label: '姓名123456789012345678901234567890',
-    type: 'input',
-    prop: 'name',
-    value: '张三',
-    'label-width': '100px',
-  },
-  {
-    label: '性别',
-    type: 'radio',
-    prop: 'gender',
-    // 作用与控件本身
-    attrs: {
-      size: 'lg',
-      button: true,
-    },
-    value: '男', // 默认值
-    options: [
-      { label: '男', value: '男', color: 'red' }, // 兼容子控件属性
-      { label: '女', value: '女' },
-    ],
-  },
-  {
-    label: '吃点啥',
+    label: '吃点啥JJ',
     type: 'select',
-    prop: 'food',
+    prop: 'foodJJ',
     value: '0',
-    options: [
-      { label: '鸡蛋', value: '0' },
-      { label: '馒头', value: '1' },
-      { label: '面包', value: '2' },
-      { label: '烧麦', value: '3' },
-      { label: '花卷', value: '4' },
-      { label: '小笼包', value: '5' },
-      { label: '大肉包', value: '6' },
-      { label: '蛋挞', value: '7' },
-      { label: '油条', value: '8' },
-    ],
-    attrs: {
-      multiple: true,
-      clearable: true,
-      collapseTags: true,
-      maxCollapseTags: 3,
-      onChange: (value: any) => {
-        console.log('onChange =>>', value);
-      },
+    render: (formData) => {
+      return (
+        <KSelectV2
+          multiple={true}
+          clearable={true}
+          collapseTags={true}
+          maxCollapseTags={6}
+          teleported={true}
+          v-model={formData.foodJJ}
+          options={[
+            { label: '鸡蛋', value: '0' },
+            { label: '馒头', value: '1' },
+            { label: '面包', value: '2' },
+            { label: '烧麦', value: '3' },
+            { label: '花卷', value: '4' },
+            { label: '小笼包', value: '5' },
+            { label: '大肉包', value: '6' },
+            { label: '蛋挞', value: '7' },
+            { label: '油条', value: '8' },
+          ]}></KSelectV2>
+      );
     },
   },
+  // {
+  //   label: '吃点啥',
+  //   type: 'select',
+  //   prop: 'food',
+  //   value: '0',
+  //   options: [
+  //     { label: '鸡蛋', value: '0' },
+  //     { label: '馒头', value: '1' },
+  //     { label: '面包', value: '2' },
+  //     { label: '烧麦', value: '3' },
+  //     { label: '花卷', value: '4' },
+  //     { label: '小笼包', value: '5' },
+  //     { label: '大肉包', value: '6' },
+  //     { label: '蛋挞', value: '7' },
+  //     { label: '油条', value: '8' },
+  //   ],
+  //   attrs: {
+  //     multiple: true,
+  //     clearable: true,
+  //     collapseTags: true,
+  //     maxCollapseTags: 6,
+  //     onChange: (value: any) => {
+  //       console.log('onChange =>>', value);
+  //     },
+  //   },
+  // },
   {
     label: '职业',
     type: 'select',
@@ -200,4 +230,8 @@ const items = ref([
     value: '这是一个示例评论',
   },
 ]);
+
+function getformdate(params: type) {
+  console.log(filterForm.value.getFormData());
+}
 </script>
