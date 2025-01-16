@@ -35,6 +35,8 @@
               :tree-config="{ expandAll: true }"
               script-key="id"
               @change="onChange"
+              placeholder="请输入脚本"
+              disabled
             >
               <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->
               <template #append><k-button @click="clear">Clear</k-button></template>
@@ -61,6 +63,7 @@
 <script lang="tsx" setup>
 import SBExamplePanel from '@src/components/SBExamplePanel.vue';
 import { computed, ref, watch, nextTick } from 'vue';
+import Tag from '../../kswux/packages/components/tag/tag.vue';
 
 // optional 控制是否可选
 // const data = [
@@ -82,6 +85,30 @@ import { computed, ref, watch, nextTick } from 'vue';
 // ];
 
 const data = [
+  {
+    id: 'bbm0001',
+    value: 'bbm1value',
+    label: 'bbm1label',
+    name: 'bbm1name',
+    type: null,
+    pid: null,
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+    tag: false,
+  },
+  {
+    id: 'bbm0002',
+    value: 'bbm2value',
+    label: 'bbm2label',
+    name: 'bbm2name',
+    type: null,
+    pid: null,
+    icon: 'IconFn',
+    children: [],
+    _X_ROW_CHILD: [],
+    tag: false,
+  },
   {
     id: '051DC769F4404585A4F097D198647597',
     value: 'LoopIndex',
