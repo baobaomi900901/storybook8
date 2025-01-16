@@ -11,6 +11,7 @@
 <template>
   <div class="epx-container">
     <div class="epx-title">脚本输入框</div>
+    <k-input disabled></k-input>
     <SBExamplePanel label="默认" open class="">
       <div class="flex flex-col gap-4 justify-center items-center">
         <div class="flex gap-4">
@@ -31,12 +32,11 @@
               default-mode="string"
               :options="data"
               use-tree
-              valueType="boolean"
               :tree-config="{ expandAll: true }"
               script-key="id"
               @change="onChange"
               placeholder="请输入脚本"
-              disabled
+              :optionRepeatable="false"
             >
               <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->
               <template #append><k-button @click="clear">Clear</k-button></template>

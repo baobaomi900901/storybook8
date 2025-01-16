@@ -77,11 +77,11 @@ const items = ref([
           multiple={true}
           clearable={true}
           collapseTags={true}
-          maxCollapseTags={6}
+          maxCollapseTags={1}
           teleported={true}
           v-model={formData.foodJJ}
           options={[
-            { label: '鸡蛋', value: '0' },
+            { label: '鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋鸡蛋', value: '0' },
             { label: '馒头', value: '1' },
             { label: '面包', value: '2' },
             { label: '烧麦', value: '3' },
