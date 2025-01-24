@@ -10,20 +10,67 @@
 !-->
 <template>
   <div class="epx-container">
-    <div class="epx-title">脚本输入框</div>
-    <k-input disabled></k-input>
     <SBExamplePanel label="默认" open class="">
-      <div class="flex flex-col gap-4 justify-center items-center">
-        <div class="flex gap-4">
-          <div class="flex flex-col gap-4 justify-center items-center">
-            <k-button main @click="showModeSwitch = !showModeSwitch">
-              {{ showModeSwitch ? '显示模式切换' : '隐藏模式切换' }}
-            </k-button>
-            <k-button @click="toggleMode" :disabled="!showModeSwitch" class="!ml-0">
-              toggleMode
-            </k-button>
+      <div class="flex flex-col gap-4">
+        <k-select v-model="selectValue" placeholder="请选择" class="!w-80">
+          <k-option value="">空</k-option>
+          <k-option value="number">number</k-option>
+          <k-option value="string">string</k-option>
+          <k-option value="boolean">boolean</k-option>
+        </k-select>
+
+        <div class="flex flex-col gap-4 justify-center items-center">
+          <div class="flex gap-4">
+            <div class="flex flex-col gap-4 justify-center items-center">
+              <k-button main @click="showModeSwitch = !showModeSwitch">
+                {{ showModeSwitch ? '显示模式切换' : '隐藏模式切换' }}
+              </k-button>
+              <k-button @click="toggleMode" :disabled="!showModeSwitch" class="!ml-0">
+                toggleMode
+              </k-button>
+            </div>
+            <div class="w-80">
+              <k-script-input
+                v-model="text"
+                ref="scriptInput"
+                :show-popper-switch="showPopperSwitch"
+                :show-mode-switch="showModeSwitch"
+                default-mode="string"
+                :options="data"
+                use-tree
+                :onlyOneInput="['expression', 'string']"
+                :tree-config="{ expandAll: true }"
+                script-key="id"
+                @change="onChange"
+                placeholder="请输入脚本"
+                :optionRepeatable="false"
+                checkContentType
+                :contentType="selectValue"
+                :min="2"
+                :max="100"
+              >
+                <!-- contentType="string" -->
+                <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->
+                <template #append><k-button @click="clear">Clear</k-button></template>
+              </k-script-input>
+            </div>
+
+            <div class="flex flex-col gap-4 justify-center items-center">
+              <k-button main @click="showPopperSwitch = !showPopperSwitch">
+                {{ showPopperSwitch ? '显示弹窗' : '隐藏弹窗' }}
+              </k-button>
+              <k-button @click="showPopper" :disabled="!showPopperSwitch" class="!ml-0">
+                showPopper
+              </k-button>
+            </div>
           </div>
-          <div class="w-80">
+          <k-button main @click="change">edit</k-button>
+          <k-button main @click="changeMode">changeMode</k-button>
+          <k-button main @click="showPassword = !showPassword">Password</k-button>
+        </div>
+
+        <k-form>
+          <k-form-item label="脚本输入框">
             <k-script-input
               v-model="text"
               ref="scriptInput"
@@ -32,29 +79,24 @@
               default-mode="string"
               :options="data"
               use-tree
+              :onlyOneInput="['expression', 'string']"
               :tree-config="{ expandAll: true }"
               script-key="id"
               @change="onChange"
               placeholder="请输入脚本"
               :optionRepeatable="false"
+              checkContentType
+              :contentType="selectValue"
+              :min="2"
+              :max="100"
             >
-              <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->
               <template #append><k-button @click="clear">Clear</k-button></template>
             </k-script-input>
-          </div>
-
-          <div class="flex flex-col gap-4 justify-center items-center">
-            <k-button main @click="showPopperSwitch = !showPopperSwitch">
-              {{ showPopperSwitch ? '显示弹窗' : '隐藏弹窗' }}
-            </k-button>
-            <k-button @click="showPopper" :disabled="!showPopperSwitch" class="!ml-0">
-              showPopper
-            </k-button>
-          </div>
-        </div>
-        <k-button main @click="change">edit</k-button>
-        <k-button main @click="changeMode">changeMode</k-button>
-        <k-button main @click="showPassword = !showPassword">Password</k-button>
+          </k-form-item>
+          <k-form-item label="输入框">
+            <k-input></k-input>
+          </k-form-item>
+        </k-form>
       </div>
     </SBExamplePanel>
   </div>
@@ -64,6 +106,8 @@
 import SBExamplePanel from '@src/components/SBExamplePanel.vue';
 import { computed, ref, watch, nextTick } from 'vue';
 import Tag from '../../kswux/packages/components/tag/tag.vue';
+
+const selectValue = ref('');
 
 // optional 控制是否可选
 // const data = [
@@ -86,6 +130,7 @@ import Tag from '../../kswux/packages/components/tag/tag.vue';
 
 const data = [
   {
+    // 非tag数据
     id: 'bbm0001',
     value: 'bbm1value',
     label: 'bbm1label',
@@ -98,6 +143,7 @@ const data = [
     tag: false,
   },
   {
+    // 非tag数据
     id: 'bbm0002',
     value: 'bbm2value',
     label: 'bbm2label',
@@ -112,9 +158,9 @@ const data = [
   {
     id: '051DC769F4404585A4F097D198647597',
     value: 'LoopIndex',
-    fxName: 'fx(LoopIndex)',
-    label: 'LoopIndex',
-    name: 'LoopIndex',
+    fxName: '',
+    label: '变量集',
+    name: '变量集',
     type: null,
     pid: null,
     icon: 'IconFn',
@@ -122,22 +168,23 @@ const data = [
     _X_ROW_CHILD: [],
   },
   {
-    id: '24FD9C812AB448A88170E62F0EDCCEF6',
+    id: '24FD9C812AB448A88170E62F0EDCCEF6123123',
     value: 'LoopIndex2',
-    fxName: 'fx(LoopIndex2)',
-    label: 'LoopIndex2',
+    fxName: 'fx(myVarWebObj)',
+    label: 'WebObj',
     name: 'LoopIndex',
     type: '2',
+    optional: true, // 非叶子节点可选
     pid: 'LoopIndex',
     icon: 'IconFn',
     children: [],
     _X_ROW_CHILD: [],
   },
   {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex3',
-    fxName: 'fx(LoopIndex3)',
-    label: 'LoopIndex3',
+    id: 'sadfdsaf4234123123',
+    value: 'subOptionsValue',
+    fxName: 'fx(subOptionsFxName)',
+    label: '该网页的地址(字符串)',
     name: 'LoopIndex',
     type: '1',
     pid: 'LoopIndex2',
@@ -146,11 +193,11 @@ const data = [
     _X_ROW_CHILD: [],
   },
   {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex4',
-    fxName: 'fx(LoopIndex4)',
-    label: 'LoopIndex4',
-    name: 'LoopIndex',
+    id: 'asdfasdf1234123123',
+    value: 'subOptions2',
+    fxName: 'fx(subOptions)',
+    label: '该网页的标题(字符串)',
+    name: 'subOptions',
     type: '1',
     pid: 'LoopIndex2',
     icon: 'IconFn',
@@ -158,133 +205,13 @@ const data = [
     _X_ROW_CHILD: [],
   },
   {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex5',
-    fxName: 'fx(LoopIndex5)',
-    label: 'LoopIndex5',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex6',
-    fxName: 'fx(LoopIndex6)',
-    label: 'LoopIndex6',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex7',
-    fxName: 'fx(LoopIndex7)',
-    label: 'LoopIndex7',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex8',
-    fxName: 'fx(LoopIndex8)',
-    label: 'LoopIndex8',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex9',
-    fxName: 'fx(LoopIndex9)',
-    label: 'LoopIndex9',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex10',
-    fxName: 'fx(LoopIndex10)',
-    label: 'LoopIndex10',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex11',
-    fxName: 'fx(LoopIndex11)',
-    label: 'LoopIndex11',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex12',
-    fxName: 'fx(LoopIndex12)',
-    label: 'LoopIndex12',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex13',
-    fxName: 'fx(LoopIndex13)',
-    label: 'LoopIndex13',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex14',
-    fxName: 'fx(LoopIndex14)',
-    label: 'LoopIndex14',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
-    icon: 'IconFn',
-    children: [],
-    _X_ROW_CHILD: [],
-  },
-  {
-    id: 'C5C20FD0C698406185E647197D8A8AED',
-    value: 'LoopIndex15',
-    fxName: 'fx(LoopIndex15)',
-    label: 'LoopIndex15',
-    name: 'LoopIndex',
-    type: '1',
-    pid: 'LoopIndex2',
+    id: '24FD9C812AB448A88170E62F0EDCCEF62',
+    value: 'myVar2Value',
+    fxName: 'fx(myVar2fxName)',
+    label: 'myVar2',
+    name: 'myVar2name',
+    type: '2',
+    pid: 'LoopIndex',
     icon: 'IconFn',
     children: [],
     _X_ROW_CHILD: [],

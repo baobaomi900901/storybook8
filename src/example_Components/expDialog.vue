@@ -94,9 +94,10 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, nextTick, watch } from 'vue';
-import { KMessageBox, KMessage } from '@ksware/ksw-ux';
+// import { KMessageBox, KMessage } from '@ksware/ksw-ux';
 // import { KMessageBox, KMessage } from '../../kswux/packages';
-import { ElMessageBox } from 'element-plus';
+import { KMessageBox, KMessage } from '../../kswux/kingsware-ui/index';
+// import { ElMessageBox } from 'element-plus';
 
 const dialogVisible = ref(false);
 const dialogVisible2 = ref(false);
