@@ -15,7 +15,6 @@
         <k-select v-model="selectValue" placeholder="请选择" class="!w-80">
           <k-option value="">空</k-option>
           <k-option value="number">number</k-option>
-          <k-option value="string">string</k-option>
           <k-option value="boolean">boolean</k-option>
         </k-select>
 
@@ -29,49 +28,9 @@
                 toggleMode
               </k-button>
             </div>
-            <div class="w-80">
-              <k-script-input
-                v-model="text"
-                ref="scriptInput"
-                :show-popper-switch="showPopperSwitch"
-                :show-mode-switch="showModeSwitch"
-                default-mode="string"
-                :options="data"
-                use-tree
-                :onlyOneInput="['expression', 'string']"
-                :tree-config="{ expandAll: true }"
-                script-key="id"
-                @change="onChange"
-                placeholder="请输入脚本"
-                :optionRepeatable="false"
-                checkContentType
-                :contentType="selectValue"
-                :min="2"
-                :max="100"
-              >
-                <!-- contentType="string" -->
-                <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->
-                <template #append><k-button @click="clear">Clear</k-button></template>
-              </k-script-input>
-            </div>
 
-            <div class="flex flex-col gap-4 justify-center items-center">
-              <k-button main @click="showPopperSwitch = !showPopperSwitch">
-                {{ showPopperSwitch ? '显示弹窗' : '隐藏弹窗' }}
-              </k-button>
-              <k-button @click="showPopper" :disabled="!showPopperSwitch" class="!ml-0">
-                showPopper
-              </k-button>
-            </div>
-          </div>
-          <k-button main @click="change">edit</k-button>
-          <k-button main @click="changeMode">changeMode</k-button>
-          <k-button main @click="showPassword = !showPassword">Password</k-button>
-        </div>
-
-        <k-form>
-          <k-form-item label="脚本输入框">
             <k-script-input
+              class="!w-80"
               v-model="text"
               ref="scriptInput"
               :show-popper-switch="showPopperSwitch"
@@ -90,13 +49,24 @@
               :min="2"
               :max="100"
             >
+              <!-- contentType="string" -->
+              <!-- <template #prepend><k-button @click="change">Change</k-button></template> -->
               <template #append><k-button @click="clear">Clear</k-button></template>
             </k-script-input>
-          </k-form-item>
-          <k-form-item label="输入框">
-            <k-input></k-input>
-          </k-form-item>
-        </k-form>
+
+            <div class="flex flex-col gap-4 justify-center items-center">
+              <k-button main @click="showPopperSwitch = !showPopperSwitch">
+                {{ showPopperSwitch ? '显示弹窗' : '隐藏弹窗' }}
+              </k-button>
+              <k-button @click="showPopper" :disabled="!showPopperSwitch" class="!ml-0">
+                showPopper
+              </k-button>
+            </div>
+          </div>
+          <k-button main @click="change">edit</k-button>
+          <k-button main @click="changeMode">changeMode</k-button>
+          <k-button main @click="showPassword = !showPassword">Password</k-button>
+        </div>
       </div>
     </SBExamplePanel>
   </div>

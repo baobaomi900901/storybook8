@@ -23,7 +23,8 @@
       "
     ></span>
     <Menu :menuItem="data" :customSort="true" />
-
+    <h1>{{ t('app.title') }}</h1>
+    <k-button @click="changeLanguage">切换语言</k-button>
     <div class="flex-1">
       <router-view />
     </div>
@@ -35,6 +36,10 @@ import { ref, reactive, watch, nextTick, onBeforeUnmount } from 'vue';
 import Menu from './components/menu.vue';
 import { useRouter } from 'vue-router';
 import useMainStore from './store';
+import { useI18n } from 'vue-i18n';
+
+const { t, locale } = useI18n();
+
 const store = useMainStore();
 const router = useRouter();
 
@@ -75,6 +80,11 @@ routerPath.forEach((item) => {
 const showMenuClick = () => {
   store.showMenuType = !store.showMenuType;
 };
+
+function changeLanguage() {
+  locale.value = locale.value === 'zh' ? 'en' : 'zh';
+  // 改变组件库的语言
+}
 </script>
 <style scoped>
 .App {

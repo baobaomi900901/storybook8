@@ -1,4 +1,4 @@
-import { createApp, watch } from 'vue';
+import { createApp, watch, ref } from 'vue';
 import App from './App.vue';
 import './style.css';
 import '../public/result.css'; // 全局字体
@@ -9,6 +9,8 @@ import useMainStore from './store';
 import { KswIcon } from 'ksw-vue-icon';
 import 'ksw-vue-icon/styles/icon.css';
 import SBExamplePanel from './components/SBExamplePanel.vue';
+// i18n
+import i18n from './includes/i18n';
 
 // 源码
 import install from '../kswux/packages/index';
@@ -27,13 +29,22 @@ import install from '../kswux/packages/index';
 
 const app = createApp(App);
 app.use(router);
+app.use(i18n);
 app.use(createPinia());
 
 const store = useMainStore();
 
+const bbm = ref('en');
+
+setTimeout(() => {
+  console.log(123);
+  bbm.value = 'zh';
+  // useChangeLocale('zh');
+}, 3000);
+
 // app.use(elementPlus);
 app.use(KswIcon, { projectName: 'KingAutometa' }); // 图标引入添加项目名称
 
-app.use(install, { styleModule: 'GFAOM' }); // 全局注册组件 GFAOM, AOM, KingAutometa
+app.use(install, { styleModule: 'GFAOM', locale: bbm.value }); // 全局注册组件 GFAOM, AOM, KingAutometa
 app.mount('#app');
 app.component('SBExamplePanel', SBExamplePanel);

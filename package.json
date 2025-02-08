@@ -18,7 +18,6 @@
     "chinese-lunar-calendar": "^1.0.1",
     "chroma-js": "^2.4.2",
     "culori": "^4.0.1",
-    "element-plus": "^2.9.1",
     "ksw-vue-icon": "^2.3.16",
     "pinia": "^2.2.7",
     "sortablejs": "^1.15.6",
@@ -33,7 +32,7 @@
   "devDependencies": {
     "@chromatic-com/storybook": "^1.4.0",
     "@iframe-resizer/child": "^5.1.4",
-    "@ksware/ksw-ux": "^1.0.4",
+    "@ksware/ksw-ux": "^1.1.5",
     "@storybook/addon-essentials": "^8.1.1",
     "@storybook/addon-interactions": "^8.1.1",
     "@storybook/addon-links": "^8.1.1",
